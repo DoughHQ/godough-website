@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dough — Shape Your Plate</title>
+<meta name="description" content="Dough helps you find what you love at the grocery store. Your taste, remembered.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --cream: #FAF8F3;
+  --cream-mid: #F5F1E8;
+  --cream-dark: #EDE8DC;
+  --ink: #18150F;
+  --ink-light: #6B6257;
+  --ink-lighter: #A89D90;
+  --warm: #B8906A;
+  --warm-light: #E2D5C3;
+  --warm-pale: #F0E9DC;
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans: 'DM Sans', system-ui, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-weight: 300;
+  line-height: 1.7;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* NAV */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.4rem 4rem;
+  background: rgba(250,248,243,0.96);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.4s;
+}
+nav.scrolled { border-bottom-color: var(--warm-light); }
+
+.nav-logo {
+  font-family: var(--serif);
+  font-size: 1.45rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-light);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--ink); }
+
+.nav-cta {
+  color: var(--cream) !important;
+  background: var(--ink);
+  padding: 0.55rem 1.3rem;
+  border-radius: 2px;
+  transition: background 0.25s !important;
+}
+.nav-cta:hover { background: var(--warm) !important; }
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 55% 45%;
+  align-items: center;
+  padding: 9rem 4rem 5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  right: -8%;
+  top: 15%;
+  width: 560px;
+  height: 560px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--warm-pale) 0%, transparent 68%);
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.hero-left { position: relative; z-index: 1; }
+
+.hero-eyebrow {
+  font-size: 0.68rem;
+  font-weight: 400;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--warm);
+  margin-bottom: 1.75rem;
+  opacity: 0;
+  transform: translateY(14px);
+  animation: fadeUp 0.65s 0.1s forwards;
+}
+
+.hero-headline {
+  font-family: var(--serif);
+  font-size: clamp(5rem, 8.5vw, 9rem);
+  font-weight: 300;
+  line-height: 0.92;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 2.25rem;
+  opacity: 0;
+  transform: translateY(22px);
+  animation: fadeUp 0.8s 0.25s forwards;
+}
+
+.hero-headline em {
+  font-style: italic;
+  color: var(--warm);
+  display: block;
+}
+
+.hero-sub {
+  font-size: 1.05rem;
+  font-weight: 300;
+  color: var(--ink-light);
+  max-width: 34ch;
+  line-height: 1.8;
+  margin-bottom: 2.75rem;
+  opacity: 0;
+  transform: translateY(14px);
+  animation: fadeUp 0.7s 0.42s forwards;
+}
+
+.hero-sub strong { font-weight: 500; color: var(--ink); }
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  opacity: 0;
+  transform: translateY(14px);
+  animation: fadeUp 0.7s 0.56s forwards;
+}
+
+.btn-primary {
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--cream);
+  background: var(--ink);
+  padding: 0.85rem 2rem;
+  border-radius: 2px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: background 0.25s;
+  display: inline-block;
+}
+.btn-primary:hover { background: var(--warm); }
+
+.btn-ghost {
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-light);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: color 0.2s;
+}
+.btn-ghost:hover { color: var(--ink); }
+.btn-ghost .arr { transition: transform 0.2s; display: inline-block; }
+.btn-ghost:hover .arr { transform: translateX(4px); }
+
+/* HERO RIGHT */
+.hero-right {
+  position: relative;
+  z-index: 1;
+  opacity: 0;
+  animation: fadeIn 1s 0.8s forwards;
+  padding-left: 3rem;
+}
+
+.hero-pull {
+  font-family: var(--serif);
+  font-size: clamp(1.7rem, 2.5vw, 2.3rem);
+  font-weight: 300;
+  line-height: 1.3;
+  color: var(--ink);
+  margin-bottom: 3rem;
+}
+.hero-pull em { font-style: italic; color: var(--warm); }
+
+.hero-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  border-left: 1px solid var(--warm-light);
+  padding-left: 2rem;
+}
+
+.hero-stat-n {
+  font-family: var(--serif);
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: var(--ink);
+  line-height: 1;
+}
+.hero-stat-n em { font-style: italic; color: var(--warm); }
+
+.hero-stat-l {
+  font-size: 0.64rem;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-lighter);
+  margin-top: 0.25rem;
+}
+
+/* DIVIDER */
+.divider { height: 1px; background: var(--warm-light); margin: 0 4rem; }
+.divider-full { height: 1px; background: var(--warm-light); }
+
+/* STORY — WHY DOUGH EXISTS */
+.story {
+  padding: 8rem 4rem;
+}
+
+.story-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8rem;
+  align-items: start;
+}
+
+.story-pull {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 3.5vw, 3.2rem);
+  font-weight: 300;
+  line-height: 1.18;
+  color: var(--ink);
+}
+.story-pull em { font-style: italic; color: var(--warm); }
+
+.story-right p {
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: var(--ink-light);
+  line-height: 1.9;
+  margin-bottom: 1.5rem;
+}
+.story-right p:last-child { margin-bottom: 0; }
+.story-right strong { font-weight: 500; color: var(--ink); }
+
+/* HOW — SIMPLE BY DESIGN */
+.how {
+  padding: 8rem 4rem;
+  background: var(--cream-dark);
+}
+
+.how-top { margin-bottom: 5rem; }
+
+.section-eyebrow {
+  font-size: 0.65rem;
+  font-weight: 400;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--warm);
+  margin-bottom: 1.2rem;
+}
+
+.section-headline {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 300;
+  line-height: 1.15;
+  color: var(--ink);
+}
+.section-headline em { font-style: italic; color: var(--warm); }
+
+.how-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4rem;
+}
+
+.step-n {
+  font-family: var(--serif);
+  font-size: 0.8rem;
+  color: var(--warm);
+  letter-spacing: 0.08em;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.step-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--warm);
+  flex-shrink: 0;
+}
+
+.step-title {
+  font-family: var(--serif);
+  font-size: 1.65rem;
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--ink);
+  margin-bottom: 0.9rem;
+}
+.step-title em { font-style: italic; }
+
+.step-body {
+  font-size: 0.86rem;
+  font-weight: 300;
+  color: var(--ink-light);
+  line-height: 1.85;
+}
+
+/* BATTLE */
+.battle-section {
+  padding: 8rem 4rem;
+  background: var(--ink);
+  position: relative;
+  overflow: hidden;
+}
+
+.battle-bg-text {
+  position: absolute;
+  font-family: var(--serif);
+  font-size: 36vw;
+  font-weight: 300;
+  color: rgba(255,255,255,0.015);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  line-height: 1;
+  pointer-events: none;
+  font-style: italic;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.battle-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.battle-eyebrow {
+  font-size: 0.66rem;
+  font-weight: 400;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--warm);
+  margin-bottom: 1rem;
+}
+
+.battle-headline {
+  font-family: var(--serif);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 300;
+  color: var(--cream);
+  line-height: 1.05;
+}
+.battle-headline em { font-style: italic; color: var(--warm); }
+
+/* PROGRESS */
+.battle-progress {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 3rem;
+  position: relative;
+  z-index: 1;
+}
+
+.progress-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: rgba(250,248,243,0.14);
+  transition: background 0.4s, transform 0.3s;
+}
+.progress-dot.done { background: var(--warm); }
+.progress-dot.active { background: var(--cream); transform: scale(1.5); }
+
+/* ARENA */
+.battle-arena {
+  position: relative;
+  z-index: 1;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.battle-cards {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: stretch;
+  gap: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.battle-card {
+  background: rgba(250,248,243,0.035);
+  border: 1px solid rgba(250,248,243,0.09);
+  border-radius: 3px;
+  padding: 2.75rem 1.75rem;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, transform 0.18s, opacity 0.3s;
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.battle-card:hover {
+  background: rgba(250,248,243,0.065);
+  border-color: rgba(250,248,243,0.18);
+  transform: translateY(-3px);
+}
+
+.battle-card:active { transform: scale(0.98); }
+
+.battle-card.winner {
+  background: rgba(184,144,106,0.12);
+  border-color: var(--warm);
+  transform: translateY(-5px);
+}
+
+.battle-card.loser {
+  opacity: 0.2;
+  transform: scale(0.96);
+}
+
+.card-brand {
+  font-size: 0.6rem;
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(250,248,243,0.28);
+}
+
+.card-name {
+  font-family: var(--serif);
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: var(--cream);
+  line-height: 1.15;
+}
+
+.card-desc {
+  font-size: 0.7rem;
+  font-weight: 300;
+  color: rgba(250,248,243,0.3);
+  line-height: 1.5;
+}
+
+.battle-vs-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 2.5rem;
+}
+
+.battle-vs {
+  font-family: var(--serif);
+  font-size: 0.9rem;
+  font-style: italic;
+  color: rgba(250,248,243,0.16);
+}
+
+.battle-hint {
+  text-align: center;
+  font-size: 0.64rem;
+  font-weight: 300;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(250,248,243,0.18);
+  margin-top: 0.25rem;
+}
+
+/* RESULTS */
+.battle-results {
+  display: none;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  max-width: 520px;
+  margin: 0 auto;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.battle-results.visible { opacity: 1; transform: translateY(0); }
+
+.results-eyebrow {
+  font-size: 0.64rem;
+  font-weight: 400;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--warm);
+  margin-bottom: 1.5rem;
+}
+
+.results-picks {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.result-pick {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  font-weight: 400;
+  color: var(--cream);
+  background: rgba(250,248,243,0.05);
+  border: 1px solid rgba(250,248,243,0.1);
+  padding: 0.45rem 1rem;
+  border-radius: 2px;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.result-pick.show { opacity: 1; transform: translateY(0); }
+
+.results-earned {
+  font-size: 0.7rem;
+  font-weight: 300;
+  color: rgba(250,248,243,0.25);
+  letter-spacing: 0.08em;
+  margin-bottom: 2.5rem;
+}
+
+.results-headline {
+  font-family: var(--serif);
+  font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+  font-weight: 300;
+  color: var(--cream);
+  line-height: 1.15;
+  margin-bottom: 2.25rem;
+}
+.results-headline em { font-style: italic; color: var(--warm); }
+
+.waitlist-inline { max-width: 400px; margin: 0 auto; }
+
+.waitlist-inline-form {
+  display: flex;
+  margin-bottom: 0.65rem;
+}
+
+.waitlist-inline-input {
+  flex: 1;
+  font-family: var(--sans);
+  font-size: 0.86rem;
+  font-weight: 300;
+  color: var(--cream);
+  background: rgba(250,248,243,0.055);
+  border: 1px solid rgba(250,248,243,0.13);
+  border-right: none;
+  padding: 0.85rem 1.2rem;
+  border-radius: 2px 0 0 2px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.waitlist-inline-input::placeholder { color: rgba(250,248,243,0.24); }
+.waitlist-inline-input:focus { border-color: var(--warm); }
+
+.waitlist-inline-btn {
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--cream);
+  background: var(--warm);
+  border: 1px solid var(--warm);
+  padding: 0.85rem 1.4rem;
+  border-radius: 0 2px 2px 0;
+  cursor: pointer;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+.waitlist-inline-btn:hover { background: #9a7450; border-color: #9a7450; }
+
+.waitlist-inline-note {
+  font-size: 0.65rem;
+  color: rgba(250,248,243,0.2);
+  letter-spacing: 0.05em;
+}
+
+.battle-disclaimer {
+  text-align: center;
+  font-size: 0.57rem;
+  color: rgba(250,248,243,0.12);
+  margin-top: 3.5rem;
+  letter-spacing: 0.06em;
+  position: relative;
+  z-index: 1;
+}
+
+/* BELIEVE */
+.believe {
+  padding: 8rem 4rem;
+}
+
+.believe-top { margin-bottom: 4rem; }
+
+.believe-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5px;
+}
+
+.believe-card {
+  background: var(--cream-dark);
+  padding: 2.5rem 2rem;
+  position: relative;
+}
+
+.believe-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--warm-light);
+  transition: background 0.3s;
+}
+.believe-card:hover::before { background: var(--warm); }
+
+.believe-title {
+  font-family: var(--serif);
+  font-size: 1.45rem;
+  font-weight: 400;
+  color: var(--ink);
+  margin-bottom: 0.85rem;
+  line-height: 1.2;
+}
+.believe-title em { font-style: italic; color: var(--warm); }
+
+.believe-body {
+  font-size: 0.84rem;
+  font-weight: 300;
+  color: var(--ink-light);
+  line-height: 1.85;
+}
+
+/* WAITLIST */
+.waitlist-section {
+  padding: 8rem 4rem;
+  background: var(--cream-mid);
+  text-align: center;
+}
+
+.waitlist-headline {
+  font-family: var(--serif);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 300;
+  color: var(--ink);
+  line-height: 1.08;
+  margin-bottom: 1rem;
+}
+.waitlist-headline em { font-style: italic; color: var(--warm); }
+
+.waitlist-sub {
+  font-size: 0.93rem;
+  font-weight: 300;
+  color: var(--ink-light);
+  margin-bottom: 3rem;
+  line-height: 1.8;
+  max-width: 36ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.type-toggle {
+  display: flex;
+  justify-content: center;
+  gap: 0.4rem;
+  margin-bottom: 1.75rem;
+}
+
+.type-btn {
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.55rem 1.2rem;
+  border-radius: 2px;
+  border: 1px solid var(--warm-light);
+  background: transparent;
+  color: var(--ink-lighter);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.type-btn.active {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--cream);
+}
+.type-btn:hover:not(.active) {
+  border-color: var(--warm);
+  color: var(--ink-light);
+}
+
+.waitlist-form-bottom {
+  display: flex;
+  justify-content: center;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.waitlist-input-bottom {
+  flex: 1;
+  font-family: var(--sans);
+  font-size: 0.88rem;
+  font-weight: 300;
+  color: var(--ink);
+  background: var(--cream);
+  border: 1px solid var(--warm-light);
+  border-right: none;
+  padding: 0.85rem 1.25rem;
+  border-radius: 2px 0 0 2px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.waitlist-input-bottom::placeholder { color: var(--ink-lighter); }
+.waitlist-input-bottom:focus { border-color: var(--warm); }
+
+.waitlist-submit-bottom {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--cream);
+  background: var(--ink);
+  border: 1px solid var(--ink);
+  padding: 0.85rem 1.5rem;
+  border-radius: 0 2px 2px 0;
+  cursor: pointer;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+.waitlist-submit-bottom:hover { background: var(--warm); border-color: var(--warm); }
+
+.waitlist-note {
+  font-size: 0.67rem;
+  color: var(--ink-lighter);
+  margin-top: 0.85rem;
+  letter-spacing: 0.04em;
+}
+
+/* FOOTER */
+footer {
+  padding: 2.5rem 4rem;
+  border-top: 1px solid var(--warm-light);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.footer-logo {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.footer-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.footer-links a {
+  font-size: 0.67rem;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-lighter);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-links a:hover { color: var(--ink); }
+
+.footer-meta {
+  font-size: 0.67rem;
+  font-weight: 300;
+  color: var(--ink-lighter);
+  letter-spacing: 0.04em;
+}
+
+/* ANIMATIONS */
+@keyframes fadeUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.72s ease, transform 0.72s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* MOBILE */
+@media (max-width: 960px) {
+  nav { padding: 1.2rem 1.5rem; }
+  .nav-links { display: none; }
+  .hero { grid-template-columns: 1fr; padding: 6rem 1.5rem 3rem; }
+  .hero-right { display: none; }
+  .divider { margin: 0 1.5rem; }
+  .story { padding: 5rem 1.5rem; }
+  .story-inner { grid-template-columns: 1fr; gap: 3rem; }
+  .how { padding: 5rem 1.5rem; }
+  .how-steps { grid-template-columns: 1fr; gap: 2.5rem; }
+  .battle-section { padding: 5rem 1.5rem; }
+  .battle-cards { gap: 0.75rem; }
+  .card-name { font-size: 1.2rem; }
+  .believe { padding: 5rem 1.5rem; }
+  .believe-cards { grid-template-columns: 1fr 1fr; gap: 1px; }
+  .waitlist-section { padding: 5rem 1.5rem; }
+  .waitlist-form-bottom { flex-direction: column; max-width: 100%; }
+  .waitlist-input-bottom { border-right: 1px solid var(--warm-light); border-bottom: none; border-radius: 2px 2px 0 0; }
+  .waitlist-submit-bottom { border-radius: 0 0 2px 2px; text-align: center; }
+  footer { padding: 2rem 1.5rem; flex-direction: column; align-items: flex-start; }
+}
+
+@media (max-width: 600px) {
+  .believe-cards { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="/" class="nav-logo">Dough</a>
+  <ul class="nav-links">
+    <li><a href="#story">Why Dough</a></li>
+    <li><a href="#try">Try it</a></li>
+    <li><a href="#waitlist" class="nav-cta">Join waitlist</a></li>
+  </ul>
+</nav>
+
+<!-- 1. HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <p class="hero-eyebrow">Introducing Dough</p>
+    <h1 class="hero-headline">Shape<br>your<br><em>plate.</em></h1>
+    <p class="hero-sub">We ask. You answer.<br><strong>Your plate takes shape.</strong></p>
+    <div class="hero-actions">
+      <a href="#story" class="btn-primary">Learn more</a>
+      <a href="#try" class="btn-ghost">Try it now <span class="arr">→</span></a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <p class="hero-pull">Your taste is specific.<br>It's complicated.<br>It's <em>entirely yours.</em></p>
+    <div class="hero-stats">
+      <div>
+        <div class="hero-stat-n">600<em>k+</em></div>
+        <div class="hero-stat-l">Products indexed</div>
+      </div>
+      <div>
+        <div class="hero-stat-n">700<em>+</em></div>
+        <div class="hero-stat-l">Categories mapped</div>
+      </div>
+      <div>
+        <div class="hero-stat-n"><em>You.</em></div>
+        <div class="hero-stat-l">The only one that matters</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- 2. WHY DOUGH EXISTS -->
+<section class="story" id="story">
+  <div class="story-inner">
+    <div class="story-left">
+      <p class="section-eyebrow reveal">Why Dough exists</p>
+      <h2 class="story-pull reveal">You already know<br>what you love.<br><br>The grocery store<br>just makes it<br><em>hard to find.</em></h2>
+    </div>
+    <div class="story-right">
+      <p class="reveal">Thousands of products. Endless decisions. Analysis paralysis in every aisle. Most of the time you reach for what you recognize — not necessarily what you'd actually love.</p>
+      <p class="reveal">Dough gives you that moment of clarity.</p>
+      <p class="reveal">There's more information in a single honest choice — between two products you genuinely know — than in everything you've ever put in a cart. <strong>That moment of real preference has always been there.</strong> Dough pays attention to it.</p>
+      <p class="reveal">Your taste shifts by mood, by moment, by occasion. If we know what you choose when forced to choose, we know what you love. Not what's popular. What's genuinely, specifically yours.</p>
+      <p class="reveal">Every choice teaches Dough something true. The things that keep winning find their way to your plate. The things that don't, don't.</p>
+      <p class="reveal">The more you use it, the more it sounds like you.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- 3. HOW WE SOLVE IT -->
+<section class="how" id="how">
+  <div class="how-top">
+    <p class="section-eyebrow reveal">How it works</p>
+    <h2 class="section-headline reveal">Simple by <em>design.</em></h2>
+  </div>
+  <div class="how-steps">
+    <div class="reveal">
+      <div class="step-n">01 <div class="step-dot"></div></div>
+      <h3 class="step-title">Scan <em>anything.</em></h3>
+      <p class="step-body">See something you're curious about. Scan it. It enters your world. Over 600,000 products are already waiting — yours begins with one.</p>
+    </div>
+    <div class="reveal">
+      <div class="step-n">02 <div class="step-dot"></div></div>
+      <h3 class="step-title">Battle. <em>Choose honestly.</em></h3>
+      <p class="step-body">Two products. One choice. Every battle teaches Dough something true about you. Do it enough times and a clear picture of what you love starts to take shape.</p>
+    </div>
+    <div class="reveal">
+      <div class="step-n">03 <div class="step-dot"></div></div>
+      <h3 class="step-title">Your plate, <em>curated.</em></h3>
+      <p class="step-body">The things that keep winning find their way to your grocery run. Your Sunday morning. Your dinner party. Your Tuesday night. It gets more you every time.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider-full"></div>
+
+<!-- 4. BATTLE WIDGET -->
+<section class="battle-section" id="try">
+  <div class="battle-bg-text">vs</div>
+
+  <div class="battle-header">
+    <p class="battle-eyebrow">See for yourself</p>
+    <h2 class="battle-headline"><em>You already know.</em></h2>
+  </div>
+
+  <div class="battle-progress" id="progress">
+    <div class="progress-dot active"></div>
+    <div class="progress-dot"></div>
+    <div class="progress-dot"></div>
+    <div class="progress-dot"></div>
+    <div class="progress-dot"></div>
+  </div>
+
+  <div class="battle-arena" id="arena">
+    <div class="battle-cards" id="battle-cards">
+      <div class="battle-card" id="card-a" onclick="choose('a')">
+        <div class="card-brand" id="brand-a"></div>
+        <div class="card-name" id="name-a"></div>
+        <div class="card-desc" id="desc-a"></div>
+      </div>
+      <div class="battle-vs-wrap">
+        <span class="battle-vs">vs</span>
+      </div>
+      <div class="battle-card" id="card-b" onclick="choose('b')">
+        <div class="card-brand" id="brand-b"></div>
+        <div class="card-name" id="name-b"></div>
+        <div class="card-desc" id="desc-b"></div>
+      </div>
+    </div>
+    <p class="battle-hint">Pick the one you actually want</p>
+  </div>
+
+  <div class="battle-results" id="results">
+    <p class="results-eyebrow">Your first five</p>
+    <div class="results-picks" id="results-picks"></div>
+    <p class="results-earned">Each one earned its place.</p>
+    <h2 class="results-headline">Imagine your whole grocery run<br>feeling <em>this easy.</em></h2>
+    <div class="waitlist-inline">
+      <form class="waitlist-inline-form" name="waitlist-inline" netlify onsubmit="handleInlineSubmit(event)">
+        <input type="email" class="waitlist-inline-input" id="inline-email" placeholder="your@email.com" required autocomplete="email">
+        <button type="submit" class="waitlist-inline-btn" id="inline-btn">Join waitlist</button>
+      </form>
+      <p class="waitlist-inline-note" id="inline-note">No spam. Just early access when we're ready.</p>
+    </div>
+  </div>
+
+  <p class="battle-disclaimer">Product names used for illustrative purposes only. Dough is not affiliated with any brands shown.</p>
+</section>
+
+<div class="divider-full"></div>
+
+<!-- 5. WHAT WE BELIEVE -->
+<section class="believe" id="believe">
+  <div class="believe-top">
+    <p class="section-eyebrow reveal">What we believe</p>
+    <h2 class="section-headline reveal">Helping you pay attention<br>to what you actually <em>love.</em></h2>
+  </div>
+  <div class="believe-cards">
+    <div class="believe-card reveal">
+      <h3 class="believe-title">Honest<br><em>by nature.</em></h3>
+      <p class="believe-body">Dough learns from what you choose — not what's trending, not what anyone paid to show you. Just your honest choices, remembered and refined over time.</p>
+    </div>
+    <div class="believe-card reveal">
+      <h3 class="believe-title">Built<br><em>for you.</em></h3>
+      <p class="believe-body">Your taste is specific. It shifts by mood, by moment, by occasion. Sunday morning looks different from your dinner party. Dough is built around the actual you — right now, in this moment.</p>
+    </div>
+    <div class="believe-card reveal">
+      <h3 class="believe-title">Earn<br><em>your place.</em></h3>
+      <p class="believe-body">Every product on your plate should be there because it won. Because it earned it. Because you said so. Food should be made for you. Nothing gets in by default. Everything wins its way to your plate.</p>
+    </div>
+    <div class="believe-card reveal">
+      <h3 class="believe-title">Always<br><em>getting better.</em></h3>
+      <p class="believe-body">The more you use it, the more it sounds like you. Today it's your grocery run, your dinner party, your Sunday morning. We're building toward something much bigger. Carefully. For you.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 6. WAITLIST -->
+<section class="waitlist-section" id="waitlist">
+  <h2 class="waitlist-headline reveal">Your plate<br>is <em>waiting.</em></h2>
+  <p class="waitlist-sub reveal">Dough is launching soon. Drop your email and we'll reach out when we're ready.</p>
+  <div class="type-toggle reveal">
+    <button class="type-btn active" onclick="setType(this,'consumer')">I love food</button>
+    <button class="type-btn" onclick="setType(this,'brand')">I represent a brand</button>
+  </div>
+  <form class="waitlist-form-bottom reveal" name="waitlist-bottom" netlify onsubmit="handleBottomSubmit(event)">
+    <input type="hidden" id="bottom-type" value="consumer">
+    <input type="email" class="waitlist-input-bottom" id="bottom-email" placeholder="your@email.com" required autocomplete="email">
+    <button type="submit" class="waitlist-submit-bottom" id="bottom-btn">Join waitlist</button>
+  </form>
+  <p class="waitlist-note reveal" id="bottom-note">No spam. Just yours when it's ready.</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <a href="/" class="footer-logo">Dough</a>
+  <ul class="footer-links">
+    <li><a href="/privacy">Privacy</a></li>
+    <li><a href="/terms">Terms</a></li>
+    <li><a href="mailto:hello@godough.co">Contact</a></li>
+  </ul>
+  <p class="footer-meta">© 2026 Sunday Company LLC · godough.co</p>
+</footer>
+
+<script>
+const battles = [
+  {
+    a: { brand: 'Coca-Cola', name: 'Coke', desc: 'The classic' },
+    b: { brand: 'PepsiCo', name: 'Pepsi', desc: 'The challenger' }
+  },
+  {
+    a: { brand: 'Nabisco', name: 'Chips Ahoy', desc: 'Chocolate chip cookies' },
+    b: { brand: 'Nabisco', name: 'Oreos', desc: 'Chocolate sandwich cookies' }
+  },
+  {
+    a: { brand: 'Heinz', name: 'Tomato Ketchup', desc: 'The original' },
+    b: { brand: "Hunt's", name: 'Tomato Ketchup', desc: 'Classic ketchup' }
+  },
+  {
+    a: { brand: 'Glacéau', name: 'Smartwater', desc: 'Vapor distilled water' },
+    b: { brand: 'Liquid Death', name: 'Mountain Water', desc: 'Still water' }
+  },
+  {
+    a: { brand: 'Olipop', name: 'Vintage Cola', desc: 'Prebiotic soda' },
+    b: { brand: 'Poppi', name: 'Classic Cola', desc: 'Prebiotic soda' }
+  }
+];
+
+let current = 0;
+let winners = [];
+let choosing = false;
+
+function loadBattle(idx) {
+  const b = battles[idx];
+  const cards = document.getElementById('battle-cards');
+
+  cards.style.transition = 'none';
+  cards.style.opacity = '0';
+  cards.style.transform = 'translateY(10px)';
+
+  document.getElementById('brand-a').textContent = b.a.brand;
+  document.getElementById('name-a').textContent = b.a.name;
+  document.getElementById('desc-a').textContent = b.a.desc;
+  document.getElementById('brand-b').textContent = b.b.brand;
+  document.getElementById('name-b').textContent = b.b.name;
+  document.getElementById('desc-b').textContent = b.b.desc;
+
+  document.getElementById('card-a').className = 'battle-card';
+  document.getElementById('card-b').className = 'battle-card';
+  choosing = false;
+
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      cards.style.transition = 'opacity 0.38s ease, transform 0.38s ease';
+      cards.style.opacity = '1';
+      cards.style.transform = 'translateY(0)';
+    });
+  });
+
+  updateDots(idx);
+}
+
+function updateDots(idx) {
+  document.querySelectorAll('.progress-dot').forEach((dot, i) => {
+    dot.className = 'progress-dot';
+    if (i < idx) dot.classList.add('done');
+    else if (i === idx) dot.classList.add('active');
+  });
+}
+
+function choose(side) {
+  if (choosing) return;
+  choosing = true;
+
+  const winner = side === 'a' ? battles[current].a : battles[current].b;
+  winners.push(winner.name);
+
+  document.getElementById('card-' + side).classList.add('winner');
+  document.getElementById('card-' + (side === 'a' ? 'b' : 'a')).classList.add('loser');
+
+  setTimeout(() => {
+    current++;
+    if (current < battles.length) {
+      loadBattle(current);
+    } else {
+      showResults();
+    }
+  }, 500);
+}
+
+function showResults() {
+  const arena = document.getElementById('arena');
+  const prog = document.getElementById('progress');
+  const results = document.getElementById('results');
+
+  arena.style.transition = 'opacity 0.4s';
+  arena.style.opacity = '0';
+  prog.style.transition = 'opacity 0.4s';
+  prog.style.opacity = '0';
+
+  setTimeout(() => {
+    arena.style.display = 'none';
+    prog.style.display = 'none';
+    results.style.display = 'block';
+
+    setTimeout(() => {
+      results.classList.add('visible');
+      const picksEl = document.getElementById('results-picks');
+      winners.forEach((name, i) => {
+        setTimeout(() => {
+          const pick = document.createElement('div');
+          pick.className = 'result-pick';
+          pick.textContent = name;
+          picksEl.appendChild(pick);
+          setTimeout(() => pick.classList.add('show'), 30);
+        }, i * 150);
+      });
+    }, 80);
+  }, 420);
+}
+
+function handleInlineSubmit(e) {
+  e.preventDefault();
+  const btn = document.getElementById('inline-btn');
+  const note = document.getElementById('inline-note');
+  const input = document.getElementById('inline-email');
+  btn.textContent = "You're in ✓";
+  btn.style.background = '#5a7a5a';
+  btn.style.borderColor = '#5a7a5a';
+  btn.disabled = true;
+  input.disabled = true;
+  note.textContent = "Welcome. You'll hear from us when early access opens.";
+}
+
+function setType(btn, type) {
+  document.querySelectorAll('.type-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('bottom-type').value = type;
+  const input = document.getElementById('bottom-email');
+  const note = document.getElementById('bottom-note');
+  if (type === 'brand') {
+    input.placeholder = 'work@yourbrand.com';
+    note.textContent = "We'll be in touch about early partnership opportunities.";
+  } else {
+    input.placeholder = 'your@email.com';
+    note.textContent = "No spam. Just yours when it's ready.";
+  }
+}
+
+function handleBottomSubmit(e) {
+  e.preventDefault();
+  const btn = document.getElementById('bottom-btn');
+  const note = document.getElementById('bottom-note');
+  const input = document.getElementById('bottom-email');
+  const type = document.getElementById('bottom-type').value;
+  btn.textContent = "You're in ✓";
+  btn.style.background = '#5a7a5a';
+  btn.style.borderColor = '#5a7a5a';
+  btn.disabled = true;
+  input.disabled = true;
+  note.textContent = type === 'brand'
+    ? "Perfect. We'll be in touch soon."
+    : "Welcome. You'll hear from us when early access opens.";
+}
+
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 40);
+}, { passive: true });
+
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), i * 65);
+      obs.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+loadBattle(0);
+</script>
+</body>
+</html>
