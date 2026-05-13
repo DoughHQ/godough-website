@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Delivery Partners — Dough</title>
+<meta name="description" content="Dough builds approved, preference-mapped grocery carts. For delivery partners.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --cream: #FAF8F3;
+  --cream-mid: #F5F1E8;
+  --cream-dark: #EDE8DC;
+  --ink: #18150F;
+  --ink-light: #6B6257;
+  --ink-lighter: #A89D90;
+  --warm: #B8906A;
+  --warm-light: #E2D5C3;
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans: 'DM Sans', system-ui, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-weight: 300;
+  line-height: 1.7;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* NAV */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.4rem 4rem;
+  border-bottom: 1px solid var(--warm-light);
+}
+
+.nav-logo {
+  font-family: var(--serif);
+  font-size: 1.45rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.nav-back {
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-light);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-back:hover { color: var(--ink); }
+
+/* HERO */
+.hero {
+  padding: 7rem 4rem 6rem;
+  border-bottom: 1px solid var(--warm-light);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: end;
+}
+
+.hero-eyebrow {
+  font-size: 0.66rem;
+  font-weight: 400;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--warm);
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  transform: translateY(12px);
+  animation: fadeUp 0.6s 0.1s forwards;
+}
+
+.hero-headline {
+  font-family: var(--serif);
+  font-size: clamp(2.8rem, 5vw, 5rem);
+  font-weight: 300;
+  line-height: 1.05;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  opacity: 0;
+  transform: translateY(16px);
+  animation: fadeUp 0.75s 0.2s forwards;
+}
+.hero-headline em { font-style: italic; color: var(--warm); }
+
+.hero-right {
+  opacity: 0;
+  animation: fadeIn 0.8s 0.5s forwards;
+}
+
+.hero-statement {
+  font-family: var(--serif);
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
+  font-weight: 300;
+  line-height: 1.45;
+  color: var(--ink);
+  margin-bottom: 2.5rem;
+  border-left: 2px solid var(--warm);
+  padding-left: 1.5rem;
+}
+.hero-statement em { font-style: italic; color: var(--warm); }
+
+.hero-sub {
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: var(--ink-light);
+  line-height: 1.85;
+}
+
+/* DIVIDER */
+.divider { height: 1px; background: var(--warm-light); }
+
+/* SECTION */
+.section {
+  padding: 6rem 4rem;
+}
+
+.section.dark {
+  background: var(--ink);
+}
+
+.section.mid {
+  background: var(--cream-dark);
+}
+
+.section-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section-eyebrow {
+  font-size: 0.64rem;
+  font-weight: 400;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--warm);
+  margin-bottom: 1.25rem;
+}
+
+.section-headline {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 300;
+  line-height: 1.15;
+  color: var(--ink);
+  margin-bottom: 3rem;
+}
+.section-headline em { font-style: italic; color: var(--warm); }
+
+.section.dark .section-headline { color: var(--cream); }
+.section.dark .section-eyebrow { color: var(--warm); }
+
+/* TWO COL */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: start;
+}
+
+.body-text p {
+  font-size: 0.93rem;
+  font-weight: 300;
+  color: var(--ink-light);
+  line-height: 1.9;
+  margin-bottom: 1.4rem;
+}
+.body-text p:last-child { margin-bottom: 0; }
+.body-text strong { font-weight: 500; color: var(--ink); }
+
+.section.dark .body-text p { color: rgba(250,248,243,0.55); }
+.section.dark .body-text strong { color: var(--cream); }
+
+/* STEPS */
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.step {
+  display: grid;
+  grid-template-columns: 3rem 1fr;
+  gap: 1.5rem;
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--warm-light);
+  align-items: start;
+}
+.step:first-child { padding-top: 0; }
+.step:last-child { border-bottom: none; padding-bottom: 0; }
+
+.step-num {
+  font-family: var(--serif);
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--warm);
+  letter-spacing: 0.06em;
+  padding-top: 0.2rem;
+}
+
+.step-content {}
+
+.step-title {
+  font-family: var(--serif);
+  font-size: 1.35rem;
+  font-weight: 400;
+  color: var(--ink);
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+.step-title em { font-style: italic; }
+
+.step-body {
+  font-size: 0.86rem;
+  font-weight: 300;
+  color: var(--ink-light);
+  line-height: 1.8;
+}
+
+/* PROOF CARDS */
+.proof-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5px;
+  margin-top: 3rem;
+}
+
+.proof-card {
+  background: rgba(250,248,243,0.04);
+  border: 1px solid rgba(250,248,243,0.08);
+  padding: 2.5rem 2rem;
+  position: relative;
+}
+
+.proof-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--warm);
+  opacity: 0.4;
+}
+
+.proof-n {
+  font-family: var(--serif);
+  font-size: clamp(2.2rem, 3.5vw, 3.2rem);
+  font-weight: 300;
+  color: var(--cream);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+.proof-n em { font-style: italic; color: var(--warm); }
+
+.proof-label {
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(250,248,243,0.35);
+  margin-bottom: 0.75rem;
+}
+
+.proof-desc {
+  font-size: 0.82rem;
+  font-weight: 300;
+  color: rgba(250,248,243,0.45);
+  line-height: 1.7;
+}
+
+/* DIFFERENTIATOR */
+.diff-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5px;
+  margin-top: 3rem;
+}
+
+.diff-card {
+  background: var(--cream-dark);
+  padding: 2.5rem 2rem;
+  position: relative;
+}
+
+.diff-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--warm-light);
+  transition: background 0.3s;
+}
+.diff-card:hover::before { background: var(--warm); }
+
+.diff-label {
+  font-size: 0.64rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-lighter);
+  margin-bottom: 1rem;
+}
+
+.diff-statement {
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: var(--ink);
+  line-height: 1.3;
+  margin-bottom: 0.75rem;
+}
+.diff-statement em { font-style: italic; color: var(--warm); }
+
+.diff-body {
+  font-size: 0.83rem;
+  font-weight: 300;
+  color: var(--ink-light);
+  line-height: 1.8;
+}
+
+/* CTA SECTION */
+.cta-section {
+  padding: 7rem 4rem;
+  background: var(--cream-mid);
+  text-align: center;
+}
+
+.cta-eyebrow {
+  font-size: 0.64rem;
+  font-weight: 400;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--warm);
+  margin-bottom: 1.25rem;
+}
+
+.cta-headline {
+  font-family: var(--serif);
+  font-size: clamp(2.2rem, 4vw, 3.8rem);
+  font-weight: 300;
+  color: var(--ink);
+  line-height: 1.1;
+  margin-bottom: 1.25rem;
+}
+.cta-headline em { font-style: italic; color: var(--warm); }
+
+.cta-sub {
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: var(--ink-light);
+  margin-bottom: 2.5rem;
+  line-height: 1.8;
+  max-width: 44ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-email {
+  display: inline-block;
+  font-family: var(--serif);
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--warm);
+  padding-bottom: 0.2rem;
+  transition: color 0.2s, border-color 0.2s;
+}
+.cta-email:hover { color: var(--warm); }
+
+.cta-label {
+  font-size: 0.7rem;
+  font-weight: 300;
+  color: var(--ink-lighter);
+  letter-spacing: 0.08em;
+  margin-top: 0.75rem;
+}
+
+/* FOOTER */
+footer {
+  padding: 2.5rem 4rem;
+  border-top: 1px solid var(--warm-light);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.footer-logo {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.footer-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.footer-links a {
+  font-size: 0.67rem;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-lighter);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-links a:hover { color: var(--ink); }
+
+.footer-meta {
+  font-size: 0.67rem;
+  font-weight: 300;
+  color: var(--ink-lighter);
+}
+
+/* ANIMATIONS */
+@keyframes fadeUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.72s ease, transform 0.72s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* MOBILE */
+@media (max-width: 900px) {
+  nav { padding: 1.2rem 1.5rem; }
+  .hero { grid-template-columns: 1fr; padding: 5rem 1.5rem 4rem; gap: 3rem; }
+  .section { padding: 4rem 1.5rem; }
+  .two-col { grid-template-columns: 1fr; gap: 3rem; }
+  .proof-grid { grid-template-columns: 1fr; gap: 1px; }
+  .diff-grid { grid-template-columns: 1fr; gap: 1px; }
+  .cta-section { padding: 5rem 1.5rem; }
+  footer { padding: 2rem 1.5rem; flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-logo">Dough</a>
+  <a href="/" class="nav-back">← Back to Dough</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div>
+    <p class="hero-eyebrow">For delivery partners</p>
+    <h1 class="hero-headline">The most<br>intentional grocery<br>orders on the<br><em>internet.</em></h1>
+  </div>
+  <div class="hero-right">
+    <p class="hero-statement">Dough builds approved, preference-mapped carts of fresh and packaged food.<br><br><em>Dough never touches a product.</em></p>
+    <p class="hero-sub">Every cart Dough delivers has been built from a user's declared food preferences — then reviewed and approved by that user before transmission. What arrives on the other side is not intent. It is a decision already made.</p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- HOW IT WORKS -->
+<section class="section">
+  <div class="section-inner">
+    <div class="two-col">
+      <div>
+        <p class="section-eyebrow reveal">How it works</p>
+        <h2 class="section-headline reveal">Four steps.<br><em>Nothing complicated.</em></h2>
+        <div class="body-text reveal">
+          <p>Dough's preference engine maps what users actually want across 600,000+ fresh and packaged food products — using an ELO-based ranking system, the same methodology used to rank competitive chess. Every cart is the output of that intelligence.</p>
+          <p>The delivery partner receives a pre-approved, user-confirmed grocery list. Clean handoff. No ambiguity.</p>
+        </div>
+      </div>
+      <div class="steps reveal">
+        <div class="step">
+          <div class="step-num">01</div>
+          <div class="step-content">
+            <h3 class="step-title">Users declare <em>their preferences.</em></h3>
+            <p class="step-body">Dough users compare fresh and packaged food products in head-to-head preference battles. Two options. One honest choice. Repeated over time across every grocery category.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">02</div>
+          <div class="step-content">
+            <h3 class="step-title">Dough maps <em>what they want.</em></h3>
+            <p class="step-body">Every choice sharpens the preference map. Dough builds a precise picture of what each user actually wants across 600,000+ indexed fresh and packaged food products.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">03</div>
+          <div class="step-content">
+            <h3 class="step-title">Dough builds <em>the cart.</em></h3>
+            <p class="step-body">Dough curates a personalized grocery cart from those declared preferences. The user reviews it. The user approves it.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">04</div>
+          <div class="step-content">
+            <h3 class="step-title">Dough sends it. <em>You fulfill it.</em></h3>
+            <p class="step-body">Dough transmits the approved cart to the delivery partner. Dough never holds inventory. Dough never interacts with fulfillment. Dough builds the list. The delivery partner delivers it.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- DATA SECTION - DARK -->
+<section class="section dark">
+  <div class="section-inner">
+    <p class="section-eyebrow reveal">The data behind every cart</p>
+    <h2 class="section-headline reveal">Declared preference.<br>Not inferred. Not purchased history.<br><em>Declared.</em></h2>
+
+    <div class="two-col">
+      <div class="body-text reveal">
+        <p>Most purchase intent data is backward-looking. It tells you what someone bought — not what they actually wanted. The gap between those two things is where grocery waste, abandoned carts, and substitution requests live.</p>
+        <p>Dough captures something categorically different. When a user chooses between two products they genuinely know, with nothing at stake but their own honest preference, <strong>that choice is the purest demand signal available.</strong></p>
+        <p>Every cart Dough builds is downstream of hundreds of those honest choices. The preference map is built before the user opens the app. The cart is ready before they ask for it.</p>
+      </div>
+      <div class="body-text reveal">
+        <p>The result is structurally different from anything else in grocery delivery. <strong>Users who approve a Dough cart have already decided.</strong> They are not browsing. They are not comparing prices. They are not wondering what to cook.</p>
+        <p>They chose these specific fresh and packaged food products — repeatedly, honestly, over time — and Dough assembled those choices into a cart they confirmed before transmission.</p>
+        <p>That is not traffic at the top of the funnel. <strong>That is a decision already made, arriving at the bottom.</strong></p>
+      </div>
+    </div>
+
+    <div class="proof-grid">
+      <div class="proof-card reveal">
+        <div class="proof-n">600<em>k+</em></div>
+        <div class="proof-label">Products indexed</div>
+        <div class="proof-desc">Fresh and packaged food products mapped across the full grocery catalog.</div>
+      </div>
+      <div class="proof-card reveal">
+        <div class="proof-n">700<em>+</em></div>
+        <div class="proof-label">Categories mapped</div>
+        <div class="proof-desc">Every fresh and packaged grocery category covered and preference-ranked.</div>
+      </div>
+      <div class="proof-card reveal">
+        <div class="proof-n"><em>Pre-</em><br>approved</div>
+        <div class="proof-label">Every cart</div>
+        <div class="proof-desc">No cart transmits without explicit user review and confirmation.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- WHY DIFFERENT -->
+<section class="section mid">
+  <div class="section-inner">
+    <p class="section-eyebrow reveal">Why this is different</p>
+    <h2 class="section-headline reveal">Every other platform sends users<br>at the top of the funnel.<br><em>Dough sends them at the bottom.</em></h2>
+
+    <div class="diff-grid">
+      <div class="diff-card reveal">
+        <div class="diff-label">Every other platform</div>
+        <h3 class="diff-statement">Browsing. Uncertain.<br>Easily distracted.</h3>
+        <p class="diff-body">Users arrive with interest but no commitment. They compare, reconsider, and abandon. Cart abandonment is structural — built into the discovery model.</p>
+      </div>
+      <div class="diff-card reveal">
+        <div class="diff-label">Dough</div>
+        <h3 class="diff-statement">Cart approved.<br><em>Purchase decided.</em></h3>
+        <p class="diff-body">Users arrive with a confirmed cart built from their own declared preferences. The decision was made upstream — through honest comparison, not browsing pressure.</p>
+      </div>
+      <div class="diff-card reveal">
+        <div class="diff-label">Every other platform</div>
+        <h3 class="diff-statement">Algorithmic inference.<br>Purchase history.</h3>
+        <p class="diff-body">Platforms infer what users might want based on what they've bought before. They are optimizing for repeat behavior, not actual preference.</p>
+      </div>
+      <div class="diff-card reveal">
+        <div class="diff-label">Dough</div>
+        <h3 class="diff-statement">Declared preference.<br><em>Honest choice.</em></h3>
+        <p class="diff-body">Dough captures what users genuinely want through direct comparison. No inference. No guessing. Declared, confirmed, and mapped before the cart is ever built.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- WHERE HEADED -->
+<section class="section">
+  <div class="section-inner">
+    <div class="two-col">
+      <div>
+        <p class="section-eyebrow reveal">Where Dough is headed</p>
+        <h2 class="section-headline reveal">New York first.<br><em>Then everywhere.</em></h2>
+      </div>
+      <div class="body-text reveal">
+        <p>Dough is in active development with a consumer launch planned for 2026, seeding across food-forward communities in New York City before expanding nationally.</p>
+        <p>Dough is evaluating grocery delivery partnerships for its initial market launch and national expansion. Dough is targeting 500 to 1,000 active users by early 2027, with an average of 2 to 4 grocery cart approvals per active user per month across fresh and packaged food categories.</p>
+        <p>Dough handles the preference intelligence layer entirely. The delivery partner handles fulfillment entirely. <strong>Clean separation. No overlap.</strong></p>
+        <p style="margin-top: 1.5rem; font-size: 0.8rem; color: var(--ink-lighter); letter-spacing: 0.04em;">Dough is a product of Sunday Company Group LLC, a food intelligence technology company.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <p class="cta-eyebrow reveal">Get in touch</p>
+  <h2 class="cta-headline reveal">Delivery partners<br>receive the most qualified<br>grocery carts <em>available.</em></h2>
+  <p class="cta-sub reveal">Contact Dough's partnerships team to discuss integration opportunities.</p>
+  <a href="mailto:hello@godough.co" class="cta-email reveal">hello@godough.co</a>
+  <p class="cta-label reveal">Dough's partnerships team</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <a href="/" class="footer-logo">Dough</a>
+  <ul class="footer-links">
+    <li><a href="/privacy">Privacy</a></li>
+    <li><a href="/terms">Terms</a></li>
+    <li><a href="mailto:hello@godough.co">Contact</a></li>
+  </ul>
+  <p class="footer-meta">© 2026 Sunday Company Group LLC · godough.co</p>
+</footer>
+
+<script>
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), i * 60);
+      obs.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
