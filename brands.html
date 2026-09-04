@@ -296,7 +296,7 @@ nav {
 /* Mechanism — choose → capture → derive */
 .mech {
   margin-top: 2.75rem;
-  max-width: 440px;
+  max-width: 480px;
 }
 
 .mech-beat-label {
@@ -354,14 +354,14 @@ nav {
 
 .split-battle-question {
   font-family: var(--serif);
-  font-size: clamp(1.35rem, 3.2vw, 1.625rem);
+  font-size: clamp(1.15rem, 2.6vw, 1.5rem);
   font-weight: 400;
   line-height: 1.2;
   text-align: center;
   color: #f2efe6;
-  padding: 18px 28px 8px;
-  max-width: 18ch;
+  padding: 18px 16px 8px;
   margin: 0 auto;
+  white-space: nowrap;
 }
 
 .split-battle-arena {
@@ -788,7 +788,11 @@ footer {
 @media (max-width: 600px) {
   .nav-link.consumer { display: none; }
   .mech { max-width: 100%; }
-  .split-battle-question { padding-left: 16px; padding-right: 16px; }
+  .split-battle-question {
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 1.05rem;
+  }
   .access-row { grid-template-columns: 2.5rem 1fr; gap: 0.85rem; }
 }
 </style>
