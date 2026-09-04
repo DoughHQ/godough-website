@@ -60,12 +60,32 @@ nav {
 }
 
 .nav-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
   font-family: var(--serif);
-  font-size: 1.55rem;
+  font-size: 1.45rem;
   font-weight: 500;
   letter-spacing: -0.02em;
   color: var(--cream);
   text-decoration: none;
+}
+
+.nav-logo-mark {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: var(--sage);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.nav-logo-mark img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .nav-actions {
@@ -132,15 +152,38 @@ nav {
 }
 
 .hero-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 2.25rem;
+  opacity: 0;
+  transform: translateY(14px);
+  animation: fadeUp 0.7s var(--ease) 0.05s forwards;
+}
+
+.hero-brand-mark {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--sage);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.28);
+}
+
+.hero-brand-mark img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-brand-name {
   font-family: var(--serif);
   font-size: clamp(2.4rem, 5vw, 3.2rem);
   font-weight: 500;
   letter-spacing: -0.03em;
   line-height: 1;
-  margin-bottom: 2.25rem;
-  opacity: 0;
-  transform: translateY(14px);
-  animation: fadeUp 0.7s var(--ease) 0.05s forwards;
 }
 
 .hero-headline {
@@ -482,12 +525,31 @@ footer {
 }
 
 .footer-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
   font-family: var(--serif);
   font-size: 1.15rem;
   font-weight: 500;
   color: var(--ink);
   text-decoration: none;
   letter-spacing: -0.02em;
+}
+
+.footer-logo-mark {
+  width: 26px;
+  height: 26px;
+  border-radius: 7px;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: var(--sage);
+}
+
+.footer-logo-mark img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .footer-links {
@@ -558,7 +620,12 @@ footer {
 <body>
 
 <nav>
-  <a href="/" class="nav-logo">Dough</a>
+  <a href="/" class="nav-logo">
+    <span class="nav-logo-mark" aria-hidden="true">
+      <img src="/dough-mark.png" alt="" width="32" height="32">
+    </span>
+    Dough
+  </a>
   <div class="nav-actions">
     <a href="/" class="nav-link consumer">For shoppers</a>
     <a href="https://brands.godough.co/login" class="nav-link">Sign in</a>
@@ -568,7 +635,12 @@ footer {
 
 <header class="hero">
   <div class="hero-inner">
-    <div class="hero-brand" aria-hidden="true">Dough</div>
+    <div class="hero-brand">
+      <div class="hero-brand-mark" aria-hidden="true">
+        <img src="/dough-mark.png" alt="" width="64" height="64">
+      </div>
+      <div class="hero-brand-name">Dough</div>
+    </div>
     <h1 class="hero-headline">See how shoppers <em>actually</em> choose your products.</h1>
     <p class="hero-sub">Declared preference — not purchase history. Apply for brand access to the intelligence already forming around your catalogue.</p>
     <div class="hero-actions">
@@ -692,7 +764,12 @@ footer {
 </section>
 
 <footer>
-  <a href="/" class="footer-logo">Dough</a>
+  <a href="/" class="footer-logo">
+    <span class="footer-logo-mark" aria-hidden="true">
+      <img src="/dough-mark.png" alt="" width="26" height="26">
+    </span>
+    Dough
+  </a>
   <ul class="footer-links">
     <li><a href="/">Shoppers</a></li>
     <li><a href="/partners">Delivery partners</a></li>

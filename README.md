@@ -20,3 +20,7 @@ Dough marketing website — [godough.co](https://godough.co)
 ## Deploy
 
 Vercel static. Rewrites in `vercel.json` map clean paths to HTML files.
+
+## Brand mark
+
+`dough-mark.png` (and SVG / inverse) — same asset as the brand portal. Used on `/brands` nav, hero, and footer.
