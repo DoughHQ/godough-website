@@ -296,13 +296,7 @@ nav {
 /* Mechanism — choose → capture → derive */
 .mech {
   margin-top: 2.75rem;
-  max-width: 720px;
-}
-
-.mech-stage {
-  border: 1px solid var(--warm-light);
-  background: var(--cream-mid);
-  padding: clamp(1.5rem, 3vw, 2rem);
+  max-width: 440px;
 }
 
 .mech-beat-label {
@@ -311,80 +305,181 @@ nav {
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--warm);
-  margin-bottom: 1rem;
+  margin-bottom: 0.85rem;
 }
 
-.mech-cards {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  align-items: stretch;
-  gap: 0.85rem;
-}
-
-.mech-card {
-  background: var(--cream);
-  border: 1px solid var(--warm-light);
-  padding: 1.75rem 1.25rem;
-  text-align: center;
-  cursor: pointer;
-  font-family: var(--sans);
-  transition: border-color 0.18s, background 0.18s, transform 0.18s, opacity 0.18s;
+/* Compact SplitBattleCard — matches dough_app home battle */
+.split-battle {
+  position: relative;
+  background: #1c3a24;
+  border-radius: 20px;
+  overflow: hidden;
+  color: #f2efe6;
+  box-shadow: 0 18px 48px rgba(24, 21, 15, 0.18);
   user-select: none;
 }
 
-.mech-card:hover {
-  border-color: rgba(62, 107, 74, 0.35);
-  transform: translateY(-2px);
+.split-battle-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 20px 0;
 }
 
-.mech-card:focus-visible {
-  outline: 2px solid var(--sage);
-  outline-offset: 2px;
-}
-
-.mech-card.is-chosen {
-  border-color: var(--sage);
-  background: rgba(62, 107, 74, 0.06);
-  box-shadow: 0 0 0 1px var(--sage);
-}
-
-.mech-card.is-not {
-  opacity: 0.38;
-}
-
-.mech-card-brand {
-  font-size: 0.62rem;
-  letter-spacing: 0.18em;
+.split-battle-eyebrow {
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 2px;
   text-transform: uppercase;
-  color: var(--ink-lighter);
-  margin-bottom: 0.55rem;
+  color: rgba(201, 214, 204, 0.78);
 }
 
-.mech-card-name {
+.split-battle-pips {
+  display: flex;
+  gap: 4px;
+  width: 72px;
+}
+
+.split-battle-pip {
+  flex: 1;
+  height: 2.5px;
+  border-radius: 2px;
+  background: rgba(157, 184, 166, 0.26);
+}
+.split-battle-pip.is-on {
+  background: #e4e0d4;
+}
+
+.split-battle-question {
   font-family: var(--serif);
-  font-size: clamp(1.25rem, 2.4vw, 1.55rem);
+  font-size: clamp(1.35rem, 3.2vw, 1.625rem);
   font-weight: 400;
-  color: var(--ink);
-  line-height: 1.15;
-  letter-spacing: -0.02em;
-  margin-bottom: 0.4rem;
+  line-height: 1.2;
+  text-align: center;
+  color: #f2efe6;
+  padding: 18px 28px 8px;
+  max-width: 18ch;
+  margin: 0 auto;
 }
 
-.mech-card-desc {
-  font-size: 0.78rem;
-  color: var(--ink-light);
-  line-height: 1.45;
+.split-battle-arena {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 280px;
+  padding: 12px 16px 0;
 }
 
-.mech-vs {
+.split-battle-half {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 8px 16px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--sans);
+  color: inherit;
+  transition: opacity 0.18s, transform 0.18s;
+}
+
+.split-battle-half:focus-visible {
+  outline: 2px solid rgba(157, 184, 166, 0.55);
+  outline-offset: 2px;
+  border-radius: 12px;
+}
+
+.split-battle-half.is-chosen {
+  transform: scale(1.015);
+}
+
+.split-battle-half.is-not {
+  opacity: 0.52;
+}
+
+.split-battle-portrait {
+  width: 100%;
+  aspect-ratio: 0.72;
+  max-height: 200px;
+  background: #151e18;
+  border: 1px solid rgba(157, 184, 166, 0.24);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.split-battle-half.is-chosen .split-battle-portrait {
+  box-shadow: 0 0 0 1.5px rgba(157, 184, 166, 0.36);
+}
+
+.split-battle-portrait img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 10px;
+}
+
+.split-battle-name {
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 18px;
+  color: #f2efe6;
+  text-align: center;
+  min-height: 36px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-bottom: 4px;
+}
+
+.split-battle-brand {
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 15px;
+  letter-spacing: 0.25px;
+  color: rgba(201, 214, 204, 0.7);
+  text-align: center;
+}
+
+.split-battle-divider {
+  position: absolute;
+  top: 24px;
+  bottom: 88px;
+  left: 50%;
+  width: 1px;
+  background: rgba(157, 184, 166, 0.28);
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.split-battle-vs {
+  position: absolute;
+  top: 42%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(18, 30, 22, 0.88);
+  border: 1.5px solid rgba(157, 184, 166, 0.18);
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: var(--serif);
   font-style: italic;
-  font-size: 1rem;
-  color: var(--warm);
-  padding: 0 0.15rem;
+  font-size: 13px;
+  color: #f2efe6;
+  pointer-events: none;
+  z-index: 2;
 }
 
 .mech-hint {
@@ -408,9 +503,9 @@ nav {
 .mech-capture,
 .mech-derive {
   border: 1px solid var(--warm-light);
-  border-top: none;
   background: var(--cream);
   padding: 1.15rem 1.35rem;
+  border-radius: 12px;
 }
 
 .mech-capture-line {
@@ -453,6 +548,7 @@ nav {
   font-size: 0.78rem;
   color: var(--ink-lighter);
   line-height: 1.5;
+  max-width: 440px;
 }
 
 /* Truth strip */
@@ -691,8 +787,8 @@ footer {
 
 @media (max-width: 600px) {
   .nav-link.consumer { display: none; }
-  .mech-cards { gap: 0.5rem; }
-  .mech-card { padding: 1.35rem 0.85rem; }
+  .mech { max-width: 100%; }
+  .split-battle-question { padding-left: 16px; padding-right: 16px; }
   .access-row { grid-template-columns: 2.5rem 1fr; gap: 0.85rem; }
 }
 </style>
@@ -735,23 +831,39 @@ footer {
   </div>
 
   <div class="mech reveal" id="mech">
-    <div class="mech-stage">
-      <p class="mech-beat-label">1 · Choose</p>
-      <div class="mech-cards" role="group" aria-label="Example product comparison">
-        <button type="button" class="mech-card is-chosen" data-side="a" id="mech-a" aria-pressed="true">
-          <div class="mech-card-brand">Liquid Death</div>
-          <div class="mech-card-name">Mountain Water</div>
-          <div class="mech-card-desc">Still water</div>
-        </button>
-        <div class="mech-vs" aria-hidden="true">vs</div>
-        <button type="button" class="mech-card is-not" data-side="b" id="mech-b" aria-pressed="false">
-          <div class="mech-card-brand">Glacéau</div>
-          <div class="mech-card-name">Smartwater</div>
-          <div class="mech-card-desc">Vapor distilled</div>
-        </button>
+    <p class="mech-beat-label">1 · Choose</p>
+    <div class="split-battle" role="group" aria-label="Example product comparison">
+      <div class="split-battle-top">
+        <div class="split-battle-eyebrow">Still water</div>
+        <div class="split-battle-pips" aria-hidden="true">
+          <span class="split-battle-pip is-on"></span>
+          <span class="split-battle-pip is-on"></span>
+          <span class="split-battle-pip"></span>
+          <span class="split-battle-pip"></span>
+          <span class="split-battle-pip"></span>
+        </div>
       </div>
-      <p class="mech-hint" id="mech-hint">Pick the one you’d rather have</p>
+      <p class="split-battle-question">Which would you rather have?</p>
+      <div class="split-battle-arena">
+        <button type="button" class="split-battle-half is-chosen" data-side="a" id="mech-a" aria-pressed="true">
+          <div class="split-battle-portrait">
+            <img src="/demo/product-a.svg" alt="" width="160" height="220">
+          </div>
+          <div class="split-battle-name">Mountain Water</div>
+          <div class="split-battle-brand">Liquid Death</div>
+        </button>
+        <button type="button" class="split-battle-half is-not" data-side="b" id="mech-b" aria-pressed="false">
+          <div class="split-battle-portrait">
+            <img src="/demo/product-b.svg" alt="" width="160" height="220">
+          </div>
+          <div class="split-battle-name">Smartwater</div>
+          <div class="split-battle-brand">Glacéau</div>
+        </button>
+        <div class="split-battle-divider" aria-hidden="true"></div>
+        <div class="split-battle-vs" aria-hidden="true">vs</div>
+      </div>
     </div>
+    <p class="mech-hint" id="mech-hint">Pick the one you’d rather have</p>
 
     <div class="mech-arrow" aria-hidden="true">↓</div>
 
@@ -774,7 +886,7 @@ footer {
     </div>
 
     <p class="mech-foot">
-      Product names used for illustration. Every insight in Dough starts the same way: a real person choosing between two real products.
+      Illustrative matchup — same layout as battles in the Dough app. Every insight starts as a real person choosing between two real products.
     </p>
   </div>
 </section>
@@ -899,8 +1011,8 @@ document.querySelectorAll('.reveal').forEach((el) => obs.observe(el));
 
 (function mechDemo() {
   const products = {
-    a: { brand: 'Liquid Death', name: 'Mountain Water', desc: 'Still water', category: 'Still water' },
-    b: { brand: 'Glacéau', name: 'Smartwater', desc: 'Vapor distilled', category: 'Still water' },
+    a: { brand: 'Liquid Death', name: 'Mountain Water', category: 'Still water' },
+    b: { brand: 'Glacéau', name: 'Smartwater', category: 'Still water' },
   };
   const cardA = document.getElementById('mech-a');
   const cardB = document.getElementById('mech-b');
