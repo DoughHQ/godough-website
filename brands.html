@@ -293,84 +293,166 @@ nav {
   line-height: 1.75;
 }
 
-/* Signal — one composition */
-.signal {
-  display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
-  gap: clamp(2.5rem, 6vw, 5.5rem);
-  align-items: center;
+/* Mechanism — choose → capture → derive */
+.mech {
+  margin-top: 2.75rem;
+  max-width: 720px;
 }
 
-.signal-visual {
-  position: relative;
-  min-height: 340px;
-  background:
-    linear-gradient(145deg, var(--cream-mid), var(--warm-pale));
+.mech-stage {
   border: 1px solid var(--warm-light);
-  overflow: hidden;
+  background: var(--cream-mid);
+  padding: clamp(1.5rem, 3vw, 2rem);
 }
 
-.signal-visual::after {
-  content: '';
-  position: absolute;
-  inset: auto -20% -30% 40%;
-  height: 80%;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(62, 107, 74, 0.14), transparent 65%);
-  pointer-events: none;
+.mech-beat-label {
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--warm);
+  margin-bottom: 1rem;
 }
 
-.battle-demo {
-  position: absolute;
-  inset: 0;
+.mech-cards {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
-  align-items: center;
-  padding: 2rem 1.75rem;
-  gap: 0.75rem;
+  align-items: stretch;
+  gap: 0.85rem;
 }
 
-.battle-side {
+.mech-card {
+  background: var(--cream);
+  border: 1px solid var(--warm-light);
+  padding: 1.75rem 1.25rem;
   text-align: center;
-  padding: 1.5rem 0.75rem;
+  cursor: pointer;
+  font-family: var(--sans);
+  transition: border-color 0.18s, background 0.18s, transform 0.18s, opacity 0.18s;
+  user-select: none;
 }
 
-.battle-side .who {
-  font-size: 0.65rem;
-  letter-spacing: 0.16em;
+.mech-card:hover {
+  border-color: rgba(62, 107, 74, 0.35);
+  transform: translateY(-2px);
+}
+
+.mech-card:focus-visible {
+  outline: 2px solid var(--sage);
+  outline-offset: 2px;
+}
+
+.mech-card.is-chosen {
+  border-color: var(--sage);
+  background: rgba(62, 107, 74, 0.06);
+  box-shadow: 0 0 0 1px var(--sage);
+}
+
+.mech-card.is-not {
+  opacity: 0.38;
+}
+
+.mech-card-brand {
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--ink-lighter);
-  margin-bottom: 0.85rem;
+  margin-bottom: 0.55rem;
 }
 
-.battle-side .name {
+.mech-card-name {
   font-family: var(--serif);
-  font-size: clamp(1.35rem, 2.4vw, 1.75rem);
+  font-size: clamp(1.25rem, 2.4vw, 1.55rem);
   font-weight: 400;
+  color: var(--ink);
   line-height: 1.15;
   letter-spacing: -0.02em;
-  color: var(--ink);
+  margin-bottom: 0.4rem;
 }
 
-.battle-side.is-win .name { color: var(--sage); }
+.mech-card-desc {
+  font-size: 0.78rem;
+  color: var(--ink-light);
+  line-height: 1.45;
+}
 
-.battle-vs {
+.mech-vs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-family: var(--serif);
   font-style: italic;
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: var(--warm);
+  padding: 0 0.15rem;
 }
 
-.battle-caption {
-  position: absolute;
-  left: 1.75rem;
-  right: 1.75rem;
-  bottom: 1.5rem;
-  font-size: 0.8rem;
-  color: var(--ink-light);
+.mech-hint {
+  text-align: center;
+  margin-top: 0.85rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-lighter);
+}
+
+.mech-arrow {
+  display: flex;
+  justify-content: center;
+  padding: 0.85rem 0;
+  color: var(--warm);
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.mech-capture,
+.mech-derive {
+  border: 1px solid var(--warm-light);
+  border-top: none;
+  background: var(--cream);
+  padding: 1.15rem 1.35rem;
+}
+
+.mech-capture-line {
+  font-family: var(--sans);
+  font-size: 0.92rem;
+  color: var(--ink);
   line-height: 1.5;
-  border-top: 1px solid var(--warm-light);
-  padding-top: 1rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.mech-capture-line strong {
+  font-weight: 500;
+}
+
+.mech-derive-title {
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  font-weight: 400;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+  margin-bottom: 0.35rem;
+}
+
+.mech-derive-meta {
+  font-size: 0.88rem;
+  color: var(--sage);
+  font-weight: 500;
+  margin-bottom: 0.55rem;
+}
+
+.mech-derive-note {
+  font-size: 0.8rem;
+  color: var(--ink-lighter);
+  line-height: 1.5;
+  max-width: 48ch;
+}
+
+.mech-foot {
+  margin-top: 1.25rem;
+  font-size: 0.78rem;
+  color: var(--ink-lighter);
+  line-height: 1.5;
 }
 
 /* Truth strip */
@@ -597,8 +679,6 @@ footer {
 }
 
 @media (max-width: 900px) {
-  .signal { grid-template-columns: 1fr; }
-  .signal-visual { min-height: 300px; order: -1; }
   .truth-grid { grid-template-columns: 1fr; border-top: none; }
   .truth-item {
     border-right: none;
@@ -611,7 +691,8 @@ footer {
 
 @media (max-width: 600px) {
   .nav-link.consumer { display: none; }
-  .battle-demo { padding: 1.5rem 1rem 4.5rem; }
+  .mech-cards { gap: 0.5rem; }
+  .mech-card { padding: 1.35rem 0.85rem; }
   .access-row { grid-template-columns: 2.5rem 1fr; gap: 0.85rem; }
 }
 </style>
@@ -646,28 +727,55 @@ footer {
   </div>
 </header>
 
-<section class="section">
+<section class="section" id="how">
   <div class="reveal">
-    <p class="section-label">How Dough works</p>
-    <h2 class="section-headline">Shoppers choose between products they <em>know.</em></h2>
-    <p class="section-body">Not browsing. Not a survey. Two real products. One honest pick. Do that enough times and a clear picture of preference starts to form — category by category.</p>
+    <p class="section-label">How preference is made</p>
+    <h2 class="section-headline">Shoppers choose. We capture the pick. Enough picks become <em>insight.</em></h2>
+    <p class="section-body">Not browsing. Not a survey. Two real products. One honest pick. Try it below — then see what Dough records, and what that can become for a brand.</p>
   </div>
-  <div class="path">
-    <div class="path-step reveal">
-      <div class="n">01</div>
-      <h3>Real products</h3>
-      <p>Shoppers scan or find grocery products that already live in Dough’s catalogue.</p>
+
+  <div class="mech reveal" id="mech">
+    <div class="mech-stage">
+      <p class="mech-beat-label">1 · Choose</p>
+      <div class="mech-cards" role="group" aria-label="Example product comparison">
+        <button type="button" class="mech-card is-chosen" data-side="a" id="mech-a" aria-pressed="true">
+          <div class="mech-card-brand">Liquid Death</div>
+          <div class="mech-card-name">Mountain Water</div>
+          <div class="mech-card-desc">Still water</div>
+        </button>
+        <div class="mech-vs" aria-hidden="true">vs</div>
+        <button type="button" class="mech-card is-not" data-side="b" id="mech-b" aria-pressed="false">
+          <div class="mech-card-brand">Glacéau</div>
+          <div class="mech-card-name">Smartwater</div>
+          <div class="mech-card-desc">Vapor distilled</div>
+        </button>
+      </div>
+      <p class="mech-hint" id="mech-hint">Pick the one you’d rather have</p>
     </div>
-    <div class="path-step reveal">
-      <div class="n">02</div>
-      <h3>Head-to-head picks</h3>
-      <p>They compare two at a time and choose the one they’d actually rather have.</p>
+
+    <div class="mech-arrow" aria-hidden="true">↓</div>
+
+    <div class="mech-capture">
+      <p class="mech-beat-label">2 · Capture</p>
+      <p class="mech-capture-line" id="mech-capture">
+        Shopper chose <strong>Mountain Water</strong> over <strong>Smartwater</strong> · Still water
+      </p>
     </div>
-    <div class="path-step reveal">
-      <div class="n">03</div>
-      <h3>Preference takes shape</h3>
-      <p>Those choices stack into a picture of what people prefer — not what they clicked once.</p>
+
+    <div class="mech-arrow" aria-hidden="true">↓</div>
+
+    <div class="mech-derive">
+      <p class="mech-beat-label">3 · Derive</p>
+      <div class="mech-derive-title" id="mech-derive-title">Mountain Water</div>
+      <div class="mech-derive-meta" id="mech-derive-meta">Winning more of these head-to-heads in Still water</div>
+      <p class="mech-derive-note">
+        Brand insight only shows where enough shoppers have made choices. One pick is a fact. A pattern becomes a standing.
+      </p>
     </div>
+
+    <p class="mech-foot">
+      Product names used for illustration. Every insight in Dough starts the same way: a real person choosing between two real products.
+    </p>
   </div>
 </section>
 
@@ -788,6 +896,44 @@ const obs = new IntersectionObserver((entries) => {
 }, { threshold: 0.12 });
 
 document.querySelectorAll('.reveal').forEach((el) => obs.observe(el));
+
+(function mechDemo() {
+  const products = {
+    a: { brand: 'Liquid Death', name: 'Mountain Water', desc: 'Still water', category: 'Still water' },
+    b: { brand: 'Glacéau', name: 'Smartwater', desc: 'Vapor distilled', category: 'Still water' },
+  };
+  const cardA = document.getElementById('mech-a');
+  const cardB = document.getElementById('mech-b');
+  const capture = document.getElementById('mech-capture');
+  const deriveTitle = document.getElementById('mech-derive-title');
+  const deriveMeta = document.getElementById('mech-derive-meta');
+  const hint = document.getElementById('mech-hint');
+  if (!cardA || !cardB || !capture) return;
+
+  function choose(side) {
+    const won = products[side];
+    const lost = products[side === 'a' ? 'b' : 'a'];
+    cardA.classList.toggle('is-chosen', side === 'a');
+    cardA.classList.toggle('is-not', side !== 'a');
+    cardB.classList.toggle('is-chosen', side === 'b');
+    cardB.classList.toggle('is-not', side !== 'b');
+    cardA.setAttribute('aria-pressed', side === 'a' ? 'true' : 'false');
+    cardB.setAttribute('aria-pressed', side === 'b' ? 'true' : 'false');
+    capture.innerHTML =
+      'Shopper chose <strong>' +
+      won.name +
+      '</strong> over <strong>' +
+      lost.name +
+      '</strong> · ' +
+      won.category;
+    deriveTitle.textContent = won.name;
+    deriveMeta.textContent = 'Winning more of these head-to-heads in ' + won.category;
+    if (hint) hint.textContent = 'That’s a captured preference';
+  }
+
+  cardA.addEventListener('click', () => choose('a'));
+  cardB.addEventListener('click', () => choose('b'));
+})();
 </script>
 </body>
 </html>
