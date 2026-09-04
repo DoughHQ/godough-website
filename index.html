@@ -735,6 +735,8 @@ nav.scrolled { border-bottom-color: var(--warm-light); }
   color: var(--ink-lighter);
   cursor: pointer;
   transition: all 0.2s;
+  text-decoration: none;
+  display: inline-block;
 }
 .type-btn.active {
   background: var(--ink);
@@ -888,6 +890,7 @@ footer {
   <ul class="nav-links">
     <li><a href="#story">Why Dough</a></li>
     <li><a href="#try">Try it</a></li>
+    <li><a href="/brands">For brands</a></li>
     <li><a href="#waitlist" class="nav-cta">Join waitlist</a></li>
   </ul>
 </nav>
@@ -1057,8 +1060,8 @@ footer {
   <h2 class="waitlist-headline reveal">Your plate<br>is <em>waiting.</em></h2>
   <p class="waitlist-sub reveal">Dough is launching soon. Drop your email and we'll reach out when we're ready.</p>
   <div class="type-toggle reveal">
-    <button class="type-btn active" onclick="setType(this,'consumer')">I love food</button>
-    <button class="type-btn" onclick="setType(this,'brand')">I represent a brand</button>
+    <button type="button" class="type-btn active" onclick="setType(this,'consumer')">I love food</button>
+    <a class="type-btn" href="/brands">I represent a brand</a>
   </div>
   <form class="waitlist-form-bottom reveal" name="waitlist-bottom" netlify onsubmit="handleBottomSubmit(event)">
     <input type="hidden" id="bottom-type" value="consumer">
@@ -1075,6 +1078,7 @@ footer {
     <li><a href="/privacy">Privacy</a></li>
     <li><a href="/terms">Terms</a></li>
     <li><a href="mailto:hello@godough.co">Contact</a></li>
+    <li><a href="/brands">Brands</a></li>
     <li><a href="/partners">Partners</a></li>
   </ul>
   <p class="footer-meta">© 2026 Sunday Company Group LLC · godough.co</p>
@@ -1214,15 +1218,8 @@ function setType(btn, type) {
   document.querySelectorAll('.type-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
   document.getElementById('bottom-type').value = type;
-  const input = document.getElementById('bottom-email');
-  const note = document.getElementById('bottom-note');
-  if (type === 'brand') {
-    input.placeholder = 'work@yourbrand.com';
-    note.textContent = "We'll be in touch about early partnership opportunities.";
-  } else {
-    input.placeholder = 'your@email.com';
-    note.textContent = "No spam. Just yours when it's ready.";
-  }
+  document.getElementById('bottom-email').placeholder = 'your@email.com';
+  document.getElementById('bottom-note').textContent = "No spam. Just yours when it's ready.";
 }
 
 function handleBottomSubmit(e) {
@@ -1230,15 +1227,12 @@ function handleBottomSubmit(e) {
   const btn = document.getElementById('bottom-btn');
   const note = document.getElementById('bottom-note');
   const input = document.getElementById('bottom-email');
-  const type = document.getElementById('bottom-type').value;
   btn.textContent = "You're in ✓";
   btn.style.background = '#5a7a5a';
   btn.style.borderColor = '#5a7a5a';
   btn.disabled = true;
   input.disabled = true;
-  note.textContent = type === 'brand'
-    ? "Perfect. We'll be in touch soon."
-    : "Welcome. You'll hear from us when early access opens.";
+  note.textContent = "Welcome. You'll hear from us when early access opens.";
 }
 
 const nav = document.getElementById('nav');
