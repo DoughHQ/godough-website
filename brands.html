@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>For Brands — Dough</title>
-<meta name="description" content="See how shoppers actually choose your products. Apply for Dough brand access — preference intelligence, not purchase history.">
+<meta name="description" content="Dough is a shopper app where people compare real grocery products. Apply for brand access to claim your catalogue and see how products compete.">
 <link rel="canonical" href="https://godough.co/brands">
 <meta property="og:title" content="For Brands — Dough">
-<meta property="og:description" content="See how shoppers actually choose your products. Apply for brand access.">
+<meta property="og:description" content="Dough is a shopper app where people compare real grocery products. Apply for brand access.">
 <meta property="og:url" content="https://godough.co/brands">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -151,6 +151,30 @@ nav {
   max-width: 920px;
 }
 
+.hero-eyebrow {
+  font-size: 0.66rem;
+  font-weight: 400;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--warm);
+  margin-bottom: 1.15rem;
+  opacity: 0;
+  transform: translateY(12px);
+  animation: fadeUp 0.65s var(--ease) 0.05s forwards;
+}
+
+.hero-define {
+  font-size: clamp(1.05rem, 1.6vw, 1.2rem);
+  font-weight: 400;
+  color: rgba(250, 248, 243, 0.78);
+  max-width: 40ch;
+  line-height: 1.5;
+  margin-bottom: 1.35rem;
+  opacity: 0;
+  transform: translateY(14px);
+  animation: fadeUp 0.7s var(--ease) 0.1s forwards;
+}
+
 .hero-headline {
   font-family: var(--serif);
   font-size: clamp(2.6rem, 6.2vw, 4.6rem);
@@ -158,10 +182,10 @@ nav {
   line-height: 1.05;
   letter-spacing: -0.02em;
   max-width: 14ch;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.35rem;
   opacity: 0;
   transform: translateY(18px);
-  animation: fadeUp 0.8s var(--ease) 0.12s forwards;
+  animation: fadeUp 0.8s var(--ease) 0.16s forwards;
 }
 .hero-headline em {
   font-style: italic;
@@ -172,12 +196,12 @@ nav {
   font-size: clamp(1rem, 1.5vw, 1.12rem);
   font-weight: 300;
   color: rgba(250, 248, 243, 0.68);
-  max-width: 36ch;
+  max-width: 40ch;
   line-height: 1.65;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2.25rem;
   opacity: 0;
   transform: translateY(14px);
-  animation: fadeUp 0.75s var(--ease) 0.22s forwards;
+  animation: fadeUp 0.75s var(--ease) 0.24s forwards;
 }
 
 .hero-actions {
@@ -188,6 +212,16 @@ nav {
   opacity: 0;
   transform: translateY(14px);
   animation: fadeUp 0.75s var(--ease) 0.32s forwards;
+}
+
+.hero-proof {
+  margin-top: 1.75rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  color: rgba(250, 248, 243, 0.45);
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeUp 0.7s var(--ease) 0.4s forwards;
 }
 
 .btn-primary {
@@ -554,7 +588,7 @@ footer {
 .reveal.visible { opacity: 1; transform: translateY(0); }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero-headline, .hero-sub, .hero-actions {
+  .hero-eyebrow, .hero-define, .hero-headline, .hero-sub, .hero-actions, .hero-proof {
     opacity: 1;
     transform: none;
     animation: none;
@@ -600,57 +634,61 @@ footer {
 
 <header class="hero">
   <div class="hero-inner">
-    <h1 class="hero-headline">See how shoppers <em>actually</em> choose your products.</h1>
-    <p class="hero-sub">Declared preference — not purchase history. Apply for brand access to the intelligence already forming around your catalogue.</p>
+    <p class="hero-eyebrow">For brands</p>
+    <p class="hero-define">Dough is a shopper app where people compare real grocery products.</p>
+    <h1 class="hero-headline">Your products are already in that <em>world.</em></h1>
+    <p class="hero-sub">Apply for brand access to claim what’s yours, see how products compete when shoppers choose, and work with us to get set up.</p>
     <div class="hero-actions">
       <a class="btn-primary" href="https://brands.godough.co/login">Apply for access <span class="arr" aria-hidden="true">→</span></a>
       <a class="btn-ghost" href="https://brands.godough.co/login">Already have access? Sign in</a>
     </div>
+    <p class="hero-proof">600k+ products already indexed · 700+ categories</p>
   </div>
 </header>
 
 <section class="section">
-  <div class="signal">
-    <div class="reveal">
-      <p class="section-label">The signal</p>
-      <h2 class="section-headline">Honest choice beats <em>inferred</em> demand.</h2>
-      <p class="section-body">When someone picks between two products they actually know, that choice is cleaner than a cart, a click, or a lookalike audience. Dough captures those moments — then maps them across the grocery shelf.</p>
+  <div class="reveal">
+    <p class="section-label">How Dough works</p>
+    <h2 class="section-headline">Shoppers choose between products they <em>know.</em></h2>
+    <p class="section-body">Not browsing. Not a survey. Two real products. One honest pick. Do that enough times and a clear picture of preference starts to form — category by category.</p>
+  </div>
+  <div class="path">
+    <div class="path-step reveal">
+      <div class="n">01</div>
+      <h3>Real products</h3>
+      <p>Shoppers scan or find grocery products that already live in Dough’s catalogue.</p>
     </div>
-    <div class="signal-visual reveal" aria-hidden="true">
-      <div class="battle-demo">
-        <div class="battle-side is-win">
-          <div class="who">Chosen</div>
-          <div class="name">Your SKU</div>
-        </div>
-        <div class="battle-vs">vs</div>
-        <div class="battle-side">
-          <div class="who">Not this time</div>
-          <div class="name">The shelf</div>
-        </div>
-        <p class="battle-caption">Every battle is a declared preference — yours to understand when you have access.</p>
-      </div>
+    <div class="path-step reveal">
+      <div class="n">02</div>
+      <h3>Head-to-head picks</h3>
+      <p>They compare two at a time and choose the one they’d actually rather have.</p>
+    </div>
+    <div class="path-step reveal">
+      <div class="n">03</div>
+      <h3>Preference takes shape</h3>
+      <p>Those choices stack into a picture of what people prefer — not what they clicked once.</p>
     </div>
   </div>
 </section>
 
 <section class="section truth">
   <div class="reveal">
-    <p class="section-label">Already true</p>
-    <h2 class="section-headline">Your catalogue may already be <em>in</em> Dough.</h2>
-    <p class="section-body">We index the grocery world so shoppers can battle real products. Brand access is how you claim what’s yours and see the preference forming around it — honestly, without a pitch deck of vanity metrics.</p>
+    <p class="section-label">Why brands care</p>
+    <h2 class="section-headline">Your catalogue may already be <em>here.</em></h2>
+    <p class="section-body">We index the grocery shelf so shoppers can battle real SKUs. Brand access is how you claim your brand, clean up what’s wrong, and see how your products fare where we have enough choices to say something useful.</p>
   </div>
   <div class="truth-grid reveal">
     <div class="truth-item">
       <div class="truth-n">600<em>k+</em></div>
-      <div class="truth-l">Products indexed across the grocery catalogue</div>
+      <div class="truth-l">Products indexed for shoppers to compare</div>
     </div>
     <div class="truth-item">
       <div class="truth-n">700<em>+</em></div>
-      <div class="truth-l">Categories mapped for preference</div>
+      <div class="truth-l">Categories mapped across grocery</div>
     </div>
     <div class="truth-item">
-      <div class="truth-n"><em>Live</em></div>
-      <div class="truth-l">Battles teaching Dough what people actually want</div>
+      <div class="truth-n"><em>Yours</em></div>
+      <div class="truth-l">Many brands are already in the catalogue — find yours when you apply</div>
     </div>
   </div>
 </section>
@@ -658,29 +696,29 @@ footer {
 <section class="section">
   <div class="reveal">
     <p class="section-label">Brand access</p>
-    <h2 class="section-headline">What you get inside the <em>portal.</em></h2>
-    <p class="section-body">A workspace for the people who own the brand — not another dashboard of noise. Clarity first. Studies when you’re ready.</p>
+    <h2 class="section-headline">What you get when you’re <em>in.</em></h2>
+    <p class="section-body">A workspace for the people who own the brand. Clear first. Deeper when you need it.</p>
   </div>
   <div class="access-list">
     <div class="access-row reveal">
       <div class="access-num">01</div>
       <div>
-        <h3 class="access-title">Standing in category</h3>
-        <p class="access-copy">See how your products hold up where shoppers actually choose — preference shaped by honest battles, not last-click attribution.</p>
+        <h3 class="access-title">Your products in Dough</h3>
+        <p class="access-copy">See what’s claimed as yours, what’s missing, and what needs a cleaner read — before you brief anyone else.</p>
       </div>
     </div>
     <div class="access-row reveal">
       <div class="access-num">02</div>
       <div>
-        <h3 class="access-title">Catalogue truth</h3>
-        <p class="access-copy">Confirm what’s yours in Dough, what’s missing, and what needs a cleaner read — before you brief a study or a retailer conversation.</p>
+        <h3 class="access-title">How they compete</h3>
+        <p class="access-copy">Where shoppers have made enough choices, see how your products hold up against alternatives in category.</p>
       </div>
     </div>
     <div class="access-row reveal">
       <div class="access-num">03</div>
       <div>
-        <h3 class="access-title">Studies on your terms</h3>
-        <p class="access-copy">Run concept and box work against real preference context when you need answers — not vanity panels.</p>
+        <h3 class="access-title">Studies when you need answers</h3>
+        <p class="access-copy">Run concept and box studies against that same preference world — when you have a question, not for vanity.</p>
       </div>
     </div>
   </div>
@@ -688,9 +726,9 @@ footer {
 
 <section class="section">
   <div class="reveal">
-    <p class="section-label">How access works</p>
-    <h2 class="section-headline">Find your brand. Tell us who you are. <em>Talk.</em></h2>
-    <p class="section-body">No product audit mid-signup. We review every application personally and follow up to get you set up.</p>
+    <p class="section-label">How to apply</p>
+    <h2 class="section-headline">Find your brand. Tell us who you are. We <em>follow up.</em></h2>
+    <p class="section-body">No product audit mid-signup. We review every application personally and get you set up.</p>
   </div>
   <div class="path">
     <div class="path-step reveal">
@@ -713,8 +751,8 @@ footer {
 
 <section class="cta-band">
   <div class="reveal">
-    <h2>Your products are already being <em>chosen.</em></h2>
-    <p>Apply for brand access. We’ll meet you on the other side of the form.</p>
+    <h2>Find your brand and <em>apply.</em></h2>
+    <p>We’ll take it from there.</p>
     <div class="hero-actions">
       <a class="btn-primary" href="https://brands.godough.co/login">Apply for access <span class="arr" aria-hidden="true">→</span></a>
       <a class="btn-ghost" href="mailto:hello@godough.co">Or email hello@godough.co</a>
