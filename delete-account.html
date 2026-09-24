@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Delete your account — Dough</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --cream: #FAF8F3;
+  --ink: #18150F;
+  --ink-light: #6B6257;
+  --ink-lighter: #A89D90;
+  --warm: #B8906A;
+  --warm-light: #E2D5C3;
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans: 'DM Sans', system-ui, sans-serif;
+}
+body {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-weight: 300;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.4rem 4rem;
+  border-bottom: 1px solid var(--warm-light);
+}
+.nav-logo {
+  font-family: var(--serif);
+  font-size: 1.45rem;
+  font-weight: 500;
+  color: var(--ink);
+  text-decoration: none;
+}
+.nav-back {
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-light);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: color 0.2s;
+}
+.nav-back:hover { color: var(--ink); }
+.content {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 5rem 2rem 8rem;
+}
+.page-eyebrow {
+  font-size: 0.65rem;
+  font-weight: 400;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--warm);
+  margin-bottom: 1rem;
+}
+.page-title {
+  font-family: var(--serif);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 300;
+  color: var(--ink);
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+}
+.page-date {
+  font-size: 0.8rem;
+  color: var(--ink-lighter);
+  margin-bottom: 4rem;
+  letter-spacing: 0.05em;
+}
+.policy-body h2 {
+  font-family: var(--serif);
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--ink);
+  margin: 3rem 0 1rem;
+  line-height: 1.2;
+}
+.policy-body p {
+  font-size: 0.92rem;
+  color: var(--ink-light);
+  line-height: 1.9;
+  margin-bottom: 1.25rem;
+}
+.policy-body a {
+  color: var(--warm);
+  text-decoration: none;
+}
+.policy-body a:hover { text-decoration: underline; }
+.policy-body ol {
+  margin: 0.75rem 0 1.25rem 1.5rem;
+}
+.policy-body ol li {
+  font-size: 0.92rem;
+  color: var(--ink-light);
+  line-height: 1.85;
+  margin-bottom: 0.4rem;
+}
+footer {
+  padding: 2.5rem 4rem;
+  border-top: 1px solid var(--warm-light);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+.footer-logo {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--ink);
+  text-decoration: none;
+}
+.footer-meta {
+  font-size: 0.67rem;
+  color: var(--ink-lighter);
+}
+.footer-meta a { color: var(--ink-lighter); }
+@media (max-width: 768px) {
+  nav { padding: 1.2rem 1.5rem; }
+  .content { padding: 3rem 1.5rem 5rem; }
+  footer { padding: 2rem 1.5rem; flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-logo">Dough</a>
+  <a href="/" class="nav-back">← Back</a>
+</nav>
+<div class="content">
+  <p class="page-eyebrow">Legal</p>
+  <h1 class="page-title">Delete your account</h1>
+  <p class="page-date">Last updated September 24, 2026</p>
+  <div class="policy-body">
+    <p>You can delete your Dough account in the app. Sunday Company Group LLC (doing business as Dough) keeps only the records listed below.</p>
+    <h2>In the app</h2>
+    <ol>
+      <li>Open Dough and go to Settings.</li>
+      <li>Open Privacy.</li>
+      <li>Under Delete Account, type DELETE and confirm.</li>
+    </ol>
+    <h2>What deletion does</h2>
+    <p>Deletion removes your login and makes your profile private. This cannot be undone. Photos and receipt images are removed within a few minutes. Your battles stay as anonymous history. You can sign up again with the same email as a new account.</p>
+    <h2>What we keep</h2>
+    <p>We keep your consent log, payout records, and the phone fraud hold. Those records do not keep your profile visible to other people.</p>
+    <h2>When the app cannot delete it</h2>
+    <p>If your login runs a brand workspace or approved a mission, the app leaves the account unchanged and asks you to contact <a href="mailto:hello@godough.co">hello@godough.co</a>. Nothing is deleted until that is resolved.</p>
+    <p>The same details are in the <a href="/privacy">privacy policy</a>.</p>
+  </div>
+</div>
+<footer>
+  <a href="/" class="footer-logo">Dough</a>
+  <p class="footer-meta">© 2026 Sunday Company Group LLC · <a href="/privacy">Privacy</a></p>
+</footer>
+</body>
+</html>
