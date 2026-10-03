@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import CtaBand from '../components/CtaBand.astro';
+import '../styles/offer-product.css';
 ---
 
 <BaseLayout
@@ -181,20 +182,6 @@ import CtaBand from '../components/CtaBand.astro';
 </BaseLayout>
 
 <style>
-<style is:global>
-  /* Hero layout must win even if scoped CSS is stale-cached in a prior chunk */
-  .shop-hero {
-    display: grid !important;
-    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr) !important;
-    gap: clamp(2rem, 4vw, 3.5rem);
-    align-items: center;
-    padding: 8rem var(--page-pad) 3.5rem;
-    border-bottom: 1px solid var(--warm-light);
-    background: var(--cream);
-  }
-</style>
-
-<style>
   .shop-eyebrow {
     font-size: 0.66rem;
     letter-spacing: 0.24em;
@@ -225,20 +212,18 @@ import CtaBand from '../components/CtaBand.astro';
   .shop-hero-card {
     display: block;
     text-decoration: none;
-    color: var(--cream);
-    background:
-      radial-gradient(ellipse 70% 55% at 100% 0%, rgba(62, 107, 74, 0.4), transparent 55%),
-      linear-gradient(165deg, #24322a 0%, var(--field) 48%, #121816 100%);
-    border: 1px solid rgba(250, 248, 243, 0.1);
+    color: inherit;
+    background: #fff;
+    border: 1px solid var(--warm-light);
     border-radius: 16px;
     padding: 1.5rem 1.55rem 1.35rem;
-    box-shadow: 0 22px 48px rgba(24, 21, 15, 0.18);
-    transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease);
+    box-shadow: 0 18px 40px rgba(24, 21, 15, 0.06);
+    transition: transform 0.25s var(--ease), border-color 0.25s var(--ease);
   }
 
   .shop-hero-card:hover {
     transform: translateY(-3px);
-    box-shadow: 0 28px 56px rgba(24, 21, 15, 0.24);
+    border-color: rgba(62, 107, 74, 0.28);
   }
 
   .shop-hero-card-top {
@@ -262,7 +247,7 @@ import CtaBand from '../components/CtaBand.astro';
     font-size: 0.62rem;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: rgba(250, 248, 243, 0.7);
+    color: var(--ink-lighter);
   }
 
   .shop-hero-card-title {
@@ -270,18 +255,18 @@ import CtaBand from '../components/CtaBand.astro';
     font-size: clamp(1.45rem, 2.4vw, 1.85rem);
     letter-spacing: -0.02em;
     margin: 0 0 0.3rem;
-    color: var(--cream);
+    color: var(--ink);
   }
 
   .shop-hero-card-meta {
     font-size: 0.8rem;
-    color: rgba(250, 248, 243, 0.65);
+    color: var(--ink-lighter);
     margin: 0 0 1.15rem;
   }
 
   .shop-hero-picks {
     list-style: none;
-    border-top: 1px solid rgba(250, 248, 243, 0.12);
+    border-top: 1px solid var(--warm-light);
     margin-bottom: 1.15rem;
   }
 
@@ -291,18 +276,17 @@ import CtaBand from '../components/CtaBand.astro';
     gap: 0.65rem;
     align-items: baseline;
     padding: 0.7rem 0;
-    border-bottom: 1px solid rgba(250, 248, 243, 0.12);
+    border-bottom: 1px solid var(--warm-light);
     font-size: 0.92rem;
-    color: rgba(250, 248, 243, 0.88);
+    color: var(--ink);
   }
 
   .shop-hero-picks b {
     font-weight: 600;
-    color: var(--cream);
   }
 
   .shop-hero-mark {
-    color: #b8d4c0;
+    color: var(--sage);
     font-weight: 600;
   }
 
@@ -312,13 +296,13 @@ import CtaBand from '../components/CtaBand.astro';
     gap: 0.4rem;
     padding: 0.9rem 0 1.1rem;
     font-size: 0.82rem;
-    color: rgba(250, 248, 243, 0.72);
+    color: var(--ink-light);
     line-height: 1.4;
   }
 
   .shop-hero-foot b {
     font-weight: 600;
-    color: var(--cream);
+    color: var(--ink);
   }
 
   .shop-hero-go {
@@ -326,12 +310,12 @@ import CtaBand from '../components/CtaBand.astro';
     font-size: 0.68rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: #e0c4a0;
+    color: var(--sage);
     font-weight: 500;
   }
 
   .shop-hero-card:hover .shop-hero-go {
-    color: #f0d8b8;
+    color: var(--field);
   }
 
   .shop-section {
@@ -697,18 +681,6 @@ import CtaBand from '../components/CtaBand.astro';
   @media (prefers-reduced-motion: reduce) {
     .shop-hero-card:hover {
       transform: none;
-    }
-  }
-</style>
-
-<style is:global>
-  @media (max-width: 900px) {
-    .shop-hero {
-      grid-template-columns: 1fr !important;
-      padding-top: 6.5rem;
-    }
-    .shop-hero-card {
-      max-width: 28rem;
     }
   }
 </style>
