@@ -11,6 +11,11 @@
   background: var(--cream);
 }
 
+/* Tall ranking embed — pin copy to the top of the card, not mid-height */
+.shop-hero {
+  align-items: start;
+}
+
 .offer-eyebrow {
   font-size: 0.66rem;
   letter-spacing: 0.24em;
