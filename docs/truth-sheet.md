@@ -24,6 +24,8 @@ Every factual claim on the site must trace here. If it is not on this list, it d
 | Workspace frames embed live portal marketing previews (`/marketing/workspace/*`) with fixture data | Brand portal public preview routes |
 | Box studies page embeds `/marketing/workspace/box-preview` (cropped experienced report) with link to full `/box-report` | Portal `ExperiencedReportDeck` preview variant + marketing fixture |
 | Concept tests page mirrors box studies layout and embeds `/marketing/workspace/report` | Portal concept report marketing route |
+| Compete page uses the same offer layout and embeds `/marketing/workspace/home` | Portal brand-home marketing route |
+| Homepage sells one preference world (compete → concept → box), contrast vs surveys/soft decks, and a report that can say no | Positioning; no invented #N-of-M ranks |
 | Legal URLs unchanged: `/privacy`, `/terms`, `/delete-account` | App deep links |
 | `/brands` redirects to `/` | Brand homepage is now `/` |
 | `/partners` redirects to `/` | Delivery-partners pitch retired; not a current offer |
