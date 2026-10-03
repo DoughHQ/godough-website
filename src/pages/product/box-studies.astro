@@ -27,26 +27,16 @@ import CtaBand from '../../components/CtaBand.astro';
   </header>
 
   <section class="box-explain" aria-label="In five seconds">
-    <ol class="box-beats">
+    <ol class="box-beats box-beats-two">
       <li>
         <span class="box-beat-n">01</span>
         <strong>Ship</strong>
-        <span>Product to a New York door</span>
+        <span>To real consumers who’ve rated products similar to yours</span>
       </li>
       <li>
         <span class="box-beat-n">02</span>
-        <strong>Use</strong>
-        <span>They try it at home</span>
-      </li>
-      <li>
-        <span class="box-beat-n">03</span>
-        <strong>Choose</strong>
-        <span>Same pick as the app — with a reason</span>
-      </li>
-      <li>
-        <span class="box-beat-n">04</span>
-        <strong>Return</strong>
-        <span>Optional follow-up when repeat matters</span>
+        <strong>Use, then choose</strong>
+        <span>Get the feedback — and a follow-up when repeat matters</span>
       </li>
     </ol>
   </section>
@@ -73,22 +63,17 @@ import CtaBand from '../../components/CtaBand.astro';
 
   <section class="section mid">
     <p class="section-label">How a box runs</p>
-    <h2 class="section-headline sell">Three moves. Recruiting and setup stay with Dough.</h2>
-    <div class="box-path">
+    <h2 class="section-headline sell">Two moves. Recruiting and setup stay with Dough.</h2>
+    <div class="box-path box-path-two">
       <div class="box-path-step">
         <p class="box-path-n">01</p>
-        <h3>Ship to New York</h3>
-        <p>The product goes to a door here. The shopper is already in the Dough app — not a rented panel.</p>
+        <h3>Ship to real consumers who’ve rated products similar to yours</h3>
+        <p>Dough shoppers in New York — people who already choose in categories next to yours. Not a rented panel.</p>
       </div>
       <div class="box-path-step">
         <p class="box-path-n">02</p>
-        <h3>Use, then choose</h3>
-        <p>After they’ve used it, they make a forced choice against an alternative and leave a reason.</p>
-      </div>
-      <div class="box-path-step">
-        <p class="box-path-n">03</p>
-        <h3>Come back, if you need it</h3>
-        <p>A loyalty follow-up can run a day or more later when “would they buy again” is the question.</p>
+        <h3>Use, then choose — get feedback</h3>
+        <p>After they use it at home, they pick against an alternative and say why. Need to know if they’d come back? A second session can follow at least a day later.</p>
       </div>
     </div>
     <OfferRelated />
@@ -152,6 +137,10 @@ import CtaBand from '../../components/CtaBand.astro';
     grid-template-columns: repeat(4, 1fr);
     gap: 0;
     margin: 0;
+  }
+
+  .box-beats-two {
+    grid-template-columns: 1fr 1fr;
   }
 
   .box-beats li {
@@ -254,6 +243,10 @@ import CtaBand from '../../components/CtaBand.astro';
     border-top: 1px solid var(--warm-light);
   }
 
+  .box-path-two {
+    grid-template-columns: 1fr 1fr;
+  }
+
   .box-path-step {
     padding: 1.75rem 1.5rem 1.75rem 0;
     border-right: 1px solid var(--warm-light);
@@ -285,13 +278,13 @@ import CtaBand from '../../components/CtaBand.astro';
   }
 
   @media (max-width: 860px) {
-    .box-beats { grid-template-columns: 1fr 1fr; }
-    .box-beats li:nth-child(2n) { border-right: none; }
-    .box-beats li:nth-child(-n+2) {
-      border-bottom: 1px solid rgba(250, 248, 243, 0.1);
-    }
+    .box-beats,
+    .box-beats-two { grid-template-columns: 1fr; }
+    .box-beats li { border-right: none; border-bottom: 1px solid rgba(250, 248, 243, 0.1); }
+    .box-beats li:last-child { border-bottom: none; }
     .box-contrast { grid-template-columns: 1fr; }
-    .box-path { grid-template-columns: 1fr; }
+    .box-path,
+    .box-path-two { grid-template-columns: 1fr; }
     .box-path-step {
       border-right: none;
       padding: 1.5rem 0;
