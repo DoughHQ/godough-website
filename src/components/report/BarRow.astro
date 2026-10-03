@@ -1,0 +1,104 @@
+---
+import VerdictChip from './VerdictChip.astro';
+
+interface Props {
+  title: string;
+  result: string;
+  estimateLabel: string;
+  estimate: string;
+  lo?: number | null;
+  hi?: number | null;
+  bar?: number | null;
+  doughDefault?: number | null;
+  detail?: string;
+}
+
+const { title, result, estimateLabel, estimate, lo, hi, bar, doughDefault, detail } = Astro.props;
+
+function pct(n: number | null | undefined) {
+  if (n == null) return '—';
+  return `${Math.round(n * 100)}%`;
+}
+---
+
+<article class="bar-row">
+  <header>
+    <h3>{title}</h3>
+    <VerdictChip result={result} />
+  </header>
+  <dl>
+    <div>
+      <dt>{estimateLabel}</dt>
+      <dd>{estimate}</dd>
+    </div>
+    {(lo != null || hi != null) && (
+      <div>
+        <dt>95% interval</dt>
+        <dd>{pct(lo)} – {pct(hi)}</dd>
+      </div>
+    )}
+    {bar != null && (
+      <div>
+        <dt>Your bar</dt>
+        <dd>{pct(bar)}</dd>
+      </div>
+    )}
+    {doughDefault != null && (
+      <div>
+        <dt>Dough default</dt>
+        <dd>{pct(doughDefault)}</dd>
+      </div>
+    )}
+  </dl>
+  {detail && <p class="detail">{detail}</p>}
+</article>
+
+<style>
+  .bar-row {
+    border: 1px solid var(--warm-light);
+    background: var(--cream);
+    padding: 1.5rem 1.6rem;
+    margin-bottom: 1rem;
+  }
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.15rem;
+  }
+  h3 {
+    font-family: var(--serif);
+    font-size: 1.35rem;
+    font-weight: 400;
+    letter-spacing: -0.015em;
+  }
+  dl {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+  }
+  dt {
+    font-size: 0.62rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-lighter);
+    margin-bottom: 0.35rem;
+  }
+  dd {
+    font-family: var(--serif);
+    font-size: 1.35rem;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.02em;
+  }
+  .detail {
+    margin-top: 1rem;
+    font-size: 0.88rem;
+    color: var(--ink-light);
+    line-height: 1.6;
+    max-width: 56ch;
+  }
+  @media (max-width: 700px) {
+    dl { grid-template-columns: 1fr 1fr; }
+  }
+</style>

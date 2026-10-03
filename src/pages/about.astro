@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { CONTACT_EMAIL } from '../data/site';
+---
+
+<BaseLayout
+  title="About — Dough"
+  description="Dough is a product of Sunday Company Group LLC. A shopper app and a brand workspace built on the same preference world."
+  crumbs={[{ label: 'About' }]}
+>
+  <header class="page-hero">
+    <p class="hero-eyebrow">Company</p>
+    <h1 class="hero-headline">Sunday Company Group <em>LLC.</em></h1>
+    <p class="hero-sub">
+      Dough is our product: a shopper app where people choose between real grocery products, and a brand workspace that turns those choices into standings, concept tests, and box studies.
+    </p>
+  </header>
+
+  <section class="section">
+    <p class="section-body">
+      We are based around New York, where the first shoppers are. Access for brands is reviewed by a person. Write to us at
+      <a href={`mailto:${CONTACT_EMAIL}`} style="color: var(--warm);">{CONTACT_EMAIL}</a>.
+    </p>
+    <p class="section-body" style="margin-top: 1.5rem;">
+      Sunday Company Group LLC<br />
+      30 N Gould St, Ste N<br />
+      Sheridan, WY 82801<br />
+      United States
+    </p>
+    <!-- Truth sheet: founder name and one-sentence bio left blank until provided. -->
+  </section>
+</BaseLayout>

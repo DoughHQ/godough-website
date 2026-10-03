@@ -1,0 +1,54 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { PORTAL_LOGIN, CONTACT_EMAIL } from '../data/site';
+---
+
+<BaseLayout
+  title="Request access — Dough"
+  description="Find your brand, tell us who you are, and a person at Dough writes back. Access is reviewed — not a checkout."
+  current="/access"
+  crumbs={[{ label: 'Request access' }]}
+>
+  <header class="page-hero field">
+    <p class="hero-eyebrow">Access</p>
+    <h1 class="hero-headline">Tell us who you are. We write <em>back.</em></h1>
+    <p class="hero-sub">
+      Search for the brand. If it is not in the catalog yet, say so. Leave a work email, your role, and a LinkedIn profile. We review the request ourselves.
+    </p>
+  </header>
+
+  <section class="section">
+    <p class="section-label">How to apply</p>
+    <div class="access-list">
+      <div class="access-row reveal">
+        <span class="access-num">01</span>
+        <div>
+          <h3 class="access-title">Find your brand</h3>
+          <p class="access-copy">Search the catalogue we already hold — or tell us if you don’t see it yet.</p>
+        </div>
+      </div>
+      <div class="access-row reveal">
+        <span class="access-num">02</span>
+        <div>
+          <h3 class="access-title">Your details</h3>
+          <p class="access-copy">Work email, role, LinkedIn. Enough to know you’re the right person.</p>
+        </div>
+      </div>
+      <div class="access-row reveal">
+        <span class="access-num">03</span>
+        <div>
+          <h3 class="access-title">We follow up</h3>
+          <p class="access-copy">A human review, then access — and a call when it’s useful. What happens next is a person, not a checkout.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-actions" style="margin-top: 3rem;">
+      <a class="btn-primary on-cream" href={PORTAL_LOGIN}>
+        Request access <span class="arr" aria-hidden="true">→</span>
+      </a>
+      <a class="btn-ghost on-cream" href={PORTAL_LOGIN}>Already have access? Sign in</a>
+      <a class="btn-ghost on-cream" href={`mailto:${CONTACT_EMAIL}`}>Or email {CONTACT_EMAIL}</a>
+    </div>
+  </section>
+</BaseLayout>

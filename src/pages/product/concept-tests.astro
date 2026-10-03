@@ -1,0 +1,66 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ChoiceWidget from '../../components/ChoiceWidget.astro';
+import OfferRelated from '../../components/OfferRelated.astro';
+import CtaBand from '../../components/CtaBand.astro';
+---
+
+<BaseLayout
+  title="Concept tests — Dough"
+  description="Put one new design against your current pack or one competitor. New York shoppers choose. The report says whether it cleared the bars you set before anyone started."
+  current="/product/concept-tests"
+  crumbs={[{ href: '/product/compete', label: 'Product' }, { label: 'Concept tests' }]}
+>
+  <header class="page-hero">
+    <p class="hero-eyebrow">Product</p>
+    <h1 class="hero-headline">Concept <em>tests.</em></h1>
+    <p class="hero-sub">
+      Put one new design against your current pack, or against the one competitor you have to beat. Shoppers see both and pick. Before anyone starts, you set the bars. The report says whether the design cleared them.
+    </p>
+  </header>
+
+  <section class="section">
+    <p class="section-label">The protocol</p>
+    <div class="access-list">
+      <div class="access-row reveal">
+        <span class="access-num">01</span>
+        <div>
+          <h3 class="access-title">Name the benchmark</h3>
+          <p class="access-copy">Your current pack, or one competitor. Exactly one. The verdict is measured against it.</p>
+        </div>
+      </div>
+      <div class="access-row reveal">
+        <span class="access-num">02</span>
+        <div>
+          <h3 class="access-title">Set the bars before anyone starts</h3>
+          <p class="access-copy">Head to head, liking, and price — or leave a bar off. You can move a bar until the first shopper starts. After that it is frozen. Confidence stays at 95%. That part is Dough’s.</p>
+        </div>
+      </div>
+      <div class="access-row reveal">
+        <span class="access-num">03</span>
+        <div>
+          <h3 class="access-title">Shoppers choose</h3>
+          <p class="access-copy">Two things on a screen. One forced choice. Battles that are too fast to be a real choice are set aside.</p>
+        </div>
+      </div>
+      <div class="access-row reveal">
+        <span class="access-num">04</span>
+        <div>
+          <h3 class="access-title">Read the verdict</h3>
+          <p class="access-copy">Cleared, not cleared, too close to call, or not enough responses. One missed bar and the study does not clear. <a href="/report/example" style="color: var(--warm);">See the example.</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section mid">
+    <p class="section-label">The choice</p>
+    <h2 class="section-headline">Same act as the <em>app.</em></h2>
+    <div class="reveal">
+      <ChoiceWidget />
+    </div>
+    <OfferRelated />
+  </section>
+
+  <CtaBand />
+</BaseLayout>

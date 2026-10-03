@@ -1,0 +1,55 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import OfferRelated from '../../components/OfferRelated.astro';
+import CtaBand from '../../components/CtaBand.astro';
+---
+
+<BaseLayout
+  title="How you compete — Dough"
+  description="Your products are already in the Dough catalog. Where enough New York shoppers have chosen, see how a product holds up against the alternatives."
+  current="/product/compete"
+  crumbs={[{ href: '/product/compete', label: 'Product' }, { label: 'How you compete' }]}
+>
+  <header class="page-hero">
+    <p class="hero-eyebrow">Product</p>
+    <h1 class="hero-headline">How you <em>compete.</em></h1>
+    <p class="hero-sub">
+      Your products are already in the catalog. Where enough shoppers have chosen, you can see how one holds up against the alternatives around it.
+    </p>
+  </header>
+
+  <section class="section">
+    <p class="section-label">The standing</p>
+    <h2 class="section-headline">One pick is a fact. A pattern is a <em>standing.</em></h2>
+    <p class="section-body">
+      We index the grocery shelf so shoppers can battle real SKUs. Brand access is how you claim your brand, clean up what’s wrong, and see how your products fare where we have enough choices to say something.
+    </p>
+    <p class="section-body">
+      A standing appears only when the choices are thick enough to be a pattern. It is not a concept verdict, and it is not a promise about next quarter’s sales.
+    </p>
+  </section>
+
+  <section class="section mid">
+    <p class="section-label">What you get</p>
+    <div class="path">
+      <div class="path-step reveal">
+        <p class="n">01</p>
+        <h3>Your products in Dough</h3>
+        <p>See what’s claimed as yours, what’s missing, and what needs a cleaner read — before you brief anyone else.</p>
+      </div>
+      <div class="path-step reveal">
+        <p class="n">02</p>
+        <h3>How they compete</h3>
+        <p>Where shoppers have made enough choices, see how your products hold up against alternatives in category.</p>
+      </div>
+      <div class="path-step reveal">
+        <p class="n">03</p>
+        <h3>Studies when you need answers</h3>
+        <p>Run concept and box studies against that same preference world — when you have a question, not for vanity.</p>
+      </div>
+    </div>
+    <OfferRelated />
+  </section>
+
+  <CtaBand headline="Claim what’s yours and <em>request access.</em>" />
+</BaseLayout>

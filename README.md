@@ -2,25 +2,46 @@
 
 Dough marketing website — [godough.co](https://godough.co)
 
+Astro static site. Design system from the former `brands.html`. Brand homepage is `/`. Shopper story lives at `/app`.
+
 ## Pages
 
-| Path | File | Audience |
-|---|---|---|
-| `/` | `index.html` | Consumers |
-| `/brands` | `brands.html` | CPG / brand partners → CTA to `brands.godough.co/login` |
-| `/partners` | `partners.html` | Delivery partners |
-| `/privacy` | `privacy.html` | Legal |
-| `/terms` | `terms.html` | Legal |
+| Path | Audience |
+|---|---|
+| `/` | Brands — home |
+| `/product/compete` | Standings / catalog |
+| `/product/concept-tests` | Concept tests |
+| `/product/box-studies` | Box / IHUT studies |
+| `/product/workspace` | Brand portal overview |
+| `/report/example` | Simulated concept report |
+| `/report/reading-a-verdict` | Verdict vocabulary |
+| `/method` | Method (report words) |
+| `/shoppers` | Who answers (NYC) |
+| `/app` | Shopper product story |
+| `/access` | Request access → portal |
+| `/about` | Company |
+| `/partners` | Delivery partners |
+| `/privacy` `/terms` `/delete-account` | Legal (stable URLs) |
 
-## Forms
+`/brands` redirects to `/`.
 
-- Consumer waitlist on `/` (Netlify Forms — `waitlist-inline`, `waitlist-bottom`). Brand interest is **not** a waitlist field anymore; “I represent a brand” links to `/brands`.
-- Brand applications submit in the portal (`brands.godough.co`), not on this site.
+## Develop
+
+```bash
+nvm use 22   # engines.node >= 22.12
+npm install
+npm run dev
+npm run build
+```
 
 ## Deploy
 
-Vercel static. Rewrites in `vercel.json` map clean paths to HTML files.
+Vercel. Output is static (`dist/`). No DNS change.
+
+## Truth
+
+See [docs/truth-sheet.md](docs/truth-sheet.md). Every claim on the site must trace there.
 
 ## Brand mark
 
-`dough-mark.png` (and SVG / inverse) — same asset as the brand portal. Used on `/brands` nav, hero, and footer.
+`public/dough-mark.png` (and SVG / inverse) — same asset as the brand portal.

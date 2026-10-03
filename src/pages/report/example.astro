@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ReportRenderer from '../../components/report/ReportRenderer.astro';
+import CtaBand from '../../components/CtaBand.astro';
+---
+
+<BaseLayout
+  title="Example report — Dough"
+  description="A simulated concept report in the real Dough schema: verdict, bars, first look, what mattered, price, and open answers. Labeled as an example."
+  current="/report/example"
+  crumbs={[{ href: '/report/example', label: 'Report' }, { label: 'Example report' }]}
+>
+  <header class="page-hero field">
+    <p class="hero-eyebrow">Report</p>
+    <h1 class="hero-headline">Example <em>report.</em></h1>
+    <p class="hero-sub">
+      Simulated. Not a client study. The sections and the verdict rule are the ones a brand receives.
+    </p>
+  </header>
+
+  <ReportRenderer />
+
+  <CtaBand headline="See this for your own <em>design.</em>" />
+</BaseLayout>

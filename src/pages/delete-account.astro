@@ -1,0 +1,61 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Delete your account — Dough"
+  description="How to delete your Dough account, what is deleted, and what Sunday Company Group LLC keeps."
+  crumbs={[{ label: 'Delete account' }]}
+>
+  <div class="section" style="padding-top: 3rem;">
+    <p class="section-label">Legal</p>
+    <h1 class="section-headline" style="max-width: 18ch;">Delete your account</h1>
+    <p class="page-date">Last updated September 26, 2026</p>
+    <div class="policy-body" style="max-width: 720px;">
+      <p>You can delete your Dough account. Sunday Company Group LLC (doing business as Dough) keeps only the records listed below. Deletion cannot be undone. The same email can create a new account later; the old account is not restored.</p>
+
+      <h2>In the app</h2>
+      <ol>
+        <li>Open Dough and go to Settings.</li>
+        <li>Under Danger Zone, open Delete Account.</li>
+        <li>Type DELETE and confirm.</li>
+      </ol>
+      <p>Privacy Settings opens the same screen.</p>
+
+      <h2>If you no longer have the app</h2>
+      <p>Email <a href="mailto:hello@godough.co">hello@godough.co</a> from the address on the account. We reply within a few business days.</p>
+
+      <h2>What is deleted</h2>
+      <ul>
+        <li>Your login</li>
+        <li>Name, email, and other personal details on the account and profile</li>
+        <li>Date of birth and gender</li>
+        <li>Uploaded photos and receipt images (removed by an automated process, normally within minutes)</li>
+        <li>Palate embeddings and personal notes on saved and tried products</li>
+        <li>Payout identities, unless a sent or paid payout still has to name them</li>
+      </ul>
+
+      <h2>What we keep, no longer linked to your identity</h2>
+      <ul>
+        <li>Product ratings and comparisons, which still count toward aggregate product scores</li>
+        <li>The five-year birth-year band (an age range, not a date)</li>
+        <li>Saved-product records with the note removed</li>
+        <li>Taste weights on the profile</li>
+      </ul>
+
+      <h2>What we keep for fraud prevention</h2>
+      <p>A phone number used for payouts may remain in a fraud-prevention registry so it cannot be reused to claim another payout.</p>
+
+      <h2>What we keep for accountability</h2>
+      <ul>
+        <li>The consent log</li>
+        <li>Payout records</li>
+        <li>A deletion record with counts and no personal information</li>
+      </ul>
+
+      <h2>When the app cannot delete it</h2>
+      <p>If your login runs a brand workspace or approved a mission, the app leaves the account unchanged and asks you to contact <a href="mailto:hello@godough.co">hello@godough.co</a>. Nothing is deleted until that is resolved.</p>
+      <p>The same details are in the <a href="/privacy">privacy policy</a>.</p>
+    </div>
+  </div>
+</BaseLayout>

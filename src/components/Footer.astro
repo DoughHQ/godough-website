@@ -1,0 +1,125 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <a href="/" class="footer-logo">
+    <span class="footer-logo-mark" aria-hidden="true">
+      <img src="/dough-mark.png" alt="" width="26" height="26" />
+    </span>
+    Dough
+  </a>
+
+  <div class="footer-cols">
+    <div>
+      <p class="footer-heading">Product</p>
+      <ul>
+        <li><a href="/product/compete">How you compete</a></li>
+        <li><a href="/product/concept-tests">Concept tests</a></li>
+        <li><a href="/product/box-studies">Box studies</a></li>
+        <li><a href="/product/workspace">The workspace</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-heading">Report</p>
+      <ul>
+        <li><a href="/report/example">Example report</a></li>
+        <li><a href="/report/reading-a-verdict">Reading a verdict</a></li>
+        <li><a href="/method">Method</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-heading">Company</p>
+      <ul>
+        <li><a href="/shoppers">Shoppers</a></li>
+        <li><a href="/app">The app</a></li>
+        <li><a href="/access">Request access</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/partners">Delivery partners</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-heading">Legal</p>
+      <ul>
+        <li><a href="/privacy">Privacy</a></li>
+        <li><a href="/terms">Terms</a></li>
+        <li><a href="/delete-account">Delete account</a></li>
+        <li><a href="mailto:hello@godough.co">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <p class="footer-meta">© {year} Sunday Company Group LLC · godough.co</p>
+</footer>
+
+<style>
+  .site-footer {
+    padding: 3rem var(--page-pad) 2.5rem;
+    background: var(--cream);
+    border-top: 1px solid var(--warm-light);
+  }
+
+  .footer-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    font-family: var(--serif);
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: var(--ink);
+    text-decoration: none;
+    letter-spacing: -0.02em;
+    margin-bottom: 2.25rem;
+  }
+
+  .footer-logo-mark {
+    width: 26px;
+    height: 26px;
+    border-radius: 7px;
+    overflow: hidden;
+    flex-shrink: 0;
+    background: var(--sage);
+  }
+  .footer-logo-mark img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .footer-cols {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .footer-heading {
+    font-size: 0.62rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--warm);
+    margin-bottom: 0.85rem;
+  }
+
+  .footer-cols a {
+    font-size: 0.85rem;
+    color: var(--ink-light);
+    text-decoration: none;
+    line-height: 2;
+    transition: color 0.2s;
+  }
+  .footer-cols a:hover { color: var(--ink); }
+
+  .footer-meta {
+    font-size: 0.67rem;
+    font-weight: 300;
+    color: var(--ink-lighter);
+    border-top: 1px solid var(--warm-light);
+    padding-top: 1.5rem;
+  }
+
+  @media (max-width: 800px) {
+    .footer-cols { grid-template-columns: 1fr 1fr; gap: 1.75rem; }
+  }
+</style>

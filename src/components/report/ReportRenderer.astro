@@ -1,0 +1,262 @@
+---
+import report from '../../data/example-report.json';
+import VerdictChip from './VerdictChip.astro';
+import BarRow from './BarRow.astro';
+import Distribution from './Distribution.astro';
+import DemandCurve from './DemandCurve.astro';
+import OpenText from './OpenText.astro';
+import MethodNote from './MethodNote.astro';
+
+const v = report.verdict[0];
+const priceReport = report.price[0]?.report;
+
+function pct(n: number | null | undefined) {
+  if (n == null) return '—';
+  return `${Math.round(n * 100)}%`;
+}
+---
+
+<div class="report">
+  <aside class="banner" role="status">
+    <strong>{report.label}</strong>
+    The packs are invented. The numbers are invented. The sections, the bars, and the verdict rule are the ones in a live concept report.
+  </aside>
+
+  <header class="report-head">
+    <p class="eyebrow">Concept test · {report.market}</p>
+    <h1>{report.study_title}</h1>
+    <p class="meta">
+      Benchmark: {report.benchmark.name}.
+      Bars on: head to head, price.
+      Liking: left off.
+      Completed: {report.sample.n_completed}.
+    </p>
+    <div class="overall">
+      <span class="overall-label">Verdict</span>
+      <VerdictChip result={v.overall} />
+    </div>
+    <p class="lede">
+      The new label won the pick. It missed the price. One missed bar and the study does not clear.
+    </p>
+  </header>
+
+  <section>
+    <h2>Bars</h2>
+    <BarRow
+      title="Head to head"
+      result={v.head_to_head.result}
+      estimateLabel="Win share"
+      estimate={pct(v.head_to_head.win_share)}
+      lo={v.head_to_head.lo}
+      hi={v.head_to_head.hi}
+      bar={v.head_to_head.bar}
+      doughDefault={v.head_to_head.dough_default}
+      detail={`${v.head_to_head.wins} wins, ${v.head_to_head.losses} losses, ${v.head_to_head.neither} neither. “Neither” is shown and not counted as a win. Timing-flagged battles are excluded.`}
+    />
+    <BarRow
+      title="Price"
+      result={v.price.result}
+      estimateLabel="Conservative share"
+      estimate={pct(v.price.share_conservative)}
+      lo={v.price.lo}
+      hi={v.price.hi}
+      bar={v.price.bar}
+      doughDefault={v.price.dough_default}
+      detail={`Anchor $${v.price.anchor.toFixed(2)}. Generous share ${pct(v.price.share_generous)}. The bar clears only if the conservative count clears it. This is what people say they would pay — not a sales forecast.`}
+    />
+    <BarRow
+      title="Liking"
+      result={v.liking.result}
+      estimateLabel="Status"
+      estimate="Left off"
+      detail="You left this bar off. Had it been on, it would be the share who said love it or like it, asked before any choice."
+    />
+  </section>
+
+  <section>
+    <h2>First look</h2>
+    <p class="section-intro">Each pack, rated on its own, before the battle.</p>
+    <div class="dist-grid">
+      {report.first_look.map((arm) => (
+        <Distribution
+          name={arm.name}
+          isBenchmark={arm.is_benchmark}
+          n={arm.n}
+          topBox={arm.top_box.share}
+          topTwo={arm.top_two.share}
+          distribution={arm.distribution}
+        />
+      ))}
+    </div>
+  </section>
+
+  <section>
+    <h2>What mattered</h2>
+    <p class="section-intro">Shoppers mark which pack attributes matter most and least. The ranking is a guide to the next design — not a second verdict.</p>
+    <ol class="matters">
+      {report.what_matters.items.map((item) => (
+        <li>
+          <span class="rank">{item.rank}</span>
+          <span class="label">{item.label}</span>
+        </li>
+      ))}
+    </ol>
+  </section>
+
+  <section>
+    <h2>Stated, beside chosen</h2>
+    <p class="section-intro">
+      After the choices, shoppers rank the set. Mean pair agreement {pct(report.stated_vs_chosen.mean_pair_agreement)}.
+      Top-pick agreement {pct(report.stated_vs_chosen.top_pick_agreement)}
+      ({report.stated_vs_chosen.n_top_pick_comparable} comparable).
+      Speech and choice are both kept. They are allowed to disagree.
+    </p>
+  </section>
+
+  {priceReport && (
+    <section>
+      <h2>Price demand</h2>
+      <DemandCurve points={priceReport.demand_curve} anchor={report.bars.price_anchor} />
+    </section>
+  )}
+
+  <section>
+    <h2>What they wrote</h2>
+    <OpenText answers={report.open_text.answers} scrubNote={report.open_text.scrub_note} />
+  </section>
+
+  <section class="closing">
+    <h2>What to do with a “not cleared”</h2>
+    <p>{report.closing}</p>
+  </section>
+
+  <MethodNote method={report.method} />
+</div>
+
+<style>
+  .report {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 2rem var(--page-pad) 5rem;
+  }
+  .banner {
+    background: var(--warm-pale);
+    border: 1px solid var(--warm-light);
+    padding: 1rem 1.25rem;
+    font-size: 0.9rem;
+    color: var(--ink-light);
+    line-height: 1.55;
+    margin-bottom: 2.5rem;
+  }
+  .banner strong {
+    display: block;
+    font-family: var(--sans);
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--warm);
+    font-weight: 500;
+    margin-bottom: 0.35rem;
+  }
+  .report-head {
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--warm-light);
+  }
+  .eyebrow {
+    font-size: 0.66rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--warm);
+    margin-bottom: 1rem;
+  }
+  h1 {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 300;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    max-width: 18ch;
+    margin-bottom: 1rem;
+  }
+  .meta {
+    font-size: 0.95rem;
+    color: var(--ink-light);
+    max-width: 48ch;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+  .overall {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  .overall-label {
+    font-size: 0.66rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-lighter);
+  }
+  .lede {
+    font-family: var(--serif);
+    font-size: 1.35rem;
+    line-height: 1.45;
+    max-width: 36ch;
+    color: var(--ink);
+  }
+  section {
+    margin-bottom: 3rem;
+  }
+  h2 {
+    font-family: var(--serif);
+    font-size: 1.65rem;
+    font-weight: 400;
+    letter-spacing: -0.015em;
+    margin-bottom: 0.85rem;
+  }
+  .section-intro {
+    font-size: 0.98rem;
+    color: var(--ink-light);
+    line-height: 1.65;
+    max-width: 52ch;
+    margin-bottom: 1.35rem;
+  }
+  .dist-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  .matters {
+    list-style: none;
+    border-top: 1px solid var(--warm-light);
+  }
+  .matters li {
+    display: grid;
+    grid-template-columns: 2.5rem 1fr;
+    gap: 1rem;
+    padding: 0.95rem 0;
+    border-bottom: 1px solid var(--warm-light);
+    align-items: baseline;
+  }
+  .rank {
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--warm);
+    font-size: 1.15rem;
+  }
+  .label {
+    font-size: 1.05rem;
+    color: var(--ink);
+  }
+  .closing p {
+    font-family: var(--serif);
+    font-size: 1.25rem;
+    line-height: 1.5;
+    max-width: 40ch;
+    color: var(--ink);
+  }
+  @media (max-width: 700px) {
+    .dist-grid { grid-template-columns: 1fr; }
+  }
+</style>

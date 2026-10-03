@@ -1,0 +1,80 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CtaBand from '../components/CtaBand.astro';
+---
+
+<BaseLayout
+  title="Method — Dough"
+  description="The rules in the same words as the Dough report: 95% confidence, Wilson intervals, cleared only when the whole interval clears the bar, price as stated willingness to pay."
+  current="/method"
+  crumbs={[{ label: 'Method' }]}
+>
+  <header class="page-hero field">
+    <p class="hero-eyebrow">Method</p>
+    <h1 class="hero-headline">The rules, in the same words as the <em>report.</em></h1>
+    <p class="hero-sub">
+      Confidence is 95%, fixed by Dough. You set the bars. You never set the confidence.
+    </p>
+  </header>
+
+  <div class="doc-layout">
+    <nav class="doc-toc" aria-label="On this page">
+      <a href="#result">Result rule</a>
+      <a href="#h2h">Head to head</a>
+      <a href="#liking">Liking</a>
+      <a href="#price">Price</a>
+      <a href="#overall">Overall verdict</a>
+      <a href="#freeze">Frozen bars</a>
+      <a href="#open">Open answers</a>
+      <a href="#standing">Standings</a>
+    </nav>
+    <article class="doc-body">
+      <h2 id="result">Result rule</h2>
+      <p>
+        A result is cleared when the whole interval sits at or above the bar. It is not cleared when the whole interval sits below the bar. It is too close to call when the interval straddles the bar. Fewer than ten answers reads as not enough responses.
+      </p>
+
+      <h2 id="h2h">Head to head</h2>
+      <p>
+        Each shopper’s direct choice between your design and the benchmark. The interval is a Wilson interval. “Neither” is shown and is not a win. Choices flagged for timing are excluded.
+      </p>
+
+      <h2 id="liking">Liking</h2>
+      <p>
+        The share who answer “love it” or “like it,” asked before any battle. Against your current pack it is the paired difference on the same shoppers.
+      </p>
+
+      <h2 id="price">Price</h2>
+      <p>
+        Stated willingness to pay at or above your price. It is never a sales forecast. Because the answer is a band, the share is a range. The bar clears only when the conservative count clears it.
+      </p>
+
+      <h2 id="overall">Overall verdict</h2>
+      <p>
+        The overall verdict takes the hardest result among the bars you turned on. A bar you left off is not tested. One “not cleared” sinks the study. “Cleared” means every bar you set has cleared.
+      </p>
+
+      <h2 id="freeze">Frozen bars</h2>
+      <p>
+        You can move your bars until the first shopper starts. Then they are frozen, and the report shows your bar next to Dough’s default so a later reader can see what was asked.
+      </p>
+
+      <h2 id="open">Open answers</h2>
+      <p>
+        Open answers are scrubbed of emails, links, handles, and phone numbers. Names are not detected. Treat the words as words, not as a contact list.
+      </p>
+
+      <h2 id="standing">Standings</h2>
+      <p>
+        A standing on a claimed product is a different object from a study. It comes from ordinary choices in the app. It appears when enough people have chosen. It is not a concept verdict.
+      </p>
+
+      <p>
+        See a full worked example: <a href="/report/example">example report</a>.
+        Who answers: <a href="/shoppers">shoppers in New York</a>.
+      </p>
+    </article>
+  </div>
+
+  <CtaBand />
+</BaseLayout>

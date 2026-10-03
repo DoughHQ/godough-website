@@ -1,0 +1,52 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { PORTAL_LOGIN } from '../data/site';
+---
+
+<BaseLayout
+  title="Dough — Shape your plate"
+  description="Scan anything. Battle. Choose honestly. Your plate, curated. Dough is a shopper app for people who love food."
+  current="/app"
+  crumbs={[{ label: 'The app' }]}
+>
+  <header class="page-hero">
+    <p class="hero-eyebrow">For shoppers</p>
+    <h1 class="hero-headline">Shape your <em>plate.</em></h1>
+    <p class="hero-sub">
+      We ask. You answer. Your plate takes shape. Dough learns from what you choose — not what’s trending, not what anyone paid to show you.
+    </p>
+  </header>
+
+  <section class="section">
+    <p class="section-label">How it works</p>
+    <div class="path">
+      <div class="path-step reveal">
+        <p class="n">01</p>
+        <h3>Scan anything</h3>
+        <p>See something you’re curious about. Scan it. Over 600,000 products are already waiting.</p>
+      </div>
+      <div class="path-step reveal">
+        <p class="n">02</p>
+        <h3>Battle. Choose honestly.</h3>
+        <p>Two products. One choice. Every battle teaches Dough something true about you.</p>
+      </div>
+      <div class="path-step reveal">
+        <p class="n">03</p>
+        <h3>Your plate, curated</h3>
+        <p>The things that keep winning find their way to your grocery run. It gets more you every time.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section mid">
+    <p class="section-label">For brands</p>
+    <h2 class="section-headline">The same choices, for people who make the <em>food.</em></h2>
+    <p class="section-body">
+      Brands use the picks New York shoppers make to see how products compete, to test concepts, and to learn from boxes in homes.
+    </p>
+    <div class="hero-actions" style="margin-top: 2rem;">
+      <a class="btn-primary on-cream" href="/">For brands <span class="arr" aria-hidden="true">→</span></a>
+      <a class="btn-ghost on-cream" href={PORTAL_LOGIN}>Brand sign in</a>
+    </div>
+  </section>
+</BaseLayout>

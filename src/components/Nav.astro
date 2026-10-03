@@ -1,0 +1,248 @@
+---
+import { PORTAL_LOGIN } from '../data/site';
+
+interface Props {
+  theme?: 'field' | 'cream';
+  current?: string;
+}
+
+const { theme = 'cream', current } = Astro.props;
+
+const productLinks = [
+  { href: '/product/compete', label: 'How you compete' },
+  { href: '/product/concept-tests', label: 'Concept tests' },
+  { href: '/product/box-studies', label: 'Box studies' },
+  { href: '/product/workspace', label: 'The workspace' },
+];
+
+const reportLinks = [
+  { href: '/report/example', label: 'Example report' },
+  { href: '/report/reading-a-verdict', label: 'Reading a verdict' },
+];
+---
+
+<header class:list={['site-nav', theme]}>
+  <a href="/" class="nav-logo">
+    <span class="nav-logo-mark" aria-hidden="true">
+      <img src="/dough-mark.png" alt="" width="32" height="32" />
+    </span>
+    Dough
+  </a>
+
+  <details class="nav-mobile">
+    <summary aria-label="Open menu">Menu</summary>
+    <div class="nav-mobile-panel">
+      <p class="nav-group-label">Product</p>
+      {productLinks.map((l) => (
+        <a href={l.href} aria-current={current === l.href ? 'page' : undefined}>{l.label}</a>
+      ))}
+      <p class="nav-group-label">Report</p>
+      {reportLinks.map((l) => (
+        <a href={l.href} aria-current={current === l.href ? 'page' : undefined}>{l.label}</a>
+      ))}
+      <a href="/method" aria-current={current === '/method' ? 'page' : undefined}>Method</a>
+      <a href="/shoppers" aria-current={current === '/shoppers' ? 'page' : undefined}>Shoppers</a>
+      <a href="/app" aria-current={current === '/app' ? 'page' : undefined}>The app</a>
+      <a href={PORTAL_LOGIN}>Sign in</a>
+      <a class="nav-cta" href="/access">Request access</a>
+    </div>
+  </details>
+
+  <nav class="nav-desktop" aria-label="Primary">
+    <details class="nav-dropdown">
+      <summary>Product</summary>
+      <div class="nav-dropdown-panel">
+        {productLinks.map((l) => (
+          <a href={l.href} aria-current={current === l.href ? 'page' : undefined}>{l.label}</a>
+        ))}
+      </div>
+    </details>
+    <details class="nav-dropdown">
+      <summary>Report</summary>
+      <div class="nav-dropdown-panel">
+        {reportLinks.map((l) => (
+          <a href={l.href} aria-current={current === l.href ? 'page' : undefined}>{l.label}</a>
+        ))}
+      </div>
+    </details>
+    <a class="nav-link" href="/method" aria-current={current === '/method' ? 'page' : undefined}>Method</a>
+    <a class="nav-link" href="/shoppers" aria-current={current === '/shoppers' ? 'page' : undefined}>Shoppers</a>
+    <a class="nav-link" href={PORTAL_LOGIN}>Sign in</a>
+    <a class="nav-cta" href="/access">Request access</a>
+  </nav>
+</header>
+
+<style>
+  .site-nav {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    z-index: 40;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.4rem var(--page-pad);
+  }
+
+  .site-nav.cream {
+    position: relative;
+    border-bottom: 1px solid var(--warm-light);
+    background: var(--cream);
+  }
+
+  .nav-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    font-family: var(--serif);
+    font-size: 1.45rem;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    color: var(--cream);
+    text-decoration: none;
+  }
+  .site-nav.cream .nav-logo { color: var(--ink); }
+
+  .nav-logo-mark {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    overflow: hidden;
+    flex-shrink: 0;
+    background: var(--sage);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  }
+  .nav-logo-mark img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .nav-desktop {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .nav-link,
+  .nav-dropdown > summary {
+    font-size: 0.72rem;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(250, 248, 243, 0.62);
+    text-decoration: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    list-style: none;
+    font-family: var(--sans);
+    transition: color 0.2s;
+  }
+  .nav-dropdown > summary::-webkit-details-marker { display: none; }
+  .nav-link:hover,
+  .nav-dropdown > summary:hover,
+  .nav-link[aria-current="page"] { color: var(--cream); }
+
+  .site-nav.cream .nav-link,
+  .site-nav.cream .nav-dropdown > summary {
+    color: var(--ink-light);
+  }
+  .site-nav.cream .nav-link:hover,
+  .site-nav.cream .nav-dropdown > summary:hover,
+  .site-nav.cream .nav-link[aria-current="page"] { color: var(--ink); }
+
+  .nav-dropdown { position: relative; }
+  .nav-dropdown-panel {
+    position: absolute;
+    top: calc(100% + 0.75rem);
+    left: 0;
+    min-width: 12rem;
+    background: var(--cream);
+    border: 1px solid var(--warm-light);
+    padding: 0.65rem 0;
+    box-shadow: 0 12px 32px rgba(24, 21, 15, 0.12);
+  }
+  .nav-dropdown-panel a {
+    display: block;
+    padding: 0.55rem 1.1rem;
+    font-size: 0.85rem;
+    color: var(--ink-light);
+    text-decoration: none;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+  .nav-dropdown-panel a:hover,
+  .nav-dropdown-panel a[aria-current="page"] {
+    color: var(--ink);
+    background: var(--cream-mid);
+  }
+
+  .nav-cta {
+    font-size: 0.72rem;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--field);
+    background: var(--cream);
+    padding: 0.65rem 1.15rem;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+  }
+  .nav-cta:hover { background: var(--warm-pale); }
+  .site-nav.cream .nav-cta {
+    color: var(--cream);
+    background: var(--field);
+  }
+  .site-nav.cream .nav-cta:hover { background: var(--field-mid); }
+
+  .nav-mobile { display: none; position: relative; }
+  .nav-mobile > summary {
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(250, 248, 243, 0.8);
+    cursor: pointer;
+    list-style: none;
+  }
+  .nav-mobile > summary::-webkit-details-marker { display: none; }
+  .site-nav.cream .nav-mobile > summary { color: var(--ink); }
+
+  .nav-mobile-panel {
+    position: absolute;
+    right: 0;
+    top: calc(100% + 0.75rem);
+    width: min(18rem, 80vw);
+    background: var(--cream);
+    border: 1px solid var(--warm-light);
+    padding: 1rem 0;
+    box-shadow: 0 16px 40px rgba(24, 21, 15, 0.16);
+    z-index: 50;
+  }
+  .nav-mobile-panel a {
+    display: block;
+    padding: 0.55rem 1.15rem;
+    font-size: 0.9rem;
+    color: var(--ink-light);
+    text-decoration: none;
+  }
+  .nav-mobile-panel a:hover { color: var(--ink); background: var(--cream-mid); }
+  .nav-mobile-panel .nav-cta {
+    display: inline-block;
+    margin: 0.75rem 1.15rem 0.25rem;
+    color: var(--cream);
+    background: var(--field);
+  }
+  .nav-group-label {
+    font-size: 0.62rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--warm);
+    padding: 0.75rem 1.15rem 0.25rem;
+  }
+
+  @media (max-width: 900px) {
+    .nav-desktop { display: none; }
+    .nav-mobile { display: block; }
+  }
+</style>

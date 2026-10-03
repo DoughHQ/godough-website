@@ -1,0 +1,19 @@
+---
+interface Props {
+  result: string;
+  label?: string;
+}
+
+const labels: Record<string, string> = {
+  cleared: 'Cleared',
+  not_cleared: 'Not cleared',
+  too_close_to_call: 'Too close to call',
+  not_enough_responses: 'Not enough responses',
+  not_tested: 'Not tested',
+};
+
+const { result, label } = Astro.props;
+const text = label ?? labels[result] ?? result;
+---
+
+<span class:list={['verdict-chip', result]}>{text}</span>
