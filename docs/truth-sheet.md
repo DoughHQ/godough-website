@@ -27,7 +27,7 @@ Every factual claim on the site must trace here. If it is not on this list, it d
 | Compete page uses the same offer layout and embeds `/marketing/workspace/home` | Portal brand-home marketing route |
 | Homepage sells already-logged preference (head start), why-brands-switch, decision list, and honest simulated proof | Positioning; box to similar-raters; no invented #N-of-M ranks |
 | Method page is a visual rulebook: result-rule diagrams, who-controls-what, Keel one-miss, bar types, freeze, standing vs study | Same words as the report; example report simulated |
-| Shoppers page sells NYC panel as people who already choose in-app; concept = same act; box = similar-raters; no national claim | Truth: NYC first panel; box to similar-raters |
+| Shoppers page sells NYC panel as people who already scan and rank in-app; hero shows a simulated consumer category ranking (fixture, not live brand standing); concept = same act; box = similar-raters; no national claim; no population Elo | Truth: NYC first panel; box to similar-raters; personal order labeled Simulated |
 | Legal URLs unchanged: `/privacy`, `/terms`, `/delete-account` | App deep links |
 | `/brands` redirects to `/` | Brand homepage is now `/` |
 | `/partners` redirects to `/` | Delivery-partners pitch retired; not a current offer |

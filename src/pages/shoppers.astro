@@ -6,16 +6,16 @@ import '../styles/offer-product.css';
 
 <BaseLayout
   title="Who answers — Dough"
-  description="Shoppers in New York, in the Dough app, choosing between products they can actually picture buying. Preference is already on the record before a study starts."
+  description="Shoppers in New York, in the Dough app, who already scan and rank products in category. That taste history is how we know who fits a study — then they choose."
   current="/shoppers"
   crumbs={[{ label: 'Shoppers' }]}
 >
   <header class="shop-hero">
     <div class="shop-hero-copy">
       <p class="shop-eyebrow">Shoppers</p>
-      <h1 class="shop-headline">New York shoppers who already choose.</h1>
+      <h1 class="shop-headline">New York shoppers who already rank.</h1>
       <p class="shop-sub">
-        Not a cold panel. People in the Dough app picking between real grocery products — then answering your concept or opening your box as another occasion of that same act.
+        Not a cold panel. They scan and battle products they already buy — build a personal ranking in your category — then answer your concept or open your box as the next pick in that same act.
       </p>
       <div class="hero-actions">
         <a class="btn-primary on-cream" href="/access">
@@ -25,26 +25,73 @@ import '../styles/offer-product.css';
       </div>
     </div>
 
-    <a class="shop-hero-card" href="#ahead">
+    <a class="shop-hero-card" href="#ahead" aria-label="Simulated shopper ranking — why this panel is different">
       <div class="shop-hero-card-top">
         <span class="shop-hero-sim">Simulated</span>
-        <span class="shop-hero-loc">New York</span>
+        <span class="shop-hero-loc">New York shopper</span>
       </div>
-      <p class="shop-hero-card-title">Already on the record</p>
-      <p class="shop-hero-card-meta">Flavored water · ordinary app picks</p>
-      <ul class="shop-hero-picks">
-        <li>
-          <span class="shop-hero-mark" aria-hidden="true">✓</span>
-          <span><b>Keel Lemon</b> over Rivermark</span>
-        </li>
-        <li>
-          <span class="shop-hero-mark" aria-hidden="true">✓</span>
-          <span><b>Keel Lemon</b> over Northveil</span>
-        </li>
-      </ul>
+      <p class="shop-hero-card-title">Her flavored water</p>
+      <p class="shop-hero-card-meta">My list · 24 battles · ordinary app picks</p>
+
+      <div class="shop-rank">
+        <p class="shop-rank-champ-label">Champion</p>
+        <div class="shop-rank-row is-champ">
+          <span class="shop-rank-n" aria-hidden="true">1</span>
+          <span class="shop-rank-thumb" aria-hidden="true">
+            <img src="/demo/product-a.svg" alt="" width="40" height="40" />
+          </span>
+          <span class="shop-rank-body">
+            <span class="shop-rank-name">Keel Lemon Water</span>
+            <span class="shop-rank-meta">14 battles</span>
+          </span>
+          <span class="shop-rank-tried">Tried</span>
+        </div>
+
+        <p class="shop-rank-also">Also ranked</p>
+        <ul class="shop-rank-list">
+          <li class="shop-rank-row">
+            <span class="shop-rank-n" aria-hidden="true">2</span>
+            <span class="shop-rank-thumb is-b" aria-hidden="true">
+              <img src="/demo/product-b.svg" alt="" width="40" height="40" />
+            </span>
+            <span class="shop-rank-body">
+              <span class="shop-rank-name">Rivermark Sparkling</span>
+              <span class="shop-rank-meta">11 battles</span>
+            </span>
+            <span class="shop-rank-tried">Tried</span>
+          </li>
+          <li class="shop-rank-row">
+            <span class="shop-rank-n" aria-hidden="true">3</span>
+            <span class="shop-rank-thumb is-letter" aria-hidden="true" data-letter="N"></span>
+            <span class="shop-rank-body">
+              <span class="shop-rank-name">Northveil Citrus</span>
+              <span class="shop-rank-meta">9 battles</span>
+            </span>
+            <span class="shop-rank-tried">Tried</span>
+          </li>
+          <li class="shop-rank-row">
+            <span class="shop-rank-n" aria-hidden="true">4</span>
+            <span class="shop-rank-thumb is-letter is-mute" aria-hidden="true" data-letter="H"></span>
+            <span class="shop-rank-body">
+              <span class="shop-rank-name">Harbor Clear</span>
+              <span class="shop-rank-meta">6 battles</span>
+            </span>
+          </li>
+          <li class="shop-rank-row">
+            <span class="shop-rank-n" aria-hidden="true">5</span>
+            <span class="shop-rank-thumb is-letter is-atlas" aria-hidden="true" data-letter="A"></span>
+            <span class="shop-rank-body">
+              <span class="shop-rank-name">Atlas Lime</span>
+              <span class="shop-rank-meta">4 battles</span>
+            </span>
+            <span class="shop-rank-tried">Tried</span>
+          </li>
+        </ul>
+      </div>
+
       <div class="shop-hero-foot">
-        <span><b>Concept</b> — same shoppers, your pair</span>
-        <span><b>Box</b> — already rated products like yours</span>
+        <span><b>Fit</b> — ranked in category before your study</span>
+        <span><b>Then</b> — concept or box as the next pick</span>
       </div>
       <span class="shop-hero-go">Why this panel is different ↓</span>
     </a>
@@ -55,7 +102,7 @@ import '../styles/offer-product.css';
     <p class="section-label">How they answer</p>
     <h2 class="shop-h2">Two products. One pick. The same act every time.</h2>
     <p class="shop-lead">
-      They scan a product, compare two things in a category they know, and pick the one they would rather have. A study is not a different kind of person — it is that same choice, with your packs or your box as the pair.
+      They scan a product, battle two things in a category they know, and pick. Enough picks become a personal ranking. A study is not a different kind of person — it is that same choice, with your packs or your box as the pair.
     </p>
 
     <div class="shop-beat">
@@ -83,13 +130,13 @@ import '../styles/offer-product.css';
         </li>
         <li>
           <span class="shop-step-n">02</span>
-          <strong>Compare</strong>
-          <span>Two products in a category they know</span>
+          <strong>Rank</strong>
+          <span>Battles stack into their list in category</span>
         </li>
         <li>
           <span class="shop-step-n">03</span>
-          <strong>Pick</strong>
-          <span>The one they would rather have</span>
+          <strong>Choose</strong>
+          <span>Your concept or box as the next pick</span>
         </li>
       </ol>
     </div>
@@ -98,16 +145,16 @@ import '../styles/offer-product.css';
   <!-- Head start -->
   <section class="shop-section mid" id="ahead">
     <p class="section-label">Why this panel is different</p>
-    <h2 class="shop-h2">Preference is already on the record.</h2>
+    <h2 class="shop-h2">They already have a ranking in your category.</h2>
     <p class="shop-lead">
-      Everyday battles build taste history in category. When you run a study, you are not starting from zero with strangers who never chose like this before.
+      Everyday scans and battles build a personal list — products they’ve tried, ordered by how they actually choose. Fit for a study comes from that history. Then they pick your pair or open your box.
     </p>
 
     <div class="ahead-grid">
       <article class="ahead-card">
         <p class="ahead-kicker">Concept</p>
-        <h3>Same shoppers. Your pair on a screen.</h3>
-        <p>People who shop the category see your design against the pack you have to beat — and pick.</p>
+        <h3>Same ranked shoppers. Your pair on a screen.</h3>
+        <p>People who already battle the category see your design against the pack you have to beat — and pick.</p>
       </article>
       <article class="ahead-card is-box">
         <p class="ahead-kicker">Box</p>
@@ -216,21 +263,22 @@ import '../styles/offer-product.css';
     background: #fff;
     border: 1px solid var(--warm-light);
     border-radius: 16px;
-    padding: 1.5rem 1.55rem 1.35rem;
+    padding: 1.35rem 1.4rem 1.25rem;
     box-shadow: 0 18px 40px rgba(24, 21, 15, 0.06);
-    transition: transform 0.25s var(--ease), border-color 0.25s var(--ease);
+    transition: transform 0.25s var(--ease), border-color 0.25s var(--ease), box-shadow 0.25s var(--ease);
   }
 
   .shop-hero-card:hover {
     transform: translateY(-3px);
     border-color: rgba(62, 107, 74, 0.28);
+    box-shadow: 0 22px 48px rgba(24, 21, 15, 0.1);
   }
 
   .shop-hero-card-top {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 1rem;
+    margin-bottom: 0.85rem;
   }
 
   .shop-hero-sim {
@@ -254,48 +302,165 @@ import '../styles/offer-product.css';
     font-family: var(--serif);
     font-size: clamp(1.45rem, 2.4vw, 1.85rem);
     letter-spacing: -0.02em;
-    margin: 0 0 0.3rem;
+    margin: 0 0 0.25rem;
     color: var(--ink);
   }
 
   .shop-hero-card-meta {
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     color: var(--ink-lighter);
-    margin: 0 0 1.15rem;
+    margin: 0 0 1rem;
   }
 
-  .shop-hero-picks {
-    list-style: none;
+  .shop-rank {
     border-top: 1px solid var(--warm-light);
-    margin-bottom: 1.15rem;
+    padding-top: 0.85rem;
+    margin-bottom: 0.35rem;
   }
 
-  .shop-hero-picks li {
+  .shop-rank-champ-label,
+  .shop-rank-also {
+    font-size: 0.58rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--warm);
+    margin: 0 0 0.35rem;
+    font-weight: 500;
+  }
+
+  .shop-rank-also {
+    margin-top: 0.85rem;
+    margin-bottom: 0.2rem;
+    color: var(--ink-lighter);
+  }
+
+  .shop-rank-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .shop-rank-row {
     display: grid;
-    grid-template-columns: 1.25rem 1fr;
-    gap: 0.65rem;
-    align-items: baseline;
-    padding: 0.7rem 0;
+    grid-template-columns: 1.65rem 2.5rem minmax(0, 1fr) auto;
+    gap: 0.55rem;
+    align-items: center;
+    padding: 0.45rem 0;
     border-bottom: 1px solid var(--warm-light);
-    font-size: 0.92rem;
+  }
+
+  .shop-rank-list .shop-rank-row:last-child {
+    border-bottom: none;
+  }
+
+  .shop-rank-row.is-champ {
+    padding: 0.35rem 0 0.65rem;
+    border-bottom: 1px solid var(--warm-light);
+  }
+
+  .shop-rank-n {
+    font-family: var(--serif);
+    font-variant-numeric: tabular-nums;
+    font-size: 1.15rem;
+    line-height: 1;
+    text-align: center;
+    color: var(--ink-lighter);
+  }
+
+  .shop-rank-row.is-champ .shop-rank-n {
+    font-size: 2.15rem;
+    color: var(--warm);
+    letter-spacing: -0.03em;
+  }
+
+  .shop-rank-thumb {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #151E18;
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+  }
+
+  .shop-rank-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .shop-rank-thumb.is-b {
+    background: #2a2218;
+  }
+
+  .shop-rank-thumb.is-letter::before {
+    content: attr(data-letter);
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    color: rgba(250, 248, 243, 0.88);
+  }
+
+  .shop-rank-thumb.is-letter {
+    background: #24322a;
+  }
+
+  .shop-rank-thumb.is-mute {
+    background: #3a3330;
+  }
+
+  .shop-rank-thumb.is-atlas {
+    background: #1e2a32;
+  }
+
+  .shop-rank-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.12rem;
+    min-width: 0;
+  }
+
+  .shop-rank-name {
+    font-size: 0.88rem;
+    font-weight: 600;
+    letter-spacing: -0.015em;
     color: var(--ink);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
-  .shop-hero-picks b {
-    font-weight: 600;
+  .shop-rank-row.is-champ .shop-rank-name {
+    font-size: 0.95rem;
   }
 
-  .shop-hero-mark {
+  .shop-rank-meta {
+    font-size: 0.7rem;
+    color: var(--ink-lighter);
+  }
+
+  .shop-rank-tried {
+    font-size: 0.55rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
     color: var(--sage);
+    border: 1px solid rgba(62, 107, 74, 0.28);
+    background: rgba(62, 107, 74, 0.06);
+    padding: 0.22rem 0.4rem;
+    border-radius: 99px;
     font-weight: 600;
+    white-space: nowrap;
   }
 
   .shop-hero-foot {
     display: flex;
     flex-direction: column;
-    gap: 0.4rem;
-    padding: 0.9rem 0 1.1rem;
-    font-size: 0.82rem;
+    gap: 0.35rem;
+    padding: 0.95rem 0 1rem;
+    border-top: 1px solid var(--warm-light);
+    margin-top: 0.35rem;
+    font-size: 0.8rem;
     color: var(--ink-light);
     line-height: 1.4;
   }
