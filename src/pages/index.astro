@@ -219,7 +219,7 @@ import CtaBand from '../components/CtaBand.astro';
     </ul>
   </section>
 
-  <section class="section field" id="world">
+  <section class="section mid" id="world">
     <p class="section-label">Same world end to end</p>
     <h2 class="section-headline sell">Compete. Concept. Box. No panel handoff.</h2>
     <p class="section-body">
@@ -555,32 +555,12 @@ import CtaBand from '../components/CtaBand.astro';
     letter-spacing: -0.025em;
   }
 
-  /* Why brands switch — visual story */
+  /* Why brands switch — light, professional story */
   .why-close {
     padding: clamp(3.5rem, 7vw, 5.5rem) var(--page-pad) clamp(3.5rem, 7vw, 5.5rem);
-    background:
-      radial-gradient(ellipse 70% 55% at 90% 10%, rgba(62, 107, 74, 0.38), transparent 55%),
-      radial-gradient(ellipse 40% 35% at 0% 100%, rgba(184, 144, 106, 0.12), transparent 50%),
-      linear-gradient(165deg, #1a221c 0%, var(--field) 45%, #0e1210 100%);
-    color: var(--cream);
-    position: relative;
-    overflow: hidden;
-  }
-
-  .why-close::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
-    opacity: 0.35;
-    pointer-events: none;
-    mix-blend-mode: overlay;
-  }
-
-  .why-close-copy,
-  .why-story {
-    position: relative;
-    z-index: 1;
+    background: var(--cream);
+    color: var(--ink);
+    border-bottom: 1px solid var(--warm-light);
   }
 
   .why-label {
@@ -599,15 +579,15 @@ import CtaBand from '../components/CtaBand.astro';
     letter-spacing: -0.025em;
     line-height: 1.15;
     max-width: 18ch;
-    color: var(--cream);
+    color: var(--ink);
     margin-bottom: 1.15rem;
   }
 
   .why-sub {
     font-size: clamp(1.02rem, 1.5vw, 1.15rem);
-    font-weight: 300;
+    font-weight: 400;
     line-height: 1.55;
-    color: rgba(250, 248, 243, 0.82);
+    color: var(--ink-light);
     max-width: 42ch;
     margin-bottom: 3rem;
   }
@@ -615,7 +595,7 @@ import CtaBand from '../components/CtaBand.astro';
   .why-story {
     display: flex;
     flex-direction: column;
-    gap: clamp(2.5rem, 5vw, 4rem);
+    gap: clamp(2.75rem, 5.5vw, 4.25rem);
   }
 
   .why-beat {
@@ -646,7 +626,7 @@ import CtaBand from '../components/CtaBand.astro';
     display: block;
     font-size: 0.9rem;
     font-style: italic;
-    color: rgba(250, 248, 243, 0.48);
+    color: var(--ink-lighter);
     margin-bottom: 0.55rem;
   }
 
@@ -656,14 +636,14 @@ import CtaBand from '../components/CtaBand.astro';
     font-weight: 600;
     letter-spacing: -0.025em;
     line-height: 1.15;
-    color: var(--cream);
+    color: var(--ink);
     margin: 0 0 0.85rem;
   }
 
   .why-beat-copy p {
     font-size: 1.02rem;
     line-height: 1.55;
-    color: rgba(250, 248, 243, 0.78);
+    color: var(--ink-light);
     max-width: 36ch;
     margin: 0;
   }
@@ -675,11 +655,12 @@ import CtaBand from '../components/CtaBand.astro';
   /* —— Viz: pick —— */
   .viz-pick {
     position: relative;
-    background: rgba(250, 248, 243, 0.04);
-    border: 1px solid rgba(250, 248, 243, 0.12);
+    background: #fff;
+    border: 1px solid var(--warm-light);
     border-radius: 16px;
     padding: 1.5rem 1.35rem 1.25rem;
     overflow: hidden;
+    box-shadow: 0 18px 40px rgba(24, 21, 15, 0.06);
   }
 
   .viz-score {
@@ -689,13 +670,13 @@ import CtaBand from '../components/CtaBand.astro';
     text-align: center;
     padding: 0.55rem 0.7rem;
     border-radius: 8px;
-    background: rgba(250, 248, 243, 0.06);
-    border: 1px solid rgba(250, 248, 243, 0.14);
+    background: var(--cream-mid);
+    border: 1px solid var(--warm-light);
     z-index: 2;
   }
 
   .viz-score.is-out {
-    opacity: 0.55;
+    opacity: 0.7;
   }
 
   .viz-score.is-out::after {
@@ -705,7 +686,7 @@ import CtaBand from '../components/CtaBand.astro';
     right: 10%;
     top: 50%;
     height: 2px;
-    background: #f0b4a8;
+    background: #c45c4a;
     transform: rotate(-12deg);
   }
 
@@ -714,7 +695,7 @@ import CtaBand from '../components/CtaBand.astro';
     font-family: var(--serif);
     font-size: 1.45rem;
     line-height: 1;
-    color: rgba(250, 248, 243, 0.7);
+    color: var(--ink-light);
   }
 
   .viz-score-l {
@@ -722,7 +703,7 @@ import CtaBand from '../components/CtaBand.astro';
     font-size: 0.52rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: rgba(250, 248, 243, 0.5);
+    color: var(--ink-lighter);
     margin-top: 0.2rem;
     max-width: 7ch;
   }
@@ -742,14 +723,13 @@ import CtaBand from '../components/CtaBand.astro';
     gap: 0.55rem;
     padding: 0.85rem 0.5rem 0.75rem;
     border-radius: 12px;
-    background: rgba(250, 248, 243, 0.04);
-    border: 1px solid rgba(250, 248, 243, 0.08);
+    background: var(--cream);
+    border: 1px solid var(--warm-light);
   }
 
   .viz-pick-half.is-won {
-    background: rgba(184, 212, 192, 0.1);
-    border-color: rgba(184, 212, 192, 0.35);
-    box-shadow: 0 0 0 1px rgba(184, 212, 192, 0.12);
+    background: rgba(62, 107, 74, 0.06);
+    border-color: rgba(62, 107, 74, 0.28);
   }
 
   .viz-pick-half img {
@@ -763,11 +743,12 @@ import CtaBand from '../components/CtaBand.astro';
     font-size: 0.68rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: rgba(250, 248, 243, 0.7);
+    color: var(--ink-light);
   }
 
   .viz-pick-half.is-won span {
-    color: #b8d4c0;
+    color: var(--sage);
+    font-weight: 500;
   }
 
   .viz-pick-vs {
@@ -784,15 +765,16 @@ import CtaBand from '../components/CtaBand.astro';
     font-size: 0.68rem;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: rgba(250, 248, 243, 0.55);
+    color: var(--ink-lighter);
   }
 
   /* —— Viz: shelf —— */
   .viz-shelf {
-    background: rgba(250, 248, 243, 0.04);
-    border: 1px solid rgba(250, 248, 243, 0.12);
+    background: #fff;
+    border: 1px solid var(--warm-light);
     border-radius: 16px;
     padding: 1.25rem 1.25rem 1.15rem;
+    box-shadow: 0 18px 40px rgba(24, 21, 15, 0.06);
   }
 
   .viz-shelf-top {
@@ -803,14 +785,14 @@ import CtaBand from '../components/CtaBand.astro';
     font-size: 0.62rem;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: rgba(250, 248, 243, 0.55);
+    color: var(--ink-lighter);
   }
 
   .viz-shelf-count {
     font-family: var(--serif);
     font-size: 1.55rem;
     letter-spacing: -0.02em;
-    color: var(--cream);
+    color: var(--ink);
     text-transform: none;
   }
 
@@ -823,8 +805,8 @@ import CtaBand from '../components/CtaBand.astro';
   .viz-sku {
     aspect-ratio: 3 / 4;
     border-radius: 10px;
-    background: rgba(250, 248, 243, 0.04);
-    border: 1px solid rgba(250, 248, 243, 0.1);
+    background: var(--cream);
+    border: 1px solid var(--warm-light);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -841,30 +823,35 @@ import CtaBand from '../components/CtaBand.astro';
     height: 52px;
     border-radius: 8px 8px 4px 4px;
     background: linear-gradient(180deg, #2a3a30 0%, #1a241e 100%);
-    border: 1px solid rgba(157, 184, 166, 0.25);
+    border: 1px solid rgba(62, 107, 74, 0.25);
+  }
+
+  .viz-sku.is-live {
+    background: rgba(62, 107, 74, 0.05);
+    border-color: rgba(62, 107, 74, 0.22);
   }
 
   .viz-sku.is-live b {
     background: linear-gradient(180deg, #3a5342 0%, #24322a 100%);
-    border-color: rgba(184, 212, 192, 0.45);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+    border-color: rgba(62, 107, 74, 0.4);
+    box-shadow: 0 6px 14px rgba(24, 21, 15, 0.12);
   }
 
   .viz-sku.is-dim {
-    opacity: 0.4;
+    opacity: 0.45;
   }
 
   .viz-sku em {
     font-style: normal;
     font-size: 0.55rem;
     letter-spacing: 0.04em;
-    color: rgba(250, 248, 243, 0.55);
+    color: var(--ink-lighter);
     text-align: center;
     line-height: 1.2;
   }
 
   .viz-sku.is-live em {
-    color: rgba(250, 248, 243, 0.85);
+    color: var(--ink-light);
   }
 
   .viz-shelf-foot {
@@ -880,14 +867,15 @@ import CtaBand from '../components/CtaBand.astro';
     text-transform: uppercase;
     padding: 0.35rem 0.55rem;
     border-radius: 999px;
-    border: 1px solid rgba(250, 248, 243, 0.14);
-    color: rgba(250, 248, 243, 0.5);
+    border: 1px solid var(--warm-light);
+    color: var(--ink-lighter);
+    background: var(--cream);
   }
 
   .viz-pill.is-on {
-    color: #b8d4c0;
-    border-color: rgba(184, 212, 192, 0.35);
-    background: rgba(184, 212, 192, 0.08);
+    color: var(--sage);
+    border-color: rgba(62, 107, 74, 0.3);
+    background: rgba(62, 107, 74, 0.06);
   }
 
   /* —— Viz: verdict —— */
@@ -895,18 +883,18 @@ import CtaBand from '../components/CtaBand.astro';
     display: block;
     text-decoration: none;
     color: inherit;
-    background:
-      radial-gradient(ellipse 70% 50% at 100% 0%, rgba(240, 180, 168, 0.12), transparent 55%),
-      rgba(250, 248, 243, 0.04);
-    border: 1px solid rgba(250, 248, 243, 0.12);
+    background: #fff;
+    border: 1px solid var(--warm-light);
     border-radius: 16px;
     padding: 1.35rem 1.4rem 1.25rem;
-    transition: transform 0.25s var(--ease), border-color 0.25s var(--ease);
+    box-shadow: 0 18px 40px rgba(24, 21, 15, 0.06);
+    transition: transform 0.25s var(--ease), border-color 0.25s var(--ease), box-shadow 0.25s var(--ease);
   }
 
   .viz-verdict:hover {
     transform: translateY(-3px);
-    border-color: rgba(240, 180, 168, 0.35);
+    border-color: rgba(139, 58, 47, 0.28);
+    box-shadow: 0 22px 48px rgba(24, 21, 15, 0.1);
   }
 
   .viz-verdict-top {
@@ -921,7 +909,7 @@ import CtaBand from '../components/CtaBand.astro';
     letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--warm);
-    border: 1px solid rgba(184, 144, 106, 0.4);
+    border: 1px solid rgba(184, 144, 106, 0.45);
     padding: 0.25rem 0.45rem;
     border-radius: 2px;
   }
@@ -930,8 +918,8 @@ import CtaBand from '../components/CtaBand.astro';
     font-size: 0.62rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: #f0b4a8;
-    font-weight: 500;
+    color: #8b3a2f;
+    font-weight: 600;
   }
 
   .viz-verdict-product {
@@ -939,12 +927,12 @@ import CtaBand from '../components/CtaBand.astro';
     font-size: 1.45rem;
     letter-spacing: -0.02em;
     margin: 0 0 0.25rem;
-    color: var(--cream);
+    color: var(--ink);
   }
 
   .viz-verdict-meta {
     font-size: 0.78rem;
-    color: rgba(250, 248, 243, 0.55);
+    color: var(--ink-lighter);
     margin: 0 0 1.15rem;
   }
 
@@ -964,25 +952,25 @@ import CtaBand from '../components/CtaBand.astro';
 
   .viz-bar span {
     font-size: 0.68rem;
-    color: rgba(250, 248, 243, 0.6);
+    color: var(--ink-light);
   }
 
   .viz-bar-track {
     height: 5px;
     border-radius: 3px;
-    background: rgba(250, 248, 243, 0.12);
+    background: var(--cream-dark);
     overflow: hidden;
   }
 
   .viz-bar-track i {
     display: block;
     height: 100%;
-    background: #b8d4c0;
+    background: var(--sage);
     border-radius: 3px;
   }
 
   .viz-bar-track.is-bad i {
-    background: #e0a090;
+    background: #c45c4a;
   }
 
   .viz-bar em {
@@ -993,19 +981,19 @@ import CtaBand from '../components/CtaBand.astro';
     font-weight: 500;
   }
 
-  .viz-bar em.is-ok { color: #b8d4c0; }
-  .viz-bar em.is-bad { color: #f0b4a8; }
+  .viz-bar em.is-ok { color: var(--sage); }
+  .viz-bar em.is-bad { color: #8b3a2f; }
 
   .viz-verdict-go {
     font-size: 0.68rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: #e0c4a0;
+    color: var(--sage);
     font-weight: 500;
   }
 
   .viz-verdict:hover .viz-verdict-go {
-    color: #f0d8b8;
+    color: var(--field);
   }
 
   .why-verdict-chips {
@@ -1016,29 +1004,8 @@ import CtaBand from '../components/CtaBand.astro';
   }
 
   .why-beat-copy :global(.verdict-chip) {
-    border-color: rgba(250, 248, 243, 0.2);
     font-size: 0.58rem;
     padding: 0.35rem 0.65rem;
-  }
-
-  .why-beat-copy :global(.verdict-chip.cleared) {
-    color: #b8d4c0;
-    background: rgba(184, 212, 192, 0.12);
-  }
-
-  .why-beat-copy :global(.verdict-chip.not_cleared) {
-    color: #f0b4a8;
-    background: rgba(240, 180, 168, 0.12);
-  }
-
-  .why-beat-copy :global(.verdict-chip.too_close_to_call) {
-    color: #e0c4a0;
-    background: rgba(224, 196, 160, 0.12);
-  }
-
-  .why-beat-copy :global(.verdict-chip.not_enough_responses) {
-    color: rgba(250, 248, 243, 0.7);
-    background: rgba(250, 248, 243, 0.08);
   }
 
   /* Decision list — buyer frame */
@@ -1093,19 +1060,20 @@ import CtaBand from '../components/CtaBand.astro';
     color: var(--field);
   }
 
-  /* One world chain */
+  /* One world chain — light */
   .world-chain {
     list-style: none;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 0;
     margin-top: 2.75rem;
-    border: 1px solid rgba(250, 248, 243, 0.12);
+    border: 1px solid var(--warm-light);
+    background: #fff;
   }
 
   .world-chain li {
     padding: 1.75rem 1.5rem;
-    border-right: 1px solid rgba(250, 248, 243, 0.12);
+    border-right: 1px solid var(--warm-light);
     display: flex;
     flex-direction: column;
     gap: 0.35rem;
@@ -1128,12 +1096,12 @@ import CtaBand from '../components/CtaBand.astro';
     font-size: 1.25rem;
     font-weight: 600;
     letter-spacing: -0.02em;
-    color: var(--cream);
+    color: var(--ink);
   }
 
   .world-chain span:last-child {
     font-size: 0.88rem;
-    color: rgba(250, 248, 243, 0.72);
+    color: var(--ink-light);
     line-height: 1.45;
   }
 
@@ -1246,7 +1214,7 @@ import CtaBand from '../components/CtaBand.astro';
     .world-chain { grid-template-columns: 1fr; }
     .world-chain li {
       border-right: none;
-      border-bottom: 1px solid rgba(250, 248, 243, 0.12);
+      border-bottom: 1px solid var(--warm-light);
     }
     .world-chain li:last-child { border-bottom: none; }
     .how-grid { grid-template-columns: 1fr; }
