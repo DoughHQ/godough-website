@@ -5,19 +5,37 @@ import { PORTAL_LOGIN, CONTACT_EMAIL } from '../data/site';
 
 <BaseLayout
   title="Request access — Dough"
-  description="Find your brand, tell us who you are, and a person at Dough writes back. Access is reviewed — not a checkout."
+  description="Tell us the brand and the decision you’re stuck on. A person at Dough reviews every request and writes back — not a checkout."
   current="/access"
   crumbs={[{ label: 'Request access' }]}
 >
   <header class="page-hero field">
     <p class="hero-eyebrow">Access</p>
-    <h1 class="hero-headline">Tell us who you are. We write <em>back.</em></h1>
+    <h1 class="hero-headline">Which decision are you stuck on?</h1>
     <p class="hero-sub">
-      Search for the brand. If it is not in the catalog yet, say so. Leave a work email, your role, and a LinkedIn profile. We review the request ourselves.
+      Find your brand, tell us who you are, and name the question. We review every request ourselves — then write back.
     </p>
   </header>
 
   <section class="section">
+    <p class="section-label">Start with the question</p>
+    <ul class="access-decisions">
+      <li>
+        <strong>Shelf</strong>
+        <span>Are we losing where shoppers already pick?</span>
+      </li>
+      <li>
+        <strong>Pack</strong>
+        <span>Should we print this design — or not?</span>
+      </li>
+      <li>
+        <strong>Box</strong>
+        <span>Would they come back after tasting?</span>
+      </li>
+    </ul>
+  </section>
+
+  <section class="section mid">
     <p class="section-label">How to apply</p>
     <div class="access-list">
       <div class="access-row reveal">
@@ -30,8 +48,8 @@ import { PORTAL_LOGIN, CONTACT_EMAIL } from '../data/site';
       <div class="access-row reveal">
         <span class="access-num">02</span>
         <div>
-          <h3 class="access-title">Your details</h3>
-          <p class="access-copy">Work email, role, LinkedIn. Enough to know you’re the right person.</p>
+          <h3 class="access-title">Your details + the question</h3>
+          <p class="access-copy">Work email, role, LinkedIn — and which decision you’re stuck on. Enough to know you’re the right person with a real ask.</p>
         </div>
       </div>
       <div class="access-row reveal">
@@ -48,7 +66,47 @@ import { PORTAL_LOGIN, CONTACT_EMAIL } from '../data/site';
         Request access <span class="arr" aria-hidden="true">→</span>
       </a>
       <a class="btn-ghost on-cream" href={PORTAL_LOGIN}>Already have access? Sign in</a>
-      <a class="btn-ghost on-cream" href={`mailto:${CONTACT_EMAIL}`}>Or email {CONTACT_EMAIL}</a>
+      <a class="btn-ghost on-cream" href={`mailto:${CONTACT_EMAIL}?subject=Access%20request`}>Or email {CONTACT_EMAIL}</a>
     </div>
   </section>
 </BaseLayout>
+
+<style>
+  .access-decisions {
+    list-style: none;
+    margin-top: 2rem;
+    border-top: 1px solid var(--warm-light);
+    max-width: 40rem;
+  }
+
+  .access-decisions li {
+    display: grid;
+    grid-template-columns: 6rem 1fr;
+    gap: 1rem;
+    padding: 1.25rem 0;
+    border-bottom: 1px solid var(--warm-light);
+    align-items: baseline;
+  }
+
+  .access-decisions strong {
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--sage);
+  }
+
+  .access-decisions span {
+    font-size: 1.05rem;
+    font-weight: 500;
+    letter-spacing: -0.015em;
+    color: var(--ink);
+  }
+
+  @media (max-width: 560px) {
+    .access-decisions li {
+      grid-template-columns: 1fr;
+      gap: 0.35rem;
+    }
+  }
+</style>
