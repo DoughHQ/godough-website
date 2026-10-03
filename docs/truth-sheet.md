@@ -23,6 +23,7 @@ Every factual claim on the site must trace here. If it is not on this list, it d
 | Workspace frames are illustrations of the portal, not live screenshots | `WorkspaceFrames.astro` |
 | Legal URLs unchanged: `/privacy`, `/terms`, `/delete-account` | App deep links |
 | `/brands` redirects to `/` | Brand homepage is now `/` |
+| `/partners` redirects to `/` | Delivery-partners pitch retired; not a current offer |
 | Sunday Company Group LLC, Sheridan WY address | Existing legal pages |
 
 ## Must not say
@@ -33,6 +34,7 @@ Every factual claim on the site must trace here. If it is not on this list, it d
 - “Start a test” / self-serve checkout as the primary CTA
 - “Predicts,” “will succeed,” or in-market volume forecasts
 - That the example report is a real client study
+- Delivery / grocery-fulfillment partnership as a live offer
 
 ## Open blanks
 
