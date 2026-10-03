@@ -1,66 +1,158 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import ChoiceWidget from '../../components/ChoiceWidget.astro';
-import OfferRelated from '../../components/OfferRelated.astro';
 import CtaBand from '../../components/CtaBand.astro';
+import '../../styles/offer-product.css';
+
+const CONCEPT_REPORT = 'https://brands.godough.co/marketing/workspace/report'
+const EXAMPLE = '/report/example'
 ---
 
 <BaseLayout
   title="Concept tests — Dough"
-  description="Put one new design against your current pack or one competitor. New York shoppers choose. The report says whether it cleared the bars you set before anyone started."
+  description="Put one new design against your current pack or one competitor. New York shoppers choose. The report says whether it cleared the bars you set."
   current="/product/concept-tests"
   crumbs={[{ href: '/product/compete', label: 'Product' }, { label: 'Concept tests' }]}
 >
-  <header class="page-hero">
-    <p class="hero-eyebrow">Product</p>
-    <h1 class="hero-headline">Concept <em>tests.</em></h1>
-    <p class="hero-sub">
-      Put one new design against your current pack, or against the one competitor you have to beat. Shoppers see both and pick. Before anyone starts, you set the bars. The report says whether the design cleared them.
-    </p>
-  </header>
-
-  <section class="section">
-    <p class="section-label">The protocol</p>
-    <div class="access-list">
-      <div class="access-row reveal">
-        <span class="access-num">01</span>
-        <div>
-          <h3 class="access-title">Name the benchmark</h3>
-          <p class="access-copy">Your current pack, or one competitor. Exactly one. The verdict is measured against it.</p>
-        </div>
-      </div>
-      <div class="access-row reveal">
-        <span class="access-num">02</span>
-        <div>
-          <h3 class="access-title">Set the bars before anyone starts</h3>
-          <p class="access-copy">Head to head, liking, and price — or leave a bar off. You can move a bar until the first shopper starts. After that it is frozen. Confidence stays at 95%. That part is Dough’s.</p>
-        </div>
-      </div>
-      <div class="access-row reveal">
-        <span class="access-num">03</span>
-        <div>
-          <h3 class="access-title">Shoppers choose</h3>
-          <p class="access-copy">Two things on a screen. One forced choice. Battles that are too fast to be a real choice are set aside.</p>
-        </div>
-      </div>
-      <div class="access-row reveal">
-        <span class="access-num">04</span>
-        <div>
-          <h3 class="access-title">Read the verdict</h3>
-          <p class="access-copy">Cleared, not cleared, too close to call, or not enough responses. One missed bar and the study does not clear. <a href="/report/example" style="color: var(--warm);">See the example.</a></p>
-        </div>
+  <header class="offer-hero">
+    <div class="offer-hero-copy">
+      <p class="offer-eyebrow">Product · Concept tests</p>
+      <h1 class="offer-headline">
+        One new design against the pack you have to beat. A verdict that can say no.
+      </h1>
+      <p class="offer-sub">
+        Shoppers see both on a screen and pick. You set the bars before anyone starts. The report says cleared, not cleared, too close to call — or not enough responses.
+      </p>
+      <div class="hero-actions offer-actions">
+        <a class="btn-primary on-cream" href="/access">
+          Request access <span class="arr" aria-hidden="true">→</span>
+        </a>
+        <a class="btn-ghost on-cream" href="#report">See what you get back</a>
       </div>
     </div>
+
+    <a class="offer-payoff" href="#report">
+      <div class="payoff-top">
+        <span class="payoff-sim">Simulated</span>
+        <span class="payoff-brand">Keel</span>
+      </div>
+      <p class="payoff-product">Keel Lemon Water</p>
+      <p class="payoff-meta">120 New York shoppers · new label vs current pack</p>
+
+      <div class="payoff-metrics">
+        <div class="payoff-metric">
+          <span class="payoff-label">Overall</span>
+          <span class="payoff-numeral is-bad">No</span>
+          <span class="payoff-unit">not cleared</span>
+          <span class="payoff-caption">One missed bar fails the study</span>
+        </div>
+        <div class="payoff-metric">
+          <span class="payoff-label">Head to head</span>
+          <span class="payoff-numeral is-ok">65</span>
+          <span class="payoff-unit">of 100 · cleared</span>
+          <span class="payoff-track" aria-hidden="true">
+            <span class="payoff-track-fill" style="width: 65%"></span>
+          </span>
+          <span class="payoff-caption">Price at $2.49 did not clear</span>
+        </div>
+      </div>
+
+      <div class="payoff-drivers">
+        <span><b>Bars set first</b> — frozen after the first shopper starts</span>
+        <span><b>95% confidence</b> — Dough’s; you set the bars</span>
+      </div>
+
+      <span class="payoff-go">See the report preview ↓</span>
+    </a>
+  </header>
+
+  <section class="offer-explain" aria-label="In five seconds">
+    <ol class="offer-beats">
+      <li>
+        <span class="offer-beat-n">01</span>
+        <strong>Set the bars</strong>
+        <span>Against current pack or one competitor — before anyone starts</span>
+      </li>
+      <li>
+        <span class="offer-beat-n">02</span>
+        <strong>Shoppers choose</strong>
+        <span>On a screen. The report says whether it cleared.</span>
+      </li>
+    </ol>
+  </section>
+
+  <section class="section">
+    <p class="section-label">When to use a concept test</p>
+    <h2 class="section-headline sell">Three questions a screen answers before you print.</h2>
+    <ul class="when-list">
+      <li>
+        <strong>New label / pack</strong>
+        <span>Does the new design beat your current bottle?</span>
+      </li>
+      <li>
+        <strong>One competitor</strong>
+        <span>Can you clear the rival you actually have to beat?</span>
+      </li>
+      <li>
+        <strong>Before you commit</strong>
+        <span>A verdict that can say no — while change is still cheap.</span>
+      </li>
+    </ul>
   </section>
 
   <section class="section mid">
-    <p class="section-label">The choice</p>
-    <h2 class="section-headline">Same act as the <em>app.</em></h2>
-    <div class="reveal">
-      <ChoiceWidget />
+    <p class="section-label">Why a concept test</p>
+    <h2 class="section-headline sell">Looking is not the same as using it at home.</h2>
+    <div class="offer-contrast">
+      <div class="offer-contrast-col is-this">
+        <p class="offer-contrast-label">Concept test</p>
+        <p class="offer-contrast-body">Two designs on a phone. Shoppers pick from looking.</p>
+        <span class="offer-contrast-now">You are here</span>
+      </div>
+      <div class="offer-contrast-col">
+        <p class="offer-contrast-label">Box study</p>
+        <p class="offer-contrast-body">The physical product at home. Shoppers pick after using it.</p>
+        <a href="/product/box-studies">Box studies →</a>
+      </div>
     </div>
-    <OfferRelated />
   </section>
 
-  <CtaBand />
+  <section class="section" id="report">
+    <p class="section-label">What you get back</p>
+    <h2 class="section-headline sell">A report that can say no.</h2>
+    <p class="section-body">
+      Live preview of the real concept report in the brand portal. Simulated fixture. Not a client study.
+    </p>
+    <figure class="offer-report-frame">
+      <div class="chrome">
+        <div class="chrome-bar" aria-hidden="true">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="url">brands.godough.co/marketing/workspace/report</span>
+        </div>
+        <iframe
+          class="portal-frame"
+          src={CONCEPT_REPORT}
+          title="Simulated concept test report from the Dough portal"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+      <figcaption class="offer-report-note">
+        Same portal report brands open after a concept fields — verdict, bars, and why.
+        <a href={EXAMPLE}>Read the worked example →</a>
+      </figcaption>
+    </figure>
+    <nav class="related" aria-label="Continue">
+      <a href={EXAMPLE}>Example report</a>
+      <a href="/report/reading-a-verdict">How to read a verdict</a>
+      <a href="/method">Method</a>
+      <a href="/access">Request access</a>
+    </nav>
+  </section>
+
+  <CtaBand
+    headline="Ready to test a pack?"
+    body="Tell us the design and the benchmark. A person reviews every request and writes back."
+  />
 </BaseLayout>
