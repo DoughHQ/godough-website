@@ -76,6 +76,34 @@ import CtaBand from '../../components/CtaBand.astro';
         <p>After they use it at home, they pick against an alternative and say why. Need to know if they’d come back? A second session can follow at least a day later.</p>
       </div>
     </div>
+  </section>
+
+  <section class="section">
+    <p class="section-label">What you get back</p>
+    <h2 class="section-headline sell">Preference after use — and whether they’d buy again.</h2>
+    <p class="section-body">
+      Live preview of the real box report in the brand portal. Simulated fixture data. Not a client study.
+    </p>
+    <figure class="box-report-frame">
+      <div class="chrome">
+        <div class="chrome-bar" aria-hidden="true">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="url">brands.godough.co/marketing/workspace/box-report</span>
+        </div>
+        <iframe
+          class="portal-frame"
+          src="https://brands.godough.co/marketing/workspace/box-report"
+          title="Simulated box study report from the Dough portal"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+      <figcaption class="box-report-note">
+        The same box report brands open in the portal — preference after use, why they chose, and whether they’d buy again. Simulated data.
+      </figcaption>
+    </figure>
     <OfferRelated />
   </section>
 
@@ -275,6 +303,60 @@ import CtaBand from '../../components/CtaBand.astro';
     color: var(--ink-light);
     line-height: 1.55;
     max-width: 28ch;
+  }
+
+  .box-report-frame {
+    margin-top: 2.25rem;
+  }
+
+  .box-report-frame .chrome {
+    border: 1px solid var(--warm-light);
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--cream);
+    box-shadow: 0 18px 48px rgba(24, 21, 15, 0.08);
+  }
+
+  .box-report-frame .chrome-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.65rem 0.9rem;
+    background: var(--cream-mid);
+    border-bottom: 1px solid var(--warm-light);
+  }
+
+  .box-report-frame .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--warm-light);
+  }
+
+  .box-report-frame .url {
+    margin-left: 0.75rem;
+    font-size: 0.7rem;
+    color: var(--ink-lighter);
+    letter-spacing: 0.02em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .box-report-frame .portal-frame {
+    display: block;
+    width: 100%;
+    height: min(88vh, 960px);
+    border: 0;
+    background: var(--cream);
+  }
+
+  .box-report-note {
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    color: var(--ink-lighter);
+    line-height: 1.55;
+    max-width: 52ch;
   }
 
   @media (max-width: 860px) {
