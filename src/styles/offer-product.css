@@ -1,7 +1,6 @@
 /* Shared product-offer page chrome (concept tests + box studies) */
 
-.offer-hero,
-.shop-hero {
+.offer-hero {
   display: grid;
   grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
   gap: clamp(2rem, 4vw, 3.5rem);
@@ -11,9 +10,15 @@
   background: var(--cream);
 }
 
-/* Tall ranking embed — pin copy to the top of the card, not mid-height */
+/* Shoppers: tall ranking card — copy must pin to the card top, never mid-column */
 .shop-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: clamp(2rem, 4vw, 3.5rem);
   align-items: start;
+  padding: 5.5rem var(--page-pad) 3.25rem;
+  border-bottom: 1px solid var(--warm-light);
+  background: var(--cream);
 }
 
 .offer-eyebrow {
@@ -436,7 +441,12 @@
   .offer-hero,
   .shop-hero {
     grid-template-columns: 1fr;
+  }
+  .offer-hero {
     padding-top: 6.5rem;
+  }
+  .shop-hero {
+    padding-top: 4.5rem;
   }
   .offer-payoff,
   .shop-hero-card {
