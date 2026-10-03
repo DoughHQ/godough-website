@@ -1,5 +1,6 @@
 {
   "redirects": [
-    { "source": "/brands", "destination": "/", "permanent": false }
+    { "source": "/brands", "destination": "/", "permanent": false },
+    { "source": "/partners", "destination": "/", "permanent": false }
   ]
 }

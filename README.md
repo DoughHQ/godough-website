@@ -20,10 +20,9 @@ Astro static site. Design system from the former `brands.html`. Brand homepage i
 | `/app` | Shopper product story |
 | `/access` | Request access → portal |
 | `/about` | Company |
-| `/partners` | Delivery partners |
 | `/privacy` `/terms` `/delete-account` | Legal (stable URLs) |
 
-`/brands` redirects to `/`.
+`/brands` and `/partners` redirect to `/`. Delivery partners is retired until fulfillment is a real offer.
 
 ## Develop
 
