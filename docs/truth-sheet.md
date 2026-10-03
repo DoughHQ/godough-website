@@ -22,7 +22,7 @@ Every factual claim on the site must trace here. If it is not on this list, it d
 | Open text scrubbed of emails, links, handles, phones | `concept_scrub_verbatim` |
 | Example report is simulated | `src/data/example-report.json` (`"simulated": true`) |
 | Workspace frames embed live portal marketing previews (`/marketing/workspace/*`) with fixture data | Brand portal public preview routes |
-| Box studies page embeds `/marketing/workspace/box-report` (experienced report fixture) | Portal `ExperiencedReportDeck` + marketing fixture |
+| Box studies page embeds `/marketing/workspace/box-preview` (cropped experienced report) with link to full `/box-report` | Portal `ExperiencedReportDeck` preview variant + marketing fixture |
 | Legal URLs unchanged: `/privacy`, `/terms`, `/delete-account` | App deep links |
 | `/brands` redirects to `/` | Brand homepage is now `/` |
 | `/partners` redirects to `/` | Delivery-partners pitch retired; not a current offer |

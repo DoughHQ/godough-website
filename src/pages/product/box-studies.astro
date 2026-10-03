@@ -1,28 +1,63 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import OfferRelated from '../../components/OfferRelated.astro';
 import CtaBand from '../../components/CtaBand.astro';
+
+const BOX_PREVIEW = 'https://brands.godough.co/marketing/workspace/box-preview'
+const BOX_FULL = 'https://brands.godough.co/marketing/workspace/box-report'
 ---
 
 <BaseLayout
   title="Box studies — Dough"
-  description="Send your product to a New York shopper. They use it at home, then choose. Ask again later if you need to know whether they’d come back."
+  description="Ship your product to New York shoppers who’ve rated similar products. They use it at home, choose, and say if they’d come back."
   current="/product/box-studies"
   crumbs={[{ href: '/product/compete', label: 'Product' }, { label: 'Box studies' }]}
 >
   <header class="box-hero">
-    <p class="box-eyebrow">Product · Box studies</p>
-    <h1 class="box-headline">
-      Your product. A New York kitchen. A real choice after they use it.
-    </h1>
-    <p class="box-sub">
-      We ship the SKU to a Dough shopper. They try it at home, pick against an alternative, and say why. Need to know if they’d come back? A second session follows at least a day later.
-    </p>
-    <div class="hero-actions box-actions">
-      <a class="btn-primary on-cream" href="/access">
-        Request access <span class="arr" aria-hidden="true">→</span>
-      </a>
-      <a class="btn-ghost on-cream" href="/product/concept-tests">Compare to concept tests</a>
+    <div class="box-hero-copy">
+      <p class="box-eyebrow">Product · Box studies</p>
+      <h1 class="box-headline">
+        Your product. A New York kitchen. A real choice after they use it.
+      </h1>
+      <p class="box-sub">
+        We ship to Dough shoppers who’ve already rated products like yours. They try it at home, pick against an alternative, and say why — then whether they’d come back.
+      </p>
+      <div class="hero-actions box-actions">
+        <a class="btn-primary on-cream" href="/access">
+          Request access <span class="arr" aria-hidden="true">→</span>
+        </a>
+        <a class="btn-ghost on-cream" href="#report">See what you get back</a>
+      </div>
+    </div>
+
+    <div class="box-hero-visual" aria-hidden="true">
+      <div class="journey">
+        <div class="journey-step">
+          <span class="journey-n">01</span>
+          <div class="journey-card door">
+            <span class="journey-icon"></span>
+            <strong>Ship</strong>
+            <em>To similar raters</em>
+          </div>
+        </div>
+        <span class="journey-arrow">→</span>
+        <div class="journey-step">
+          <span class="journey-n">02</span>
+          <div class="journey-card kitchen">
+            <span class="journey-icon"></span>
+            <strong>Use</strong>
+            <em>In a real kitchen</em>
+          </div>
+        </div>
+        <span class="journey-arrow">→</span>
+        <div class="journey-step">
+          <span class="journey-n">03</span>
+          <div class="journey-card pick">
+            <span class="journey-icon"></span>
+            <strong>Choose</strong>
+            <em>Get the feedback</em>
+          </div>
+        </div>
+      </div>
     </div>
   </header>
 
@@ -42,11 +77,27 @@ import CtaBand from '../../components/CtaBand.astro';
   </section>
 
   <section class="section">
+    <p class="section-label">When to use a box</p>
+    <h2 class="section-headline sell">Three questions a kitchen answers better than a screen.</h2>
+    <ul class="when-list">
+      <li>
+        <strong>New formula</strong>
+        <span>Will they still pick you after they’ve tasted it?</span>
+      </li>
+      <li>
+        <strong>Relaunch / pack change</strong>
+        <span>Does the new thing hold up once it’s in their hands?</span>
+      </li>
+      <li>
+        <strong>Repeat</strong>
+        <span>Would they buy it again a day later?</span>
+      </li>
+    </ul>
+  </section>
+
+  <section class="section mid">
     <p class="section-label">Why a box</p>
     <h2 class="section-headline sell">On-screen preference is not the same as preference after use.</h2>
-    <p class="section-body">
-      Concept tests put two packs on a screen. A box study puts the real thing in someone’s hands. You learn what holds up after they open it, pour it, cook with it — then choose.
-    </p>
     <div class="box-contrast">
       <div class="box-contrast-col">
         <p class="box-contrast-label">Concept test</p>
@@ -61,28 +112,11 @@ import CtaBand from '../../components/CtaBand.astro';
     </div>
   </section>
 
-  <section class="section mid">
-    <p class="section-label">How a box runs</p>
-    <h2 class="section-headline sell">Two moves. Recruiting and setup stay with Dough.</h2>
-    <div class="box-path box-path-two">
-      <div class="box-path-step">
-        <p class="box-path-n">01</p>
-        <h3>Ship to real consumers who’ve rated products similar to yours</h3>
-        <p>Dough shoppers in New York — people who already choose in categories next to yours. Not a rented panel.</p>
-      </div>
-      <div class="box-path-step">
-        <p class="box-path-n">02</p>
-        <h3>Use, then choose — get feedback</h3>
-        <p>After they use it at home, they pick against an alternative and say why. Need to know if they’d come back? A second session can follow at least a day later.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
+  <section class="section" id="report">
     <p class="section-label">What you get back</p>
     <h2 class="section-headline sell">Preference after use — and whether they’d buy again.</h2>
     <p class="section-body">
-      Live preview of the real box report in the brand portal. Simulated fixture data. Not a client study.
+      Cropped live preview of the real box report. Simulated fixture. Not a client study.
     </p>
     <figure class="box-report-frame">
       <div class="chrome">
@@ -90,21 +124,27 @@ import CtaBand from '../../components/CtaBand.astro';
           <span class="dot"></span>
           <span class="dot"></span>
           <span class="dot"></span>
-          <span class="url">brands.godough.co/marketing/workspace/box-report</span>
+          <span class="url">brands.godough.co/marketing/workspace/box-preview</span>
         </div>
         <iframe
           class="portal-frame"
-          src="https://brands.godough.co/marketing/workspace/box-report"
-          title="Simulated box study report from the Dough portal"
+          src={BOX_PREVIEW}
+          title="Simulated box study report preview from the Dough portal"
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
         ></iframe>
       </div>
       <figcaption class="box-report-note">
-        The same box report brands open in the portal — preference after use, why they chose, and whether they’d buy again. Simulated data.
+        Same portal report brands open after a box fields — preference, why they chose, buy-again.
+        <a href={BOX_FULL}>Full report preview →</a>
       </figcaption>
     </figure>
-    <OfferRelated />
+    <nav class="related" aria-label="Continue">
+      <a href={BOX_FULL}>Full box report</a>
+      <a href="/method">Method</a>
+      <a href="/product/workspace">The workspace</a>
+      <a href="/access">Request access</a>
+    </nav>
   </section>
 
   <CtaBand
@@ -115,6 +155,10 @@ import CtaBand from '../../components/CtaBand.astro';
 
 <style>
   .box-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    gap: clamp(2rem, 4vw, 3.5rem);
+    align-items: center;
     padding: 8rem var(--page-pad) 3.25rem;
     border-bottom: 1px solid var(--warm-light);
     background: var(--cream);
@@ -135,7 +179,7 @@ import CtaBand from '../../components/CtaBand.astro';
     font-style: normal;
     line-height: 1.15;
     letter-spacing: -0.025em;
-    max-width: 20ch;
+    max-width: 18ch;
     color: var(--ink);
     margin-bottom: 1.15rem;
   }
@@ -143,16 +187,88 @@ import CtaBand from '../../components/CtaBand.astro';
   .box-sub {
     font-size: clamp(1rem, 1.4vw, 1.1rem);
     color: var(--ink-light);
-    max-width: 42ch;
+    max-width: 40ch;
     line-height: 1.65;
     margin-bottom: 2rem;
   }
 
-  .box-actions {
-    margin-top: 0.25rem;
+  .box-actions { margin-top: 0.25rem; }
+
+  /* Hero journey visual */
+  .journey {
+    display: flex;
+    align-items: stretch;
+    gap: 0.65rem;
+    padding: 1.25rem;
+    background:
+      radial-gradient(ellipse 70% 80% at 80% 20%, rgba(62, 107, 74, 0.12), transparent 55%),
+      var(--field);
+    border-radius: 16px;
+    color: var(--cream);
+    box-shadow: 0 22px 56px rgba(24, 21, 15, 0.14);
   }
 
-  /* Five-second strip */
+  .journey-step {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+    min-width: 0;
+  }
+
+  .journey-n {
+    font-size: 0.58rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--warm);
+  }
+
+  .journey-card {
+    flex: 1;
+    border-radius: 12px;
+    padding: 1.1rem 0.85rem 1rem;
+    border: 1px solid rgba(250, 248, 243, 0.12);
+    background: rgba(250, 248, 243, 0.06);
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    min-height: 7.5rem;
+  }
+
+  .journey-card.door { background: rgba(62, 107, 74, 0.28); }
+  .journey-card.kitchen { background: rgba(184, 144, 106, 0.18); }
+  .journey-card.pick { background: rgba(250, 248, 243, 0.1); }
+
+  .journey-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    margin-bottom: 0.55rem;
+    background: rgba(250, 248, 243, 0.16);
+    border: 1px solid rgba(250, 248, 243, 0.2);
+  }
+
+  .journey-card strong {
+    font-family: var(--sans);
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+
+  .journey-card em {
+    font-style: normal;
+    font-size: 0.75rem;
+    color: rgba(250, 248, 243, 0.55);
+    line-height: 1.35;
+  }
+
+  .journey-arrow {
+    align-self: center;
+    color: rgba(250, 248, 243, 0.35);
+    font-size: 1rem;
+    padding-top: 1.1rem;
+  }
+
   .box-explain {
     padding: 0 var(--page-pad);
     background: var(--field);
@@ -162,13 +278,9 @@ import CtaBand from '../../components/CtaBand.astro';
   .box-beats {
     list-style: none;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: 1fr 1fr;
     gap: 0;
     margin: 0;
-  }
-
-  .box-beats-two {
-    grid-template-columns: 1fr 1fr;
   }
 
   .box-beats li {
@@ -209,7 +321,35 @@ import CtaBand from '../../components/CtaBand.astro';
     letter-spacing: -0.025em;
   }
 
-  /* Concept vs box */
+  .when-list {
+    list-style: none;
+    margin-top: 2.25rem;
+    border-top: 1px solid var(--warm-light);
+    max-width: 52rem;
+  }
+
+  .when-list li {
+    display: grid;
+    grid-template-columns: minmax(8rem, 12rem) 1fr;
+    gap: 1.25rem;
+    padding: 1.35rem 0;
+    border-bottom: 1px solid var(--warm-light);
+    align-items: baseline;
+  }
+
+  .when-list strong {
+    font-family: var(--sans);
+    font-size: 1.05rem;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+  }
+
+  .when-list span {
+    font-size: 0.98rem;
+    color: var(--ink-light);
+    line-height: 1.5;
+  }
+
   .box-contrast {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -223,10 +363,7 @@ import CtaBand from '../../components/CtaBand.astro';
     background: var(--cream);
     padding: 1.75rem 1.65rem;
   }
-
-  .box-contrast-col.is-this {
-    background: var(--cream-mid);
-  }
+  .box-contrast-col.is-this { background: var(--cream-mid); }
 
   .box-contrast-label {
     font-size: 0.62rem;
@@ -263,51 +400,7 @@ import CtaBand from '../../components/CtaBand.astro';
     color: var(--ink-lighter);
   }
 
-  .box-path {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0;
-    margin-top: 2.5rem;
-    border-top: 1px solid var(--warm-light);
-  }
-
-  .box-path-two {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .box-path-step {
-    padding: 1.75rem 1.5rem 1.75rem 0;
-    border-right: 1px solid var(--warm-light);
-  }
-  .box-path-step:last-child { border-right: none; padding-right: 0; }
-  .box-path-step:not(:first-child) { padding-left: 1.5rem; }
-
-  .box-path-n {
-    font-size: 0.62rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--warm);
-    margin-bottom: 0.85rem;
-  }
-
-  .box-path-step h3 {
-    font-family: var(--sans);
-    font-size: 1.2rem;
-    font-weight: 600;
-    letter-spacing: -0.02em;
-    margin-bottom: 0.55rem;
-  }
-
-  .box-path-step p {
-    font-size: 0.95rem;
-    color: var(--ink-light);
-    line-height: 1.55;
-    max-width: 28ch;
-  }
-
-  .box-report-frame {
-    margin-top: 2.25rem;
-  }
+  .box-report-frame { margin-top: 2.25rem; }
 
   .box-report-frame .chrome {
     border: 1px solid var(--warm-light);
@@ -346,7 +439,7 @@ import CtaBand from '../../components/CtaBand.astro';
   .box-report-frame .portal-frame {
     display: block;
     width: 100%;
-    height: min(88vh, 960px);
+    height: min(72vh, 720px);
     border: 0;
     background: var(--cream);
   }
@@ -359,20 +452,33 @@ import CtaBand from '../../components/CtaBand.astro';
     max-width: 52ch;
   }
 
-  @media (max-width: 860px) {
-    .box-beats,
-    .box-beats-two { grid-template-columns: 1fr; }
-    .box-beats li { border-right: none; border-bottom: 1px solid rgba(250, 248, 243, 0.1); }
-    .box-beats li:last-child { border-bottom: none; }
-    .box-contrast { grid-template-columns: 1fr; }
-    .box-path,
-    .box-path-two { grid-template-columns: 1fr; }
-    .box-path-step {
-      border-right: none;
-      padding: 1.5rem 0;
-      border-bottom: 1px solid var(--warm-light);
+  .box-report-note a {
+    color: var(--sage);
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 0.35rem;
+  }
+  .box-report-note a:hover { text-decoration: underline; }
+
+  @media (max-width: 900px) {
+    .box-hero {
+      grid-template-columns: 1fr;
+      padding-top: 6.5rem;
     }
-    .box-path-step:not(:first-child) { padding-left: 0; }
-    .box-path-step:last-child { border-bottom: none; }
+    .journey { flex-wrap: wrap; }
+    .journey-arrow { display: none; }
+    .journey-step { flex: 1 1 30%; min-width: 5.5rem; }
+  }
+
+  @media (max-width: 640px) {
+    .box-beats { grid-template-columns: 1fr; }
+    .box-beats li {
+      border-right: none;
+      border-bottom: 1px solid rgba(250, 248, 243, 0.1);
+    }
+    .box-beats li:last-child { border-bottom: none; }
+    .when-list li { grid-template-columns: 1fr; gap: 0.35rem; }
+    .box-contrast { grid-template-columns: 1fr; }
+    .journey-step { flex: 1 1 100%; }
   }
 </style>
