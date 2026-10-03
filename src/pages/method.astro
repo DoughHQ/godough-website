@@ -1,6 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import CtaBand from '../components/CtaBand.astro';
+
+const EXAMPLE = '/report/example'
 ---
 
 <BaseLayout
@@ -9,72 +11,761 @@ import CtaBand from '../components/CtaBand.astro';
   current="/method"
   crumbs={[{ label: 'Method' }]}
 >
-  <header class="page-hero field">
-    <p class="hero-eyebrow">Method</p>
-    <h1 class="hero-headline">The rules, in the same words as the <em>report.</em></h1>
-    <p class="hero-sub">
-      Confidence is 95%, fixed by Dough. You set the bars. You never set the confidence.
+  <header class="method-hero">
+    <p class="method-eyebrow">Method</p>
+    <h1 class="method-headline">
+      The rules, in the same words as the report.
+    </h1>
+    <p class="method-sub">
+      You set the bars. Dough fixes confidence at 95%. A study can fail. Here is exactly how — no soft landings.
     </p>
+    <div class="hero-actions">
+      <a class="btn-primary on-cream" href={EXAMPLE}>
+        See the example report <span class="arr" aria-hidden="true">→</span>
+      </a>
+      <a class="btn-ghost on-cream" href="/access">Request access</a>
+    </div>
   </header>
 
-  <div class="doc-layout">
-    <nav class="doc-toc" aria-label="On this page">
-      <a href="#result">Result rule</a>
-      <a href="#h2h">Head to head</a>
-      <a href="#liking">Liking</a>
-      <a href="#price">Price</a>
-      <a href="#overall">Overall verdict</a>
-      <a href="#freeze">Frozen bars</a>
-      <a href="#open">Open answers</a>
-      <a href="#standing">Standings</a>
+  <!-- Result rule -->
+  <section class="method-section" id="result">
+    <p class="section-label">Result rule</p>
+    <h2 class="method-h2">Four outcomes. One geometry.</h2>
+    <p class="method-lead">
+      A bar clears only when the whole 95% interval sits on the right side of the line you set. Under ten answers is not a result.
+    </p>
+
+    <div class="rule-grid">
+      <figure class="rule-card is-ok">
+        <div class="rule-viz" aria-hidden="true">
+          <span class="rule-bar-label">Your bar</span>
+          <div class="rule-track">
+            <span class="rule-mark" style="left: 50%"></span>
+            <span class="rule-interval is-ok" style="left: 56%; width: 28%"></span>
+          </div>
+        </div>
+        <span class="verdict-chip cleared">Cleared</span>
+        <figcaption>Whole interval at or above the bar.</figcaption>
+      </figure>
+
+      <figure class="rule-card is-bad">
+        <div class="rule-viz" aria-hidden="true">
+          <span class="rule-bar-label">Your bar</span>
+          <div class="rule-track">
+            <span class="rule-mark" style="left: 50%"></span>
+            <span class="rule-interval is-bad" style="left: 18%; width: 26%"></span>
+          </div>
+        </div>
+        <span class="verdict-chip not_cleared">Not cleared</span>
+        <figcaption>Whole interval below the bar.</figcaption>
+      </figure>
+
+      <figure class="rule-card is-close">
+        <div class="rule-viz" aria-hidden="true">
+          <span class="rule-bar-label">Your bar</span>
+          <div class="rule-track">
+            <span class="rule-mark" style="left: 50%"></span>
+            <span class="rule-interval is-close" style="left: 38%; width: 28%"></span>
+          </div>
+        </div>
+        <span class="verdict-chip too_close_to_call">Too close to call</span>
+        <figcaption>Interval straddles the bar.</figcaption>
+      </figure>
+
+      <figure class="rule-card is-none">
+        <div class="rule-viz is-empty" aria-hidden="true">
+          <span class="rule-bar-label">Under 10 answers</span>
+          <div class="rule-track">
+            <span class="rule-mark" style="left: 50%"></span>
+            <span class="rule-empty-note">No pass or fail</span>
+          </div>
+        </div>
+        <span class="verdict-chip not_enough_responses">Not enough responses</span>
+        <figcaption>Fewer than ten answers. Not a result.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Who controls what -->
+  <section class="method-section mid" id="controls">
+    <p class="section-label">The contract</p>
+    <h2 class="method-h2">You set the bars. Dough fixes the rest.</h2>
+    <div class="control-grid">
+      <div class="control-col">
+        <p class="control-eyebrow">You</p>
+        <ul>
+          <li>Which bars are on (head to head, liking, price)</li>
+          <li>Where each bar sits</li>
+          <li>The benchmark and the price anchor</li>
+          <li>Moving bars — until the first shopper starts</li>
+        </ul>
+      </div>
+      <div class="control-col is-dough">
+        <p class="control-eyebrow">Dough</p>
+        <ul>
+          <li>Confidence fixed at 95%</li>
+          <li>Wilson intervals on the counts that matter</li>
+          <li>Bars freeze after the first shopper</li>
+          <li>Open answers scrubbed of contact noise</li>
+        </ul>
+      </div>
+    </div>
+    <p class="method-note">
+      You never set the confidence. That is intentional — so a later reader can trust what was asked.
+    </p>
+  </section>
+
+  <!-- One miss -->
+  <section class="method-section" id="overall">
+    <p class="section-label">Overall verdict</p>
+    <h2 class="method-h2">One missed bar sinks the study.</h2>
+    <p class="method-lead">
+      The overall verdict takes the hardest result among the bars you turned on. A bar you left off is not tested. “Cleared” means every bar you set has cleared.
+    </p>
+
+    <a class="miss-card" href={EXAMPLE}>
+      <div class="miss-top">
+        <span class="miss-sim">Simulated</span>
+        <span class="miss-badge">Not cleared</span>
+      </div>
+      <p class="miss-product">Keel Lemon Water</p>
+      <p class="miss-meta">New label vs current pack · 120 New York shoppers</p>
+      <div class="miss-rows">
+        <div class="miss-row">
+          <span>Head to head</span>
+          <div class="miss-track"><i style="width: 65%"></i></div>
+          <em class="is-ok">Cleared · 65 of 100</em>
+        </div>
+        <div class="miss-row">
+          <span>Price · $2.49</span>
+          <div class="miss-track is-bad"><i style="width: 38%"></i></div>
+          <em class="is-bad">Not cleared</em>
+        </div>
+      </div>
+      <p class="miss-punch">Winning the pick is not enough. Price missed — the study does not clear.</p>
+      <span class="miss-go">Read the worked example →</span>
+    </a>
+  </section>
+
+  <!-- Bar types -->
+  <section class="method-section mid" id="bars">
+    <p class="section-label">What a bar measures</p>
+    <h2 class="method-h2">Three ways shoppers can clear — or not.</h2>
+    <div class="bar-cards">
+      <article class="bar-card" id="h2h">
+        <p class="bar-kicker">Head to head</p>
+        <h3>Direct choice</h3>
+        <p>Each shopper picks your design or the benchmark. Interval is Wilson. “Neither” is shown and is not a win. Timing-flagged choices are excluded.</p>
+      </article>
+      <article class="bar-card" id="liking">
+        <p class="bar-kicker">Liking</p>
+        <h3>Love it / like it</h3>
+        <p>Share who answer “love it” or “like it,” asked before any battle. Against current pack it is the paired difference on the same shoppers.</p>
+      </article>
+      <article class="bar-card" id="price">
+        <p class="bar-kicker">Price</p>
+        <h3>Willingness to pay</h3>
+        <p>Stated willingness at or above your price. Never a sales forecast. Because the answer is a band, the share is a range — the bar clears only on the conservative count.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Freeze -->
+  <section class="method-section" id="freeze">
+    <p class="section-label">Frozen bars</p>
+    <h2 class="method-h2">Set the line before anyone starts. Then it locks.</h2>
+    <ol class="freeze-steps">
+      <li>
+        <span class="freeze-n">01</span>
+        <strong>Edit</strong>
+        <span>Move bars, turn tests on or off</span>
+      </li>
+      <li>
+        <span class="freeze-n">02</span>
+        <strong>First shopper</strong>
+        <span>Bars freeze. No quiet moves mid-field</span>
+      </li>
+      <li>
+        <span class="freeze-n">03</span>
+        <strong>Report</strong>
+        <span>Your bar next to Dough’s default — so a later reader sees what was asked</span>
+      </li>
+    </ol>
+  </section>
+
+  <!-- Standing vs study -->
+  <section class="method-section mid" id="standing">
+    <p class="section-label">Two different objects</p>
+    <h2 class="method-h2">A standing is not a study. A study is not a standing.</h2>
+    <div class="object-grid">
+      <div class="object-col">
+        <p class="object-eyebrow">Standing</p>
+        <p class="object-body">Ordinary picks in the app. Appears when enough people have chosen. Pattern — not a commissioned verdict.</p>
+      </div>
+      <div class="object-col is-study">
+        <p class="object-eyebrow">Study</p>
+        <p class="object-body">A question you commission. Bars frozen. Deadline. Four verdicts — including not cleared.</p>
+      </div>
+    </div>
+    <p class="method-note">
+      Same New York shoppers. Same catalog. Different objects — on purpose.
+      <a href="/shoppers">Who answers →</a>
+    </p>
+  </section>
+
+  <!-- Open answers -->
+  <section class="method-section" id="open">
+    <p class="section-label">Open answers</p>
+    <h2 class="method-h2">Words, not a contact list.</h2>
+    <p class="method-lead">
+      Open answers are scrubbed of emails, links, handles, and phone numbers. Names are not detected. Treat the words as words.
+    </p>
+    <nav class="method-related" aria-label="Continue">
+      <a href={EXAMPLE}>Example report</a>
+      <a href="/report/reading-a-verdict">How to read a verdict</a>
+      <a href="/shoppers">Shoppers</a>
+      <a href="/access">Request access</a>
     </nav>
-    <article class="doc-body">
-      <h2 id="result">Result rule</h2>
-      <p>
-        A result is cleared when the whole interval sits at or above the bar. It is not cleared when the whole interval sits below the bar. It is too close to call when the interval straddles the bar. Fewer than ten answers reads as not enough responses.
-      </p>
+  </section>
 
-      <h2 id="h2h">Head to head</h2>
-      <p>
-        Each shopper’s direct choice between your design and the benchmark. The interval is a Wilson interval. “Neither” is shown and is not a win. Choices flagged for timing are excluded.
-      </p>
-
-      <h2 id="liking">Liking</h2>
-      <p>
-        The share who answer “love it” or “like it,” asked before any battle. Against your current pack it is the paired difference on the same shoppers.
-      </p>
-
-      <h2 id="price">Price</h2>
-      <p>
-        Stated willingness to pay at or above your price. It is never a sales forecast. Because the answer is a band, the share is a range. The bar clears only when the conservative count clears it.
-      </p>
-
-      <h2 id="overall">Overall verdict</h2>
-      <p>
-        The overall verdict takes the hardest result among the bars you turned on. A bar you left off is not tested. One “not cleared” sinks the study. “Cleared” means every bar you set has cleared.
-      </p>
-
-      <h2 id="freeze">Frozen bars</h2>
-      <p>
-        You can move your bars until the first shopper starts. Then they are frozen, and the report shows your bar next to Dough’s default so a later reader can see what was asked.
-      </p>
-
-      <h2 id="open">Open answers</h2>
-      <p>
-        Open answers are scrubbed of emails, links, handles, and phone numbers. Names are not detected. Treat the words as words, not as a contact list.
-      </p>
-
-      <h2 id="standing">Standings</h2>
-      <p>
-        A standing on a claimed product is a different object from a study. It comes from ordinary choices in the app. It appears when enough people have chosen. It is not a concept verdict.
-      </p>
-
-      <p>
-        See a full worked example: <a href="/report/example">example report</a>.
-        Who answers: <a href="/shoppers">shoppers in New York</a>.
-      </p>
-    </article>
-  </div>
-
-  <CtaBand />
+  <CtaBand
+    headline="Ready to set bars that can fail?"
+    body="Tell us the brand and the question. A person reviews every request and writes back."
+  />
 </BaseLayout>
+
+<style>
+  .method-hero {
+    padding: 8rem var(--page-pad) 3.5rem;
+    border-bottom: 1px solid var(--warm-light);
+    background: var(--cream);
+  }
+
+  .method-eyebrow {
+    font-size: 0.66rem;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--warm);
+    margin-bottom: 1.15rem;
+  }
+
+  .method-headline {
+    font-family: var(--sans);
+    font-size: clamp(1.85rem, 3.8vw, 2.75rem);
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    line-height: 1.15;
+    max-width: 18ch;
+    color: var(--ink);
+    margin-bottom: 1.15rem;
+  }
+
+  .method-sub {
+    font-size: clamp(1.02rem, 1.5vw, 1.12rem);
+    color: var(--ink-light);
+    max-width: 42ch;
+    line-height: 1.55;
+    margin-bottom: 2rem;
+  }
+
+  .method-section {
+    padding: clamp(3.5rem, 7vw, 5rem) var(--page-pad);
+    border-bottom: 1px solid var(--warm-light);
+    background: var(--cream);
+  }
+
+  .method-section.mid {
+    background: var(--cream-mid);
+  }
+
+  .method-h2 {
+    font-family: var(--sans);
+    font-size: clamp(1.45rem, 2.6vw, 1.95rem);
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    line-height: 1.2;
+    max-width: 22ch;
+    color: var(--ink);
+    margin: 0 0 1rem;
+  }
+
+  .method-lead {
+    font-size: 1.05rem;
+    color: var(--ink-light);
+    line-height: 1.6;
+    max-width: 48ch;
+    margin: 0 0 2.25rem;
+  }
+
+  .method-note {
+    margin-top: 1.75rem;
+    font-size: 0.92rem;
+    color: var(--ink-lighter);
+    line-height: 1.55;
+    max-width: 48ch;
+  }
+
+  .method-note a {
+    color: var(--sage);
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 0.35rem;
+  }
+
+  .method-note a:hover {
+    text-decoration: underline;
+  }
+
+  /* Result rule diagrams */
+  .rule-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    max-width: 52rem;
+  }
+
+  .rule-card {
+    background: #fff;
+    border: 1px solid var(--warm-light);
+    border-radius: 14px;
+    padding: 1.25rem 1.25rem 1.15rem;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+
+  .rule-viz {
+    padding: 0.85rem 0.65rem 0.5rem;
+    background: var(--cream);
+    border-radius: 10px;
+  }
+
+  .rule-bar-label {
+    display: block;
+    font-size: 0.58rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-lighter);
+    margin-bottom: 0.65rem;
+  }
+
+  .rule-track {
+    position: relative;
+    height: 28px;
+    border-radius: 4px;
+    background: var(--cream-dark);
+  }
+
+  .rule-mark {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--ink);
+    transform: translateX(-50%);
+    z-index: 2;
+  }
+
+  .rule-interval {
+    position: absolute;
+    top: 9px;
+    height: 10px;
+    border-radius: 5px;
+    z-index: 1;
+  }
+
+  .rule-interval.is-ok {
+    background: var(--sage);
+  }
+
+  .rule-interval.is-bad {
+    background: #c45c4a;
+  }
+
+  .rule-interval.is-close {
+    background: var(--warm);
+  }
+
+  .rule-viz.is-empty .rule-track {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .rule-empty-note {
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-lighter);
+    position: relative;
+    z-index: 1;
+  }
+
+  .rule-card figcaption {
+    font-size: 0.88rem;
+    color: var(--ink-light);
+    line-height: 1.4;
+  }
+
+  /* Controls */
+  .control-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--warm-light);
+    border: 1px solid var(--warm-light);
+    max-width: 52rem;
+  }
+
+  .control-col {
+    background: var(--cream);
+    padding: 1.75rem 1.65rem;
+  }
+
+  .control-col.is-dough {
+    background: #fff;
+  }
+
+  .control-eyebrow {
+    font-size: 0.62rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--warm);
+    margin-bottom: 1rem;
+  }
+
+  .control-col.is-dough .control-eyebrow {
+    color: var(--sage);
+  }
+
+  .control-col ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .control-col li {
+    font-size: 0.98rem;
+    color: var(--ink);
+    line-height: 1.45;
+    padding-left: 1rem;
+    position: relative;
+  }
+
+  .control-col li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.55rem;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--warm-light);
+  }
+
+  .control-col.is-dough li::before {
+    background: var(--sage);
+  }
+
+  /* One miss card */
+  .miss-card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    background: #fff;
+    border: 1px solid var(--warm-light);
+    border-radius: 16px;
+    padding: 1.5rem 1.55rem 1.35rem;
+    max-width: 36rem;
+    box-shadow: 0 18px 40px rgba(24, 21, 15, 0.06);
+    transition: transform 0.25s var(--ease), border-color 0.25s var(--ease);
+  }
+
+  .miss-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(139, 58, 47, 0.28);
+  }
+
+  .miss-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .miss-sim {
+    font-size: 0.55rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--warm);
+    border: 1px solid rgba(184, 144, 106, 0.45);
+    padding: 0.25rem 0.45rem;
+    border-radius: 2px;
+  }
+
+  .miss-badge {
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #8b3a2f;
+    font-weight: 600;
+  }
+
+  .miss-product {
+    font-family: var(--serif);
+    font-size: 1.55rem;
+    letter-spacing: -0.02em;
+    margin: 0 0 0.25rem;
+    color: var(--ink);
+  }
+
+  .miss-meta {
+    font-size: 0.8rem;
+    color: var(--ink-lighter);
+    margin: 0 0 1.25rem;
+  }
+
+  .miss-rows {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    margin-bottom: 1.15rem;
+  }
+
+  .miss-row {
+    display: grid;
+    grid-template-columns: 7.5rem 1fr auto;
+    gap: 0.65rem;
+    align-items: center;
+  }
+
+  .miss-row span {
+    font-size: 0.72rem;
+    color: var(--ink-light);
+  }
+
+  .miss-track {
+    height: 5px;
+    border-radius: 3px;
+    background: var(--cream-dark);
+    overflow: hidden;
+  }
+
+  .miss-track i {
+    display: block;
+    height: 100%;
+    background: var(--sage);
+    border-radius: 3px;
+  }
+
+  .miss-track.is-bad i {
+    background: #c45c4a;
+  }
+
+  .miss-row em {
+    font-style: normal;
+    font-size: 0.62rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  .miss-row em.is-ok { color: var(--sage); }
+  .miss-row em.is-bad { color: #8b3a2f; }
+
+  .miss-punch {
+    font-size: 0.95rem;
+    color: var(--ink);
+    line-height: 1.45;
+    margin: 0 0 1rem;
+    font-weight: 500;
+  }
+
+  .miss-go {
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--sage);
+    font-weight: 500;
+  }
+
+  .miss-card:hover .miss-go {
+    color: var(--field);
+  }
+
+  /* Bar cards */
+  .bar-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--warm-light);
+    border: 1px solid var(--warm-light);
+    max-width: 56rem;
+  }
+
+  .bar-card {
+    background: #fff;
+    padding: 1.65rem 1.5rem;
+  }
+
+  .bar-kicker {
+    font-size: 0.62rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--warm);
+    margin-bottom: 0.65rem;
+  }
+
+  .bar-card h3 {
+    font-family: var(--sans);
+    font-size: 1.15rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin: 0 0 0.65rem;
+    color: var(--ink);
+  }
+
+  .bar-card p {
+    font-size: 0.92rem;
+    color: var(--ink-light);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  /* Freeze */
+  .freeze-steps {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    max-width: 52rem;
+    border: 1px solid var(--warm-light);
+    background: #fff;
+  }
+
+  .freeze-steps li {
+    padding: 1.65rem 1.4rem;
+    border-right: 1px solid var(--warm-light);
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .freeze-steps li:last-child {
+    border-right: none;
+  }
+
+  .freeze-n {
+    font-size: 0.62rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--warm);
+    margin-bottom: 0.25rem;
+  }
+
+  .freeze-steps strong {
+    font-family: var(--sans);
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+
+  .freeze-steps span:last-child {
+    font-size: 0.88rem;
+    color: var(--ink-light);
+    line-height: 1.45;
+  }
+
+  /* Objects */
+  .object-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--warm-light);
+    border: 1px solid var(--warm-light);
+    max-width: 52rem;
+  }
+
+  .object-col {
+    background: var(--cream);
+    padding: 1.75rem 1.65rem;
+  }
+
+  .object-col.is-study {
+    background: #fff;
+  }
+
+  .object-eyebrow {
+    font-size: 0.62rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--warm);
+    margin-bottom: 0.75rem;
+  }
+
+  .object-col.is-study .object-eyebrow {
+    color: var(--sage);
+  }
+
+  .object-body {
+    font-size: 1.05rem;
+    font-weight: 500;
+    letter-spacing: -0.015em;
+    line-height: 1.4;
+    color: var(--ink);
+    margin: 0;
+    max-width: 28ch;
+  }
+
+  .method-related {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 1.75rem;
+    margin-top: 2rem;
+    padding-top: 1.75rem;
+    border-top: 1px solid var(--warm-light);
+  }
+
+  .method-related a {
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    text-decoration: none;
+  }
+
+  .method-related a:hover {
+    color: var(--ink);
+  }
+
+  @media (max-width: 900px) {
+    .rule-grid,
+    .control-grid,
+    .object-grid,
+    .bar-cards,
+    .freeze-steps {
+      grid-template-columns: 1fr;
+    }
+    .freeze-steps li {
+      border-right: none;
+      border-bottom: 1px solid var(--warm-light);
+    }
+    .freeze-steps li:last-child {
+      border-bottom: none;
+    }
+    .miss-row {
+      grid-template-columns: 1fr;
+      gap: 0.3rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .miss-card:hover {
+      transform: none;
+    }
+  }
+</style>
