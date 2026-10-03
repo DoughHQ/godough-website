@@ -262,6 +262,16 @@ import '../styles/offer-product.css';
 </BaseLayout>
 
 <style>
+  /* Pin to ranking card top — scoped so it can't lose to shared offer-hero center */
+  .shop-hero {
+    align-items: start;
+  }
+
+  .shop-hero-copy,
+  .shop-hero-card {
+    align-self: start;
+  }
+
   .shop-eyebrow {
     font-size: 0.66rem;
     letter-spacing: 0.24em;
