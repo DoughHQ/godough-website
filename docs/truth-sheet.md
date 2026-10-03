@@ -8,6 +8,7 @@ Every factual claim on the site must trace here. If it is not on this list, it d
 |---|---|
 | Dough is a shopper app where people compare real grocery products | Product / brands positioning |
 | Three offers: standings (how you compete), concept tests, box studies | Portal: concept + IHUT publish; catalog standings |
+| Box studies ship to Dough shoppers who’ve already rated / chosen in similar categories | Product positioning for IHUT recruiting |
 | Shoppers in New York (first panel) | Product decision for this site |
 | Access is reviewed by a person (not self-serve checkout on the marketing site) | Portal application flow; `brands.godough.co/login` |
 | 600,000+ products indexed | Existing brands page / catalog |
