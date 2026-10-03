@@ -6,7 +6,7 @@ interface Props {
 }
 
 const {
-  footNote = 'Illustrative matchup. Same layout as the app. Dough is not those brands.',
+  footNote = 'Illustrative matchup with fictional products. Same layout as the app.',
   variant = 'full',
 } = Astro.props;
 
@@ -17,7 +17,7 @@ const isBattle = variant === 'battle';
   {!isBattle && <p class="mech-beat-label">1 · Choose</p>}
   <div class="split-battle" role="group" aria-label="Which would you rather have?">
     <div class="split-battle-top">
-      <span class="split-battle-eyebrow">Still water</span>
+      <span class="split-battle-eyebrow">Flavored water</span>
       <div class="split-battle-pips" aria-hidden="true">
         <span class="split-battle-pip is-on"></span>
         <span class="split-battle-pip is-on"></span>
@@ -32,15 +32,15 @@ const isBattle = variant === 'battle';
         <span class="split-battle-portrait">
           <img src="/demo/product-a.svg" alt="" width="120" height="160" />
         </span>
-        <span class="split-battle-name">Mountain Water</span>
-        <span class="split-battle-brand">Liquid Death</span>
+        <span class="split-battle-name">Lemon Water</span>
+        <span class="split-battle-brand">Keel</span>
       </button>
       <button type="button" class="split-battle-half is-not" data-side="b" aria-pressed="false">
         <span class="split-battle-portrait">
           <img src="/demo/product-b.svg" alt="" width="120" height="160" />
         </span>
-        <span class="split-battle-name">Smartwater</span>
-        <span class="split-battle-brand">Glacéau</span>
+        <span class="split-battle-name">Citrus Still</span>
+        <span class="split-battle-brand">Rivermark</span>
       </button>
       <span class="split-battle-divider" aria-hidden="true"></span>
       <span class="split-battle-vs" aria-hidden="true">vs</span>
@@ -55,7 +55,7 @@ const isBattle = variant === 'battle';
       <p class="mech-beat-label">2 · Capture</p>
       <div class="mech-capture">
         <p class="mech-capture-line" data-capture>
-          Shopper chose <strong>Mountain Water</strong> over <strong>Smartwater</strong> · Still water
+          Shopper chose <strong>Lemon Water</strong> over <strong>Citrus Still</strong> · Flavored water
         </p>
       </div>
 
@@ -63,8 +63,8 @@ const isBattle = variant === 'battle';
 
       <p class="mech-beat-label">3 · Derive</p>
       <div class="mech-derive">
-        <div class="mech-derive-title" data-derive-title>Mountain Water</div>
-        <div class="mech-derive-meta" data-derive-meta>Winning more of these head-to-heads in Still water</div>
+        <div class="mech-derive-title" data-derive-title>Lemon Water</div>
+        <div class="mech-derive-meta" data-derive-meta>Winning more of these head-to-heads in Flavored water</div>
         <p class="mech-derive-note">
           Brand insight only shows where enough shoppers have made choices. One pick is a fact. A pattern becomes a standing.
         </p>
@@ -366,8 +366,8 @@ const isBattle = variant === 'battle';
 <script>
   function initChoice(root: Element) {
     const products = {
-      a: { brand: 'Liquid Death', name: 'Mountain Water', category: 'Still water' },
-      b: { brand: 'Glacéau', name: 'Smartwater', category: 'Still water' },
+      a: { brand: 'Keel', name: 'Lemon Water', category: 'Flavored water' },
+      b: { brand: 'Rivermark', name: 'Citrus Still', category: 'Flavored water' },
     };
     const cardA = root.querySelector<HTMLButtonElement>('[data-side="a"]');
     const cardB = root.querySelector<HTMLButtonElement>('[data-side="b"]');
