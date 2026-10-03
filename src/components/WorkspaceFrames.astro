@@ -1,78 +1,52 @@
 ---
-/** Illustrated portal frames — stand in for live screenshots until captured. */
+const PORTAL = 'https://brands.godough.co'
+
+const frames = [
+  {
+    label: 'Dashboard',
+    src: `${PORTAL}/marketing/workspace/home`,
+    title: 'Brand home in the Dough portal',
+  },
+  {
+    label: 'Concept study',
+    src: `${PORTAL}/marketing/workspace/concept`,
+    title: 'Concept study report in the Dough portal',
+  },
+  {
+    label: 'Report verdict',
+    src: `${PORTAL}/marketing/workspace/report`,
+    title: 'Concept test report in the Dough portal',
+  },
+]
 ---
 
 <div class="frames">
-  <figure class="frame">
-    <figcaption>Dashboard</figcaption>
-    <div class="chrome" aria-hidden="true">
-      <div class="chrome-bar">
-        <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-        <span class="url">brands.godough.co</span>
-      </div>
-      <div class="chrome-body dash">
-        <aside>
-          <span class="nav-item on">Home</span>
-          <span class="nav-item">Products</span>
-          <span class="nav-item">Studies</span>
-          <span class="nav-item">Reports</span>
-        </aside>
-        <main>
-          <p class="kicker">Your brand</p>
-          <p class="title">Keel Still</p>
-          <div class="cards">
-            <div class="card"><span>42</span><em>Claimed SKUs</em></div>
-            <div class="card"><span>3</span><em>Active studies</em></div>
-            <div class="card"><span>1</span><em>Report ready</em></div>
-          </div>
-        </main>
-      </div>
-    </div>
-  </figure>
-
-  <figure class="frame">
-    <figcaption>Concept study</figcaption>
-    <div class="chrome" aria-hidden="true">
-      <div class="chrome-bar">
-        <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-        <span class="url">brands.godough.co/studies/concept</span>
-      </div>
-      <div class="chrome-body study">
-        <p class="kicker">Concept test</p>
-        <p class="title">New label vs current pack</p>
-        <div class="shelf">
-          <div class="pack">New label</div>
-          <div class="vs">vs</div>
-          <div class="pack muted">Current pack</div>
+  {frames.map((frame) => (
+    <figure class="frame">
+      <figcaption>{frame.label}</figcaption>
+      <div class="chrome">
+        <div class="chrome-bar" aria-hidden="true">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="url">{frame.src.replace('https://', '')}</span>
         </div>
-        <div class="bars">
-          <div><span>Head to head</span><i>50%</i></div>
-          <div><span>Price at $2.49</span><i>50%</i></div>
-          <div><span>Liking</span><i>Off</i></div>
-        </div>
+        <iframe
+          class="portal-frame"
+          src={frame.src}
+          title={frame.title}
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
       </div>
-    </div>
-  </figure>
-
-  <figure class="frame">
-    <figcaption>Report verdict</figcaption>
-    <div class="chrome" aria-hidden="true">
-      <div class="chrome-bar">
-        <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-        <span class="url">brands.godough.co/studies/…/report</span>
-      </div>
-      <div class="chrome-body report">
-        <p class="kicker">Verdict</p>
-        <p class="title bad">Not cleared</p>
-        <div class="rows">
-          <div><span>Head to head</span><b class="ok">Cleared</b></div>
-          <div><span>Price</span><b class="no">Not cleared</b></div>
-          <div><span>Liking</span><b class="na">Not tested</b></div>
-        </div>
-      </div>
-    </div>
-  </figure>
+    </figure>
+  ))}
 </div>
+
+<p class="live-note">
+  These are live views from <a href="https://brands.godough.co">brands.godough.co</a>, rendered with
+  simulated fixture data — the same components brands see after access.
+</p>
 
 <style>
   .frames {
@@ -112,102 +86,29 @@
     font-size: 0.7rem;
     color: var(--ink-lighter);
     letter-spacing: 0.02em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
-  .chrome-body {
-    padding: 1.5rem;
-    min-height: 200px;
-  }
-  .dash {
-    display: grid;
-    grid-template-columns: 8rem 1fr;
-    gap: 1.5rem;
-  }
-  aside {
-    display: flex;
-    flex-direction: column;
-    gap: 0.55rem;
-    padding-right: 1rem;
-    border-right: 1px solid var(--warm-light);
-  }
-  .nav-item {
-    font-size: 0.78rem;
-    color: var(--ink-lighter);
-  }
-  .nav-item.on { color: var(--ink); font-weight: 500; }
-  .kicker {
-    font-size: 0.62rem;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--warm);
-    margin-bottom: 0.4rem;
-  }
-  .title {
-    font-family: var(--serif);
-    font-size: 1.65rem;
-    font-weight: 400;
-    margin-bottom: 1.25rem;
-  }
-  .title.bad { color: #8b3a2f; }
-  .cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0.75rem;
-  }
-  .card {
-    background: var(--cream-mid);
-    padding: 1rem;
-    border: 1px solid var(--warm-light);
-  }
-  .card span {
+  .portal-frame {
     display: block;
-    font-family: var(--serif);
-    font-size: 1.75rem;
-    letter-spacing: -0.02em;
+    width: 100%;
+    height: min(70vh, 720px);
+    border: 0;
+    background: var(--cream);
   }
-  .card em {
-    font-style: normal;
-    font-size: 0.72rem;
-    color: var(--ink-lighter);
-  }
-  .shelf {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-  }
-  .pack {
-    flex: 1;
-    height: 100px;
-    border-radius: 10px;
-    background: var(--field);
-    color: var(--cream);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .live-note {
+    margin-top: 1.5rem;
     font-size: 0.85rem;
+    color: var(--ink-lighter);
+    line-height: 1.55;
+    max-width: 52ch;
   }
-  .pack.muted { background: var(--field-mid); opacity: 0.7; }
-  .vs {
-    font-family: var(--serif);
-    font-style: italic;
+  .live-note a {
     color: var(--warm);
+    text-decoration: none;
   }
-  .bars > div,
-  .rows > div {
-    display: flex;
-    justify-content: space-between;
-    padding: 0.65rem 0;
-    border-top: 1px solid var(--warm-light);
-    font-size: 0.9rem;
-  }
-  .bars i { font-style: normal; color: var(--ink-light); font-variant-numeric: tabular-nums; }
-  .ok { color: var(--sage); font-weight: 500; }
-  .no { color: #8b3a2f; font-weight: 500; }
-  .na { color: var(--ink-lighter); font-weight: 400; }
-
-  @media (max-width: 600px) {
-    .dash { grid-template-columns: 1fr; }
-    aside { flex-direction: row; flex-wrap: wrap; border-right: none; border-bottom: 1px solid var(--warm-light); padding-bottom: 0.75rem; }
-    .cards { grid-template-columns: 1fr; }
+  .live-note a:hover {
+    text-decoration: underline;
   }
 </style>

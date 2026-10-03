@@ -20,7 +20,7 @@ Every factual claim on the site must trace here. If it is not on this list, it d
 | “Neither” shown, not counted as wins; timing-flagged battles excluded | Report `method.head_to_head` |
 | Open text scrubbed of emails, links, handles, phones | `concept_scrub_verbatim` |
 | Example report is simulated | `src/data/example-report.json` (`"simulated": true`) |
-| Workspace frames are illustrations of the portal, not live screenshots | `WorkspaceFrames.astro` |
+| Workspace frames embed live portal marketing previews (`/marketing/workspace/*`) with fixture data | Brand portal public preview routes |
 | Legal URLs unchanged: `/privacy`, `/terms`, `/delete-account` | App deep links |
 | `/brands` redirects to `/` | Brand homepage is now `/` |
 | `/partners` redirects to `/` | Delivery-partners pitch retired; not a current offer |
@@ -39,5 +39,4 @@ Every factual claim on the site must trace here. If it is not on this list, it d
 ## Open blanks
 
 - Founder name and one-sentence bio on `/about`
-- Live portal screenshots to replace `WorkspaceFrames` when available
 - Public pricing page (out of scope this pass)
