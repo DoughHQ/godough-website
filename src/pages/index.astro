@@ -5,8 +5,8 @@ import CtaBand from '../components/CtaBand.astro';
 ---
 
 <BaseLayout
-  title="Dough — Know how your product stacks up"
-  description="Dough captures how New York shoppers choose between real grocery products. Brands use those picks to compete, test a concept, and learn from a box in a home."
+  title="Dough — Real grocery choices. Verdicts that can say no."
+  description="New York shoppers pick between real grocery products. Brands see standings where the choices are thick enough — then concept and box studies against that same world, with reports that can fail."
   navTheme="field"
   current="/"
 >
@@ -14,78 +14,153 @@ import CtaBand from '../components/CtaBand.astro';
     <div class="home-hero-copy">
       <p class="home-brand">Dough</p>
       <h1 class="home-headline">
-        Know how your product stacks up with New York shoppers — before you ship the pack.
+        Real grocery choices. A standing — or a verdict that can kill the design.
       </h1>
       <p class="home-sub">
-        Real head-to-head picks. Not surveys. Compete in the catalog, test a concept, or put a box in a home.
+        Not surveys. Not soft decks. New York shoppers pick between real SKUs. Brands use those picks to compete, test a pack, or put a box in a kitchen — same preference world, end to end.
       </p>
       <div class="hero-actions home-actions">
         <a class="btn-primary" href="/access">
           Request access <span class="arr" aria-hidden="true">→</span>
         </a>
-        <a class="btn-ghost" href="/report/example">See an example report</a>
+        <a class="btn-ghost" href="/report/example">See a report that said no</a>
       </div>
     </div>
-    <div class="home-hero-product reveal-hero">
-      <ChoiceWidget variant="battle" />
-    </div>
+
+    <a class="home-outcome" href="/report/example">
+      <div class="home-outcome-top">
+        <span class="home-outcome-sim">Simulated</span>
+        <span class="home-outcome-brand">Keel</span>
+      </div>
+      <p class="home-outcome-product">Keel Lemon Water</p>
+      <p class="home-outcome-meta">Flavored water · New York shoppers</p>
+
+      <div class="home-outcome-row">
+        <div class="home-outcome-block">
+          <span class="home-outcome-label">Standing</span>
+          <span class="home-outcome-value">Winning more</span>
+          <span class="home-outcome-detail">Head-to-heads vs the shelf — only where choices are thick enough</span>
+        </div>
+        <div class="home-outcome-block is-fail">
+          <span class="home-outcome-label">Concept study</span>
+          <span class="home-outcome-value">Not cleared</span>
+          <span class="home-outcome-detail">New label beat current pack. Price at $2.49 did not.</span>
+        </div>
+      </div>
+
+      <div class="home-outcome-chain" aria-hidden="true">
+        <span>Pick</span>
+        <span class="home-outcome-chain-sep">→</span>
+        <span>Standing</span>
+        <span class="home-outcome-chain-sep">→</span>
+        <span>Verdict</span>
+      </div>
+      <span class="home-outcome-go">Read the worked example →</span>
+    </a>
   </header>
 
   <section class="proof-strip" aria-label="At a glance">
     <div class="proof-item">
       <span class="proof-n">600k+</span>
-      <span class="proof-l">Products indexed</span>
+      <span class="proof-l">Real SKUs to battle — not made-up stimuli</span>
     </div>
     <div class="proof-item">
       <span class="proof-n">700+</span>
-      <span class="proof-l">Categories</span>
+      <span class="proof-l">Categories with a living shelf</span>
     </div>
     <div class="proof-item">
       <span class="proof-n">NYC</span>
-      <span class="proof-l">Shopper panel</span>
+      <span class="proof-l">Shoppers who already choose in-app</span>
     </div>
     <div class="proof-item">
       <span class="proof-n">Can say no</span>
-      <span class="proof-l">Reports that clear — or don’t</span>
+      <span class="proof-l">Bars you set. Verdicts that can fail.</span>
+    </div>
+  </section>
+
+  <section class="section mid">
+    <p class="section-label">Not this</p>
+    <h2 class="section-headline sell">What Dough is not — and what it is.</h2>
+    <div class="contrast-grid">
+      <div class="contrast-col is-not">
+        <p class="contrast-eyebrow">Not Dough</p>
+        <ul class="contrast-list">
+          <li>Survey scales and “likelihood to buy” soft landings</li>
+          <li>Focus groups that never see your actual SKU</li>
+          <li>IHUT panels of strangers who’ve never chosen in your category</li>
+          <li>Decks that always find a reason to ship</li>
+        </ul>
+      </div>
+      <div class="contrast-col is-yes">
+        <p class="contrast-eyebrow">Dough</p>
+        <ul class="contrast-list">
+          <li>Head-to-head picks on real grocery products</li>
+          <li>Standings only where enough shoppers have chosen</li>
+          <li>Concept and box against that same preference world</li>
+          <li>Reports with four verdicts — including not cleared</li>
+        </ul>
+      </div>
     </div>
   </section>
 
   <section class="section">
-    <p class="section-label">What brands buy</p>
-    <h2 class="section-headline sell">Three ways to use the same preference data</h2>
-    <div class="offer-grid">
-      <a class="offer-card" href="/product/compete">
-        <span class="offer-kicker">01</span>
-        <h3 class="offer-title">Compete</h3>
-        <p class="offer-body">
-          Your SKUs are in the catalog. Where enough shoppers have chosen, see how one holds up against the alternatives.
-        </p>
-        <span class="offer-go">How you compete →</span>
-      </a>
-      <a class="offer-card" href="/product/concept-tests">
-        <span class="offer-kicker">02</span>
-        <h3 class="offer-title">Test a concept</h3>
-        <p class="offer-body">
-          New label vs current pack — or one competitor. Shoppers pick. The report says whether it cleared the bars you set.
-        </p>
-        <span class="offer-go">Concept tests →</span>
-      </a>
-      <a class="offer-card" href="/product/box-studies">
-        <span class="offer-kicker">03</span>
-        <h3 class="offer-title">Box in a home</h3>
-        <p class="offer-body">
-          A real product in a New York kitchen, with a follow-up when you need to know if they would come back to it.
-        </p>
-        <span class="offer-go">Box studies →</span>
-      </a>
-    </div>
+    <p class="section-label">When brands call</p>
+    <h2 class="section-headline sell">Three decisions. One preference world.</h2>
+    <ul class="decision-list">
+      <li>
+        <a href="/product/compete">
+          <strong>Are we losing on the shelf?</strong>
+          <span>Claim your SKUs. See where New York shoppers already pick — and where the signal isn’t thick enough yet.</span>
+          <em>Compete →</em>
+        </a>
+      </li>
+      <li>
+        <a href="/product/concept-tests">
+          <strong>Should we print this pack?</strong>
+          <span>New label vs current — or one competitor. You set the bars. The report can say no.</span>
+          <em>Concept tests →</em>
+        </a>
+      </li>
+      <li>
+        <a href="/product/box-studies">
+          <strong>Would they come back after tasting?</strong>
+          <span>Ship to Dough shoppers who’ve rated products like yours. Preference after use — then buy-again.</span>
+          <em>Box studies →</em>
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <section class="section field" id="world">
+    <p class="section-label">The wedge</p>
+    <h2 class="section-headline sell">One shopper world. Three ways to ask.</h2>
+    <p class="section-body">
+      Everyday battles in the app become standings. A concept study asks a sharper question on a screen. A box study asks after they’ve used it at home. Same New York shoppers. Same catalog. No handoff to a different panel.
+    </p>
+    <ol class="world-chain">
+      <li>
+        <span class="world-n">01</span>
+        <strong>Compete</strong>
+        <span>Standing from ordinary picks</span>
+      </li>
+      <li>
+        <span class="world-n">02</span>
+        <strong>Concept</strong>
+        <span>Bars you freeze before anyone starts</span>
+      </li>
+      <li>
+        <span class="world-n">03</span>
+        <strong>Box</strong>
+        <span>Use at home, then choose again</span>
+      </li>
+    </ol>
   </section>
 
   <section class="section mid">
     <p class="section-label">The differentiator</p>
     <h2 class="section-headline sell">A report that can say no</h2>
     <p class="section-body">
-      Four verdicts. No soft landings. A bar clears only when the whole 95% interval sits on the right side of the line you set. Fewer than ten answers is not a result.
+      Four verdicts. No soft landings. A bar clears only when the whole 95% interval sits on the right side of the line you set. One missed bar fails the study. Fewer than ten answers is not a result.
     </p>
     <div class="chip-row">
       <span class="verdict-chip cleared">Cleared</span>
@@ -140,7 +215,6 @@ import CtaBand from '../components/CtaBand.astro';
 </BaseLayout>
 
 <style>
-  /* —— Hero: brand + pitch + product —— */
   .home-hero {
     display: grid;
     grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
@@ -169,7 +243,7 @@ import CtaBand from '../components/CtaBand.astro';
   }
 
   .home-hero-copy,
-  .home-hero-product {
+  .home-outcome {
     position: relative;
     z-index: 1;
   }
@@ -190,12 +264,12 @@ import CtaBand from '../components/CtaBand.astro';
 
   .home-headline {
     font-family: var(--sans);
-    font-size: clamp(1.55rem, 2.8vw, 2.15rem);
-    font-weight: 500;
+    font-size: clamp(1.55rem, 2.9vw, 2.25rem);
+    font-weight: 600;
     font-style: normal;
-    line-height: 1.22;
-    letter-spacing: -0.02em;
-    max-width: 22ch;
+    line-height: 1.18;
+    letter-spacing: -0.025em;
+    max-width: 20ch;
     color: var(--cream);
     margin-bottom: 1.15rem;
     opacity: 0;
@@ -206,8 +280,8 @@ import CtaBand from '../components/CtaBand.astro';
   .home-sub {
     font-size: clamp(0.98rem, 1.35vw, 1.08rem);
     font-weight: 300;
-    color: rgba(250, 248, 243, 0.68);
-    max-width: 36ch;
+    color: rgba(250, 248, 243, 0.78);
+    max-width: 38ch;
     line-height: 1.6;
     margin-bottom: 2rem;
     opacity: 0;
@@ -221,10 +295,145 @@ import CtaBand from '../components/CtaBand.astro';
     animation: homeUp 0.7s var(--ease) 0.3s forwards;
   }
 
-  .home-hero-product {
+  /* Hero outcome card — brand deliverable, not just the mechanic */
+  .home-outcome {
+    display: block;
+    text-decoration: none;
+    color: var(--cream);
+    background:
+      radial-gradient(ellipse 70% 60% at 100% 0%, rgba(62, 107, 74, 0.35), transparent 55%),
+      rgba(250, 248, 243, 0.05);
+    border: 1px solid rgba(250, 248, 243, 0.14);
+    border-radius: 18px;
+    padding: 1.65rem 1.75rem 1.5rem;
+    box-shadow: 0 28px 64px rgba(0, 0, 0, 0.28);
+    backdrop-filter: blur(8px);
     opacity: 0;
     transform: translateY(24px) scale(0.985);
     animation: homeProduct 0.9s var(--ease) 0.28s forwards;
+    transition: transform 0.25s var(--ease), border-color 0.25s var(--ease);
+  }
+
+  .home-outcome:hover {
+    transform: translateY(-3px) scale(1);
+    border-color: rgba(250, 248, 243, 0.28);
+  }
+
+  .home-outcome-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.1rem;
+  }
+
+  .home-outcome-sim {
+    font-size: 0.58rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--warm);
+    border: 1px solid rgba(184, 144, 106, 0.45);
+    padding: 0.28rem 0.55rem;
+    border-radius: 2px;
+  }
+
+  .home-outcome-brand {
+    font-size: 0.62rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(250, 248, 243, 0.72);
+  }
+
+  .home-outcome-product {
+    font-family: var(--serif);
+    font-size: clamp(1.55rem, 2.4vw, 1.95rem);
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin: 0 0 0.3rem;
+  }
+
+  .home-outcome-meta {
+    font-size: 0.78rem;
+    color: rgba(250, 248, 243, 0.72);
+    margin: 0 0 1.35rem;
+  }
+
+  .home-outcome-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.85rem;
+    margin-bottom: 1.15rem;
+  }
+
+  .home-outcome-block {
+    background: rgba(250, 248, 243, 0.06);
+    border: 1px solid rgba(250, 248, 243, 0.1);
+    border-radius: 12px;
+    padding: 1rem 0.95rem 0.95rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .home-outcome-block.is-fail {
+    border-color: rgba(240, 180, 168, 0.28);
+    background: rgba(240, 180, 168, 0.08);
+  }
+
+  .home-outcome-label {
+    font-size: 0.58rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(250, 248, 243, 0.65);
+    margin-bottom: 0.25rem;
+  }
+
+  .home-outcome-value {
+    font-family: var(--serif);
+    font-size: 1.35rem;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    color: #b8d4c0;
+  }
+
+  .home-outcome-block.is-fail .home-outcome-value {
+    color: #f0b4a8;
+  }
+
+  .home-outcome-detail {
+    font-size: 0.72rem;
+    color: rgba(250, 248, 243, 0.72);
+    line-height: 1.4;
+    margin-top: 0.35rem;
+  }
+
+  .home-outcome-chain {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.85rem 0 1.1rem;
+    border-top: 1px solid rgba(250, 248, 243, 0.12);
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(250, 248, 243, 0.7);
+  }
+
+  .home-outcome-chain-sep {
+    color: var(--warm);
+  }
+
+  .home-outcome-go {
+    display: inline-block;
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #e0c4a0;
+    font-weight: 500;
+  }
+
+  .home-outcome:hover .home-outcome-go {
+    color: #f0d8b8;
   }
 
   @keyframes homeUp {
@@ -235,7 +444,6 @@ import CtaBand from '../components/CtaBand.astro';
     to { opacity: 1; transform: translateY(0) scale(1); }
   }
 
-  /* —— Proof strip —— */
   .proof-strip {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -257,87 +465,194 @@ import CtaBand from '../components/CtaBand.astro';
     font-family: var(--serif);
     font-size: clamp(1.45rem, 2.4vw, 1.85rem);
     font-weight: 400;
-    font-style: normal;
     letter-spacing: -0.02em;
     line-height: 1.1;
-    margin-bottom: 0.35rem;
+    margin-bottom: 0.45rem;
   }
 
   .proof-l {
     font-size: 0.72rem;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: rgba(250, 248, 243, 0.72);
+    color: rgba(250, 248, 243, 0.78);
+    line-height: 1.4;
+    max-width: 18ch;
   }
 
-  /* —— Sell headlines: upright, commercial —— */
   .section-headline.sell {
     font-family: var(--sans);
-    font-weight: 500;
+    font-weight: 600;
     font-style: normal;
     max-width: 22ch;
     letter-spacing: -0.025em;
   }
-  .section-headline.sell :global(em) {
-    font-style: normal;
-    color: inherit;
-  }
 
-  /* —— Offer cards —— */
-  .offer-grid {
+  /* Not this / Dough */
+  .contrast-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr 1fr;
     gap: 1px;
-    margin-top: 2.75rem;
+    margin-top: 2.5rem;
     background: var(--warm-light);
     border: 1px solid var(--warm-light);
   }
 
-  .offer-card {
+  .contrast-col {
+    padding: 1.85rem 1.75rem;
     background: var(--cream);
-    padding: 2rem 1.75rem 1.85rem;
-    text-decoration: none;
-    color: inherit;
-    display: flex;
-    flex-direction: column;
-    min-height: 100%;
-    transition: background 0.2s;
   }
-  .offer-card:hover { background: var(--cream-mid); }
 
-  .offer-kicker {
+  .contrast-col.is-yes {
+    background: var(--cream-mid);
+  }
+
+  .contrast-eyebrow {
     font-size: 0.62rem;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: var(--warm);
     margin-bottom: 1.15rem;
   }
 
-  .offer-title {
-    font-family: var(--sans);
-    font-size: 1.45rem;
-    font-weight: 600;
-    font-style: normal;
-    letter-spacing: -0.02em;
-    margin-bottom: 0.75rem;
+  .contrast-col.is-not .contrast-eyebrow {
+    color: var(--ink-lighter);
   }
 
-  .offer-body {
+  .contrast-col.is-yes .contrast-eyebrow {
+    color: var(--sage);
+  }
+
+  .contrast-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.95rem;
+  }
+
+  .contrast-list li {
+    font-size: 0.98rem;
+    line-height: 1.45;
+    color: var(--ink);
+    padding-left: 1.1rem;
+    position: relative;
+  }
+
+  .contrast-col.is-not .contrast-list li {
+    color: var(--ink-light);
+  }
+
+  .contrast-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.55rem;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+  }
+
+  .contrast-col.is-not .contrast-list li::before {
+    background: var(--warm-light);
+  }
+
+  .contrast-col.is-yes .contrast-list li::before {
+    background: var(--sage);
+  }
+
+  /* Decision list — buyer frame */
+  .decision-list {
+    list-style: none;
+    margin-top: 2.5rem;
+    border-top: 1px solid var(--warm-light);
+    max-width: 56rem;
+  }
+
+  .decision-list a {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.4fr) auto;
+    gap: 1.25rem 1.75rem;
+    align-items: baseline;
+    padding: 1.55rem 0;
+    border-bottom: 1px solid var(--warm-light);
+    text-decoration: none;
+    color: inherit;
+    transition: padding-left 0.2s var(--ease);
+  }
+
+  .decision-list a:hover {
+    padding-left: 0.35rem;
+  }
+
+  .decision-list strong {
+    font-family: var(--sans);
+    font-size: 1.15rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+
+  .decision-list span {
     font-size: 0.95rem;
     color: var(--ink-light);
-    line-height: 1.55;
-    flex: 1;
-    margin-bottom: 1.5rem;
+    line-height: 1.5;
   }
 
-  .offer-go {
-    font-size: 0.72rem;
+  .decision-list em {
+    font-style: normal;
+    font-size: 0.7rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--sage);
     font-weight: 500;
+    white-space: nowrap;
   }
-  .offer-card:hover .offer-go { color: var(--field); }
+
+  .decision-list a:hover em {
+    color: var(--field);
+  }
+
+  /* One world chain */
+  .world-chain {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    margin-top: 2.75rem;
+    border: 1px solid rgba(250, 248, 243, 0.12);
+  }
+
+  .world-chain li {
+    padding: 1.75rem 1.5rem;
+    border-right: 1px solid rgba(250, 248, 243, 0.12);
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .world-chain li:last-child {
+    border-right: none;
+  }
+
+  .world-n {
+    font-size: 0.62rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--warm);
+    margin-bottom: 0.35rem;
+  }
+
+  .world-chain strong {
+    font-family: var(--sans);
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--cream);
+  }
+
+  .world-chain span:last-child {
+    font-size: 0.88rem;
+    color: rgba(250, 248, 243, 0.72);
+    line-height: 1.45;
+  }
 
   .chip-row {
     display: flex;
@@ -346,7 +661,6 @@ import CtaBand from '../components/CtaBand.astro';
     margin-top: 1.75rem;
   }
 
-  /* —— How it works —— */
   .how-grid {
     display: grid;
     grid-template-columns: minmax(0, 480px) minmax(0, 1fr);
@@ -427,20 +741,27 @@ import CtaBand from '../components/CtaBand.astro';
       gap: 2.5rem;
     }
     .home-headline { max-width: 28ch; }
-    .home-hero-product { max-width: 440px; }
+    .home-outcome { max-width: 440px; }
+    .home-outcome-row { grid-template-columns: 1fr; }
     .proof-strip { grid-template-columns: repeat(2, 1fr); }
     .proof-item:nth-child(2n) { border-right: none; }
     .proof-item:nth-child(1),
     .proof-item:nth-child(2) {
       border-bottom: 1px solid rgba(250, 248, 243, 0.08);
     }
-    .offer-grid { grid-template-columns: 1fr; }
+    .contrast-grid { grid-template-columns: 1fr; }
+    .decision-list a {
+      grid-template-columns: 1fr;
+      gap: 0.4rem;
+    }
+    .world-chain { grid-template-columns: 1fr; }
+    .world-chain li {
+      border-right: none;
+      border-bottom: 1px solid rgba(250, 248, 243, 0.12);
+    }
+    .world-chain li:last-child { border-bottom: none; }
     .how-grid { grid-template-columns: 1fr; }
     .how-aside { padding-top: 0.5rem; }
-  }
-
-  @media (max-width: 560px) {
-    .proof-strip { grid-template-columns: 1fr 1fr; }
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -448,10 +769,13 @@ import CtaBand from '../components/CtaBand.astro';
     .home-headline,
     .home-sub,
     .home-actions,
-    .home-hero-product {
+    .home-outcome {
       opacity: 1;
       transform: none;
       animation: none;
+    }
+    .home-outcome:hover {
+      transform: none;
     }
   }
 </style>
