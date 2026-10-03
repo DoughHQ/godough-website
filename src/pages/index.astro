@@ -1,12 +1,11 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import ChoiceWidget from '../components/ChoiceWidget.astro';
 import CtaBand from '../components/CtaBand.astro';
 ---
 
 <BaseLayout
   title="Dough — Real grocery choices. Verdicts that can say no."
-  description="New York shoppers pick between real grocery products. Brands see standings where the choices are thick enough — then concept and box studies against that same world, with reports that can fail."
+  description="New York shoppers already pick between real grocery products. Brands start a step ahead — then concept and box studies against that same preference, with reports that can fail."
   navTheme="field"
   current="/"
 >
@@ -17,7 +16,7 @@ import CtaBand from '../components/CtaBand.astro';
         Real grocery choices. A standing — or a verdict that can kill the design.
       </h1>
       <p class="home-sub">
-        Not surveys. Not soft decks. New York shoppers pick between real SKUs. Brands use those picks to compete, test a pack, or put a box in a kitchen — same preference world, end to end.
+        Preference is already on the record. Not surveys. Not cold panels. New York shoppers pick real SKUs — then you compete, test a pack, or put a box in a kitchen against that same world.
       </p>
       <div class="hero-actions home-actions">
         <a class="btn-primary" href="/access">
@@ -61,16 +60,16 @@ import CtaBand from '../components/CtaBand.astro';
 
   <section class="proof-strip" aria-label="At a glance">
     <div class="proof-item">
-      <span class="proof-n">600k+</span>
-      <span class="proof-l">Real SKUs to battle — not made-up stimuli</span>
+      <span class="proof-n">Already logged</span>
+      <span class="proof-l">Preference from real in-app picks</span>
     </div>
     <div class="proof-item">
-      <span class="proof-n">700+</span>
-      <span class="proof-l">Categories with a living shelf</span>
+      <span class="proof-n">600k+</span>
+      <span class="proof-l">Real SKUs — not made-up stimuli</span>
     </div>
     <div class="proof-item">
       <span class="proof-n">NYC</span>
-      <span class="proof-l">Shoppers who already choose in-app</span>
+      <span class="proof-l">Shoppers who already choose</span>
     </div>
     <div class="proof-item">
       <span class="proof-n">Can say no</span>
@@ -82,10 +81,10 @@ import CtaBand from '../components/CtaBand.astro';
     <div class="why-close-copy">
       <p class="why-label">Why brands switch</p>
       <h2 id="why-headline" class="why-headline">
-        You don’t need another study that finds a reason to ship.
+        You don’t need another cold panel. You need shoppers who already choose.
       </h2>
       <p class="why-sub">
-        You need New York shoppers picking between real products — and a report that can tell you to stop.
+        Preference is logged before you brief a study. Same New York shoppers for standings, concept, and box — and a report that can tell you to stop.
       </p>
     </div>
 
@@ -120,33 +119,44 @@ import CtaBand from '../components/CtaBand.astro';
         </div>
       </article>
 
-      <!-- Beat 2: Shelf -->
+      <!-- Beat 2: Already preferred -->
       <article class="why-beat is-flip">
         <div class="why-viz" aria-hidden="true">
-          <div class="viz-shelf">
-            <div class="viz-shelf-top">
-              <span>Living catalog</span>
-              <span class="viz-shelf-count">600k+</span>
+          <div class="viz-pref">
+            <div class="viz-pref-top">
+              <span>Already on the record</span>
+              <span class="viz-pref-sim">Simulated</span>
             </div>
-            <div class="viz-shelf-grid">
-              <div class="viz-sku is-live"><b></b><em>Keel Lemon</em></div>
-              <div class="viz-sku is-live"><b></b><em>Rivermark</em></div>
-              <div class="viz-sku"><b></b><em>Northveil</em></div>
-              <div class="viz-sku is-live"><b></b><em>Keel 12oz</em></div>
-              <div class="viz-sku"><b></b><em>—</em></div>
-              <div class="viz-sku is-dim"><b></b><em>—</em></div>
+            <p class="viz-pref-cat">Flavored water</p>
+            <p class="viz-pref-meta">184 battles counted · New York shoppers</p>
+            <ul class="viz-pref-list">
+              <li>
+                <span class="viz-pref-mark" aria-hidden="true">✓</span>
+                <span><b>Keel Lemon</b> over Rivermark</span>
+              </li>
+              <li>
+                <span class="viz-pref-mark" aria-hidden="true">✓</span>
+                <span><b>Keel Lemon</b> over Northveil</span>
+              </li>
+              <li>
+                <span class="viz-pref-mark is-soft" aria-hidden="true">·</span>
+                <span>Standing only where choices are thick enough</span>
+              </li>
+            </ul>
+            <div class="viz-pref-foot">
+              <strong>Box studies</strong>
+              <span>Ship to shoppers who’ve already rated products like yours</span>
             </div>
-            <div class="viz-shelf-foot">
-              <span class="viz-pill is-on">Flavored water · standing</span>
-              <span class="viz-pill">Still water · building</span>
-            </div>
+            <p class="viz-pref-aside">600k+ indexed SKUs · same catalog end to end</p>
           </div>
         </div>
         <div class="why-beat-copy">
           <span class="why-beat-n">02</span>
-          <span class="why-fear">“The panel never saw our bottle.”</span>
-          <h3>Your shelf, not a mock.</h3>
-          <p>Shoppers battle the living catalog — then concept and box against that same world. No handoff to strangers.</p>
+          <span class="why-fear">“We’re starting from zero again.”</span>
+          <h3>We already know how they choose.</h3>
+          <p>
+            Shoppers battle real products in the app every day. When you run a concept or ship a box, you’re not starting cold — you’re asking people whose preference in categories like yours is already on the record.
+          </p>
         </div>
       </article>
 
@@ -191,7 +201,7 @@ import CtaBand from '../components/CtaBand.astro';
     </div>
   </section>
 
-  <section class="section">
+  <section class="section" id="decisions">
     <p class="section-label">When brands call</p>
     <h2 class="section-headline sell">Three decisions. One preference world.</h2>
     <ul class="decision-list">
@@ -217,68 +227,17 @@ import CtaBand from '../components/CtaBand.astro';
         </a>
       </li>
     </ul>
-  </section>
-
-  <section class="section mid" id="world">
-    <p class="section-label">Same world end to end</p>
-    <h2 class="section-headline sell">Compete. Concept. Box. No panel handoff.</h2>
-    <p class="section-body">
-      Everyday battles become standings. A concept asks on a screen. A box asks after they’ve used it at home. Same New York shoppers. Same catalog.
-    </p>
-    <ol class="world-chain">
-      <li>
-        <span class="world-n">01</span>
-        <strong>Compete</strong>
-        <span>Standing from ordinary picks</span>
-      </li>
-      <li>
-        <span class="world-n">02</span>
-        <strong>Concept</strong>
-        <span>Bars frozen before anyone starts</span>
-      </li>
-      <li>
-        <span class="world-n">03</span>
-        <strong>Box</strong>
-        <span>Use at home, then choose again</span>
-      </li>
-    </ol>
-  </section>
-
-  <section class="section" id="how">
-    <p class="section-label">How preference is made</p>
-    <h2 class="section-headline sell">Two products. One pick. Enough picks become a standing.</h2>
-    <p class="section-body">
-      Not browsing. Not a survey. Try the same choice shoppers make — then see what a brand receives.
-    </p>
-    <div class="how-grid">
-      <ChoiceWidget />
-      <aside class="how-aside">
-        <ol class="how-steps">
-          <li>
-            <strong>Choose</strong>
-            <span>A shopper picks the one they would rather have.</span>
-          </li>
-          <li>
-            <strong>Capture</strong>
-            <span>That preference is recorded against real products in a real category.</span>
-          </li>
-          <li>
-            <strong>Derive</strong>
-            <span>Where enough people have chosen, brands see standings, concept results, and box follow-ups.</span>
-          </li>
-        </ol>
-        <div class="how-links">
-          <a href="/method">Method →</a>
-          <a href="/shoppers">Who answers →</a>
-          <a href="/product/workspace">The workspace →</a>
-        </div>
-      </aside>
-    </div>
+    <nav class="deeper" aria-label="Go deeper">
+      <a href="/method">Method</a>
+      <a href="/shoppers">Who answers</a>
+      <a href="/product/workspace">The workspace</a>
+      <a href="/report/example">Example report</a>
+    </nav>
   </section>
 
   <CtaBand
-    headline="Find your brand and request access."
-    body="A person reviews every request and writes back. No self-serve checkout on this site."
+    headline="Which decision are you stuck on?"
+    body="Tell us the brand and the question. A person reviews every request and writes back — no self-serve checkout."
   />
 </BaseLayout>
 
@@ -531,10 +490,10 @@ import CtaBand from '../components/CtaBand.astro';
   .proof-n {
     display: block;
     font-family: var(--serif);
-    font-size: clamp(1.45rem, 2.4vw, 1.85rem);
+    font-size: clamp(1.25rem, 2.1vw, 1.65rem);
     font-weight: 400;
     letter-spacing: -0.02em;
-    line-height: 1.1;
+    line-height: 1.15;
     margin-bottom: 0.45rem;
   }
 
@@ -768,114 +727,118 @@ import CtaBand from '../components/CtaBand.astro';
     color: var(--ink-lighter);
   }
 
-  /* —— Viz: shelf —— */
-  .viz-shelf {
+  /* —— Viz: already preferred —— */
+  .viz-pref {
     background: #fff;
     border: 1px solid var(--warm-light);
     border-radius: 16px;
-    padding: 1.25rem 1.25rem 1.15rem;
+    padding: 1.35rem 1.4rem 1.2rem;
     box-shadow: 0 18px 40px rgba(24, 21, 15, 0.06);
   }
 
-  .viz-shelf-top {
+  .viz-pref-top {
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
-    margin-bottom: 1rem;
+    align-items: center;
+    margin-bottom: 0.85rem;
     font-size: 0.62rem;
     letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--ink-lighter);
   }
 
-  .viz-shelf-count {
+  .viz-pref-sim {
+    color: var(--warm);
+    border: 1px solid rgba(184, 144, 106, 0.45);
+    padding: 0.25rem 0.45rem;
+    border-radius: 2px;
+    letter-spacing: 0.12em;
+  }
+
+  .viz-pref-cat {
     font-family: var(--serif);
     font-size: 1.55rem;
     letter-spacing: -0.02em;
     color: var(--ink);
-    text-transform: none;
+    margin: 0 0 0.25rem;
   }
 
-  .viz-shelf-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0.55rem;
+  .viz-pref-meta {
+    font-size: 0.8rem;
+    color: var(--ink-lighter);
+    margin: 0 0 1.15rem;
   }
 
-  .viz-sku {
-    aspect-ratio: 3 / 4;
-    border-radius: 10px;
-    background: var(--cream);
-    border: 1px solid var(--warm-light);
+  .viz-pref-list {
+    list-style: none;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: flex-end;
-    padding: 0.55rem 0.35rem;
-    gap: 0.45rem;
-    position: relative;
-    overflow: hidden;
+    gap: 0;
+    border-top: 1px solid var(--warm-light);
+    margin-bottom: 1.15rem;
   }
 
-  .viz-sku b {
-    display: block;
-    width: 28px;
-    height: 52px;
-    border-radius: 8px 8px 4px 4px;
-    background: linear-gradient(180deg, #2a3a30 0%, #1a241e 100%);
-    border: 1px solid rgba(62, 107, 74, 0.25);
+  .viz-pref-list li {
+    display: grid;
+    grid-template-columns: 1.25rem 1fr;
+    gap: 0.65rem;
+    align-items: baseline;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--warm-light);
+    font-size: 0.92rem;
+    color: var(--ink);
+    line-height: 1.35;
   }
 
-  .viz-sku.is-live {
-    background: rgba(62, 107, 74, 0.05);
-    border-color: rgba(62, 107, 74, 0.22);
+  .viz-pref-list b {
+    font-weight: 600;
   }
 
-  .viz-sku.is-live b {
-    background: linear-gradient(180deg, #3a5342 0%, #24322a 100%);
-    border-color: rgba(62, 107, 74, 0.4);
-    box-shadow: 0 6px 14px rgba(24, 21, 15, 0.12);
-  }
-
-  .viz-sku.is-dim {
-    opacity: 0.45;
-  }
-
-  .viz-sku em {
-    font-style: normal;
-    font-size: 0.55rem;
-    letter-spacing: 0.04em;
-    color: var(--ink-lighter);
-    text-align: center;
-    line-height: 1.2;
-  }
-
-  .viz-sku.is-live em {
-    color: var(--ink-light);
-  }
-
-  .viz-shelf-foot {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.45rem;
-    margin-top: 1rem;
-  }
-
-  .viz-pill {
-    font-size: 0.58rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    padding: 0.35rem 0.55rem;
-    border-radius: 999px;
-    border: 1px solid var(--warm-light);
-    color: var(--ink-lighter);
-    background: var(--cream);
-  }
-
-  .viz-pill.is-on {
+  .viz-pref-mark {
     color: var(--sage);
-    border-color: rgba(62, 107, 74, 0.3);
+    font-weight: 600;
+    font-size: 0.85rem;
+  }
+
+  .viz-pref-mark.is-soft {
+    color: var(--ink-lighter);
+    font-weight: 400;
+  }
+
+  .viz-pref-list li:last-child {
+    color: var(--ink-light);
+    font-size: 0.85rem;
+  }
+
+  .viz-pref-foot {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 0.95rem 1rem;
     background: rgba(62, 107, 74, 0.06);
+    border: 1px solid rgba(62, 107, 74, 0.18);
+    border-radius: 10px;
+    margin-bottom: 0.85rem;
+  }
+
+  .viz-pref-foot strong {
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--sage);
+  }
+
+  .viz-pref-foot span {
+    font-size: 0.88rem;
+    color: var(--ink);
+    line-height: 1.4;
+  }
+
+  .viz-pref-aside {
+    margin: 0;
+    font-size: 0.72rem;
+    color: var(--ink-lighter);
+    letter-spacing: 0.02em;
   }
 
   /* —— Viz: verdict —— */
@@ -1060,121 +1023,26 @@ import CtaBand from '../components/CtaBand.astro';
     color: var(--field);
   }
 
-  /* One world chain — light */
-  .world-chain {
-    list-style: none;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0;
-    margin-top: 2.75rem;
-    border: 1px solid var(--warm-light);
-    background: #fff;
-  }
-
-  .world-chain li {
-    padding: 1.75rem 1.5rem;
-    border-right: 1px solid var(--warm-light);
+  .deeper {
     display: flex;
-    flex-direction: column;
-    gap: 0.35rem;
-  }
-
-  .world-chain li:last-child {
-    border-right: none;
-  }
-
-  .world-n {
-    font-size: 0.62rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--warm);
-    margin-bottom: 0.35rem;
-  }
-
-  .world-chain strong {
-    font-family: var(--sans);
-    font-size: 1.25rem;
-    font-weight: 600;
-    letter-spacing: -0.02em;
-    color: var(--ink);
-  }
-
-  .world-chain span:last-child {
-    font-size: 0.88rem;
-    color: var(--ink-light);
-    line-height: 1.45;
-  }
-
-  .how-grid {
-    display: grid;
-    grid-template-columns: minmax(0, 480px) minmax(0, 1fr);
-    gap: clamp(2rem, 5vw, 4rem);
-    align-items: start;
-    margin-top: 0.5rem;
-  }
-
-  .how-grid :global(.mech) {
-    margin-top: 1.5rem;
-  }
-
-  .how-aside {
-    padding-top: 3.5rem;
-  }
-
-  .how-steps {
-    list-style: none;
-    counter-reset: how;
+    flex-wrap: wrap;
+    gap: 1rem 1.75rem;
+    margin-top: 2.75rem;
+    padding-top: 1.75rem;
     border-top: 1px solid var(--warm-light);
   }
 
-  .how-steps li {
-    counter-increment: how;
-    display: grid;
-    grid-template-columns: 2.5rem 1fr;
-    gap: 0.75rem 1rem;
-    padding: 1.35rem 0;
-    border-bottom: 1px solid var(--warm-light);
-  }
-
-  .how-steps li::before {
-    content: counter(how, decimal-leading-zero);
-    font-size: 0.66rem;
-    letter-spacing: 0.14em;
-    color: var(--warm);
-    padding-top: 0.3rem;
-  }
-
-  .how-steps strong {
-    display: block;
-    font-family: var(--sans);
-    font-size: 1.05rem;
-    font-weight: 600;
-    margin-bottom: 0.3rem;
-    grid-column: 2;
-  }
-
-  .how-steps span {
-    grid-column: 2;
-    font-size: 0.92rem;
-    color: var(--ink-light);
-    line-height: 1.55;
-  }
-
-  .how-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.25rem 1.75rem;
-    margin-top: 2rem;
-  }
-
-  .how-links a {
+  .deeper a {
     font-size: 0.72rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--ink-light);
     text-decoration: none;
   }
-  .how-links a:hover { color: var(--ink); }
+
+  .deeper a:hover {
+    color: var(--ink);
+  }
 
   @media (max-width: 960px) {
     .home-hero {
@@ -1211,14 +1079,6 @@ import CtaBand from '../components/CtaBand.astro';
       grid-template-columns: 1fr;
       gap: 0.4rem;
     }
-    .world-chain { grid-template-columns: 1fr; }
-    .world-chain li {
-      border-right: none;
-      border-bottom: 1px solid var(--warm-light);
-    }
-    .world-chain li:last-child { border-bottom: none; }
-    .how-grid { grid-template-columns: 1fr; }
-    .how-aside { padding-top: 0.5rem; }
   }
 
   @media (prefers-reduced-motion: reduce) {
