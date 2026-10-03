@@ -1,0 +1,265 @@
+/* Compete page — category preference ranking fixture (portal PreferenceField chrome) */
+
+.offer-hero.is-standing {
+  align-items: start;
+}
+
+.offer-hero.is-standing .offer-headline {
+  max-width: 20ch;
+}
+
+.compete-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  padding: 1.15rem 1.15rem 1.05rem;
+  box-shadow: 0 18px 40px rgba(24, 21, 15, 0.07);
+  transition: transform 0.25s var(--ease), border-color 0.25s var(--ease), box-shadow 0.25s var(--ease);
+}
+
+.compete-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(62, 107, 74, 0.28);
+  box-shadow: 0 22px 48px rgba(24, 21, 15, 0.11);
+}
+
+.compete-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.85rem;
+}
+
+.compete-sim {
+  font-size: 0.55rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--amber);
+  border: 1px solid rgba(192, 120, 24, 0.4);
+  padding: 0.25rem 0.45rem;
+  border-radius: 2px;
+}
+
+.compete-loc {
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #9b9b9b;
+}
+
+/* Portal PreferenceField paper */
+.compete-field {
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 0 0 1px var(--warm-light);
+  padding: 1.15rem 1.1rem 0.85rem;
+}
+
+.compete-field-kicker {
+  font-size: 0.58rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(24, 21, 15, 0.35);
+  margin: 0 0 0.35rem;
+}
+
+.compete-field-title {
+  font-family: var(--serif-app);
+  font-size: 1.35rem;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin: 0 0 0.2rem;
+}
+
+.compete-field-meta {
+  font-size: 0.78rem;
+  color: var(--ink-lighter);
+  margin: 0 0 0.85rem;
+}
+
+.compete-axis {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.58rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #9b9b9b;
+  margin: 0 0 0.35rem;
+  padding-left: calc(1.85rem + 0.65rem + min(42%, 9.5rem));
+}
+
+.compete-rank-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.compete-rank-row {
+  display: grid;
+  grid-template-columns: 1.85rem minmax(0, 42%) 1fr;
+  gap: 0.65rem;
+  align-items: center;
+  padding: 0.55rem 0.2rem;
+  border-radius: 4px;
+  min-height: 3.1rem;
+}
+
+.compete-rank-row.is-focal {
+  background: rgba(62, 107, 74, 0.07);
+}
+
+.compete-rank-n {
+  font-family: var(--serif-app);
+  font-variant-numeric: tabular-nums;
+  font-size: 1.15rem;
+  text-align: right;
+  color: rgba(24, 21, 15, 0.32);
+  letter-spacing: -0.02em;
+}
+
+.compete-rank-row.is-top .compete-rank-n {
+  color: var(--ink);
+}
+
+.compete-rank-body {
+  min-width: 0;
+}
+
+.compete-rank-name-row {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-width: 0;
+}
+
+.compete-rank-name {
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.compete-rank-chip {
+  flex-shrink: 0;
+  font-size: 0.52rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--sage);
+  background: rgba(62, 107, 74, 0.1);
+  border-radius: 99px;
+  padding: 0.18rem 0.4rem;
+}
+
+.compete-rank-brand {
+  font-size: 0.7rem;
+  color: var(--ink-lighter);
+  margin-top: 0.12rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.compete-elo {
+  position: relative;
+  height: 1.65rem;
+  display: flex;
+  align-items: center;
+}
+
+.compete-elo-track {
+  position: absolute;
+  inset: 50% 0 auto;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.08);
+  transform: translateY(-50%);
+}
+
+.compete-elo-dot {
+  position: absolute;
+  top: 50%;
+  width: 0.72rem;
+  height: 0.72rem;
+  border-radius: 50%;
+  background: var(--ink);
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 0 2px #fff;
+}
+
+.compete-rank-row.is-focal .compete-elo-dot {
+  background: var(--sage);
+  width: 0.85rem;
+  height: 0.85rem;
+}
+
+.compete-elo-num {
+  margin-left: auto;
+  font-family: var(--serif-app);
+  font-variant-numeric: tabular-nums;
+  font-size: 0.95rem;
+  color: var(--ink-light);
+  padding-left: 0.5rem;
+  position: relative;
+  z-index: 1;
+  background: linear-gradient(90deg, transparent, #fff 30%);
+}
+
+.compete-rank-row.is-focal .compete-elo-num {
+  color: var(--sage);
+  font-weight: 500;
+}
+
+.compete-card-foot {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-top: 0.85rem;
+  padding: 0.85rem 0.15rem 0.75rem;
+  font-size: 0.8rem;
+  color: var(--ink-light);
+  line-height: 1.4;
+}
+
+.compete-card-foot b {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.compete-card-go {
+  display: inline-block;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--sage);
+  font-weight: 500;
+  padding: 0 0.15rem;
+}
+
+.compete-card:hover .compete-card-go {
+  color: var(--field);
+}
+
+@media (max-width: 900px) {
+  .offer-hero.is-standing {
+    padding-top: 4.5rem;
+  }
+  .compete-card {
+    max-width: 28rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .compete-card,
+  .compete-card:hover {
+    transition: none;
+    transform: none;
+  }
+}

@@ -24,7 +24,7 @@ Every factual claim on the site must trace here. If it is not on this list, it d
 | Workspace frames embed live portal marketing previews (`/marketing/workspace/*`) with fixture data | Brand portal public preview routes |
 | Box studies page embeds `/marketing/workspace/box-preview` (cropped experienced report) with link to full `/box-report` | Portal `ExperiencedReportDeck` preview variant + marketing fixture |
 | Concept tests page mirrors box studies layout and embeds `/marketing/workspace/report` | Portal concept report marketing route |
-| Compete page uses the same offer layout and embeds `/marketing/workspace/home` | Portal brand-home marketing route |
+| Compete page sells claim catalog → category PreferenceField ranking from head-to-heads (Elo field); hero mimics portal preference ranking chrome with simulated fixture (not invented Signal/Gaining tiles); embeds `/marketing/workspace/home` | Portal PreferenceField / brand home; fixture labeled Simulated |
 | Homepage sells already-logged preference (head start), why-brands-switch, decision list, and honest simulated proof | Positioning; box to similar-raters; no invented #N-of-M ranks |
 | Method page is a visual rulebook: result-rule diagrams, who-controls-what, Keel one-miss, bar types, freeze, standing vs study | Same words as the report; example report simulated |
 | Shoppers page sells NYC panel as people who already scan and rank in-app; hero mimics app ListDetail chrome (My List tabs, champion/also-ranked, Tried, simulated personal Elo) as a labeled fixture — not a live brand standing or population Elo; concept = same act; box = similar-raters; no national claim | Truth: NYC first panel; box to similar-raters; personal fixture labeled Simulated |
