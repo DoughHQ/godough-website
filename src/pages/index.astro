@@ -78,29 +78,57 @@ import CtaBand from '../components/CtaBand.astro';
     </div>
   </section>
 
-  <section class="section mid">
-    <p class="section-label">Not this</p>
-    <h2 class="section-headline sell">What Dough is not — and what it is.</h2>
-    <div class="contrast-grid">
-      <div class="contrast-col is-not">
-        <p class="contrast-eyebrow">Not Dough</p>
-        <ul class="contrast-list">
-          <li>Survey scales and “likelihood to buy” soft landings</li>
-          <li>Focus groups that never see your actual SKU</li>
-          <li>IHUT panels of strangers who’ve never chosen in your category</li>
-          <li>Decks that always find a reason to ship</li>
-        </ul>
-      </div>
-      <div class="contrast-col is-yes">
-        <p class="contrast-eyebrow">Dough</p>
-        <ul class="contrast-list">
-          <li>Head-to-head picks on real grocery products</li>
-          <li>Standings only where enough shoppers have chosen</li>
-          <li>Concept and box against that same preference world</li>
-          <li>Reports with four verdicts — including not cleared</li>
-        </ul>
-      </div>
+  <section class="why-close" id="why" aria-labelledby="why-headline">
+    <div class="why-close-copy">
+      <p class="why-label">Why brands switch</p>
+      <h2 id="why-headline" class="why-headline">
+        You don’t need another study that finds a reason to ship.
+      </h2>
+      <p class="why-sub">
+        You need New York shoppers picking between real products — and a report that can tell you to stop.
+      </p>
     </div>
+
+    <p class="why-old-strip" aria-label="What you’re leaving">
+      <span>Likelihood-to-buy scores</span>
+      <span aria-hidden="true">·</span>
+      <span>Focus groups that never see your SKU</span>
+      <span aria-hidden="true">·</span>
+      <span>Stranger IHUT panels</span>
+      <span aria-hidden="true">·</span>
+      <span>Decks that always say go</span>
+    </p>
+
+    <ol class="why-punches">
+      <li>
+        <span class="why-fear">“We got a 7.2 likelihood to buy.”</span>
+        <strong>A pick, not a score.</strong>
+        <span class="why-line">Two real grocery products. One choice. Enough picks become a standing — only where the signal is thick enough.</span>
+      </li>
+      <li>
+        <span class="why-fear">“The panel never saw our bottle.”</span>
+        <strong>Your shelf, not a mock.</strong>
+        <span class="why-line">600k+ indexed SKUs. Shoppers battle the living catalog — then concept and box against that same world. No handoff to strangers.</span>
+      </li>
+      <li>
+        <span class="why-fear">“The deck always finds a reason to ship.”</span>
+        <strong>We’ll tell you not to print it.</strong>
+        <span class="why-line">You set the bars before anyone starts. Cleared only when the whole 95% interval clears. One miss fails the study.</span>
+      </li>
+    </ol>
+
+    <aside class="why-verdict">
+      <div class="why-verdict-chips" aria-label="Four verdicts">
+        <span class="verdict-chip cleared">Cleared</span>
+        <span class="verdict-chip not_cleared">Not cleared</span>
+        <span class="verdict-chip too_close_to_call">Too close to call</span>
+        <span class="verdict-chip not_enough_responses">Not enough responses</span>
+      </div>
+      <p class="why-verdict-body">
+        Four verdicts. No soft landings. Under ten answers is not a result.
+        <a href="/report/example">See the report that said no →</a>
+      </p>
+    </aside>
   </section>
 
   <section class="section">
@@ -132,10 +160,10 @@ import CtaBand from '../components/CtaBand.astro';
   </section>
 
   <section class="section field" id="world">
-    <p class="section-label">The wedge</p>
-    <h2 class="section-headline sell">One shopper world. Three ways to ask.</h2>
+    <p class="section-label">Same world end to end</p>
+    <h2 class="section-headline sell">Compete. Concept. Box. No panel handoff.</h2>
     <p class="section-body">
-      Everyday battles in the app become standings. A concept study asks a sharper question on a screen. A box study asks after they’ve used it at home. Same New York shoppers. Same catalog. No handoff to a different panel.
+      Everyday battles become standings. A concept asks on a screen. A box asks after they’ve used it at home. Same New York shoppers. Same catalog.
     </p>
     <ol class="world-chain">
       <li>
@@ -146,7 +174,7 @@ import CtaBand from '../components/CtaBand.astro';
       <li>
         <span class="world-n">02</span>
         <strong>Concept</strong>
-        <span>Bars you freeze before anyone starts</span>
+        <span>Bars frozen before anyone starts</span>
       </li>
       <li>
         <span class="world-n">03</span>
@@ -154,26 +182,6 @@ import CtaBand from '../components/CtaBand.astro';
         <span>Use at home, then choose again</span>
       </li>
     </ol>
-  </section>
-
-  <section class="section mid">
-    <p class="section-label">The differentiator</p>
-    <h2 class="section-headline sell">A report that can say no</h2>
-    <p class="section-body">
-      Four verdicts. No soft landings. A bar clears only when the whole 95% interval sits on the right side of the line you set. One missed bar fails the study. Fewer than ten answers is not a result.
-    </p>
-    <div class="chip-row">
-      <span class="verdict-chip cleared">Cleared</span>
-      <span class="verdict-chip not_cleared">Not cleared</span>
-      <span class="verdict-chip too_close_to_call">Too close to call</span>
-      <span class="verdict-chip not_enough_responses">Not enough responses</span>
-    </div>
-    <div class="hero-actions" style="margin-top: 2rem;">
-      <a class="btn-primary on-cream" href="/report/example">
-        Read the example report <span class="arr" aria-hidden="true">→</span>
-      </a>
-      <a class="btn-ghost on-cream" href="/report/reading-a-verdict">How to read a verdict</a>
-    </div>
   </section>
 
   <section class="section" id="how">
@@ -487,75 +495,182 @@ import CtaBand from '../components/CtaBand.astro';
     letter-spacing: -0.025em;
   }
 
-  /* Not this / Dough */
-  .contrast-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1px;
-    margin-top: 2.5rem;
-    background: var(--warm-light);
-    border: 1px solid var(--warm-light);
+  /* Why brands switch — hard close, Dough dominates */
+  .why-close {
+    padding: clamp(3.5rem, 7vw, 5.5rem) var(--page-pad) clamp(3.25rem, 6vw, 4.75rem);
+    background:
+      radial-gradient(ellipse 70% 55% at 90% 10%, rgba(62, 107, 74, 0.38), transparent 55%),
+      radial-gradient(ellipse 40% 35% at 0% 100%, rgba(184, 144, 106, 0.12), transparent 50%),
+      linear-gradient(165deg, #1a221c 0%, var(--field) 45%, #0e1210 100%);
+    color: var(--cream);
+    position: relative;
+    overflow: hidden;
   }
 
-  .contrast-col {
-    padding: 1.85rem 1.75rem;
-    background: var(--cream);
+  .why-close::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+    opacity: 0.35;
+    pointer-events: none;
+    mix-blend-mode: overlay;
   }
 
-  .contrast-col.is-yes {
-    background: var(--cream-mid);
+  .why-close-copy,
+  .why-old-strip,
+  .why-punches,
+  .why-verdict {
+    position: relative;
+    z-index: 1;
   }
 
-  .contrast-eyebrow {
-    font-size: 0.62rem;
-    letter-spacing: 0.18em;
+  .why-label {
+    font-size: 0.66rem;
+    letter-spacing: 0.24em;
     text-transform: uppercase;
+    color: var(--warm);
     margin-bottom: 1.15rem;
   }
 
-  .contrast-col.is-not .contrast-eyebrow {
-    color: var(--ink-lighter);
+  .why-headline {
+    font-family: var(--sans);
+    font-size: clamp(1.75rem, 3.6vw, 2.65rem);
+    font-weight: 600;
+    font-style: normal;
+    letter-spacing: -0.025em;
+    line-height: 1.15;
+    max-width: 18ch;
+    color: var(--cream);
+    margin-bottom: 1.15rem;
   }
 
-  .contrast-col.is-yes .contrast-eyebrow {
-    color: var(--sage);
+  .why-sub {
+    font-size: clamp(1.02rem, 1.5vw, 1.15rem);
+    font-weight: 300;
+    line-height: 1.55;
+    color: rgba(250, 248, 243, 0.82);
+    max-width: 42ch;
+    margin-bottom: 2.25rem;
   }
 
-  .contrast-list {
+  .why-old-strip {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.55rem 0.75rem;
+    padding: 1rem 0 1.75rem;
+    border-top: 1px solid rgba(250, 248, 243, 0.12);
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    color: rgba(250, 248, 243, 0.42);
+    text-decoration: line-through;
+    text-decoration-color: rgba(250, 248, 243, 0.28);
+  }
+
+  .why-punches {
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 0.95rem;
+    gap: 0;
+    max-width: 52rem;
   }
 
-  .contrast-list li {
-    font-size: 0.98rem;
-    line-height: 1.45;
-    color: var(--ink);
-    padding-left: 1.1rem;
-    position: relative;
+  .why-punches li {
+    padding: 1.65rem 0;
+    border-top: 1px solid rgba(250, 248, 243, 0.12);
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.35rem;
   }
 
-  .contrast-col.is-not .contrast-list li {
-    color: var(--ink-light);
+  .why-punches li:last-child {
+    border-bottom: 1px solid rgba(250, 248, 243, 0.12);
   }
 
-  .contrast-list li::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0.55rem;
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
+  .why-fear {
+    font-size: 0.88rem;
+    font-style: italic;
+    color: rgba(250, 248, 243, 0.48);
+    margin-bottom: 0.35rem;
   }
 
-  .contrast-col.is-not .contrast-list li::before {
-    background: var(--warm-light);
+  .why-punches strong {
+    font-family: var(--sans);
+    font-size: clamp(1.35rem, 2.2vw, 1.65rem);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--cream);
+    line-height: 1.2;
   }
 
-  .contrast-col.is-yes .contrast-list li::before {
-    background: var(--sage);
+  .why-line {
+    font-size: 1rem;
+    line-height: 1.55;
+    color: rgba(250, 248, 243, 0.78);
+    max-width: 48ch;
+    margin-top: 0.25rem;
+  }
+
+  .why-verdict {
+    margin-top: 2.5rem;
+    padding: 1.5rem 1.65rem;
+    background: rgba(250, 248, 243, 0.05);
+    border: 1px solid rgba(250, 248, 243, 0.12);
+    border-radius: 14px;
+    max-width: 52rem;
+  }
+
+  .why-verdict-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+    margin-bottom: 1rem;
+  }
+
+  .why-verdict :global(.verdict-chip) {
+    border-color: rgba(250, 248, 243, 0.2);
+  }
+
+  .why-verdict :global(.verdict-chip.cleared) {
+    color: #b8d4c0;
+    background: rgba(184, 212, 192, 0.12);
+  }
+
+  .why-verdict :global(.verdict-chip.not_cleared) {
+    color: #f0b4a8;
+    background: rgba(240, 180, 168, 0.12);
+  }
+
+  .why-verdict :global(.verdict-chip.too_close_to_call) {
+    color: #e0c4a0;
+    background: rgba(224, 196, 160, 0.12);
+  }
+
+  .why-verdict :global(.verdict-chip.not_enough_responses) {
+    color: rgba(250, 248, 243, 0.7);
+    background: rgba(250, 248, 243, 0.08);
+  }
+
+  .why-verdict-body {
+    font-size: 0.95rem;
+    line-height: 1.55;
+    color: rgba(250, 248, 243, 0.78);
+    margin: 0;
+  }
+
+  .why-verdict-body a {
+    display: inline-block;
+    margin-left: 0.35rem;
+    color: #e0c4a0;
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+  }
+
+  .why-verdict-body a:hover {
+    color: #f0d8b8;
+    text-decoration: underline;
   }
 
   /* Decision list — buyer frame */
@@ -654,13 +769,6 @@ import CtaBand from '../components/CtaBand.astro';
     line-height: 1.45;
   }
 
-  .chip-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.65rem;
-    margin-top: 1.75rem;
-  }
-
   .how-grid {
     display: grid;
     grid-template-columns: minmax(0, 480px) minmax(0, 1fr);
@@ -749,7 +857,7 @@ import CtaBand from '../components/CtaBand.astro';
     .proof-item:nth-child(2) {
       border-bottom: 1px solid rgba(250, 248, 243, 0.08);
     }
-    .contrast-grid { grid-template-columns: 1fr; }
+    .why-headline { max-width: 22ch; }
     .decision-list a {
       grid-template-columns: 1fr;
       gap: 0.4rem;
