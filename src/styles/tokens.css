@@ -12,7 +12,9 @@
   --field-mid: #24322a;
   --sage: #3e6b4a;
   --serif: 'Cormorant Garamond', Georgia, serif;
+  --serif-app: 'DM Serif Display', 'Cormorant Garamond', Georgia, serif;
   --sans: 'DM Sans', system-ui, sans-serif;
+  --amber: #C07818;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
   --page-pad: clamp(1.5rem, 4vw, 4rem);
   --measure: 42ch;

@@ -28,63 +28,96 @@ import '../styles/offer-product.css';
     <a class="shop-hero-card" href="#ahead" aria-label="Simulated shopper ranking — why this panel is different">
       <div class="shop-hero-card-top">
         <span class="shop-hero-sim">Simulated</span>
-        <span class="shop-hero-loc">New York shopper</span>
+        <span class="shop-hero-loc">As in the Dough app</span>
       </div>
-      <p class="shop-hero-card-title">Her flavored water</p>
-      <p class="shop-hero-card-meta">My list · 24 battles · ordinary app picks</p>
 
-      <div class="shop-rank">
+      <div class="shop-app" aria-hidden="true">
+        <p class="shop-app-crumb">Drinks</p>
+        <p class="shop-app-title">
+          <span class="shop-app-title-dark">Flavored</span>
+          <span class="shop-app-title-sage"> water</span>
+        </p>
+        <div class="shop-app-level">
+          <span class="shop-app-ranked">5 ranked</span>
+          <span class="shop-app-level-pill">Level 2</span>
+        </div>
+        <div class="shop-app-track" role="presentation">
+          <span class="shop-app-track-fill" style="width: 62%"></span>
+        </div>
+        <p class="shop-app-level-hint">3 loops to Level 3 · Friends unlocks</p>
+
+        <div class="shop-app-tabs">
+          <span class="is-on">My List</span>
+          <span>Explore</span>
+          <span class="is-lock"><span class="shop-app-lock" aria-hidden="true"></span>Friends<span class="shop-app-tab-hint">Level 3</span></span>
+          <span class="is-lock"><span class="shop-app-lock" aria-hidden="true"></span>NYC<span class="shop-app-tab-hint">Level 4</span></span>
+        </div>
+
         <p class="shop-rank-champ-label">Champion</p>
         <div class="shop-rank-row is-champ">
-          <span class="shop-rank-n" aria-hidden="true">1</span>
-          <span class="shop-rank-thumb" aria-hidden="true">
-            <img src="/demo/product-a.svg" alt="" width="40" height="40" />
+          <span class="shop-rank-n r1">1</span>
+          <span class="shop-rank-thumb">
+            <img src="/demo/product-a.svg" alt="" width="52" height="72" />
           </span>
           <span class="shop-rank-body">
             <span class="shop-rank-name">Keel Lemon Water</span>
-            <span class="shop-rank-meta">14 battles</span>
+            <span class="shop-rank-state">
+              <span class="shop-rank-tried"><span class="shop-rank-check"></span>Tried</span>
+              <span class="shop-rank-elo">1542</span>
+            </span>
           </span>
-          <span class="shop-rank-tried">Tried</span>
         </div>
 
-        <p class="shop-rank-also">Also ranked</p>
+        <div class="shop-rank-also">
+          <span>Also ranked</span>
+          <span class="shop-rank-also-rule"></span>
+        </div>
         <ul class="shop-rank-list">
           <li class="shop-rank-row">
-            <span class="shop-rank-n" aria-hidden="true">2</span>
-            <span class="shop-rank-thumb is-b" aria-hidden="true">
-              <img src="/demo/product-b.svg" alt="" width="40" height="40" />
+            <span class="shop-rank-n r2">2</span>
+            <span class="shop-rank-thumb is-b">
+              <img src="/demo/product-b.svg" alt="" width="52" height="72" />
             </span>
             <span class="shop-rank-body">
               <span class="shop-rank-name">Rivermark Sparkling</span>
-              <span class="shop-rank-meta">11 battles</span>
+              <span class="shop-rank-state">
+                <span class="shop-rank-tried"><span class="shop-rank-check"></span>Tried</span>
+                <span class="shop-rank-elo">1488</span>
+              </span>
             </span>
-            <span class="shop-rank-tried">Tried</span>
           </li>
           <li class="shop-rank-row">
-            <span class="shop-rank-n" aria-hidden="true">3</span>
-            <span class="shop-rank-thumb is-letter" aria-hidden="true" data-letter="N"></span>
+            <span class="shop-rank-n r3">3</span>
+            <span class="shop-rank-thumb is-letter" data-letter="N"></span>
             <span class="shop-rank-body">
               <span class="shop-rank-name">Northveil Citrus</span>
-              <span class="shop-rank-meta">9 battles</span>
+              <span class="shop-rank-state">
+                <span class="shop-rank-tried"><span class="shop-rank-check"></span>Tried</span>
+                <span class="shop-rank-elo">1410</span>
+              </span>
             </span>
-            <span class="shop-rank-tried">Tried</span>
           </li>
           <li class="shop-rank-row">
-            <span class="shop-rank-n" aria-hidden="true">4</span>
-            <span class="shop-rank-thumb is-letter is-mute" aria-hidden="true" data-letter="H"></span>
+            <span class="shop-rank-n r4">4</span>
+            <span class="shop-rank-thumb is-letter is-mute" data-letter="H"></span>
             <span class="shop-rank-body">
               <span class="shop-rank-name">Harbor Clear</span>
-              <span class="shop-rank-meta">6 battles</span>
+              <span class="shop-rank-state">
+                <span class="shop-rank-not">Not tried</span>
+                <span class="shop-rank-elo">1364</span>
+              </span>
             </span>
           </li>
           <li class="shop-rank-row">
-            <span class="shop-rank-n" aria-hidden="true">5</span>
-            <span class="shop-rank-thumb is-letter is-atlas" aria-hidden="true" data-letter="A"></span>
+            <span class="shop-rank-n r5">5</span>
+            <span class="shop-rank-thumb is-letter is-atlas" data-letter="A"></span>
             <span class="shop-rank-body">
               <span class="shop-rank-name">Atlas Lime</span>
-              <span class="shop-rank-meta">4 battles</span>
+              <span class="shop-rank-state">
+                <span class="shop-rank-tried"><span class="shop-rank-check"></span>Tried</span>
+                <span class="shop-rank-elo">1298</span>
+              </span>
             </span>
-            <span class="shop-rank-tried">Tried</span>
           </li>
         </ul>
       </div>
@@ -261,126 +294,246 @@ import '../styles/offer-product.css';
     text-decoration: none;
     color: inherit;
     background: #fff;
-    border: 1px solid var(--warm-light);
-    border-radius: 16px;
-    padding: 1.35rem 1.4rem 1.25rem;
-    box-shadow: 0 18px 40px rgba(24, 21, 15, 0.06);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 18px;
+    padding: 1rem 1rem 1.15rem;
+    box-shadow: 0 18px 40px rgba(24, 21, 15, 0.07);
     transition: transform 0.25s var(--ease), border-color 0.25s var(--ease), box-shadow 0.25s var(--ease);
   }
 
   .shop-hero-card:hover {
     transform: translateY(-3px);
     border-color: rgba(62, 107, 74, 0.28);
-    box-shadow: 0 22px 48px rgba(24, 21, 15, 0.1);
+    box-shadow: 0 22px 48px rgba(24, 21, 15, 0.11);
   }
 
   .shop-hero-card-top {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 0.85rem;
+    margin-bottom: 0.75rem;
+    padding: 0 0.15rem;
   }
 
   .shop-hero-sim {
     font-size: 0.55rem;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(--warm);
-    border: 1px solid rgba(184, 144, 106, 0.45);
+    color: var(--amber);
+    border: 1px solid rgba(192, 120, 24, 0.4);
     padding: 0.25rem 0.45rem;
     border-radius: 2px;
   }
 
   .shop-hero-loc {
     font-size: 0.62rem;
-    letter-spacing: 0.14em;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--ink-lighter);
+    color: #9b9b9b;
   }
 
-  .shop-hero-card-title {
-    font-family: var(--serif);
-    font-size: clamp(1.45rem, 2.4vw, 1.85rem);
-    letter-spacing: -0.02em;
-    margin: 0 0 0.25rem;
-    color: var(--ink);
+  .shop-app {
+    background: #faf8f3;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 14px;
+    padding: 0.85rem 0.55rem 0.55rem;
+    margin-bottom: 0.15rem;
   }
 
-  .shop-hero-card-meta {
-    font-size: 0.78rem;
-    color: var(--ink-lighter);
-    margin: 0 0 1rem;
+  .shop-app-crumb {
+    font-size: 0.72rem;
+    color: #6b6b6b;
+    margin: 0 0.65rem 0.15rem;
   }
 
-  .shop-rank {
-    border-top: 1px solid var(--warm-light);
-    padding-top: 0.85rem;
-    margin-bottom: 0.35rem;
+  .shop-app-title {
+    font-family: var(--serif-app);
+    font-size: 1.55rem;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    margin: 0 0.65rem 0.55rem;
+    font-weight: 400;
   }
 
-  .shop-rank-champ-label,
-  .shop-rank-also {
+  .shop-app-title-dark { color: #1a1a1a; }
+  .shop-app-title-sage { color: #3e6b4a; }
+
+  .shop-app-level {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 0.65rem 0.35rem;
+  }
+
+  .shop-app-ranked { font-size: 0.78rem; color: #1a1a1a; }
+
+  .shop-app-level-pill {
+    background: #3e6b4a;
+    color: #fff;
+    font-size: 0.66rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    padding: 0.18rem 0.5rem;
+    border-radius: 99px;
+  }
+
+  .shop-app-track {
+    height: 3px;
+    border-radius: 99px;
+    background: rgba(62, 107, 74, 0.12);
+    overflow: hidden;
+    margin: 0 0.65rem 0.3rem;
+  }
+
+  .shop-app-track-fill {
+    display: block;
+    height: 100%;
+    background: #3e6b4a;
+    border-radius: 99px;
+  }
+
+  .shop-app-level-hint {
+    font-size: 0.66rem;
+    color: #6b6b6b;
+    margin: 0 0.65rem 0.7rem;
+  }
+
+  .shop-app-tabs {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4px;
+    margin: 0 0.35rem 0.85rem;
+  }
+
+  .shop-app-tabs > span {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1px;
+    min-height: 2.35rem;
+    padding: 0.28rem 0.15rem;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.14);
+    background: #faf8f3;
     font-size: 0.58rem;
-    letter-spacing: 0.16em;
+    font-weight: 600;
+    color: #6b6b6b;
+    text-align: center;
+    line-height: 1.15;
+  }
+
+  .shop-app-tabs > span.is-on {
+    background: #3e6b4a;
+    border-color: #3e6b4a;
+    color: #fff;
+  }
+
+  .shop-app-tabs > span.is-lock {
+    opacity: 0.72;
+    color: #9b9b9b;
+  }
+
+  .shop-app-lock {
+    display: block;
+    width: 8px;
+    height: 9px;
+    margin-bottom: 1px;
+    border: 1.5px solid #9b9b9b;
+    border-radius: 2px 2px 1px 1px;
+    position: relative;
+  }
+
+  .shop-app-lock::before {
+    content: '';
+    position: absolute;
+    left: 1px;
+    top: -4px;
+    width: 4px;
+    height: 4px;
+    border: 1.5px solid #9b9b9b;
+    border-bottom: none;
+    border-radius: 4px 4px 0 0;
+  }
+
+  .shop-app-tab-hint {
+    font-size: 0.48rem;
+    font-weight: 400;
+    color: #9b9b9b;
+  }
+
+  .shop-rank-champ-label {
+    font-size: 0.58rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
     text-transform: uppercase;
-    color: var(--warm);
-    margin: 0 0 0.35rem;
-    font-weight: 500;
+    color: var(--amber);
+    margin: 0 0.65rem 0.15rem;
   }
 
   .shop-rank-also {
-    margin-top: 0.85rem;
-    margin-bottom: 0.2rem;
-    color: var(--ink-lighter);
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    margin: 0.7rem 0.65rem 0.2rem;
+    font-size: 0.66rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #9b9b9b;
   }
 
-  .shop-rank-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  .shop-rank-also-rule {
+    flex: 1;
+    height: 1px;
+    background: rgba(0, 0, 0, 0.1);
   }
+
+  .shop-rank-list { list-style: none; margin: 0; padding: 0; }
 
   .shop-rank-row {
     display: grid;
-    grid-template-columns: 1.65rem 2.5rem minmax(0, 1fr) auto;
+    grid-template-columns: 2rem 2.85rem minmax(0, 1fr);
     gap: 0.55rem;
-    align-items: center;
-    padding: 0.45rem 0;
-    border-bottom: 1px solid var(--warm-light);
+    align-items: stretch;
+    padding: 0.55rem 0.45rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    min-height: 4.6rem;
   }
 
-  .shop-rank-list .shop-rank-row:last-child {
-    border-bottom: none;
-  }
+  .shop-rank-list .shop-rank-row:last-child { border-bottom: none; }
 
   .shop-rank-row.is-champ {
-    padding: 0.35rem 0 0.65rem;
-    border-bottom: 1px solid var(--warm-light);
+    padding-top: 0.35rem;
+    padding-bottom: 0.65rem;
   }
 
   .shop-rank-n {
-    font-family: var(--serif);
+    font-family: var(--serif-app);
     font-variant-numeric: tabular-nums;
-    font-size: 1.15rem;
+    font-size: 1.55rem;
     line-height: 1;
     text-align: center;
-    color: var(--ink-lighter);
+    align-self: center;
+    font-weight: 400;
   }
 
-  .shop-rank-row.is-champ .shop-rank-n {
-    font-size: 2.15rem;
-    color: var(--warm);
-    letter-spacing: -0.03em;
-  }
+  .shop-rank-n.r1 { font-size: 2rem; color: #c07818; }
+  .shop-rank-n.r2 { color: rgba(62, 107, 74, 0.48); }
+  .shop-rank-n.r3 { color: rgba(62, 107, 74, 0.34); }
+  .shop-rank-n.r4 { color: rgba(62, 107, 74, 0.24); }
+  .shop-rank-n.r5 { color: rgba(62, 107, 74, 0.16); }
 
   .shop-rank-thumb {
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 8px;
+    width: 2.85rem;
+    height: 3.9rem;
+    border-radius: 10px;
     overflow: hidden;
-    background: #151E18;
+    background: #efebe2;
+    border: 1px solid rgba(36, 61, 44, 0.06);
     display: grid;
     place-items: center;
+    align-self: center;
     flex-shrink: 0;
   }
 
@@ -391,75 +544,106 @@ import '../styles/offer-product.css';
     display: block;
   }
 
-  .shop-rank-thumb.is-b {
-    background: #2a2218;
-  }
-
+  .shop-rank-thumb.is-b { background: #2a2218; }
+  .shop-rank-thumb.is-letter { background: rgba(62, 107, 74, 0.04); }
   .shop-rank-thumb.is-letter::before {
     content: attr(data-letter);
-    font-family: var(--serif);
-    font-size: 1.1rem;
-    color: rgba(250, 248, 243, 0.88);
+    font-family: var(--serif-app);
+    font-size: 1.25rem;
+    color: rgba(62, 107, 74, 0.32);
   }
-
-  .shop-rank-thumb.is-letter {
-    background: #24322a;
-  }
-
-  .shop-rank-thumb.is-mute {
-    background: #3a3330;
-  }
-
-  .shop-rank-thumb.is-atlas {
-    background: #1e2a32;
-  }
+  .shop-rank-thumb.is-mute { background: rgba(0, 0, 0, 0.04); }
+  .shop-rank-thumb.is-mute::before { color: rgba(0, 0, 0, 0.22); }
+  .shop-rank-thumb.is-atlas { background: rgba(30, 42, 50, 0.08); }
+  .shop-rank-thumb.is-atlas::before { color: rgba(30, 42, 50, 0.4); }
 
   .shop-rank-body {
     display: flex;
     flex-direction: column;
-    gap: 0.12rem;
+    justify-content: space-between;
     min-width: 0;
+    padding: 0.1rem 0 0.05rem;
   }
 
   .shop-rank-name {
     font-size: 0.88rem;
-    font-weight: 600;
-    letter-spacing: -0.015em;
-    color: var(--ink);
-    white-space: nowrap;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: #1a1f1b;
+    line-height: 1.2;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
     overflow: hidden;
-    text-overflow: ellipsis;
   }
 
-  .shop-rank-row.is-champ .shop-rank-name {
-    font-size: 0.95rem;
+  .shop-rank-row.is-champ .shop-rank-name { font-size: 0.95rem; }
+
+  .shop-rank-state {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 0.5rem;
+    margin-top: 0.45rem;
   }
 
-  .shop-rank-meta {
-    font-size: 0.7rem;
-    color: var(--ink-lighter);
+  .shop-rank-tried,
+  .shop-rank-not {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.28rem;
+    font-size: 0.72rem;
+    font-weight: 500;
   }
 
-  .shop-rank-tried {
-    font-size: 0.55rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--sage);
-    border: 1px solid rgba(62, 107, 74, 0.28);
-    background: rgba(62, 107, 74, 0.06);
-    padding: 0.22rem 0.4rem;
-    border-radius: 99px;
+  .shop-rank-tried { color: #3e6b4a; }
+  .shop-rank-not { color: #98a49b; }
+
+  .shop-rank-check {
+    width: 0.7rem;
+    height: 0.7rem;
+    border-radius: 50%;
+    background: #3e6b4a;
+    position: relative;
+    flex-shrink: 0;
+  }
+
+  .shop-rank-check::after {
+    content: '';
+    position: absolute;
+    left: 0.18rem;
+    top: 0.1rem;
+    width: 0.22rem;
+    height: 0.38rem;
+    border: solid #fff;
+    border-width: 0 1.5px 1.5px 0;
+    transform: rotate(45deg);
+  }
+
+  .shop-rank-not::before {
+    content: '';
+    width: 0.7rem;
+    height: 0.7rem;
+    border-radius: 50%;
+    border: 1.5px solid #98a49b;
+    flex-shrink: 0;
+  }
+
+  .shop-rank-elo {
+    font-size: 0.88rem;
     font-weight: 600;
-    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.02em;
+    color: #6e7c71;
+    line-height: 1;
   }
 
   .shop-hero-foot {
     display: flex;
     flex-direction: column;
     gap: 0.35rem;
-    padding: 0.95rem 0 1rem;
-    border-top: 1px solid var(--warm-light);
-    margin-top: 0.35rem;
+    padding: 0.95rem 0.25rem 0.95rem;
+    margin-top: 0.55rem;
     font-size: 0.8rem;
     color: var(--ink-light);
     line-height: 1.4;
@@ -477,6 +661,7 @@ import '../styles/offer-product.css';
     text-transform: uppercase;
     color: var(--sage);
     font-weight: 500;
+    padding: 0 0.25rem;
   }
 
   .shop-hero-card:hover .shop-hero-go {
