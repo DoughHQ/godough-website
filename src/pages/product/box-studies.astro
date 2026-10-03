@@ -29,36 +29,39 @@ const BOX_FULL = 'https://brands.godough.co/marketing/workspace/box-report'
       </div>
     </div>
 
-    <div class="box-hero-visual" aria-hidden="true">
-      <div class="journey">
-        <div class="journey-step">
-          <span class="journey-n">01</span>
-          <div class="journey-card door">
-            <span class="journey-icon"></span>
-            <strong>Ship</strong>
-            <em>To similar raters</em>
-          </div>
+    <a class="box-hero-visual payoff" href="#report">
+      <div class="payoff-top">
+        <span class="payoff-sim">Simulated</span>
+        <span class="payoff-brand">Keel Still</span>
+      </div>
+      <p class="payoff-product">Keel Still 1L</p>
+      <p class="payoff-meta">64 New York shoppers · after use at home</p>
+
+      <div class="payoff-metrics">
+        <div class="payoff-metric">
+          <span class="payoff-label">Preference</span>
+          <span class="payoff-numeral">58</span>
+          <span class="payoff-unit">of 100</span>
+          <span class="payoff-track" aria-hidden="true">
+            <span class="payoff-track-fill" style="width: 58%"></span>
+          </span>
+          <span class="payoff-caption">Chosen after they used it</span>
         </div>
-        <span class="journey-arrow">→</span>
-        <div class="journey-step">
-          <span class="journey-n">02</span>
-          <div class="journey-card kitchen">
-            <span class="journey-icon"></span>
-            <strong>Use</strong>
-            <em>In a real kitchen</em>
-          </div>
-        </div>
-        <span class="journey-arrow">→</span>
-        <div class="journey-step">
-          <span class="journey-n">03</span>
-          <div class="journey-card pick">
-            <span class="journey-icon"></span>
-            <strong>Choose</strong>
-            <em>Get the feedback</em>
-          </div>
+        <div class="payoff-metric">
+          <span class="payoff-label">Would buy again</span>
+          <span class="payoff-numeral">47%</span>
+          <span class="payoff-unit">definite yes</span>
+          <span class="payoff-caption">72% yes or maybe · session 1</span>
         </div>
       </div>
-    </div>
+
+      <div class="payoff-drivers">
+        <span><b>Taste</b> led when they chose you</span>
+        <span><b>Price</b> led when they didn’t</span>
+      </div>
+
+      <span class="payoff-go">See the report preview ↓</span>
+    </a>
   </header>
 
   <section class="box-explain" aria-label="In five seconds">
@@ -194,79 +197,172 @@ const BOX_FULL = 'https://brands.godough.co/marketing/workspace/box-report'
 
   .box-actions { margin-top: 0.25rem; }
 
-  /* Hero journey visual */
-  .journey {
-    display: flex;
-    align-items: stretch;
-    gap: 0.65rem;
-    padding: 1.25rem;
-    background:
-      radial-gradient(ellipse 70% 80% at 80% 20%, rgba(62, 107, 74, 0.12), transparent 55%),
-      var(--field);
-    border-radius: 16px;
+  /* Hero payoff card — report fragment, not an iframe */
+  .box-hero-visual.payoff {
+    display: block;
+    text-decoration: none;
     color: var(--cream);
-    box-shadow: 0 22px 56px rgba(24, 21, 15, 0.14);
+    background:
+      radial-gradient(ellipse 80% 70% at 90% 0%, rgba(62, 107, 74, 0.45), transparent 55%),
+      radial-gradient(ellipse 50% 45% at 0% 100%, rgba(184, 144, 106, 0.16), transparent 50%),
+      linear-gradient(165deg, #24322a 0%, var(--field) 48%, #121816 100%);
+    border-radius: 18px;
+    padding: 1.65rem 1.75rem 1.5rem;
+    box-shadow: 0 28px 64px rgba(24, 21, 15, 0.18);
+    border: 1px solid rgba(250, 248, 243, 0.08);
+    transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease);
+    position: relative;
+    overflow: hidden;
   }
 
-  .journey-step {
-    flex: 1;
+  .box-hero-visual.payoff::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+    opacity: 0.35;
+    pointer-events: none;
+    mix-blend-mode: overlay;
+  }
+
+  .box-hero-visual.payoff:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 34px 72px rgba(24, 21, 15, 0.24);
+  }
+
+  .box-hero-visual.payoff > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .payoff-top {
     display: flex;
-    flex-direction: column;
-    gap: 0.45rem;
-    min-width: 0;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-bottom: 1.15rem;
   }
 
-  .journey-n {
+  .payoff-sim {
     font-size: 0.58rem;
     letter-spacing: 0.16em;
     text-transform: uppercase;
     color: var(--warm);
+    border: 1px solid rgba(184, 144, 106, 0.45);
+    padding: 0.28rem 0.55rem;
+    border-radius: 2px;
   }
 
-  .journey-card {
-    flex: 1;
-    border-radius: 12px;
-    padding: 1.1rem 0.85rem 1rem;
-    border: 1px solid rgba(250, 248, 243, 0.12);
+  .payoff-brand {
+    font-size: 0.62rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(250, 248, 243, 0.45);
+  }
+
+  .payoff-product {
+    font-family: var(--serif);
+    font-size: clamp(1.55rem, 2.4vw, 1.95rem);
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin: 0 0 0.35rem;
+  }
+
+  .payoff-meta {
+    font-size: 0.78rem;
+    color: rgba(250, 248, 243, 0.5);
+    margin: 0 0 1.5rem;
+  }
+
+  .payoff-metrics {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .payoff-metric {
     background: rgba(250, 248, 243, 0.06);
+    border: 1px solid rgba(250, 248, 243, 0.1);
+    border-radius: 12px;
+    padding: 1rem 1rem 0.95rem;
     display: flex;
     flex-direction: column;
-    gap: 0.25rem;
-    min-height: 7.5rem;
+    gap: 0.15rem;
   }
 
-  .journey-card.door { background: rgba(62, 107, 74, 0.28); }
-  .journey-card.kitchen { background: rgba(184, 144, 106, 0.18); }
-  .journey-card.pick { background: rgba(250, 248, 243, 0.1); }
-
-  .journey-icon {
-    width: 28px;
-    height: 28px;
-    border-radius: 8px;
-    margin-bottom: 0.55rem;
-    background: rgba(250, 248, 243, 0.16);
-    border: 1px solid rgba(250, 248, 243, 0.2);
+  .payoff-label {
+    font-size: 0.58rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(250, 248, 243, 0.45);
+    margin-bottom: 0.35rem;
   }
 
-  .journey-card strong {
-    font-family: var(--sans);
-    font-size: 0.95rem;
-    font-weight: 600;
-    letter-spacing: -0.01em;
+  .payoff-numeral {
+    font-family: var(--serif);
+    font-size: clamp(2.1rem, 3.5vw, 2.6rem);
+    font-weight: 400;
+    letter-spacing: -0.03em;
+    line-height: 1;
   }
 
-  .journey-card em {
-    font-style: normal;
-    font-size: 0.75rem;
+  .payoff-unit {
+    font-size: 0.72rem;
     color: rgba(250, 248, 243, 0.55);
+    margin-bottom: 0.55rem;
+  }
+
+  .payoff-track {
+    display: block;
+    height: 4px;
+    border-radius: 2px;
+    background: rgba(250, 248, 243, 0.12);
+    overflow: hidden;
+    margin: 0.25rem 0 0.55rem;
+  }
+
+  .payoff-track-fill {
+    display: block;
+    height: 100%;
+    background: #9db8a6;
+    border-radius: 2px;
+  }
+
+  .payoff-caption {
+    font-size: 0.72rem;
+    color: rgba(250, 248, 243, 0.5);
     line-height: 1.35;
   }
 
-  .journey-arrow {
-    align-self: center;
-    color: rgba(250, 248, 243, 0.35);
-    font-size: 1rem;
-    padding-top: 1.1rem;
+  .payoff-drivers {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+    padding: 0.85rem 0 1.15rem;
+    border-top: 1px solid rgba(250, 248, 243, 0.1);
+    font-size: 0.8rem;
+    color: rgba(250, 248, 243, 0.62);
+    line-height: 1.4;
+  }
+
+  .payoff-drivers b {
+    font-weight: 600;
+    color: var(--cream);
+  }
+
+  .payoff-go {
+    display: inline-block;
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--warm);
+    font-weight: 500;
+  }
+
+  .box-hero-visual.payoff:hover .payoff-go {
+    color: #d4b08a;
   }
 
   .box-explain {
@@ -465,9 +561,9 @@ const BOX_FULL = 'https://brands.godough.co/marketing/workspace/box-report'
       grid-template-columns: 1fr;
       padding-top: 6.5rem;
     }
-    .journey { flex-wrap: wrap; }
-    .journey-arrow { display: none; }
-    .journey-step { flex: 1 1 30%; min-width: 5.5rem; }
+    .box-hero-visual.payoff {
+      max-width: 28rem;
+    }
   }
 
   @media (max-width: 640px) {
@@ -479,6 +575,14 @@ const BOX_FULL = 'https://brands.godough.co/marketing/workspace/box-report'
     .box-beats li:last-child { border-bottom: none; }
     .when-list li { grid-template-columns: 1fr; gap: 0.35rem; }
     .box-contrast { grid-template-columns: 1fr; }
-    .journey-step { flex: 1 1 100%; }
+    .payoff-metrics { grid-template-columns: 1fr; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .box-hero-visual.payoff,
+    .box-hero-visual.payoff:hover {
+      transition: none;
+      transform: none;
+    }
   }
 </style>
