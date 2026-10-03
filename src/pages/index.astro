@@ -5,74 +5,94 @@ import CtaBand from '../components/CtaBand.astro';
 ---
 
 <BaseLayout
-  title="Dough — What New York actually picks"
-  description="Dough is a shopper app where New Yorkers compare real grocery products. Brands use those choices to see how they compete, test a concept, and learn from a box in a home."
+  title="Dough — Know how your product stacks up"
+  description="Dough captures how New York shoppers choose between real grocery products. Brands use those picks to compete, test a concept, and learn from a box in a home."
   navTheme="field"
   current="/"
 >
-  <header class="hero">
-    <div class="hero-inner">
-      <p class="hero-eyebrow">For brands</p>
-      <p class="hero-define">Dough is a shopper app where people compare real grocery products.</p>
-      <h1 class="hero-headline">What New York actually <em>picks.</em></h1>
-      <p class="hero-sub">
-        People compare real grocery products and choose one. Brands use those choices to see how they compete, to test a concept, and to learn from a box in a home.
+  <header class="home-hero">
+    <div class="home-hero-copy">
+      <p class="home-brand">Dough</p>
+      <h1 class="home-headline">
+        Know how your product stacks up with New York shoppers — before you ship the pack.
+      </h1>
+      <p class="home-sub">
+        Real head-to-head picks. Not surveys. Compete in the catalog, test a concept, or put a box in a home.
       </p>
-      <div class="hero-actions">
+      <div class="hero-actions home-actions">
         <a class="btn-primary" href="/access">
           Request access <span class="arr" aria-hidden="true">→</span>
         </a>
         <a class="btn-ghost" href="/report/example">See an example report</a>
       </div>
-      <p class="hero-proof">600k+ products already indexed · 700+ categories · Shoppers in New York</p>
+    </div>
+    <div class="home-hero-product reveal-hero">
+      <ChoiceWidget variant="battle" />
     </div>
   </header>
 
-  <section class="section">
-    <p class="section-label">Three ways in</p>
-    <h2 class="section-headline">One preference world. Three ways to use <em>it.</em></h2>
-    <div class="truth-grid reveal">
-      <a class="truth-item" href="/product/compete">
-        <div class="truth-n">How you <em>compete</em></div>
-        <p class="truth-l">Your products are in the catalog. Where enough shoppers have chosen, you can see how one holds up against the alternatives.</p>
-      </a>
-      <a class="truth-item" href="/product/concept-tests">
-        <div class="truth-n">Concept <em>tests</em></div>
-        <p class="truth-l">One design against your current pack or one competitor. Shoppers pick. The report says whether it cleared the bars you set.</p>
-      </a>
-      <a class="truth-item" href="/product/box-studies">
-        <div class="truth-n">Box <em>studies</em></div>
-        <p class="truth-l">A real product in a New York home, with a follow-up when you need to know if they would come back to it.</p>
-      </a>
+  <section class="proof-strip" aria-label="At a glance">
+    <div class="proof-item">
+      <span class="proof-n">600k+</span>
+      <span class="proof-l">Products indexed</span>
     </div>
-  </section>
-
-  <section class="section mid" id="how">
-    <p class="section-label">How preference is made</p>
-    <h2 class="section-headline">Shoppers choose. We capture the pick. Enough picks become <em>insight.</em></h2>
-    <p class="section-body">
-      Not browsing. Not a survey. Two real products. One honest pick. Try it below — then see what a brand receives.
-    </p>
-    <div class="reveal">
-      <ChoiceWidget />
+    <div class="proof-item">
+      <span class="proof-n">700+</span>
+      <span class="proof-l">Categories</span>
+    </div>
+    <div class="proof-item">
+      <span class="proof-n">NYC</span>
+      <span class="proof-l">Shopper panel</span>
+    </div>
+    <div class="proof-item">
+      <span class="proof-n">Can say no</span>
+      <span class="proof-l">Reports that clear — or don’t</span>
     </div>
   </section>
 
   <section class="section">
-    <p class="section-label">What you get back</p>
-    <h2 class="section-headline">A report that can say <em>no.</em></h2>
+    <p class="section-label">What brands buy</p>
+    <h2 class="section-headline sell">Three ways to use the same preference data</h2>
+    <div class="offer-grid">
+      <a class="offer-card" href="/product/compete">
+        <span class="offer-kicker">01</span>
+        <h3 class="offer-title">Compete</h3>
+        <p class="offer-body">
+          Your SKUs are in the catalog. Where enough shoppers have chosen, see how one holds up against the alternatives.
+        </p>
+        <span class="offer-go">How you compete →</span>
+      </a>
+      <a class="offer-card" href="/product/concept-tests">
+        <span class="offer-kicker">02</span>
+        <h3 class="offer-title">Test a concept</h3>
+        <p class="offer-body">
+          New label vs current pack — or one competitor. Shoppers pick. The report says whether it cleared the bars you set.
+        </p>
+        <span class="offer-go">Concept tests →</span>
+      </a>
+      <a class="offer-card" href="/product/box-studies">
+        <span class="offer-kicker">03</span>
+        <h3 class="offer-title">Box in a home</h3>
+        <p class="offer-body">
+          A real product in a New York kitchen, with a follow-up when you need to know if they would come back to it.
+        </p>
+        <span class="offer-go">Box studies →</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="section mid">
+    <p class="section-label">The differentiator</p>
+    <h2 class="section-headline sell">A report that can say no</h2>
     <p class="section-body">
-      A concept report has a verdict, a first look, the attributes that mattered, the rank people stated next to the choice they made, a price read, and what people wrote. The verdict uses four words.
+      Four verdicts. No soft landings. A bar clears only when the whole 95% interval sits on the right side of the line you set. Fewer than ten answers is not a result.
     </p>
-    <div class="chip-row reveal">
+    <div class="chip-row">
       <span class="verdict-chip cleared">Cleared</span>
       <span class="verdict-chip not_cleared">Not cleared</span>
       <span class="verdict-chip too_close_to_call">Too close to call</span>
       <span class="verdict-chip not_enough_responses">Not enough responses</span>
     </div>
-    <p class="section-body" style="margin-top: 1.75rem;">
-      Fewer than ten answers is not a result. A bar clears only when the whole 95% interval sits on the right side of the line you set. The worked example is simulated. The sections are the ones a brand receives.
-    </p>
     <div class="hero-actions" style="margin-top: 2rem;">
       <a class="btn-primary on-cream" href="/report/example">
         Read the example report <span class="arr" aria-hidden="true">→</span>
@@ -81,27 +101,357 @@ import CtaBand from '../components/CtaBand.astro';
     </div>
   </section>
 
-  <section class="section mid">
-    <p class="section-label">Who answers</p>
-    <h2 class="section-headline">Shoppers in <em>New York.</em></h2>
+  <section class="section" id="how">
+    <p class="section-label">How preference is made</p>
+    <h2 class="section-headline sell">Two products. One pick. Enough picks become a standing.</h2>
     <p class="section-body">
-      They use Dough the way the app is built. They scan a product, they compare two things in a category they know, and they pick the one they would rather have. This is where the panel starts.
+      Not browsing. Not a survey. Try the same choice shoppers make — then see what a brand receives.
     </p>
-    <div class="hero-actions" style="margin-top: 2rem;">
-      <a class="btn-ghost on-cream" href="/shoppers">Who answers →</a>
-      <a class="btn-ghost on-cream" href="/method">Method →</a>
-      <a class="btn-ghost on-cream" href="/product/workspace">The workspace →</a>
+    <div class="how-grid">
+      <ChoiceWidget />
+      <aside class="how-aside">
+        <ol class="how-steps">
+          <li>
+            <strong>Choose</strong>
+            <span>A shopper picks the one they would rather have.</span>
+          </li>
+          <li>
+            <strong>Capture</strong>
+            <span>That preference is recorded against real products in a real category.</span>
+          </li>
+          <li>
+            <strong>Derive</strong>
+            <span>Where enough people have chosen, brands see standings, concept results, and box follow-ups.</span>
+          </li>
+        </ol>
+        <div class="how-links">
+          <a href="/method">Method →</a>
+          <a href="/shoppers">Who answers →</a>
+          <a href="/product/workspace">The workspace →</a>
+        </div>
+      </aside>
     </div>
   </section>
 
-  <CtaBand />
+  <CtaBand
+    headline="Find your brand and request access."
+    body="A person reviews every request and writes back. No self-serve checkout on this site."
+  />
 </BaseLayout>
 
 <style>
+  /* —— Hero: brand + pitch + product —— */
+  .home-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    gap: clamp(2rem, 5vw, 4.5rem);
+    align-items: center;
+    min-height: 92vh;
+    min-height: 92dvh;
+    padding: 7.5rem var(--page-pad) clamp(3rem, 6vh, 4.5rem);
+    position: relative;
+    overflow: hidden;
+    color: var(--cream);
+    background:
+      radial-gradient(ellipse 80% 65% at 85% 20%, rgba(62, 107, 74, 0.42), transparent 55%),
+      radial-gradient(ellipse 45% 40% at 5% 90%, rgba(184, 144, 106, 0.14), transparent 50%),
+      linear-gradient(165deg, #1a221c 0%, var(--field) 42%, #0e1210 100%);
+  }
+
+  .home-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+    opacity: 0.4;
+    pointer-events: none;
+    mix-blend-mode: overlay;
+  }
+
+  .home-hero-copy,
+  .home-hero-product {
+    position: relative;
+    z-index: 1;
+  }
+
+  .home-brand {
+    font-family: var(--serif);
+    font-size: clamp(3.2rem, 7vw, 5.5rem);
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: -0.03em;
+    line-height: 0.95;
+    color: var(--cream);
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    transform: translateY(16px);
+    animation: homeUp 0.75s var(--ease) 0.05s forwards;
+  }
+
+  .home-headline {
+    font-family: var(--sans);
+    font-size: clamp(1.55rem, 2.8vw, 2.15rem);
+    font-weight: 500;
+    font-style: normal;
+    line-height: 1.22;
+    letter-spacing: -0.02em;
+    max-width: 22ch;
+    color: var(--cream);
+    margin-bottom: 1.15rem;
+    opacity: 0;
+    transform: translateY(16px);
+    animation: homeUp 0.75s var(--ease) 0.14s forwards;
+  }
+
+  .home-sub {
+    font-size: clamp(0.98rem, 1.35vw, 1.08rem);
+    font-weight: 300;
+    color: rgba(250, 248, 243, 0.68);
+    max-width: 36ch;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    opacity: 0;
+    transform: translateY(14px);
+    animation: homeUp 0.7s var(--ease) 0.22s forwards;
+  }
+
+  .home-actions {
+    opacity: 0;
+    transform: translateY(14px);
+    animation: homeUp 0.7s var(--ease) 0.3s forwards;
+  }
+
+  .home-hero-product {
+    opacity: 0;
+    transform: translateY(24px) scale(0.985);
+    animation: homeProduct 0.9s var(--ease) 0.28s forwards;
+  }
+
+  @keyframes homeUp {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes homeProduct {
+    to { opacity: 1; transform: translateY(0) scale(1); }
+  }
+
+  /* —— Proof strip —— */
+  .proof-strip {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    padding: 0 var(--page-pad);
+    background: var(--field-mid);
+    border-bottom: 1px solid rgba(250, 248, 243, 0.08);
+  }
+
+  .proof-item {
+    padding: 1.65rem 1.25rem;
+    border-right: 1px solid rgba(250, 248, 243, 0.08);
+    color: var(--cream);
+  }
+  .proof-item:last-child { border-right: none; }
+
+  .proof-n {
+    display: block;
+    font-family: var(--serif);
+    font-size: clamp(1.45rem, 2.4vw, 1.85rem);
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin-bottom: 0.35rem;
+  }
+
+  .proof-l {
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(250, 248, 243, 0.5);
+  }
+
+  /* —— Sell headlines: upright, commercial —— */
+  .section-headline.sell {
+    font-family: var(--sans);
+    font-weight: 500;
+    font-style: normal;
+    max-width: 22ch;
+    letter-spacing: -0.025em;
+  }
+  .section-headline.sell :global(em) {
+    font-style: normal;
+    color: inherit;
+  }
+
+  /* —— Offer cards —— */
+  .offer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    margin-top: 2.75rem;
+    background: var(--warm-light);
+    border: 1px solid var(--warm-light);
+  }
+
+  .offer-card {
+    background: var(--cream);
+    padding: 2rem 1.75rem 1.85rem;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    transition: background 0.2s;
+  }
+  .offer-card:hover { background: var(--cream-mid); }
+
+  .offer-kicker {
+    font-size: 0.62rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--warm);
+    margin-bottom: 1.15rem;
+  }
+
+  .offer-title {
+    font-family: var(--sans);
+    font-size: 1.45rem;
+    font-weight: 600;
+    font-style: normal;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.75rem;
+  }
+
+  .offer-body {
+    font-size: 0.95rem;
+    color: var(--ink-light);
+    line-height: 1.55;
+    flex: 1;
+    margin-bottom: 1.5rem;
+  }
+
+  .offer-go {
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--sage);
+    font-weight: 500;
+  }
+  .offer-card:hover .offer-go { color: var(--field); }
+
   .chip-row {
     display: flex;
     flex-wrap: wrap;
     gap: 0.65rem;
     margin-top: 1.75rem;
+  }
+
+  /* —— How it works —— */
+  .how-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 480px) minmax(0, 1fr);
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: start;
+    margin-top: 0.5rem;
+  }
+
+  .how-grid :global(.mech) {
+    margin-top: 1.5rem;
+  }
+
+  .how-aside {
+    padding-top: 3.5rem;
+  }
+
+  .how-steps {
+    list-style: none;
+    counter-reset: how;
+    border-top: 1px solid var(--warm-light);
+  }
+
+  .how-steps li {
+    counter-increment: how;
+    display: grid;
+    grid-template-columns: 2.5rem 1fr;
+    gap: 0.75rem 1rem;
+    padding: 1.35rem 0;
+    border-bottom: 1px solid var(--warm-light);
+  }
+
+  .how-steps li::before {
+    content: counter(how, decimal-leading-zero);
+    font-size: 0.66rem;
+    letter-spacing: 0.14em;
+    color: var(--warm);
+    padding-top: 0.3rem;
+  }
+
+  .how-steps strong {
+    display: block;
+    font-family: var(--sans);
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+    grid-column: 2;
+  }
+
+  .how-steps span {
+    grid-column: 2;
+    font-size: 0.92rem;
+    color: var(--ink-light);
+    line-height: 1.55;
+  }
+
+  .how-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem 1.75rem;
+    margin-top: 2rem;
+  }
+
+  .how-links a {
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    text-decoration: none;
+  }
+  .how-links a:hover { color: var(--ink); }
+
+  @media (max-width: 960px) {
+    .home-hero {
+      grid-template-columns: 1fr;
+      min-height: auto;
+      padding-top: 6.5rem;
+      padding-bottom: 3rem;
+      gap: 2.5rem;
+    }
+    .home-headline { max-width: 28ch; }
+    .home-hero-product { max-width: 440px; }
+    .proof-strip { grid-template-columns: repeat(2, 1fr); }
+    .proof-item:nth-child(2n) { border-right: none; }
+    .proof-item:nth-child(1),
+    .proof-item:nth-child(2) {
+      border-bottom: 1px solid rgba(250, 248, 243, 0.08);
+    }
+    .offer-grid { grid-template-columns: 1fr; }
+    .how-grid { grid-template-columns: 1fr; }
+    .how-aside { padding-top: 0.5rem; }
+  }
+
+  @media (max-width: 560px) {
+    .proof-strip { grid-template-columns: 1fr 1fr; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .home-brand,
+    .home-headline,
+    .home-sub,
+    .home-actions,
+    .home-hero-product {
+      opacity: 1;
+      transform: none;
+      animation: none;
+    }
   }
 </style>

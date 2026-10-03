@@ -1,15 +1,20 @@
 ---
 interface Props {
   footNote?: string;
+  /** Hero: battle only. Full: choose → capture → derive. */
+  variant?: 'full' | 'battle';
 }
 
 const {
   footNote = 'Illustrative matchup. Same layout as the app. Dough is not those brands.',
+  variant = 'full',
 } = Astro.props;
+
+const isBattle = variant === 'battle';
 ---
 
-<div class="mech" id="choice-widget" data-choice>
-  <p class="mech-beat-label">1 · Choose</p>
+<div class:list={['mech', isBattle && 'is-battle']} data-choice data-variant={variant}>
+  {!isBattle && <p class="mech-beat-label">1 · Choose</p>}
   <div class="split-battle" role="group" aria-label="Which would you rather have?">
     <div class="split-battle-top">
       <span class="split-battle-eyebrow">Still water</span>
@@ -23,14 +28,14 @@ const {
     </div>
     <p class="split-battle-question">Which would you rather have?</p>
     <div class="split-battle-arena">
-      <button type="button" class="split-battle-half is-chosen" data-side="a" id="mech-a" aria-pressed="true">
+      <button type="button" class="split-battle-half is-chosen" data-side="a" aria-pressed="true">
         <span class="split-battle-portrait">
           <img src="/demo/product-a.svg" alt="" width="120" height="160" />
         </span>
         <span class="split-battle-name">Mountain Water</span>
         <span class="split-battle-brand">Liquid Death</span>
       </button>
-      <button type="button" class="split-battle-half is-not" data-side="b" id="mech-b" aria-pressed="false">
+      <button type="button" class="split-battle-half is-not" data-side="b" aria-pressed="false">
         <span class="split-battle-portrait">
           <img src="/demo/product-b.svg" alt="" width="120" height="160" />
         </span>
@@ -41,35 +46,45 @@ const {
       <span class="split-battle-vs" aria-hidden="true">vs</span>
     </div>
   </div>
-  <p class="mech-hint" id="mech-hint">Pick the one you'd rather have</p>
+  <p class="mech-hint" data-hint>Pick the one you'd rather have</p>
 
-  <div class="mech-arrow" aria-hidden="true">↓</div>
+  {!isBattle && (
+    <>
+      <div class="mech-arrow" aria-hidden="true">↓</div>
 
-  <p class="mech-beat-label">2 · Capture</p>
-  <div class="mech-capture">
-    <p class="mech-capture-line" id="mech-capture">
-      Shopper chose <strong>Mountain Water</strong> over <strong>Smartwater</strong> · Still water
-    </p>
-  </div>
+      <p class="mech-beat-label">2 · Capture</p>
+      <div class="mech-capture">
+        <p class="mech-capture-line" data-capture>
+          Shopper chose <strong>Mountain Water</strong> over <strong>Smartwater</strong> · Still water
+        </p>
+      </div>
 
-  <div class="mech-arrow" aria-hidden="true">↓</div>
+      <div class="mech-arrow" aria-hidden="true">↓</div>
 
-  <p class="mech-beat-label">3 · Derive</p>
-  <div class="mech-derive">
-    <div class="mech-derive-title" id="mech-derive-title">Mountain Water</div>
-    <div class="mech-derive-meta" id="mech-derive-meta">Winning more of these head-to-heads in Still water</div>
-    <p class="mech-derive-note">
-      Brand insight only shows where enough shoppers have made choices. One pick is a fact. A pattern becomes a standing.
-    </p>
-  </div>
+      <p class="mech-beat-label">3 · Derive</p>
+      <div class="mech-derive">
+        <div class="mech-derive-title" data-derive-title>Mountain Water</div>
+        <div class="mech-derive-meta" data-derive-meta>Winning more of these head-to-heads in Still water</div>
+        <p class="mech-derive-note">
+          Brand insight only shows where enough shoppers have made choices. One pick is a fact. A pattern becomes a standing.
+        </p>
+      </div>
 
-  <p class="mech-foot">{footNote}</p>
+      <p class="mech-foot">{footNote}</p>
+    </>
+  )}
 </div>
 
 <style>
   .mech {
     margin-top: 2.75rem;
     max-width: 480px;
+  }
+
+  .mech.is-battle {
+    margin-top: 0;
+    max-width: none;
+    width: 100%;
   }
 
   .mech-beat-label {
@@ -89,6 +104,12 @@ const {
     color: #f2efe6;
     box-shadow: 0 18px 48px rgba(24, 21, 15, 0.18);
     user-select: none;
+  }
+
+  .is-battle .split-battle {
+    box-shadow:
+      0 28px 80px rgba(0, 0, 0, 0.45),
+      0 0 0 1px rgba(250, 248, 243, 0.06);
   }
 
   .split-battle-top {
@@ -126,6 +147,7 @@ const {
     font-family: var(--serif);
     font-size: clamp(1.15rem, 2.6vw, 1.5rem);
     font-weight: 400;
+    font-style: normal;
     line-height: 1.2;
     text-align: center;
     color: #f2efe6;
@@ -140,6 +162,10 @@ const {
     grid-template-columns: 1fr 1fr;
     min-height: 280px;
     padding: 12px 16px 0;
+  }
+
+  .is-battle .split-battle-arena {
+    min-height: 320px;
   }
 
   .split-battle-half {
@@ -176,6 +202,10 @@ const {
     justify-content: center;
     overflow: hidden;
     margin-bottom: 10px;
+  }
+
+  .is-battle .split-battle-portrait {
+    max-height: 240px;
   }
 
   .split-battle-half.is-chosen .split-battle-portrait {
@@ -239,9 +269,12 @@ const {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: var(--serif);
-    font-style: italic;
-    font-size: 13px;
+    font-family: var(--sans);
+    font-style: normal;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
     color: #f2efe6;
     pointer-events: none;
     z-index: 2;
@@ -254,6 +287,10 @@ const {
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--ink-lighter);
+  }
+
+  .is-battle .mech-hint {
+    color: rgba(250, 248, 243, 0.45);
   }
 
   .mech-arrow {
@@ -287,6 +324,7 @@ const {
     font-family: var(--serif);
     font-size: 1.25rem;
     font-weight: 400;
+    font-style: normal;
     letter-spacing: -0.015em;
     color: var(--ink);
     margin-bottom: 0.35rem;
@@ -315,7 +353,7 @@ const {
   }
 
   @media (max-width: 600px) {
-    .mech { max-width: 100%; }
+    .mech:not(.is-battle) { max-width: 100%; }
     .split-battle-question {
       padding-left: 10px;
       padding-right: 10px;
@@ -333,11 +371,11 @@ const {
     };
     const cardA = root.querySelector<HTMLButtonElement>('[data-side="a"]');
     const cardB = root.querySelector<HTMLButtonElement>('[data-side="b"]');
-    const capture = root.querySelector('#mech-capture');
-    const deriveTitle = root.querySelector('#mech-derive-title');
-    const deriveMeta = root.querySelector('#mech-derive-meta');
-    const hint = root.querySelector('#mech-hint');
-    if (!cardA || !cardB || !capture) return;
+    const capture = root.querySelector('[data-capture]');
+    const deriveTitle = root.querySelector('[data-derive-title]');
+    const deriveMeta = root.querySelector('[data-derive-meta]');
+    const hint = root.querySelector('[data-hint]');
+    if (!cardA || !cardB) return;
 
     function choose(side: 'a' | 'b') {
       const won = products[side];
@@ -348,13 +386,15 @@ const {
       cardB!.classList.toggle('is-not', side !== 'b');
       cardA!.setAttribute('aria-pressed', side === 'a' ? 'true' : 'false');
       cardB!.setAttribute('aria-pressed', side === 'b' ? 'true' : 'false');
-      capture!.innerHTML =
-        'Shopper chose <strong>' +
-        won.name +
-        '</strong> over <strong>' +
-        lost.name +
-        '</strong> · ' +
-        won.category;
+      if (capture) {
+        capture.innerHTML =
+          'Shopper chose <strong>' +
+          won.name +
+          '</strong> over <strong>' +
+          lost.name +
+          '</strong> · ' +
+          won.category;
+      }
       if (deriveTitle) deriveTitle.textContent = won.name;
       if (deriveMeta) deriveMeta.textContent = 'Winning more of these head-to-heads in ' + won.category;
       if (hint) hint.textContent = "That's a captured preference";
