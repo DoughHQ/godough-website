@@ -6,16 +6,19 @@ const frames = [
     label: 'Dashboard',
     src: `${PORTAL}/marketing/workspace/home`,
     title: 'Brand home in the Dough portal',
+    eager: true,
   },
   {
     label: 'Concept study',
     src: `${PORTAL}/marketing/workspace/concept`,
     title: 'Concept study report in the Dough portal',
+    eager: false,
   },
   {
     label: 'Report verdict',
     src: `${PORTAL}/marketing/workspace/report`,
     title: 'Concept test report in the Dough portal',
+    eager: false,
   },
 ]
 ---
@@ -35,7 +38,7 @@ const frames = [
           class="portal-frame"
           src={frame.src}
           title={frame.title}
-          loading="lazy"
+          loading={frame.eager ? 'eager' : 'lazy'}
           referrerpolicy="no-referrer-when-downgrade"
         ></iframe>
       </div>
@@ -93,7 +96,7 @@ const frames = [
   .portal-frame {
     display: block;
     width: 100%;
-    height: min(70vh, 720px);
+    height: min(88vh, 960px);
     border: 0;
     background: var(--cream);
   }
