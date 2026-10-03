@@ -1,0 +1,41 @@
+# Truth sheet — godough.co
+
+Every factual claim on the site must trace here. If it is not on this list, it does not ship.
+
+## Allowed facts
+
+| Claim | Source |
+|---|---|
+| Dough is a shopper app where people compare real grocery products | Product / brands positioning |
+| Three offers: standings (how you compete), concept tests, box studies | Portal: concept + IHUT publish; catalog standings |
+| Shoppers in New York (first panel) | Product decision for this site |
+| Access is reviewed by a person (not self-serve checkout on the marketing site) | Portal application flow; `brands.godough.co/login` |
+| 600,000+ products indexed | Existing brands page / catalog |
+| 700+ categories | Existing brands page / catalog |
+| Confidence 95%, fixed by Dough; brands set bars | `concept_verdict_bars` / report `method.confidence` |
+| Cleared / not cleared / too close to call / not enough responses | `concept_bar_result` |
+| Under 10 answers → not enough responses | `concept_bar_result` floor |
+| Bars frozen at first respondent | `concept_verdict_bars_guard` |
+| Price is stated willingness to pay, not a sales forecast | Report `method.price` |
+| “Neither” shown, not counted as wins; timing-flagged battles excluded | Report `method.head_to_head` |
+| Open text scrubbed of emails, links, handles, phones | `concept_scrub_verbatim` |
+| Example report is simulated | `src/data/example-report.json` (`"simulated": true`) |
+| Workspace frames are illustrations of the portal, not live screenshots | `WorkspaceFrames.astro` |
+| Legal URLs unchanged: `/privacy`, `/terms`, `/delete-account` | App deep links |
+| `/brands` redirects to `/` | Brand homepage is now `/` |
+| Sunday Company Group LLC, Sheridan WY address | Existing legal pages |
+
+## Must not say
+
+- Public price per response (until explicitly approved)
+- National panel / multi-city sample
+- Named client logos or case studies
+- “Start a test” / self-serve checkout as the primary CTA
+- “Predicts,” “will succeed,” or in-market volume forecasts
+- That the example report is a real client study
+
+## Open blanks
+
+- Founder name and one-sentence bio on `/about`
+- Live portal screenshots to replace `WorkspaceFrames` when available
+- Public pricing page (out of scope this pass)

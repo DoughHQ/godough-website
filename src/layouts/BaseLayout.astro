@@ -1,0 +1,80 @@
+---
+import '../styles/base.css';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+
+interface Crumb {
+  href?: string;
+  label: string;
+}
+
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  navTheme?: 'field' | 'cream';
+  current?: string;
+  crumbs?: Crumb[];
+  ogType?: string;
+}
+
+const {
+  title,
+  description,
+  canonical,
+  navTheme = 'cream',
+  current,
+  crumbs,
+  ogType = 'website',
+} = Astro.props;
+
+const site = 'https://godough.co';
+const path = Astro.url.pathname.replace(/\/$/, '') || '/';
+const canonicalUrl = canonical ?? `${site}${path === '/' ? '/' : path}`;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:site_name" content="Dough" />
+    <link rel="icon" type="image/svg+xml" href="/dough-mark.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <Nav theme={navTheme} current={current} />
+    {crumbs && crumbs.length > 0 && <Breadcrumb items={crumbs} />}
+    <main>
+      <slot />
+    </main>
+    <Footer />
+    <script>
+      const obs = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              obs.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.12 }
+      );
+      document.querySelectorAll('.reveal').forEach((el) => obs.observe(el));
+    </script>
+  </body>
+</html>

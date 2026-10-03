@@ -1,0 +1,107 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ChoiceWidget from '../components/ChoiceWidget.astro';
+import CtaBand from '../components/CtaBand.astro';
+---
+
+<BaseLayout
+  title="Dough — What New York actually picks"
+  description="Dough is a shopper app where New Yorkers compare real grocery products. Brands use those choices to see how they compete, test a concept, and learn from a box in a home."
+  navTheme="field"
+  current="/"
+>
+  <header class="hero">
+    <div class="hero-inner">
+      <p class="hero-eyebrow">For brands</p>
+      <p class="hero-define">Dough is a shopper app where people compare real grocery products.</p>
+      <h1 class="hero-headline">What New York actually <em>picks.</em></h1>
+      <p class="hero-sub">
+        People compare real grocery products and choose one. Brands use those choices to see how they compete, to test a concept, and to learn from a box in a home.
+      </p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="/access">
+          Request access <span class="arr" aria-hidden="true">→</span>
+        </a>
+        <a class="btn-ghost" href="/report/example">See an example report</a>
+      </div>
+      <p class="hero-proof">600k+ products already indexed · 700+ categories · Shoppers in New York</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <p class="section-label">Three ways in</p>
+    <h2 class="section-headline">One preference world. Three ways to use <em>it.</em></h2>
+    <div class="truth-grid reveal">
+      <a class="truth-item" href="/product/compete">
+        <div class="truth-n">How you <em>compete</em></div>
+        <p class="truth-l">Your products are in the catalog. Where enough shoppers have chosen, you can see how one holds up against the alternatives.</p>
+      </a>
+      <a class="truth-item" href="/product/concept-tests">
+        <div class="truth-n">Concept <em>tests</em></div>
+        <p class="truth-l">One design against your current pack or one competitor. Shoppers pick. The report says whether it cleared the bars you set.</p>
+      </a>
+      <a class="truth-item" href="/product/box-studies">
+        <div class="truth-n">Box <em>studies</em></div>
+        <p class="truth-l">A real product in a New York home, with a follow-up when you need to know if they would come back to it.</p>
+      </a>
+    </div>
+  </section>
+
+  <section class="section mid" id="how">
+    <p class="section-label">How preference is made</p>
+    <h2 class="section-headline">Shoppers choose. We capture the pick. Enough picks become <em>insight.</em></h2>
+    <p class="section-body">
+      Not browsing. Not a survey. Two real products. One honest pick. Try it below — then see what a brand receives.
+    </p>
+    <div class="reveal">
+      <ChoiceWidget />
+    </div>
+  </section>
+
+  <section class="section">
+    <p class="section-label">What you get back</p>
+    <h2 class="section-headline">A report that can say <em>no.</em></h2>
+    <p class="section-body">
+      A concept report has a verdict, a first look, the attributes that mattered, the rank people stated next to the choice they made, a price read, and what people wrote. The verdict uses four words.
+    </p>
+    <div class="chip-row reveal">
+      <span class="verdict-chip cleared">Cleared</span>
+      <span class="verdict-chip not_cleared">Not cleared</span>
+      <span class="verdict-chip too_close_to_call">Too close to call</span>
+      <span class="verdict-chip not_enough_responses">Not enough responses</span>
+    </div>
+    <p class="section-body" style="margin-top: 1.75rem;">
+      Fewer than ten answers is not a result. A bar clears only when the whole 95% interval sits on the right side of the line you set. The worked example is simulated. The sections are the ones a brand receives.
+    </p>
+    <div class="hero-actions" style="margin-top: 2rem;">
+      <a class="btn-primary on-cream" href="/report/example">
+        Read the example report <span class="arr" aria-hidden="true">→</span>
+      </a>
+      <a class="btn-ghost on-cream" href="/report/reading-a-verdict">How to read a verdict</a>
+    </div>
+  </section>
+
+  <section class="section mid">
+    <p class="section-label">Who answers</p>
+    <h2 class="section-headline">Shoppers in <em>New York.</em></h2>
+    <p class="section-body">
+      They use Dough the way the app is built. They scan a product, they compare two things in a category they know, and they pick the one they would rather have. This is where the panel starts.
+    </p>
+    <div class="hero-actions" style="margin-top: 2rem;">
+      <a class="btn-ghost on-cream" href="/shoppers">Who answers →</a>
+      <a class="btn-ghost on-cream" href="/method">Method →</a>
+      <a class="btn-ghost on-cream" href="/product/workspace">The workspace →</a>
+    </div>
+  </section>
+
+  <CtaBand />
+</BaseLayout>
+
+<style>
+  .chip-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    margin-top: 1.75rem;
+  }
+</style>

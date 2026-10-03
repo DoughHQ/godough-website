@@ -1,0 +1,47 @@
+---
+interface Answer {
+  text: string;
+}
+
+interface Props {
+  answers: Answer[];
+  scrubNote: string;
+}
+
+const { answers, scrubNote } = Astro.props;
+---
+
+<section class="open-text">
+  <ul>
+    {answers.map((a) => (
+      <li>
+        <blockquote>“{a.text}”</blockquote>
+      </li>
+    ))}
+  </ul>
+  <p class="scrub">{scrubNote}</p>
+</section>
+
+<style>
+  li {
+    border-bottom: 1px solid var(--warm-light);
+    padding: 1.15rem 0;
+  }
+  li:first-child { padding-top: 0; }
+  blockquote {
+    font-family: var(--serif);
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 1.45;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    max-width: 42ch;
+  }
+  .scrub {
+    margin-top: 1.25rem;
+    font-size: 0.78rem;
+    color: var(--ink-lighter);
+    line-height: 1.55;
+    max-width: 52ch;
+  }
+</style>

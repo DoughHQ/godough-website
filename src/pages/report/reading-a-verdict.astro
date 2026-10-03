@@ -1,0 +1,67 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CtaBand from '../../components/CtaBand.astro';
+---
+
+<BaseLayout
+  title="How to read a verdict — Dough"
+  description="Cleared, not cleared, too close to call, not enough responses. One missed bar and the study does not clear. Under ten answers is not a result."
+  current="/report/reading-a-verdict"
+  crumbs={[{ href: '/report/example', label: 'Report' }, { label: 'Reading a verdict' }]}
+>
+  <header class="page-hero">
+    <p class="hero-eyebrow">Report</p>
+    <h1 class="hero-headline">How to read a <em>verdict.</em></h1>
+    <p class="hero-sub">
+      The four words, the one-missed-bar rule, and the floor under which a bar does not pass or fail.
+    </p>
+  </header>
+
+  <div class="doc-layout">
+    <nav class="doc-toc" aria-label="On this page">
+      <a href="#four-words">Four words</a>
+      <a href="#one-miss">One missed bar</a>
+      <a href="#floor">Under ten</a>
+      <a href="#example">See it work</a>
+    </nav>
+    <article class="doc-body">
+      <h2 id="four-words">Four words</h2>
+      <p>
+        <span class="verdict-chip cleared">Cleared</span>
+        &nbsp; when the whole 95% interval sits at or above the bar you set.
+      </p>
+      <p>
+        <span class="verdict-chip not_cleared">Not cleared</span>
+        &nbsp; when the whole interval sits below the bar.
+      </p>
+      <p>
+        <span class="verdict-chip too_close_to_call">Too close to call</span>
+        &nbsp; when the interval straddles the bar.
+      </p>
+      <p>
+        <span class="verdict-chip not_enough_responses">Not enough responses</span>
+        &nbsp; when fewer than ten answers are in. That is not a result.
+      </p>
+
+      <h2 id="one-miss">One missed bar</h2>
+      <p>
+        The overall verdict takes the hardest result among the bars you turned on. A bar you left off is not tested — it cannot carry the study and it cannot sink it. One “not cleared” sinks it. One “too close to call,” with nothing worse, leaves it too close. “Cleared” means every bar you set has cleared.
+      </p>
+      <p>
+        Winning the pick is not enough. In the <a href="/report/example">example report</a>, the new label cleared head to head and missed price. The study is not cleared.
+      </p>
+
+      <h2 id="floor">Under ten</h2>
+      <p>
+        Confidence is 95%, fixed by Dough. You set the bars. You never set the confidence. Under ten completed answers, a concept bar reads “not enough responses.” Everyday competition on a claimed product waits until the choices are thick enough to be a pattern.
+      </p>
+
+      <h2 id="example">See it work</h2>
+      <p>
+        Read the <a href="/report/example">simulated Keel Still report</a>, then the <a href="/method">full method</a> in the same words the product uses.
+      </p>
+    </article>
+  </div>
+
+  <CtaBand />
+</BaseLayout>

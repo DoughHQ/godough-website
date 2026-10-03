@@ -1,0 +1,27 @@
+---
+import { PORTAL_LOGIN, CONTACT_EMAIL } from '../data/site';
+
+interface Props {
+  headline?: string;
+  body?: string;
+}
+
+const {
+  headline = 'Find your brand and <em>request access.</em>',
+  body = 'A person reviews every request and writes back.',
+} = Astro.props;
+---
+
+<section class="cta-band">
+  <div class="reveal">
+    <h2 set:html={headline} />
+    <p>{body}</p>
+    <div class="hero-actions">
+      <a class="btn-primary" href="/access">
+        Request access <span class="arr" aria-hidden="true">→</span>
+      </a>
+      <a class="btn-ghost" href={`mailto:${CONTACT_EMAIL}`}>Or email {CONTACT_EMAIL}</a>
+      <a class="btn-ghost" href={PORTAL_LOGIN}>Already have access? Sign in</a>
+    </div>
+  </div>
+</section>

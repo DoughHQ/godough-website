@@ -1,0 +1,51 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CtaBand from '../components/CtaBand.astro';
+---
+
+<BaseLayout
+  title="Who answers — Dough"
+  description="Shoppers in New York, in the Dough app, choosing between products they can actually picture buying. This is where the panel starts."
+  current="/shoppers"
+  crumbs={[{ label: 'Shoppers' }]}
+>
+  <header class="page-hero">
+    <p class="hero-eyebrow">Shoppers</p>
+    <h1 class="hero-headline">Shoppers in <em>New York.</em></h1>
+    <p class="hero-sub">
+      They use Dough the way the app is built. A study is another occasion for that same act, with your packs or your box as the pair.
+    </p>
+  </header>
+
+  <div class="doc-layout">
+    <nav class="doc-toc" aria-label="On this page">
+      <a href="#how">How they answer</a>
+      <a href="#where">Where</a>
+      <a href="#enough">When enough is enough</a>
+      <a href="#app">The app</a>
+    </nav>
+    <article class="doc-body">
+      <h2 id="how">How they answer</h2>
+      <p>
+        They scan a product, they compare two things in a category they know, and they pick the one they would rather have. A concept reaches people who shop the category. A box goes to a door here.
+      </p>
+
+      <h2 id="where">Where</h2>
+      <p>
+        They are in the city. When the panel grows past New York, the report will say where the answers came from. Until then the site says New York, because that is the truth.
+      </p>
+
+      <h2 id="enough">When enough is enough</h2>
+      <p>
+        We do not show a standing, or pass a bar, on a handful of taps. Under ten completed answers, a concept bar reads “not enough responses.” Everyday competition on a claimed product waits until the choices are thick enough to be a pattern.
+      </p>
+
+      <h2 id="app">The app</h2>
+      <p>
+        The shopper product has its own page: <a href="/app">Shape your plate</a>. Brands and shoppers share the same preference world. They do not share the same homepage.
+      </p>
+    </article>
+  </div>
+
+  <CtaBand />
+</BaseLayout>

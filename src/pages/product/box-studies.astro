@@ -1,0 +1,47 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import OfferRelated from '../../components/OfferRelated.astro';
+import CtaBand from '../../components/CtaBand.astro';
+---
+
+<BaseLayout
+  title="Box studies — Dough"
+  description="Send a real product to a New York shopper. They use it at home, choose, and say why. A second session follows when you need to know if they would come back to it."
+  current="/product/box-studies"
+  crumbs={[{ href: '/product/compete', label: 'Product' }, { label: 'Box studies' }]}
+>
+  <header class="page-hero">
+    <p class="hero-eyebrow">Product</p>
+    <h1 class="hero-headline">Box <em>studies.</em></h1>
+    <p class="hero-sub">
+      Send the real product. A shopper in New York uses it at home, chooses, and says why. If you need to know whether they would come back to it, a second session follows at least a day later.
+    </p>
+  </header>
+
+  <section class="section">
+    <p class="section-label">How a box runs</p>
+    <div class="path">
+      <div class="path-step reveal">
+        <p class="n">01</p>
+        <h3>Ship to New York</h3>
+        <p>The product goes to a door here. Recruiting and the study setup happen with Dough.</p>
+      </div>
+      <div class="path-step reveal">
+        <p class="n">02</p>
+        <h3>Use, then choose</h3>
+        <p>After they’ve used it, they make the same kind of choice as in the app — with a reason.</p>
+      </div>
+      <div class="path-step reveal">
+        <p class="n">03</p>
+        <h3>Come back, if you need it</h3>
+        <p>A loyalty follow-up can run a day or more later, when repeat matters.</p>
+      </div>
+    </div>
+    <p class="section-body" style="margin-top: 2.5rem;">
+      Box studies sit in the same preference world as concept tests and standings. The shopper is not a stranger panel. They are in the Dough app.
+    </p>
+    <OfferRelated />
+  </section>
+
+  <CtaBand />
+</BaseLayout>

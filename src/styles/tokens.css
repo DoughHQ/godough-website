@@ -1,0 +1,20 @@
+:root {
+  --cream: #FAF8F3;
+  --cream-mid: #F5F1E8;
+  --cream-dark: #EDE8DC;
+  --ink: #18150F;
+  --ink-light: #6B6257;
+  --ink-lighter: #A89D90;
+  --warm: #B8906A;
+  --warm-light: #E2D5C3;
+  --warm-pale: #F0E9DC;
+  --field: #1c2620;
+  --field-mid: #24322a;
+  --sage: #3e6b4a;
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans: 'DM Sans', system-ui, sans-serif;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --page-pad: clamp(1.5rem, 4vw, 4rem);
+  --measure: 42ch;
+  --portal: https://brands.godough.co/login;
+}

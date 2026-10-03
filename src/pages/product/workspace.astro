@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import OfferRelated from '../../components/OfferRelated.astro';
+import CtaBand from '../../components/CtaBand.astro';
+import WorkspaceFrames from '../../components/WorkspaceFrames.astro';
+---
+
+<BaseLayout
+  title="The workspace — Dough"
+  description="After a person lets you in, the brand workspace holds claimed products, studies, and the report in one place."
+  current="/product/workspace"
+  crumbs={[{ href: '/product/compete', label: 'Product' }, { label: 'The workspace' }]}
+>
+  <header class="page-hero">
+    <p class="hero-eyebrow">Product</p>
+    <h1 class="hero-headline">The <em>workspace.</em></h1>
+    <p class="hero-sub">
+      A place for the people who own the brand. Claimed products, studies you commission, and the report — in one login, after a person at Dough lets you in.
+    </p>
+  </header>
+
+  <section class="section">
+    <p class="section-label">What you see</p>
+    <p class="section-body" style="margin-bottom: 2.5rem;">
+      These frames match the brand portal at brands.godough.co. They are illustrations of the real screens, not a live account.
+    </p>
+    <WorkspaceFrames />
+    <OfferRelated />
+  </section>
+
+  <CtaBand headline="Open the door with a <em>request.</em>" />
+</BaseLayout>
