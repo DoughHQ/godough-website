@@ -89,46 +89,106 @@ import CtaBand from '../components/CtaBand.astro';
       </p>
     </div>
 
-    <p class="why-old-strip" aria-label="What you’re leaving">
-      <span>Likelihood-to-buy scores</span>
-      <span aria-hidden="true">·</span>
-      <span>Focus groups that never see your SKU</span>
-      <span aria-hidden="true">·</span>
-      <span>Stranger IHUT panels</span>
-      <span aria-hidden="true">·</span>
-      <span>Decks that always say go</span>
-    </p>
+    <div class="why-story" aria-label="How Dough is different">
+      <!-- Beat 1: Pick -->
+      <article class="why-beat">
+        <div class="why-viz" aria-hidden="true">
+          <div class="viz-pick">
+            <div class="viz-score is-out">
+              <span class="viz-score-n">7.2</span>
+              <span class="viz-score-l">Likelihood to buy</span>
+            </div>
+            <div class="viz-pick-arena">
+              <div class="viz-pick-half is-won">
+                <img src="/demo/product-a.svg" alt="" width="72" height="144" />
+                <span>Keel</span>
+              </div>
+              <span class="viz-pick-vs">vs</span>
+              <div class="viz-pick-half">
+                <img src="/demo/product-b.svg" alt="" width="72" height="144" />
+                <span>Rivermark</span>
+              </div>
+            </div>
+            <p class="viz-pick-cap">One pick. Real SKUs.</p>
+          </div>
+        </div>
+        <div class="why-beat-copy">
+          <span class="why-beat-n">01</span>
+          <span class="why-fear">“We got a 7.2 likelihood to buy.”</span>
+          <h3>A pick, not a score.</h3>
+          <p>Two real grocery products. One choice. Enough picks become a standing — only where the signal is thick enough.</p>
+        </div>
+      </article>
 
-    <ol class="why-punches">
-      <li>
-        <span class="why-fear">“We got a 7.2 likelihood to buy.”</span>
-        <strong>A pick, not a score.</strong>
-        <span class="why-line">Two real grocery products. One choice. Enough picks become a standing — only where the signal is thick enough.</span>
-      </li>
-      <li>
-        <span class="why-fear">“The panel never saw our bottle.”</span>
-        <strong>Your shelf, not a mock.</strong>
-        <span class="why-line">600k+ indexed SKUs. Shoppers battle the living catalog — then concept and box against that same world. No handoff to strangers.</span>
-      </li>
-      <li>
-        <span class="why-fear">“The deck always finds a reason to ship.”</span>
-        <strong>We’ll tell you not to print it.</strong>
-        <span class="why-line">You set the bars before anyone starts. Cleared only when the whole 95% interval clears. One miss fails the study.</span>
-      </li>
-    </ol>
+      <!-- Beat 2: Shelf -->
+      <article class="why-beat is-flip">
+        <div class="why-viz" aria-hidden="true">
+          <div class="viz-shelf">
+            <div class="viz-shelf-top">
+              <span>Living catalog</span>
+              <span class="viz-shelf-count">600k+</span>
+            </div>
+            <div class="viz-shelf-grid">
+              <div class="viz-sku is-live"><b></b><em>Keel Lemon</em></div>
+              <div class="viz-sku is-live"><b></b><em>Rivermark</em></div>
+              <div class="viz-sku"><b></b><em>Northveil</em></div>
+              <div class="viz-sku is-live"><b></b><em>Keel 12oz</em></div>
+              <div class="viz-sku"><b></b><em>—</em></div>
+              <div class="viz-sku is-dim"><b></b><em>—</em></div>
+            </div>
+            <div class="viz-shelf-foot">
+              <span class="viz-pill is-on">Flavored water · standing</span>
+              <span class="viz-pill">Still water · building</span>
+            </div>
+          </div>
+        </div>
+        <div class="why-beat-copy">
+          <span class="why-beat-n">02</span>
+          <span class="why-fear">“The panel never saw our bottle.”</span>
+          <h3>Your shelf, not a mock.</h3>
+          <p>Shoppers battle the living catalog — then concept and box against that same world. No handoff to strangers.</p>
+        </div>
+      </article>
 
-    <aside class="why-verdict">
-      <div class="why-verdict-chips" aria-label="Four verdicts">
-        <span class="verdict-chip cleared">Cleared</span>
-        <span class="verdict-chip not_cleared">Not cleared</span>
-        <span class="verdict-chip too_close_to_call">Too close to call</span>
-        <span class="verdict-chip not_enough_responses">Not enough responses</span>
-      </div>
-      <p class="why-verdict-body">
-        Four verdicts. No soft landings. Under ten answers is not a result.
-        <a href="/report/example">See the report that said no →</a>
-      </p>
-    </aside>
+      <!-- Beat 3: Verdict -->
+      <article class="why-beat">
+        <div class="why-viz" aria-hidden="true">
+          <a class="viz-verdict" href="/report/example">
+            <div class="viz-verdict-top">
+              <span class="viz-sim">Simulated</span>
+              <span class="viz-verdict-badge">Not cleared</span>
+            </div>
+            <p class="viz-verdict-product">Keel Lemon Water</p>
+            <p class="viz-verdict-meta">New label vs current pack</p>
+            <div class="viz-bars">
+              <div class="viz-bar">
+                <span>Head to head</span>
+                <div class="viz-bar-track"><i style="width: 65%"></i></div>
+                <em class="is-ok">Cleared</em>
+              </div>
+              <div class="viz-bar">
+                <span>Price · $2.49</span>
+                <div class="viz-bar-track is-bad"><i style="width: 38%"></i></div>
+                <em class="is-bad">Missed</em>
+              </div>
+            </div>
+            <span class="viz-verdict-go">One miss fails the study →</span>
+          </a>
+        </div>
+        <div class="why-beat-copy">
+          <span class="why-beat-n">03</span>
+          <span class="why-fear">“The deck always finds a reason to ship.”</span>
+          <h3>We’ll tell you not to print it.</h3>
+          <p>You set the bars before anyone starts. Cleared only when the whole 95% interval clears. Four verdicts — including not cleared.</p>
+          <div class="why-verdict-chips" aria-label="Four verdicts">
+            <span class="verdict-chip cleared">Cleared</span>
+            <span class="verdict-chip not_cleared">Not cleared</span>
+            <span class="verdict-chip too_close_to_call">Too close to call</span>
+            <span class="verdict-chip not_enough_responses">Not enough</span>
+          </div>
+        </div>
+      </article>
+    </div>
   </section>
 
   <section class="section">
@@ -495,9 +555,9 @@ import CtaBand from '../components/CtaBand.astro';
     letter-spacing: -0.025em;
   }
 
-  /* Why brands switch — hard close, Dough dominates */
+  /* Why brands switch — visual story */
   .why-close {
-    padding: clamp(3.5rem, 7vw, 5.5rem) var(--page-pad) clamp(3.25rem, 6vw, 4.75rem);
+    padding: clamp(3.5rem, 7vw, 5.5rem) var(--page-pad) clamp(3.5rem, 7vw, 5.5rem);
     background:
       radial-gradient(ellipse 70% 55% at 90% 10%, rgba(62, 107, 74, 0.38), transparent 55%),
       radial-gradient(ellipse 40% 35% at 0% 100%, rgba(184, 144, 106, 0.12), transparent 50%),
@@ -518,9 +578,7 @@ import CtaBand from '../components/CtaBand.astro';
   }
 
   .why-close-copy,
-  .why-old-strip,
-  .why-punches,
-  .why-verdict {
+  .why-story {
     position: relative;
     z-index: 1;
   }
@@ -551,126 +609,436 @@ import CtaBand from '../components/CtaBand.astro';
     line-height: 1.55;
     color: rgba(250, 248, 243, 0.82);
     max-width: 42ch;
-    margin-bottom: 2.25rem;
+    margin-bottom: 3rem;
   }
 
-  .why-old-strip {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 0.55rem 0.75rem;
-    padding: 1rem 0 1.75rem;
-    border-top: 1px solid rgba(250, 248, 243, 0.12);
-    font-size: 0.78rem;
-    letter-spacing: 0.04em;
-    color: rgba(250, 248, 243, 0.42);
-    text-decoration: line-through;
-    text-decoration-color: rgba(250, 248, 243, 0.28);
-  }
-
-  .why-punches {
-    list-style: none;
+  .why-story {
     display: flex;
     flex-direction: column;
-    gap: 0;
-    max-width: 52rem;
+    gap: clamp(2.5rem, 5vw, 4rem);
   }
 
-  .why-punches li {
-    padding: 1.65rem 0;
-    border-top: 1px solid rgba(250, 248, 243, 0.12);
+  .why-beat {
     display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    gap: 0.35rem;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    gap: clamp(1.75rem, 4vw, 3.5rem);
+    align-items: center;
   }
 
-  .why-punches li:last-child {
-    border-bottom: 1px solid rgba(250, 248, 243, 0.12);
+  .why-beat.is-flip .why-viz {
+    order: 2;
+  }
+
+  .why-beat.is-flip .why-beat-copy {
+    order: 1;
+  }
+
+  .why-beat-n {
+    display: block;
+    font-size: 0.62rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--warm);
+    margin-bottom: 0.85rem;
   }
 
   .why-fear {
-    font-size: 0.88rem;
+    display: block;
+    font-size: 0.9rem;
     font-style: italic;
     color: rgba(250, 248, 243, 0.48);
-    margin-bottom: 0.35rem;
+    margin-bottom: 0.55rem;
   }
 
-  .why-punches strong {
+  .why-beat-copy h3 {
     font-family: var(--sans);
-    font-size: clamp(1.35rem, 2.2vw, 1.65rem);
+    font-size: clamp(1.45rem, 2.5vw, 1.85rem);
     font-weight: 600;
+    letter-spacing: -0.025em;
+    line-height: 1.15;
+    color: var(--cream);
+    margin: 0 0 0.85rem;
+  }
+
+  .why-beat-copy p {
+    font-size: 1.02rem;
+    line-height: 1.55;
+    color: rgba(250, 248, 243, 0.78);
+    max-width: 36ch;
+    margin: 0;
+  }
+
+  .why-viz {
+    min-width: 0;
+  }
+
+  /* —— Viz: pick —— */
+  .viz-pick {
+    position: relative;
+    background: rgba(250, 248, 243, 0.04);
+    border: 1px solid rgba(250, 248, 243, 0.12);
+    border-radius: 16px;
+    padding: 1.5rem 1.35rem 1.25rem;
+    overflow: hidden;
+  }
+
+  .viz-score {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    text-align: center;
+    padding: 0.55rem 0.7rem;
+    border-radius: 8px;
+    background: rgba(250, 248, 243, 0.06);
+    border: 1px solid rgba(250, 248, 243, 0.14);
+    z-index: 2;
+  }
+
+  .viz-score.is-out {
+    opacity: 0.55;
+  }
+
+  .viz-score.is-out::after {
+    content: '';
+    position: absolute;
+    left: 10%;
+    right: 10%;
+    top: 50%;
+    height: 2px;
+    background: #f0b4a8;
+    transform: rotate(-12deg);
+  }
+
+  .viz-score-n {
+    display: block;
+    font-family: var(--serif);
+    font-size: 1.45rem;
+    line-height: 1;
+    color: rgba(250, 248, 243, 0.7);
+  }
+
+  .viz-score-l {
+    display: block;
+    font-size: 0.52rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(250, 248, 243, 0.5);
+    margin-top: 0.2rem;
+    max-width: 7ch;
+  }
+
+  .viz-pick-arena {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 0.75rem;
+    align-items: end;
+    padding: 0.5rem 0.5rem 0;
+  }
+
+  .viz-pick-half {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.85rem 0.5rem 0.75rem;
+    border-radius: 12px;
+    background: rgba(250, 248, 243, 0.04);
+    border: 1px solid rgba(250, 248, 243, 0.08);
+  }
+
+  .viz-pick-half.is-won {
+    background: rgba(184, 212, 192, 0.1);
+    border-color: rgba(184, 212, 192, 0.35);
+    box-shadow: 0 0 0 1px rgba(184, 212, 192, 0.12);
+  }
+
+  .viz-pick-half img {
+    width: 72px;
+    height: auto;
+    display: block;
+    border-radius: 6px;
+  }
+
+  .viz-pick-half span {
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(250, 248, 243, 0.7);
+  }
+
+  .viz-pick-half.is-won span {
+    color: #b8d4c0;
+  }
+
+  .viz-pick-vs {
+    font-size: 0.62rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--warm);
+    padding-bottom: 2.5rem;
+  }
+
+  .viz-pick-cap {
+    margin: 1rem 0 0;
+    text-align: center;
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(250, 248, 243, 0.55);
+  }
+
+  /* —— Viz: shelf —— */
+  .viz-shelf {
+    background: rgba(250, 248, 243, 0.04);
+    border: 1px solid rgba(250, 248, 243, 0.12);
+    border-radius: 16px;
+    padding: 1.25rem 1.25rem 1.15rem;
+  }
+
+  .viz-shelf-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 1rem;
+    font-size: 0.62rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(250, 248, 243, 0.55);
+  }
+
+  .viz-shelf-count {
+    font-family: var(--serif);
+    font-size: 1.55rem;
     letter-spacing: -0.02em;
     color: var(--cream);
+    text-transform: none;
+  }
+
+  .viz-shelf-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.55rem;
+  }
+
+  .viz-sku {
+    aspect-ratio: 3 / 4;
+    border-radius: 10px;
+    background: rgba(250, 248, 243, 0.04);
+    border: 1px solid rgba(250, 248, 243, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0.55rem 0.35rem;
+    gap: 0.45rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .viz-sku b {
+    display: block;
+    width: 28px;
+    height: 52px;
+    border-radius: 8px 8px 4px 4px;
+    background: linear-gradient(180deg, #2a3a30 0%, #1a241e 100%);
+    border: 1px solid rgba(157, 184, 166, 0.25);
+  }
+
+  .viz-sku.is-live b {
+    background: linear-gradient(180deg, #3a5342 0%, #24322a 100%);
+    border-color: rgba(184, 212, 192, 0.45);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+  }
+
+  .viz-sku.is-dim {
+    opacity: 0.4;
+  }
+
+  .viz-sku em {
+    font-style: normal;
+    font-size: 0.55rem;
+    letter-spacing: 0.04em;
+    color: rgba(250, 248, 243, 0.55);
+    text-align: center;
     line-height: 1.2;
   }
 
-  .why-line {
-    font-size: 1rem;
-    line-height: 1.55;
-    color: rgba(250, 248, 243, 0.78);
-    max-width: 48ch;
-    margin-top: 0.25rem;
+  .viz-sku.is-live em {
+    color: rgba(250, 248, 243, 0.85);
   }
 
-  .why-verdict {
-    margin-top: 2.5rem;
-    padding: 1.5rem 1.65rem;
-    background: rgba(250, 248, 243, 0.05);
+  .viz-shelf-foot {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    margin-top: 1rem;
+  }
+
+  .viz-pill {
+    font-size: 0.58rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.35rem 0.55rem;
+    border-radius: 999px;
+    border: 1px solid rgba(250, 248, 243, 0.14);
+    color: rgba(250, 248, 243, 0.5);
+  }
+
+  .viz-pill.is-on {
+    color: #b8d4c0;
+    border-color: rgba(184, 212, 192, 0.35);
+    background: rgba(184, 212, 192, 0.08);
+  }
+
+  /* —— Viz: verdict —— */
+  .viz-verdict {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    background:
+      radial-gradient(ellipse 70% 50% at 100% 0%, rgba(240, 180, 168, 0.12), transparent 55%),
+      rgba(250, 248, 243, 0.04);
     border: 1px solid rgba(250, 248, 243, 0.12);
-    border-radius: 14px;
-    max-width: 52rem;
+    border-radius: 16px;
+    padding: 1.35rem 1.4rem 1.25rem;
+    transition: transform 0.25s var(--ease), border-color 0.25s var(--ease);
+  }
+
+  .viz-verdict:hover {
+    transform: translateY(-3px);
+    border-color: rgba(240, 180, 168, 0.35);
+  }
+
+  .viz-verdict-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .viz-sim {
+    font-size: 0.55rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--warm);
+    border: 1px solid rgba(184, 144, 106, 0.4);
+    padding: 0.25rem 0.45rem;
+    border-radius: 2px;
+  }
+
+  .viz-verdict-badge {
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #f0b4a8;
+    font-weight: 500;
+  }
+
+  .viz-verdict-product {
+    font-family: var(--serif);
+    font-size: 1.45rem;
+    letter-spacing: -0.02em;
+    margin: 0 0 0.25rem;
+    color: var(--cream);
+  }
+
+  .viz-verdict-meta {
+    font-size: 0.78rem;
+    color: rgba(250, 248, 243, 0.55);
+    margin: 0 0 1.15rem;
+  }
+
+  .viz-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    margin-bottom: 1.1rem;
+  }
+
+  .viz-bar {
+    display: grid;
+    grid-template-columns: 7.5rem 1fr auto;
+    gap: 0.65rem;
+    align-items: center;
+  }
+
+  .viz-bar span {
+    font-size: 0.68rem;
+    color: rgba(250, 248, 243, 0.6);
+  }
+
+  .viz-bar-track {
+    height: 5px;
+    border-radius: 3px;
+    background: rgba(250, 248, 243, 0.12);
+    overflow: hidden;
+  }
+
+  .viz-bar-track i {
+    display: block;
+    height: 100%;
+    background: #b8d4c0;
+    border-radius: 3px;
+  }
+
+  .viz-bar-track.is-bad i {
+    background: #e0a090;
+  }
+
+  .viz-bar em {
+    font-style: normal;
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  .viz-bar em.is-ok { color: #b8d4c0; }
+  .viz-bar em.is-bad { color: #f0b4a8; }
+
+  .viz-verdict-go {
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #e0c4a0;
+    font-weight: 500;
+  }
+
+  .viz-verdict:hover .viz-verdict-go {
+    color: #f0d8b8;
   }
 
   .why-verdict-chips {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.55rem;
-    margin-bottom: 1rem;
+    gap: 0.45rem;
+    margin-top: 1.35rem;
   }
 
-  .why-verdict :global(.verdict-chip) {
+  .why-beat-copy :global(.verdict-chip) {
     border-color: rgba(250, 248, 243, 0.2);
+    font-size: 0.58rem;
+    padding: 0.35rem 0.65rem;
   }
 
-  .why-verdict :global(.verdict-chip.cleared) {
+  .why-beat-copy :global(.verdict-chip.cleared) {
     color: #b8d4c0;
     background: rgba(184, 212, 192, 0.12);
   }
 
-  .why-verdict :global(.verdict-chip.not_cleared) {
+  .why-beat-copy :global(.verdict-chip.not_cleared) {
     color: #f0b4a8;
     background: rgba(240, 180, 168, 0.12);
   }
 
-  .why-verdict :global(.verdict-chip.too_close_to_call) {
+  .why-beat-copy :global(.verdict-chip.too_close_to_call) {
     color: #e0c4a0;
     background: rgba(224, 196, 160, 0.12);
   }
 
-  .why-verdict :global(.verdict-chip.not_enough_responses) {
+  .why-beat-copy :global(.verdict-chip.not_enough_responses) {
     color: rgba(250, 248, 243, 0.7);
     background: rgba(250, 248, 243, 0.08);
-  }
-
-  .why-verdict-body {
-    font-size: 0.95rem;
-    line-height: 1.55;
-    color: rgba(250, 248, 243, 0.78);
-    margin: 0;
-  }
-
-  .why-verdict-body a {
-    display: inline-block;
-    margin-left: 0.35rem;
-    color: #e0c4a0;
-    text-decoration: none;
-    font-weight: 500;
-    letter-spacing: 0.02em;
-  }
-
-  .why-verdict-body a:hover {
-    color: #f0d8b8;
-    text-decoration: underline;
   }
 
   /* Decision list — buyer frame */
@@ -858,6 +1226,19 @@ import CtaBand from '../components/CtaBand.astro';
       border-bottom: 1px solid rgba(250, 248, 243, 0.08);
     }
     .why-headline { max-width: 22ch; }
+    .why-beat,
+    .why-beat.is-flip {
+      grid-template-columns: 1fr;
+    }
+    .why-beat.is-flip .why-viz,
+    .why-beat.is-flip .why-beat-copy {
+      order: unset;
+    }
+    .why-viz { max-width: 28rem; }
+    .viz-bar {
+      grid-template-columns: 1fr;
+      gap: 0.3rem;
+    }
     .decision-list a {
       grid-template-columns: 1fr;
       gap: 0.4rem;
@@ -882,7 +1263,8 @@ import CtaBand from '../components/CtaBand.astro';
       transform: none;
       animation: none;
     }
-    .home-outcome:hover {
+    .home-outcome:hover,
+    .viz-verdict:hover {
       transform: none;
     }
   }
