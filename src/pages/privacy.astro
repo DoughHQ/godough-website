@@ -13,21 +13,24 @@ const siteHost = SITE_URL.replace(/^https:\/\//, '')
   <div class="section" style="padding-top: 3rem;">
     <p class="section-label">Legal</p>
     <h1 class="section-headline" style="max-width: 20ch;">Privacy Policy</h1>
-    <p class="page-date">Last updated September 26, 2026</p>
+    <p class="page-date">Last updated October 9, 2026</p>
     <div class="policy-body" style="max-width: 720px;">
       <p>This Privacy Notice for Sunday Company Group LLC (doing business as Dough) describes how and why we might access, collect, store, use, and share your personal information when you use our services, including when you visit our website at <a href={SITE_URL}>{siteHost}</a> or use the Dough mobile application.</p>
       <p>Questions or concerns? Reading this privacy notice will help you understand your privacy rights and choices. If you do not agree with our policies and practices, please do not use our services. If you still have any questions or concerns, please contact us at <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.</p>
       <div class="divider"></div>
       <h2>What information do we collect?</h2>
       <p>We collect personal information that you voluntarily provide to us when you register on the services, express an interest in obtaining information about us or our products, or otherwise contact us.</p>
-      <p>The personal information we collect may include: email addresses, usernames, and preferences you express through product battles and scans.</p>
+      <p>The personal information we collect may include: email addresses, usernames, display names, bios, profile photos, package photos you capture or upload, and preferences you express through product battles and scans.</p>
       <p>We also collect certain information automatically when you use our services, including device information, usage data, and interaction data such as your product battles and scan history.</p>
       <h2>How do we process your information?</h2>
       <p>We process your information to provide, improve, and administer our services, communicate with you, and for security and fraud prevention. We process your personal information only when we have a valid legal reason to do so.</p>
       <p>Your declared preference data — the choices you make in product battles — is used to build your personal taste profile and to generate aggregated, anonymized insights. Individual preference data is never sold or shared with third parties in identifiable form.</p>
+      <h2>Photos and automated content checks</h2>
+      <p>Profile photos and package photos are checked before other people can see them. We send those images to OpenAI’s moderation API to help detect sexual and violent content. Photos that fail the check are not published and are removed from temporary storage.</p>
+      <p>Separately, when you scan or submit a product package, we may send label images to Anthropic so the app can read product names, brands, nutrition facts, and ingredients. That label-reading use is different from the publish-gate moderation check.</p>
       <h2>When and with whom do we share your information?</h2>
       <p>We do not sell your personal information. We may share aggregated, anonymized preference data with food industry partners for research and insights. This data cannot be used to identify you individually.</p>
-      <p>We may share your information with service providers who assist us in operating our platform, subject to confidentiality agreements.</p>
+      <p>We may share your information with service providers who assist us in operating our platform, subject to confidentiality agreements. That includes OpenAI (photo moderation) and Anthropic (package label reading), as described above.</p>
       <h2>How do we keep your information safe?</h2>
       <p>We have implemented appropriate technical and organizational security measures designed to protect the security of any personal information we process. However, no electronic transmission over the internet or information storage technology can be guaranteed to be 100% secure.</p>
       <h2>What are your privacy rights?</h2>
