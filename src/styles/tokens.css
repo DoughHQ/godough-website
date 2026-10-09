@@ -18,5 +18,4 @@
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
   --page-pad: clamp(1.5rem, 4vw, 4rem);
   --measure: 42ch;
-  --portal: https://brands.godough.co/login;
 }

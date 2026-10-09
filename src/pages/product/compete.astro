@@ -1,10 +1,11 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import CtaBand from '../../components/CtaBand.astro';
+import { PORTAL_ORIGIN } from '../../data/site';
 import '../../styles/offer-product.css';
 import '../../styles/compete.css';
 
-const WORKSPACE_HOME = 'https://brands.godough.co/marketing/workspace/home'
+const WORKSPACE_HOME = `${PORTAL_ORIGIN}/marketing/workspace/home`
 
 /**
  * Simulated category PreferenceField — portal ranking chrome with fixture Elo.
@@ -159,7 +160,7 @@ const field = [
           <span class="dot"></span>
           <span class="dot"></span>
           <span class="dot"></span>
-          <span class="url">brands.godough.co/marketing/workspace/home</span>
+          <span class="url">{WORKSPACE_HOME.replace('https://', '')}</span>
         </div>
         <iframe
           class="portal-frame"

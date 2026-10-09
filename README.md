@@ -1,6 +1,6 @@
 # godough-website
 
-Dough marketing website — [godough.co](https://godough.co)
+Dough marketing website — [www.itsarunoff.com](https://www.itsarunoff.com) · brand portal [brands.itsarunoff.com](https://brands.itsarunoff.com)
 
 Astro static site. Design system from the former `brands.html`. Brand homepage is `/`. Shopper story lives at `/app`.
 

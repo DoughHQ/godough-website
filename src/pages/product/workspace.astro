@@ -3,6 +3,9 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import OfferRelated from '../../components/OfferRelated.astro';
 import CtaBand from '../../components/CtaBand.astro';
 import WorkspaceFrames from '../../components/WorkspaceFrames.astro';
+import { PORTAL_ORIGIN } from '../../data/site';
+
+const portalHost = PORTAL_ORIGIN.replace(/^https:\/\//, '')
 ---
 
 <BaseLayout
@@ -22,7 +25,7 @@ import WorkspaceFrames from '../../components/WorkspaceFrames.astro';
   <section class="section">
     <p class="section-label">What you see</p>
     <p class="section-body" style="margin-bottom: 2.5rem;">
-      Live views from the brand portal at brands.godough.co — the same screens, with simulated fixture data.
+      Live views from the brand portal at {portalHost} — the same screens, with simulated fixture data.
     </p>
     <WorkspaceFrames />
     <OfferRelated />

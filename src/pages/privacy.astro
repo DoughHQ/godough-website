@@ -1,5 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE_URL, CONTACT_EMAIL } from '../data/site';
+
+const siteHost = SITE_URL.replace(/^https:\/\//, '')
 ---
 
 <BaseLayout
@@ -12,8 +15,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <h1 class="section-headline" style="max-width: 20ch;">Privacy Policy</h1>
     <p class="page-date">Last updated September 26, 2026</p>
     <div class="policy-body" style="max-width: 720px;">
-      <p>This Privacy Notice for Sunday Company Group LLC (doing business as Dough) describes how and why we might access, collect, store, use, and share your personal information when you use our services, including when you visit our website at <a href="https://godough.co">godough.co</a> or use the Dough mobile application.</p>
-      <p>Questions or concerns? Reading this privacy notice will help you understand your privacy rights and choices. If you do not agree with our policies and practices, please do not use our services. If you still have any questions or concerns, please contact us at <a href="mailto:hello@godough.co">hello@godough.co</a>.</p>
+      <p>This Privacy Notice for Sunday Company Group LLC (doing business as Dough) describes how and why we might access, collect, store, use, and share your personal information when you use our services, including when you visit our website at <a href={SITE_URL}>{siteHost}</a> or use the Dough mobile application.</p>
+      <p>Questions or concerns? Reading this privacy notice will help you understand your privacy rights and choices. If you do not agree with our policies and practices, please do not use our services. If you still have any questions or concerns, please contact us at <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.</p>
       <div class="divider"></div>
       <h2>What information do we collect?</h2>
       <p>We collect personal information that you voluntarily provide to us when you register on the services, express an interest in obtaining information about us or our products, or otherwise contact us.</p>
@@ -28,11 +31,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <h2>How do we keep your information safe?</h2>
       <p>We have implemented appropriate technical and organizational security measures designed to protect the security of any personal information we process. However, no electronic transmission over the internet or information storage technology can be guaranteed to be 100% secure.</p>
       <h2>What are your privacy rights?</h2>
-      <p>Depending on your location, you may have certain rights regarding your personal information, including the right to access, correct, or delete your data. To delete your account, follow the steps on <a href="/delete-account">the account deletion page</a>. For other requests, contact us at <a href="mailto:hello@godough.co">hello@godough.co</a>.</p>
+      <p>Depending on your location, you may have certain rights regarding your personal information, including the right to access, correct, or delete your data. To delete your account, follow the steps on <a href="/delete-account">the account deletion page</a>. For other requests, contact us at <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.</p>
       <h2>How do you delete your account?</h2>
-      <p>In the Dough app, open Settings, then Delete Account under Danger Zone, and type DELETE. Privacy Settings opens the same screen. If you no longer have the app, email <a href="mailto:hello@godough.co">hello@godough.co</a> from the account's address; we reply within a few business days.</p>
+      <p>In the Dough app, open Settings, then Delete Account under Danger Zone, and type DELETE. Privacy Settings opens the same screen. If you no longer have the app, email <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a> from the account's address; we reply within a few business days.</p>
       <p>Deletion removes your login and personal details. Photos and receipt images are removed within a few minutes. Ratings and comparisons stay in a form no longer linked to your identity, along with the five-year birth-year band, saved products with notes removed, and taste weights. We keep your consent log, payout records, a deletion record with no personal information, and any payout phone number in the fraud-prevention registry. A payout identity is deleted unless a sent or paid payout still has to name it. You can sign up again with the same email as a new account; the old account is not restored.</p>
-      <p>If your login runs a brand workspace or approved a mission, deletion goes through <a href="mailto:hello@godough.co">hello@godough.co</a>. Nothing is deleted until that is resolved.</p>
+      <p>If your login runs a brand workspace or approved a mission, deletion goes through <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. Nothing is deleted until that is resolved.</p>
       <p>More detail is on <a href="/delete-account">the account deletion page</a>.</p>
       <h2>Do we make updates to this notice?</h2>
       <p>We may update this privacy notice from time to time. The updated version will be indicated by an updated date at the top of this page. We encourage you to review this privacy notice frequently to stay informed about how we are protecting your information.</p>
@@ -42,7 +45,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       30 N Gould St, Ste N<br />
       Sheridan, WY 82801<br />
       United States<br />
-      <a href="mailto:hello@godough.co">hello@godough.co</a></p>
+      <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a></p>
     </div>
   </div>
 </BaseLayout>

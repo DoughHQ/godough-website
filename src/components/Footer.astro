@@ -1,4 +1,6 @@
 ---
+import { CONTACT_EMAIL } from '../data/site';
+
 const year = new Date().getFullYear();
 ---
 
@@ -43,12 +45,12 @@ const year = new Date().getFullYear();
         <li><a href="/privacy">Privacy</a></li>
         <li><a href="/terms">Terms</a></li>
         <li><a href="/delete-account">Delete account</a></li>
-        <li><a href="mailto:hello@godough.co">Contact</a></li>
+        <li><a href={`mailto:${CONTACT_EMAIL}`}>Contact</a></li>
       </ul>
     </div>
   </div>
 
-  <p class="footer-meta">© {year} Sunday Company Group LLC · godough.co</p>
+  <p class="footer-meta">© {year} Sunday Company Group LLC · itsarunoff.com</p>
 </footer>
 
 <style>

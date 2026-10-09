@@ -1,26 +1,28 @@
 ---
-const PORTAL = 'https://brands.godough.co'
+import { PORTAL_ORIGIN } from '../data/site';
 
 const frames = [
   {
     label: 'Dashboard',
-    src: `${PORTAL}/marketing/workspace/home`,
+    src: `${PORTAL_ORIGIN}/marketing/workspace/home`,
     title: 'Brand home in the Dough portal',
     eager: true,
   },
   {
     label: 'Concept study',
-    src: `${PORTAL}/marketing/workspace/concept`,
+    src: `${PORTAL_ORIGIN}/marketing/workspace/concept`,
     title: 'Concept study report in the Dough portal',
     eager: false,
   },
   {
     label: 'Report verdict',
-    src: `${PORTAL}/marketing/workspace/report`,
+    src: `${PORTAL_ORIGIN}/marketing/workspace/report`,
     title: 'Concept test report in the Dough portal',
     eager: false,
   },
 ]
+
+const portalHost = PORTAL_ORIGIN.replace(/^https:\/\//, '')
 ---
 
 <div class="frames">
@@ -47,7 +49,7 @@ const frames = [
 </div>
 
 <p class="live-note">
-  These are live views from <a href="https://brands.godough.co">brands.godough.co</a>, rendered with
+  These are live views from <a href={PORTAL_ORIGIN}>{portalHost}</a>, rendered with
   simulated fixture data — the same components brands see after access.
 </p>
 
