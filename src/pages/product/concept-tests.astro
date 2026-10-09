@@ -1,9 +1,10 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import CtaBand from '../../components/CtaBand.astro';
+import { PORTAL_ORIGIN } from '../../data/site';
 import '../../styles/offer-product.css';
 
-const CONCEPT_REPORT = 'https://brands.godough.co/marketing/workspace/report'
+const CONCEPT_REPORT = `${PORTAL_ORIGIN}/marketing/workspace/report`
 const EXAMPLE = '/report/example'
 ---
 
@@ -128,7 +129,7 @@ const EXAMPLE = '/report/example'
           <span class="dot"></span>
           <span class="dot"></span>
           <span class="dot"></span>
-          <span class="url">brands.godough.co/marketing/workspace/report</span>
+          <span class="url">{CONCEPT_REPORT.replace('https://', '')}</span>
         </div>
         <iframe
           class="portal-frame"

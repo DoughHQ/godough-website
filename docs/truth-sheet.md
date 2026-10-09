@@ -1,4 +1,4 @@
-# Truth sheet — godough.co
+# Truth sheet — www.itsarunoff.com
 
 Every factual claim on the site must trace here. If it is not on this list, it does not ship.
 
@@ -10,7 +10,7 @@ Every factual claim on the site must trace here. If it is not on this list, it d
 | Three offers: standings (how you compete), concept tests, box studies | Portal: concept + IHUT publish; catalog standings |
 | Box studies ship to Dough shoppers who’ve already rated / chosen in similar categories | Product positioning for IHUT recruiting |
 | Shoppers in New York (first panel) | Product decision for this site |
-| Access is reviewed by a person (not self-serve checkout on the marketing site) | Portal application flow; `brands.godough.co/login` |
+| Access is reviewed by a person (not self-serve checkout on the marketing site) | Portal application flow; `brands.itsarunoff.com/login` |
 | 600,000+ products indexed | Existing brands page / catalog |
 | 700+ categories | Existing brands page / catalog |
 | Confidence 95%, fixed by Dough; brands set bars | `concept_verdict_bars` / report `method.confidence` |

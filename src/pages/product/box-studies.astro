@@ -1,10 +1,11 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import CtaBand from '../../components/CtaBand.astro';
+import { PORTAL_ORIGIN } from '../../data/site';
 import '../../styles/offer-product.css';
 
-const BOX_PREVIEW = 'https://brands.godough.co/marketing/workspace/box-preview'
-const BOX_FULL = 'https://brands.godough.co/marketing/workspace/box-report'
+const BOX_PREVIEW = `${PORTAL_ORIGIN}/marketing/workspace/box-preview`
+const BOX_FULL = `${PORTAL_ORIGIN}/marketing/workspace/box-report`
 ---
 
 <BaseLayout
@@ -128,7 +129,7 @@ const BOX_FULL = 'https://brands.godough.co/marketing/workspace/box-report'
           <span class="dot"></span>
           <span class="dot"></span>
           <span class="dot"></span>
-          <span class="url">brands.godough.co/marketing/workspace/box-preview</span>
+          <span class="url">{BOX_PREVIEW.replace('https://', '')}</span>
         </div>
         <iframe
           class="portal-frame"

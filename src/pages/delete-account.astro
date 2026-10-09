@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { CONTACT_EMAIL } from '../data/site';
 ---
 
 <BaseLayout
@@ -23,7 +24,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <p>Privacy Settings opens the same screen.</p>
 
       <h2>If you no longer have the app</h2>
-      <p>Email <a href="mailto:hello@godough.co">hello@godough.co</a> from the address on the account. We reply within a few business days.</p>
+      <p>Email <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a> from the address on the account. We reply within a few business days.</p>
 
       <h2>What is deleted</h2>
       <ul>
@@ -54,7 +55,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </ul>
 
       <h2>When the app cannot delete it</h2>
-      <p>If your login runs a brand workspace or approved a mission, the app leaves the account unchanged and asks you to contact <a href="mailto:hello@godough.co">hello@godough.co</a>. Nothing is deleted until that is resolved.</p>
+      <p>If your login runs a brand workspace or approved a mission, the app leaves the account unchanged and asks you to contact <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. Nothing is deleted until that is resolved.</p>
       <p>The same details are in the <a href="/privacy">privacy policy</a>.</p>
     </div>
   </div>

@@ -3,6 +3,7 @@ import '../styles/base.css';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
+import { SITE_URL } from '../data/site';
 
 interface Crumb {
   href?: string;
@@ -29,9 +30,8 @@ const {
   ogType = 'website',
 } = Astro.props;
 
-const site = 'https://godough.co';
 const path = Astro.url.pathname.replace(/\/$/, '') || '/';
-const canonicalUrl = canonical ?? `${site}${path === '/' ? '/' : path}`;
+const canonicalUrl = canonical ?? `${SITE_URL}${path === '/' ? '/' : path}`;
 ---
 
 <!DOCTYPE html>
