@@ -3,7 +3,7 @@ import '../styles/base.css';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
-import { SITE_URL } from '../data/site';
+import { PRODUCT_NAME, SITE_URL } from '../data/site';
 
 interface Crumb {
   href?: string;
@@ -46,7 +46,7 @@ const canonicalUrl = canonical ?? `${SITE_URL}${path === '/' ? '/' : path}`;
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:type" content={ogType} />
-    <meta property="og:site_name" content="Dough" />
+    <meta property="og:site_name" content={PRODUCT_NAME} />
     <link rel="icon" type="image/svg+xml" href="/dough-mark.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

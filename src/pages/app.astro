@@ -1,11 +1,11 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { PORTAL_LOGIN } from '../data/site';
+import { PORTAL_LOGIN, PRODUCT_NAME } from '../data/site';
 ---
 
 <BaseLayout
-  title="Dough — Shape your plate"
-  description="Scan anything. Battle. Choose honestly. Your plate, curated. Dough is a shopper app for people who love food."
+  title={`${PRODUCT_NAME} — Shape your plate`}
+  description={`Scan anything. Battle. Choose honestly. Your plate, curated. ${PRODUCT_NAME} is a shopper app for people who love food.`}
   current="/app"
   crumbs={[{ label: 'The app' }]}
 >
@@ -13,7 +13,7 @@ import { PORTAL_LOGIN } from '../data/site';
     <p class="hero-eyebrow">For shoppers</p>
     <h1 class="hero-headline">Shape your <em>plate.</em></h1>
     <p class="hero-sub">
-      We ask. You answer. Your plate takes shape. Dough learns from what you choose — not what’s trending, not what anyone paid to show you.
+      We ask. You answer. Your plate takes shape. {PRODUCT_NAME} learns from what you choose — not what’s trending, not what anyone paid to show you.
     </p>
   </header>
 
@@ -28,7 +28,7 @@ import { PORTAL_LOGIN } from '../data/site';
       <div class="path-step reveal">
         <p class="n">02</p>
         <h3>Battle. Choose honestly.</h3>
-        <p>Two products. One choice. Every battle teaches Dough something true about you.</p>
+        <p>Two products. One choice. Every battle teaches {PRODUCT_NAME} something true about you.</p>
       </div>
       <div class="path-step reveal">
         <p class="n">03</p>
