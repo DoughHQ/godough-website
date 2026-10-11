@@ -1,17 +1,18 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import CtaBand from '../components/CtaBand.astro';
+import { PRODUCT_NAME } from '../data/site';
 ---
 
 <BaseLayout
-  title="Dough — Real grocery choices. Verdicts that can say no."
+  title={`${PRODUCT_NAME} — Real grocery choices. Verdicts that can say no.`}
   description="New York shoppers already pick between real grocery products. Brands start a step ahead — then concept and box studies against that same preference, with reports that can fail."
   navTheme="field"
   current="/"
 >
   <header class="home-hero">
     <div class="home-hero-copy">
-      <p class="home-brand">Dough</p>
+      <p class="home-brand">{PRODUCT_NAME}</p>
       <h1 class="home-headline">
         Real grocery choices. A standing — or a verdict that can kill the design.
       </h1>

@@ -1,5 +1,5 @@
 ---
-import { PORTAL_LOGIN } from '../data/site';
+import { PORTAL_LOGIN, PRODUCT_NAME } from '../data/site';
 
 interface Props {
   theme?: 'field' | 'cream';
@@ -26,7 +26,7 @@ const reportLinks = [
     <span class="nav-logo-mark" aria-hidden="true">
       <img src="/dough-mark.png" alt="" width="32" height="32" />
     </span>
-    Dough
+    {PRODUCT_NAME}
   </a>
 
   <details class="nav-mobile">
