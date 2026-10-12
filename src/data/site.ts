@@ -7,4 +7,5 @@ export const PRODUCT_NAME = 'Dough';
 export const SITE_URL = 'https://www.itsarunoff.com';
 export const PORTAL_ORIGIN = 'https://brands.itsarunoff.com';
 export const PORTAL_LOGIN = `${PORTAL_ORIGIN}/login`;
+export const PORTAL_APPLY = `${PORTAL_ORIGIN}/apply`;
 export const CONTACT_EMAIL = 'hello@itsarunoff.com';

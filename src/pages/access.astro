@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { PRODUCT_NAME, PORTAL_LOGIN, CONTACT_EMAIL } from '../data/site';
+import { PRODUCT_NAME, PORTAL_APPLY, PORTAL_LOGIN, CONTACT_EMAIL } from '../data/site';
 ---
 
 <BaseLayout
@@ -56,13 +56,13 @@ import { PRODUCT_NAME, PORTAL_LOGIN, CONTACT_EMAIL } from '../data/site';
         <span class="access-num">03</span>
         <div>
           <h3 class="access-title">We follow up</h3>
-          <p class="access-copy">A human review, then access — and a call when it’s useful. What happens next is a person, not a checkout.</p>
+          <p class="access-copy">A person reads every request and replies within 3 business days.</p>
         </div>
       </div>
     </div>
 
     <div class="hero-actions" style="margin-top: 3rem;">
-      <a class="btn-primary on-cream" href={PORTAL_LOGIN}>
+      <a class="btn-primary on-cream" href={PORTAL_APPLY}>
         Request access <span class="arr" aria-hidden="true">→</span>
       </a>
       <a class="btn-ghost on-cream" href={PORTAL_LOGIN}>Already have access? Sign in</a>
