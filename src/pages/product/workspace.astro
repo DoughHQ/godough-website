@@ -3,13 +3,13 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import OfferRelated from '../../components/OfferRelated.astro';
 import CtaBand from '../../components/CtaBand.astro';
 import WorkspaceFrames from '../../components/WorkspaceFrames.astro';
-import { PORTAL_ORIGIN } from '../../data/site';
+import { PRODUCT_NAME, PORTAL_ORIGIN } from '../../data/site';
 
 const portalHost = PORTAL_ORIGIN.replace(/^https:\/\//, '')
 ---
 
 <BaseLayout
-  title="The workspace — Dough"
+  title={`The workspace — ${PRODUCT_NAME}`}
   description="After a person lets you in, the brand workspace holds claimed products, studies, and the report in one place."
   current="/product/workspace"
   crumbs={[{ href: '/product/compete', label: 'Product' }, { label: 'The workspace' }]}
@@ -18,7 +18,7 @@ const portalHost = PORTAL_ORIGIN.replace(/^https:\/\//, '')
     <p class="hero-eyebrow">Product</p>
     <h1 class="hero-headline">The <em>workspace.</em></h1>
     <p class="hero-sub">
-      A place for the people who own the brand. Claimed products, studies you commission, and the report — in one login, after a person at Dough lets you in.
+      A place for the people who own the brand. Claimed products, studies you commission, and the report — in one login, after a person at {PRODUCT_NAME} lets you in.
     </p>
   </header>
 

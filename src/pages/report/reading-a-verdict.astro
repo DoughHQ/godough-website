@@ -1,10 +1,11 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import CtaBand from '../../components/CtaBand.astro';
+import { PRODUCT_NAME } from '../../data/site';
 ---
 
 <BaseLayout
-  title="How to read a verdict — Dough"
+  title={`How to read a verdict — ${PRODUCT_NAME}`}
   description="Cleared, not cleared, too close to call, not enough responses. One missed bar and the study does not clear. Under ten answers is not a result."
   current="/report/reading-a-verdict"
   crumbs={[{ href: '/report/example', label: 'Report' }, { label: 'Reading a verdict' }]}
@@ -53,7 +54,7 @@ import CtaBand from '../../components/CtaBand.astro';
 
       <h2 id="floor">Under ten</h2>
       <p>
-        Confidence is 95%, fixed by Dough. You set the bars. You never set the confidence. Under ten completed answers, a concept bar reads “not enough responses.” Everyday competition on a claimed product waits until the choices are thick enough to be a pattern.
+        Confidence is 95%, fixed by {PRODUCT_NAME}. You set the bars. You never set the confidence. Under ten completed answers, a concept bar reads “not enough responses.” Everyday competition on a claimed product waits until the choices are thick enough to be a pattern.
       </p>
 
       <h2 id="example">See it work</h2>

@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import CtaBand from '../components/CtaBand.astro';
 import '../styles/offer-product.css';
 import '../styles/shoppers.css';
+import { PRODUCT_NAME } from '../data/site';
 
 /** Simulated My List fixture — personal order + Elo, not brand population standing. */
 const rankingRows = [
@@ -49,8 +50,8 @@ const alsoRanked = rankingRows.slice(1);
 ---
 
 <BaseLayout
-  title="Who answers — Dough"
-  description="Shoppers in New York, in the Dough app, who already scan and rank products in category. That taste history is how we know who fits a study — then they choose."
+  title={`Who answers — ${PRODUCT_NAME}`}
+  description={`Shoppers in New York, in the ${PRODUCT_NAME} app, who already scan and rank products in category. That taste history is how we know who fits a study — then they choose.`}
   current="/shoppers"
   crumbs={[{ label: 'Shoppers' }]}
 >
@@ -72,7 +73,7 @@ const alsoRanked = rankingRows.slice(1);
     <a class="shop-hero-card" href="#ahead" aria-label="Simulated shopper ranking — why this panel is different">
       <div class="shop-hero-card-top">
         <span class="shop-hero-sim">Simulated</span>
-        <span class="shop-hero-loc">As in the Dough app</span>
+        <span class="shop-hero-loc">As in the {PRODUCT_NAME} app</span>
       </div>
 
       <div class="shop-app" aria-hidden="true">
@@ -219,7 +220,7 @@ const alsoRanked = rankingRows.slice(1);
       <article class="ahead-card is-box">
         <p class="ahead-kicker">Box</p>
         <h3>Already rated products like yours.</h3>
-        <p>We ship to Dough shoppers who’ve already chosen in similar categories. Preference after use — then whether they’d come back.</p>
+        <p>We ship to {PRODUCT_NAME} shoppers who’ve already chosen in similar categories. Preference after use — then whether they’d come back.</p>
       </article>
     </div>
   </section>

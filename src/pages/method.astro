@@ -1,13 +1,14 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import CtaBand from '../components/CtaBand.astro';
+import { PRODUCT_NAME } from '../data/site';
 
 const EXAMPLE = '/report/example'
 ---
 
 <BaseLayout
-  title="Method — Dough"
-  description="The rules in the same words as the Dough report: 95% confidence, Wilson intervals, cleared only when the whole interval clears the bar, price as stated willingness to pay."
+  title={`Method — ${PRODUCT_NAME}`}
+  description={`The rules in the same words as the ${PRODUCT_NAME} report: 95% confidence, Wilson intervals, cleared only when the whole interval clears the bar, price as stated willingness to pay.`}
   current="/method"
   crumbs={[{ label: 'Method' }]}
 >
@@ -17,7 +18,7 @@ const EXAMPLE = '/report/example'
       The rules, in the same words as the report.
     </h1>
     <p class="method-sub">
-      You set the bars. Dough fixes confidence at 95%. A study can fail. Here is exactly how — no soft landings.
+      You set the bars. {PRODUCT_NAME} fixes confidence at 95%. A study can fail. Here is exactly how — no soft landings.
     </p>
     <div class="hero-actions">
       <a class="btn-primary on-cream" href={EXAMPLE}>
@@ -89,7 +90,7 @@ const EXAMPLE = '/report/example'
   <!-- Who controls what -->
   <section class="method-section mid" id="controls">
     <p class="section-label">The contract</p>
-    <h2 class="method-h2">You set the bars. Dough fixes the rest.</h2>
+    <h2 class="method-h2">You set the bars. {PRODUCT_NAME} fixes the rest.</h2>
     <div class="control-grid">
       <div class="control-col">
         <p class="control-eyebrow">You</p>
@@ -101,7 +102,7 @@ const EXAMPLE = '/report/example'
         </ul>
       </div>
       <div class="control-col is-dough">
-        <p class="control-eyebrow">Dough</p>
+        <p class="control-eyebrow">{PRODUCT_NAME}</p>
         <ul>
           <li>Confidence fixed at 95%</li>
           <li>Wilson intervals on the counts that matter</li>
@@ -188,7 +189,7 @@ const EXAMPLE = '/report/example'
       <li>
         <span class="freeze-n">03</span>
         <strong>Report</strong>
-        <span>Your bar next to Dough’s default — so a later reader sees what was asked</span>
+        <span>Your bar next to {PRODUCT_NAME}’s default — so a later reader sees what was asked</span>
       </li>
     </ol>
   </section>

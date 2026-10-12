@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import CtaBand from '../../components/CtaBand.astro';
-import { PORTAL_ORIGIN } from '../../data/site';
+import { PRODUCT_NAME, PORTAL_ORIGIN } from '../../data/site';
 import '../../styles/offer-product.css';
 import '../../styles/compete.css';
 
@@ -22,8 +22,8 @@ const field = [
 ---
 
 <BaseLayout
-  title="How you compete — Dough"
-  description="Claim your products in the Dough catalog. Shoppers battle them head-to-head in category — Elo rankings show where you stand and what you’re compared against."
+  title={`How you compete — ${PRODUCT_NAME}`}
+  description={`Claim your products in the ${PRODUCT_NAME} catalog. Shoppers battle them head-to-head in category — Elo rankings show where you stand and what you’re compared against.`}
   current="/product/compete"
   crumbs={[{ href: '/product/compete', label: 'Product' }, { label: 'How you compete' }]}
 >
@@ -165,7 +165,7 @@ const field = [
         <iframe
           class="portal-frame"
           src={WORKSPACE_HOME}
-          title="Simulated brand workspace home from the Dough portal"
+          title={`Simulated brand workspace home from the ${PRODUCT_NAME} portal`}
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
         ></iframe>

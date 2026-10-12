@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import CtaBand from '../../components/CtaBand.astro';
-import { PORTAL_ORIGIN } from '../../data/site';
+import { PRODUCT_NAME, PORTAL_ORIGIN } from '../../data/site';
 import '../../styles/offer-product.css';
 
 const CONCEPT_REPORT = `${PORTAL_ORIGIN}/marketing/workspace/report`
@@ -9,7 +9,7 @@ const EXAMPLE = '/report/example'
 ---
 
 <BaseLayout
-  title="Concept tests — Dough"
+  title={`Concept tests — ${PRODUCT_NAME}`}
   description="Put one new design against your current pack or one competitor. New York shoppers choose. The report says whether it cleared the bars you set."
   current="/product/concept-tests"
   crumbs={[{ href: '/product/compete', label: 'Product' }, { label: 'Concept tests' }]}
@@ -59,7 +59,7 @@ const EXAMPLE = '/report/example'
 
       <div class="payoff-drivers">
         <span><b>Bars set first</b> — frozen after the first shopper starts</span>
-        <span><b>95% confidence</b> — Dough’s; you set the bars</span>
+        <span><b>95% confidence</b> — {PRODUCT_NAME}’s; you set the bars</span>
       </div>
 
       <span class="payoff-go">See the report preview ↓</span>
@@ -134,7 +134,7 @@ const EXAMPLE = '/report/example'
         <iframe
           class="portal-frame"
           src={CONCEPT_REPORT}
-          title="Simulated concept test report from the Dough portal"
+          title={`Simulated concept test report from the ${PRODUCT_NAME} portal`}
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
         ></iframe>

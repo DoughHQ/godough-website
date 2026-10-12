@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import CtaBand from '../../components/CtaBand.astro';
-import { PORTAL_ORIGIN } from '../../data/site';
+import { PRODUCT_NAME, PORTAL_ORIGIN } from '../../data/site';
 import '../../styles/offer-product.css';
 
 const BOX_PREVIEW = `${PORTAL_ORIGIN}/marketing/workspace/box-preview`
@@ -9,7 +9,7 @@ const BOX_FULL = `${PORTAL_ORIGIN}/marketing/workspace/box-report`
 ---
 
 <BaseLayout
-  title="Box studies — Dough"
+  title={`Box studies — ${PRODUCT_NAME}`}
   description="Ship your product to New York shoppers who’ve rated similar products. They use it at home, choose, and say if they’d come back."
   current="/product/box-studies"
   crumbs={[{ href: '/product/compete', label: 'Product' }, { label: 'Box studies' }]}
@@ -21,7 +21,7 @@ const BOX_FULL = `${PORTAL_ORIGIN}/marketing/workspace/box-report`
         Your product. A New York kitchen. A real choice after they use it.
       </h1>
       <p class="offer-sub">
-        We ship to Dough shoppers who’ve already rated products like yours. They try it at home, pick against an alternative, and say why — then whether they’d come back.
+        We ship to {PRODUCT_NAME} shoppers who’ve already rated products like yours. They try it at home, pick against an alternative, and say why — then whether they’d come back.
       </p>
       <div class="hero-actions offer-actions">
         <a class="btn-primary on-cream" href="/access">
@@ -134,7 +134,7 @@ const BOX_FULL = `${PORTAL_ORIGIN}/marketing/workspace/box-report`
         <iframe
           class="portal-frame"
           src={BOX_PREVIEW}
-          title="Simulated box study report preview from the Dough portal"
+          title={`Simulated box study report preview from the ${PRODUCT_NAME} portal`}
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
         ></iframe>

@@ -1,18 +1,18 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { CONTACT_EMAIL } from '../data/site';
+import { PRODUCT_NAME, CONTACT_EMAIL } from '../data/site';
 ---
 
 <BaseLayout
-  title="About — Dough"
-  description="Dough is a product of Sunday Company Group LLC. A shopper app and a brand workspace built on the same preference world."
+  title={`About — ${PRODUCT_NAME}`}
+  description={`${PRODUCT_NAME} is a product of Sunday Company Group LLC. A shopper app and a brand workspace built on the same preference world.`}
   crumbs={[{ label: 'About' }]}
 >
   <header class="page-hero">
     <p class="hero-eyebrow">Company</p>
     <h1 class="hero-headline">Sunday Company Group <em>LLC.</em></h1>
     <p class="hero-sub">
-      Dough is our product: a shopper app where people choose between real grocery products, and a brand workspace that turns those choices into standings, concept tests, and box studies.
+      {PRODUCT_NAME} is our product: a shopper app where people choose between real grocery products, and a brand workspace that turns those choices into standings, concept tests, and box studies.
     </p>
   </header>
 

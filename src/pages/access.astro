@@ -1,11 +1,11 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { PORTAL_LOGIN, CONTACT_EMAIL } from '../data/site';
+import { PRODUCT_NAME, PORTAL_LOGIN, CONTACT_EMAIL } from '../data/site';
 ---
 
 <BaseLayout
-  title="Request access — Dough"
-  description="Tell us the brand and the decision you’re stuck on. A person at Dough reviews every request and writes back — not a checkout."
+  title={`Request access — ${PRODUCT_NAME}`}
+  description={`Tell us the brand and the decision you’re stuck on. A person at ${PRODUCT_NAME} reviews every request and writes back — not a checkout.`}
   current="/access"
   crumbs={[{ label: 'Request access' }]}
 >
