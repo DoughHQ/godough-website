@@ -1,5 +1,6 @@
 ---
 import VerdictChip from './VerdictChip.astro';
+import { PRODUCT_NAME } from '../../data/site';
 
 interface Props {
   title: string;
@@ -45,7 +46,7 @@ function pct(n: number | null | undefined) {
     )}
     {doughDefault != null && (
       <div>
-        <dt>Dough default</dt>
+        <dt>{PRODUCT_NAME} default</dt>
         <dd>{pct(doughDefault)}</dd>
       </div>
     )}

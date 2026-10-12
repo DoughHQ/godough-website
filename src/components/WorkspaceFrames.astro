@@ -1,23 +1,23 @@
 ---
-import { PORTAL_ORIGIN } from '../data/site';
+import { PRODUCT_NAME, PORTAL_ORIGIN } from '../data/site';
 
 const frames = [
   {
     label: 'Dashboard',
     src: `${PORTAL_ORIGIN}/marketing/workspace/home`,
-    title: 'Brand home in the Dough portal',
+    title: `Brand home in the ${PRODUCT_NAME} portal`,
     eager: true,
   },
   {
     label: 'Concept study',
     src: `${PORTAL_ORIGIN}/marketing/workspace/concept`,
-    title: 'Concept study report in the Dough portal',
+    title: `Concept study report in the ${PRODUCT_NAME} portal`,
     eager: false,
   },
   {
     label: 'Report verdict',
     src: `${PORTAL_ORIGIN}/marketing/workspace/report`,
-    title: 'Concept test report in the Dough portal',
+    title: `Concept test report in the ${PRODUCT_NAME} portal`,
     eager: false,
   },
 ]

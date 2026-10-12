@@ -2,11 +2,12 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ReportRenderer from '../../components/report/ReportRenderer.astro';
 import CtaBand from '../../components/CtaBand.astro';
+import { PRODUCT_NAME } from '../../data/site';
 ---
 
 <BaseLayout
-  title="Example report — Dough"
-  description="A simulated concept report in the real Dough schema: verdict, bars, first look, what mattered, price, and open answers. Labeled as an example."
+  title={`Example report — ${PRODUCT_NAME}`}
+  description={`A simulated concept report in the real ${PRODUCT_NAME} schema: verdict, bars, first look, what mattered, price, and open answers. Labeled as an example.`}
   current="/report/example"
   crumbs={[{ href: '/report/example', label: 'Report' }, { label: 'Example report' }]}
 >

@@ -1,11 +1,11 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { CONTACT_EMAIL } from '../data/site';
+import { PRODUCT_NAME, CONTACT_EMAIL } from '../data/site';
 ---
 
 <BaseLayout
-  title="Delete your account — Dough"
-  description="How to delete your Dough account, what is deleted, and what Sunday Company Group LLC keeps."
+  title={`Delete your account — ${PRODUCT_NAME}`}
+  description={`How to delete your ${PRODUCT_NAME} account, what is deleted, and what Sunday Company Group LLC keeps.`}
   crumbs={[{ label: 'Delete account' }]}
 >
   <div class="section" style="padding-top: 3rem;">
@@ -13,11 +13,11 @@ import { CONTACT_EMAIL } from '../data/site';
     <h1 class="section-headline" style="max-width: 18ch;">Delete your account</h1>
     <p class="page-date">Last updated September 26, 2026</p>
     <div class="policy-body" style="max-width: 720px;">
-      <p>You can delete your Dough account. Sunday Company Group LLC (doing business as Dough) keeps only the records listed below. Deletion cannot be undone. The same email can create a new account later; the old account is not restored.</p>
+      <p>You can delete your {PRODUCT_NAME} account. Sunday Company Group LLC (doing business as {PRODUCT_NAME}) keeps only the records listed below. Deletion cannot be undone. The same email can create a new account later; the old account is not restored.</p>
 
       <h2>In the app</h2>
       <ol>
-        <li>Open Dough and go to Settings.</li>
+        <li>Open {PRODUCT_NAME} and go to Settings.</li>
         <li>Under Danger Zone, open Delete Account.</li>
         <li>Type DELETE and confirm.</li>
       </ol>
