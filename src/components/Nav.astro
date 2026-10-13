@@ -23,10 +23,12 @@ const reportLinks = [
 
 <header class:list={['site-nav', theme]}>
   <a href="/" class="nav-logo">
-    <span class="nav-logo-mark" aria-hidden="true">
-      <img src="/dough-mark.png" alt="" width="32" height="32" />
-    </span>
-    {PRODUCT_NAME}
+    <img
+      src={theme === 'cream' ? '/brand/runoff-horizontal-fullcolor.svg' : '/brand/runoff-horizontal-reversed.svg'}
+      alt={PRODUCT_NAME}
+      width="140"
+      height="32"
+    />
   </a>
 
   <details class="nav-mobile">
@@ -92,30 +94,12 @@ const reportLinks = [
   .nav-logo {
     display: inline-flex;
     align-items: center;
-    gap: 0.65rem;
-    font-family: var(--serif);
-    font-size: 1.45rem;
-    font-weight: 500;
-    letter-spacing: -0.02em;
-    color: var(--cream);
     text-decoration: none;
   }
-  .site-nav.cream .nav-logo { color: var(--ink); }
-
-  .nav-logo-mark {
-    width: 32px;
-    height: 32px;
-    border-radius: 8px;
-    overflow: hidden;
-    flex-shrink: 0;
-    background: var(--sage);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-  }
-  .nav-logo-mark img {
+  .nav-logo img {
     display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: 32px;
+    width: auto;
   }
 
   .nav-desktop {
