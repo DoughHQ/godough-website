@@ -6,14 +6,14 @@ Every factual claim on the site must trace here. If it is not on this list, it d
 
 | Claim | Source |
 |---|---|
-| Dough is a shopper app where people compare real grocery products | Product / brands positioning |
+| Runoff is a shopper app where people compare real grocery products | Product / brands positioning |
 | Three offers: standings (how you compete), concept tests, box studies | Portal: concept + IHUT publish; catalog standings |
-| Box studies ship to Dough shoppers who’ve already rated / chosen in similar categories | Product positioning for IHUT recruiting |
+| Box studies ship to Runoff shoppers who’ve already rated / chosen in similar categories | Product positioning for IHUT recruiting |
 | Shoppers in New York (first panel) | Product decision for this site |
 | Access is reviewed by a person (not self-serve checkout on the marketing site) | Portal application flow; `brands.itsarunoff.com/login` |
 | 600,000+ products indexed | Existing brands page / catalog |
 | 700+ categories | Existing brands page / catalog |
-| Confidence 95%, fixed by Dough; brands set bars | `concept_verdict_bars` / report `method.confidence` |
+| Confidence 95%, fixed by Runoff; brands set bars | `concept_verdict_bars` / report `method.confidence` |
 | Cleared / not cleared / too close to call / not enough responses | `concept_bar_result` |
 | Under 10 answers → not enough responses | `concept_bar_result` floor |
 | Bars frozen at first respondent | `concept_verdict_bars_guard` |
